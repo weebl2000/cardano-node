@@ -460,7 +460,6 @@ mkConsensusTracers trSel verb tr nodeKern fStats = do
   blockForgeOutcomeExtractor <- mkOutcomeExtractor
   elidedFetchDecision <- newstate  -- for eliding messages in FetchDecision tr
   forgeTracers <- mkForgeTracers
-  meta <- mkLOMeta Critical Public
 
   tHeadersServed <- STM.newTVarIO @Int 0
   tBlocksServed <- STM.newTVarIO @Int 0
@@ -472,6 +471,7 @@ mkConsensusTracers trSel verb tr nodeKern fStats = do
     { Consensus.chainSyncClientTracer = tracerOnOff (traceChainSyncClient trSel) verb "ChainSyncClient" tr
     , Consensus.chainSyncServerHeaderTracer = tracerOnOff' (traceChainSyncHeaderServer trSel) $
         Tracer $ \ev -> do
+          meta <- mkLOMeta Critical Public
           traceWith (annotateSeverity . toLogObject' verb $ appendName "ChainSyncHeaderServer" tr) ev
           when (isRollForward ev) $
             traceI trmet meta "served.header.count" =<<
@@ -482,6 +482,7 @@ mkConsensusTracers trSel verb tr nodeKern fStats = do
     , Consensus.blockFetchClientTracer = tracerOnOff (traceBlockFetchClient trSel) verb "BlockFetchClient" tr
     , Consensus.blockFetchServerTracer = tracerOnOff' (traceBlockFetchServer trSel) $
         Tracer $ \ev -> do
+          meta <- mkLOMeta Critical Public
           traceWith (annotateSeverity . toLogObject' verb $ appendName "BlockFetchServer" tr) ev
           when (isTraceBlockFetchServerBlockCount ev) $
             traceI trmet meta "served.block.count" =<<
@@ -490,9 +491,10 @@ mkConsensusTracers trSel verb tr nodeKern fStats = do
         forgeStateInfoTracer (Proxy @ blk) trSel tr
     , Consensus.txInboundTracer = tracerOnOff' (traceTxInbound trSel) $
         Tracer $ \ev -> do
+          meta <- mkLOMeta Critical Public
           traceWith (annotateSeverity . toLogObject' verb $ appendName "TxInbound" tr) ev
           case ev of
-            TraceLabelPeer _ (TraceTxSubmissionCollected collected) ->
+            TraceLabelPeer _ (TraceTxSubmissionCollected collected) -> do
               traceI trmet meta "submissions.submitted.count" =<<
                 STM.modifyReadTVarIO tSubmissionsCollected (+ collected)
 
