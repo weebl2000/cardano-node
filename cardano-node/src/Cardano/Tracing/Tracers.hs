@@ -496,13 +496,13 @@ mkConsensusTracers trSel verb tr nodeKern fStats = do
           case ev of
             TraceLabelPeer _ (TraceTxSubmissionCollected collected) -> do
               traceI trmet meta "submissions.submitted.count" =<<
-                STM.modifyReadTVarIO tSubmissionsCollected (+ collected)
+                STM.modifyReadTVarIO' tSubmissionsCollected (+ collected)
 
             TraceLabelPeer _ (TraceTxSubmissionProcessed processed) -> do
               traceI trmet meta "submissions.accepted.count" =<<
-                STM.modifyReadTVarIO tSubmissionsAccepted (+ ptxcAccepted processed)
+                STM.modifyReadTVarIO' tSubmissionsAccepted (+ ptxcAccepted processed)
               traceI trmet meta "submissions.rejected.count" =<<
-                STM.modifyReadTVarIO tSubmissionsRejected (+ ptxcRejected processed)
+                STM.modifyReadTVarIO' tSubmissionsRejected (+ ptxcRejected processed)
 
     , Consensus.txOutboundTracer = tracerOnOff (traceTxOutbound trSel) verb "TxOutbound" tr
     , Consensus.localTxSubmissionServerTracer = tracerOnOff (traceLocalTxSubmissionServer trSel) verb "LocalTxSubmissionServer" tr
