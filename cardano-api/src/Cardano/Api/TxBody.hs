@@ -131,7 +131,11 @@ import qualified Cardano.Ledger.AuxiliaryData as Ledger (hashAuxiliaryData)
 import qualified Cardano.Ledger.Core as Core
 import qualified Cardano.Ledger.Core as Ledger
 import qualified Cardano.Ledger.Era as Ledger
+import qualified Cardano.Ledger.SafeHash as SafeHash
 import qualified Cardano.Ledger.Shelley.Constraints as Ledger
+import qualified Cardano.Ledger.Shelley as Ledger
+import qualified Cardano.Ledger.Mary as Ledger
+import qualified Cardano.Ledger.Allegra as Ledger
 import qualified Cardano.Ledger.ShelleyMA.AuxiliaryData as Allegra
 import qualified Cardano.Ledger.ShelleyMA.TxBody as Allegra
 import           Ouroboros.Consensus.Shelley.Eras (StandardAllegra, StandardMary, StandardShelley)
@@ -192,11 +196,11 @@ toByronTxId (TxId h) =
 
 toShelleyTxId :: TxId -> Shelley.TxId StandardCrypto
 toShelleyTxId (TxId h) =
-    Shelley.TxId (Crypto.castHash h)
+    Shelley.TxId (SafeHash.unsafeMakeSafeHash (Crypto.castHash h))
 
 fromShelleyTxId :: Shelley.TxId StandardCrypto -> TxId
 fromShelleyTxId (Shelley.TxId h) =
-    TxId (Crypto.castHash h)
+    TxId (Crypto.castHash (SafeHash.extractHash h))
 
 -- | Calculate the transaction identifier for a 'TxBody'.
 --
@@ -214,18 +218,22 @@ getTxId (ByronTxBody tx) =
 
 getTxId (ShelleyTxBody era tx _) =
     case era of
-      ShelleyBasedEraShelley -> getTxIdShelley tx
-      ShelleyBasedEraAllegra -> getTxIdShelley tx
-      ShelleyBasedEraMary    -> getTxIdShelley tx
+      ShelleyBasedEraShelley ->
+         getTxIdShelley ([] :: [Ledger.ShelleyEra StandardCrypto]) tx
+      ShelleyBasedEraAllegra ->
+         getTxIdShelley ([] :: [Ledger.AllegraEra StandardCrypto]) tx
+      ShelleyBasedEraMary    ->
+         getTxIdShelley ([] :: [Ledger.MaryEra StandardCrypto]) tx
   where
-    getTxIdShelley :: Ledger.Crypto ledgerera ~ StandardCrypto
+    getTxIdShelley :: forall ledgerera proxy
+                    . Ledger.Crypto ledgerera ~ StandardCrypto
                    => Ledger.UsesTxBody ledgerera
-                   => Ledger.TxBody ledgerera -> TxId
-    getTxIdShelley =
+                   => proxy ledgerera -> Ledger.TxBody ledgerera -> TxId
+    getTxIdShelley _ =
         TxId
       . Crypto.castHash
-      . (\(Shelley.TxId txhash) -> txhash)
-      . Shelley.txid
+      . (\(Shelley.TxId txhash) -> SafeHash.extractHash txhash)
+      . (Shelley.txid @ledgerera)
 
 
 -- ----------------------------------------------------------------------------

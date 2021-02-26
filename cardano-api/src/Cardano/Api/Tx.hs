@@ -87,11 +87,14 @@ import           Ouroboros.Consensus.Shelley.Protocol.Crypto (StandardCrypto)
 
 import qualified Cardano.Ledger.Core as Ledger
 import qualified Cardano.Ledger.Era as Ledger
+import qualified Cardano.Ledger.SafeHash as Ledger
+import qualified Cardano.Ledger.Shelley as Ledger
+import qualified Cardano.Ledger.Mary as Ledger
+import qualified Cardano.Ledger.Allegra as Ledger
 import qualified Cardano.Ledger.Shelley.Constraints as Shelley
 
 import qualified Shelley.Spec.Ledger.Address.Bootstrap as Shelley
 import           Shelley.Spec.Ledger.BaseTypes (maybeToStrictMaybe, strictMaybeToMaybe)
-import qualified Shelley.Spec.Ledger.Hashing as Shelley
 import qualified Shelley.Spec.Ledger.Keys as Shelley
 import qualified Shelley.Spec.Ledger.Tx as Shelley
 
@@ -586,22 +589,29 @@ makeShelleyBootstrapWitness _ ByronTxBody{} _ =
 
 makeShelleyBootstrapWitness nwOrAddr (ShelleyTxBody era txbody _) sk =
     case era of
-      ShelleyBasedEraShelley -> makeShelleyBasedBootstrapWitness era
-                                  nwOrAddr txbody sk
-      ShelleyBasedEraAllegra -> makeShelleyBasedBootstrapWitness era
-                                  nwOrAddr txbody sk
-      ShelleyBasedEraMary    -> makeShelleyBasedBootstrapWitness era
-                                  nwOrAddr txbody sk
+      ShelleyBasedEraShelley ->
+        makeShelleyBasedBootstrapWitness
+          (Proxy :: Proxy (Ledger.ShelleyEra StandardCrypto))
+          era nwOrAddr txbody sk
+      ShelleyBasedEraAllegra ->
+        makeShelleyBasedBootstrapWitness
+          (Proxy :: Proxy (Ledger.AllegraEra StandardCrypto))
+          era nwOrAddr txbody sk
+      ShelleyBasedEraMary    ->
+        makeShelleyBasedBootstrapWitness
+          (Proxy :: Proxy (Ledger.MaryEra StandardCrypto))
+          era nwOrAddr txbody sk
 
-makeShelleyBasedBootstrapWitness :: forall era ledgerera.
+makeShelleyBasedBootstrapWitness :: forall era ledgerera proxy.
                                     Shelley.ShelleyBased ledgerera
                                  => Ledger.Crypto ledgerera ~ StandardCrypto
-                                 => ShelleyBasedEra era
+                                 => proxy ledgerera
+                                 -> ShelleyBasedEra era
                                  -> WitnessNetworkIdOrByronAddress
                                  -> Ledger.TxBody ledgerera
                                  -> SigningKey ByronKey
                                  -> Witness era
-makeShelleyBasedBootstrapWitness era nwOrAddr txbody (ByronSigningKey sk) =
+makeShelleyBasedBootstrapWitness _ era nwOrAddr txbody (ByronSigningKey sk) =
     ShelleyBootstrapWitness era $
       -- Byron era witnesses were weird. This reveals all that weirdness.
       Shelley.BootstrapWitness {
@@ -625,14 +635,14 @@ makeShelleyBasedBootstrapWitness era nwOrAddr txbody (ByronSigningKey sk) =
     -- reuse that here.
     --
     signature :: Shelley.SignedDSIGN StandardCrypto
-                  (Shelley.Hash StandardCrypto Shelley.EraIndependentTxBody)
+                  (Shelley.Hash StandardCrypto Ledger.EraIndependentTxBody)
     signature = makeShelleySignature
                   txhash
                   -- Make the signature with the extended key directly:
                   (ShelleyExtendedSigningKey (Byron.unSigningKey sk))
 
-    txhash :: Shelley.Hash StandardCrypto Shelley.EraIndependentTxBody
-    txhash = Shelley.hashAnnotated txbody
+    txhash :: Shelley.Hash StandardCrypto Ledger.EraIndependentTxBody
+    txhash = Ledger.extractHash (Ledger.hashAnnotated txbody)
     --TODO: use Shelley.eraIndTxBodyHash txbody once that function has a
     -- suitably general type.
 
@@ -695,20 +705,30 @@ makeShelleyKeyWitness :: forall era.
                       -> Witness era
 makeShelleyKeyWitness (ShelleyTxBody era txbody _) =
     case era of
-      ShelleyBasedEraShelley -> makeShelleyBasedKeyWitness txbody
-      ShelleyBasedEraAllegra -> makeShelleyBasedKeyWitness txbody
-      ShelleyBasedEraMary    -> makeShelleyBasedKeyWitness txbody
+      ShelleyBasedEraShelley ->
+        makeShelleyBasedKeyWitness
+          (Proxy :: Proxy (Ledger.ShelleyEra StandardCrypto))
+          txbody
+      ShelleyBasedEraAllegra ->
+        makeShelleyBasedKeyWitness
+          (Proxy :: Proxy (Ledger.AllegraEra StandardCrypto))
+          txbody
+      ShelleyBasedEraMary    ->
+        makeShelleyBasedKeyWitness
+          (Proxy :: Proxy (Ledger.MaryEra StandardCrypto))
+          txbody
   where
-    makeShelleyBasedKeyWitness :: forall ledgerera.
+    makeShelleyBasedKeyWitness :: forall ledgerera proxy.
                                   Shelley.ShelleyBased ledgerera
                                => Ledger.Crypto ledgerera ~ StandardCrypto
-                               => Ledger.TxBody ledgerera
+                               => proxy ledgerera
+                               -> Ledger.TxBody ledgerera
                                -> ShelleyWitnessSigningKey
                                -> Witness era
-    makeShelleyBasedKeyWitness txbody' =
+    makeShelleyBasedKeyWitness _ txbody' =
 
-     let txhash :: Shelley.Hash StandardCrypto Shelley.EraIndependentTxBody
-         txhash = Shelley.hashAnnotated txbody'
+     let txhash :: Shelley.Hash StandardCrypto Ledger.EraIndependentTxBody
+         txhash = Ledger.extractHash (Ledger.hashAnnotated txbody')
 
         -- To allow sharing of the txhash computation across many signatures we
         -- define and share the txhash outside the lambda for the signing key:
