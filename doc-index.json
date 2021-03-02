@@ -1836,13 +1836,13 @@
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:toShelleyPParamsUpdate"
   },
   {
-    "display_html": "<a href=\"#v:toShelleyProposedPPUpdates\">toShelleyProposedPPUpdates</a> &#8759; Crypto ledgerera ~ StandardCrypto &#8658; <a href=\"file:///opt/ghc/8.10.2/share/doc/ghc-8.10.2/html/libraries/Cabal-3.2.0.0/Distribution-Compat-Prelude-Internal.html#t:Map\" title=\"Distribution.Compat.Prelude.Internal\">Map</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParametersUpdate\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParametersUpdate</a> &#8594; ProposedPPUpdates ledgerera",
+    "display_html": "<a href=\"#v:toShelleyProposedPPUpdates\">toShelleyProposedPPUpdates</a> &#8759; &#8704; ledgerera. (Crypto ledgerera ~ StandardCrypto, PParamsDelta ledgerera ~ PParamsUpdate ledgerera) &#8658; <a href=\"file:///opt/ghc/8.10.2/share/doc/ghc-8.10.2/html/libraries/Cabal-3.2.0.0/Distribution-Compat-Prelude-Internal.html#t:Map\" title=\"Distribution.Compat.Prelude.Internal\">Map</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParametersUpdate\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParametersUpdate</a> &#8594; ProposedPPUpdates ledgerera",
     "name": "toShelleyProposedPPUpdates",
     "module": "Cardano.Api.ProtocolParameters",
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:toShelleyProposedPPUpdates"
   },
   {
-    "display_html": "<a href=\"#v:toShelleyUpdate\">toShelleyUpdate</a> &#8759; Crypto ledgerera ~ StandardCrypto &#8658; <a href=\"Cardano-Api-ProtocolParameters.html#t:UpdateProposal\" title=\"Cardano.Api.ProtocolParameters\">UpdateProposal</a> &#8594; Update ledgerera",
+    "display_html": "<a href=\"#v:toShelleyUpdate\">toShelleyUpdate</a> &#8759; (Crypto ledgerera ~ StandardCrypto, PParamsDelta ledgerera ~ PParamsUpdate ledgerera) &#8658; <a href=\"Cardano-Api-ProtocolParameters.html#t:UpdateProposal\" title=\"Cardano.Api.ProtocolParameters\">UpdateProposal</a> &#8594; Update ledgerera",
     "name": "toShelleyUpdate",
     "module": "Cardano.Api.ProtocolParameters",
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:toShelleyUpdate"
@@ -1860,13 +1860,13 @@
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:fromShelleyPParamsUpdate"
   },
   {
-    "display_html": "<a href=\"#v:fromShelleyProposedPPUpdates\">fromShelleyProposedPPUpdates</a> &#8759; Crypto ledgerera ~ StandardCrypto &#8658; ProposedPPUpdates ledgerera &#8594; <a href=\"file:///opt/ghc/8.10.2/share/doc/ghc-8.10.2/html/libraries/Cabal-3.2.0.0/Distribution-Compat-Prelude-Internal.html#t:Map\" title=\"Distribution.Compat.Prelude.Internal\">Map</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParametersUpdate\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParametersUpdate</a>",
+    "display_html": "<a href=\"#v:fromShelleyProposedPPUpdates\">fromShelleyProposedPPUpdates</a> &#8759; (Crypto ledgerera ~ StandardCrypto, PParamsDelta ledgerera ~ PParamsUpdate ledgerera) &#8658; ProposedPPUpdates ledgerera &#8594; <a href=\"file:///opt/ghc/8.10.2/share/doc/ghc-8.10.2/html/libraries/Cabal-3.2.0.0/Distribution-Compat-Prelude-Internal.html#t:Map\" title=\"Distribution.Compat.Prelude.Internal\">Map</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParametersUpdate\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParametersUpdate</a>",
     "name": "fromShelleyProposedPPUpdates",
     "module": "Cardano.Api.ProtocolParameters",
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:fromShelleyProposedPPUpdates"
   },
   {
-    "display_html": "<a href=\"#v:fromShelleyUpdate\">fromShelleyUpdate</a> &#8759; Crypto ledgerera ~ StandardCrypto &#8658; Update ledgerera &#8594; <a href=\"Cardano-Api-ProtocolParameters.html#t:UpdateProposal\" title=\"Cardano.Api.ProtocolParameters\">UpdateProposal</a>",
+    "display_html": "<a href=\"#v:fromShelleyUpdate\">fromShelleyUpdate</a> &#8759; (Crypto ledgerera ~ StandardCrypto, PParamsDelta ledgerera ~ PParamsUpdate ledgerera) &#8658; Update ledgerera &#8594; <a href=\"Cardano-Api-ProtocolParameters.html#t:UpdateProposal\" title=\"Cardano.Api.ProtocolParameters\">UpdateProposal</a>",
     "name": "fromShelleyUpdate",
     "module": "Cardano.Api.ProtocolParameters",
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:fromShelleyUpdate"
@@ -2022,7 +2022,7 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxId"
   },
   {
-    "display_html": "<a href=\"#v:getTxId\">getTxId</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxId\" title=\"Cardano.Api.TxBody\">TxId</a>",
+    "display_html": "<a href=\"#v:getTxId\">getTxId</a> &#8759; &#8704; era. <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxId\" title=\"Cardano.Api.TxBody\">TxId</a>",
     "name": "getTxId",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#v:getTxId"
@@ -3324,7 +3324,7 @@
     "link": "cardano-api/Cardano-Api.html#t:TxId"
   },
   {
-    "display_html": "<a href=\"#v:getTxId\">getTxId</a> &#8759; <a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era &#8594; <a href=\"Cardano-Api.html#t:TxId\" title=\"Cardano.Api\">TxId</a>",
+    "display_html": "<a href=\"#v:getTxId\">getTxId</a> &#8759; &#8704; era. <a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era &#8594; <a href=\"Cardano-Api.html#t:TxId\" title=\"Cardano.Api\">TxId</a>",
     "name": "getTxId",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:getTxId"
