@@ -6799,7 +6799,7 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Mod FlagFields AnyCardanoEra
 forall (f :: * -&gt; *) a. String -&gt; Mod f a
 </span><span class="hs-identifier hs-var">Opt.help</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><span class="hs-string">&quot;Specify the Shelley era (default)&quot;</span></span><span>
+</span><span class="hs-string">&quot;Specify the Shelley era&quot;</span></span><span>
 </span><span id="line-1525"></span><span>      </span><span class="hs-special">)</span><span>
 </span><span id="line-1526"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">AnyCardanoEra
 -&gt; Mod FlagFields AnyCardanoEra -&gt; Parser AnyCardanoEra
@@ -6837,16 +6837,16 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Mod FlagFields AnyCardanoEra
 forall (f :: * -&gt; *) a. String -&gt; Mod f a
 </span><span class="hs-identifier hs-var">Opt.help</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><span class="hs-string">&quot;Specify the Mary era&quot;</span></span><span>
+</span><span class="hs-string">&quot;Specify the Mary era (default)&quot;</span></span><span>
 </span><span id="line-1533"></span><span>      </span><span class="hs-special">)</span><span>
 </span><span id="line-1534"></span><span>
 </span><span id="line-1535"></span><span>    </span><span class="hs-comment">-- Default for now:</span><span>
 </span><span id="line-1536"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">AnyCardanoEra -&gt; Parser AnyCardanoEra
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CardanoEra ShelleyEra -&gt; AnyCardanoEra
+</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">CardanoEra MaryEra -&gt; AnyCardanoEra
 forall era. IsCardanoEra era =&gt; CardanoEra era -&gt; AnyCardanoEra
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.2/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AnyCardanoEra</span></a></span><span> </span><span class="annot"><span class="annottext">CardanoEra ShelleyEra
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.2/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyEra</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.2/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AnyCardanoEra</span></a></span><span> </span><span class="annot"><span class="annottext">CardanoEra MaryEra
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.2/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">MaryEra</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-1537"></span><span>  </span><span class="hs-special">]</span><span>
 </span><span id="line-1538"></span><span>
 </span><span id="line-1539"></span><span class="annot"><a href="Cardano.CLI.Shelley.Parsers.html#pTxIn"><span class="hs-identifier hs-type">pTxIn</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.2/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">TxIn</span></a></span><span>
