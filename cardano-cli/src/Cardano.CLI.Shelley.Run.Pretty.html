@@ -16,10 +16,10 @@
 </span><span id="line-16"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Aeson.Encode.Pretty</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Config</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">confCompare</span></span><span class="hs-special">)</span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">defConfig</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">encodePretty'</span></span><span class="hs-special">)</span><span>
 </span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Shelley.Spec.Ledger.API</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Shelley</span></span><span>
 </span><span id="line-18"></span><span>
-</span><span id="line-19"></span><span id="local-6989586621679243889"><span class="annot"><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyTx"><span class="hs-identifier hs-type">prettyTx</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">TxBody</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679243889"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LByteString</span></span></span><span>
+</span><span id="line-19"></span><span id="local-6989586621679243794"><span class="annot"><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyTx"><span class="hs-identifier hs-type">prettyTx</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">TxBody</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679243794"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">LByteString</span></span></span><span>
 </span><span id="line-20"></span><span id="prettyTx"><span class="annot"><span class="annottext">prettyTx :: TxBody era -&gt; LByteString
-</span><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyTx"><span class="hs-identifier hs-var hs-var">prettyTx</span></a></span></span><span> </span><span id="local-6989586621679243888"><span class="annot"><span class="annottext">TxBody era
-</span><a href="#local-6989586621679243888"><span class="hs-identifier hs-var">body0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyTx"><span class="hs-identifier hs-var hs-var">prettyTx</span></a></span></span><span> </span><span id="local-6989586621679243793"><span class="annot"><span class="annottext">TxBody era
+</span><a href="#local-6989586621679243793"><span class="hs-identifier hs-var">body0</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-21"></span><span>  </span><span class="annot"><span class="annottext">Config -&gt; Value -&gt; LByteString
 forall a. ToJSON a =&gt; Config -&gt; a -&gt; LByteString
 </span><span class="hs-identifier hs-var">encodePretty'</span></span><span> </span><span class="annot"><span class="annottext">Config
@@ -34,9 +34,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
 </span><span id="line-23"></span><span>  </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">TxBody era
-</span><a href="#local-6989586621679243888"><span class="hs-identifier hs-var">body0</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-24"></span><span>    </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronTxBody</span></a></span><span> </span><span id="local-6989586621679243886"><span class="annot"><span class="annottext">Annotated Tx ByteString
-</span><a href="#local-6989586621679243886"><span class="hs-identifier hs-var">tx</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679243793"><span class="hs-identifier hs-var">body0</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-24"></span><span>    </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronTxBody</span></a></span><span> </span><span id="local-6989586621679243791"><span class="annot"><span class="annottext">Annotated Tx ByteString
+</span><a href="#local-6989586621679243791"><span class="hs-identifier hs-var">tx</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;era&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text
@@ -44,11 +44,11 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-string">&quot;tx&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Annotated Tx ByteString -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Annotated Tx ByteString
-</span><a href="#local-6989586621679243886"><span class="hs-identifier hs-var">tx</span></a></span><span class="hs-special">]</span><span>
+</span><a href="#local-6989586621679243791"><span class="hs-identifier hs-var">tx</span></a></span><span class="hs-special">]</span><span>
 </span><span id="line-25"></span><span>    </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ShelleyTxBody</span></a></span><span> </span><span class="annot"><span class="annottext">ShelleyBasedEra era
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyBasedEraShelley</span></a></span><span> </span><span id="local-6989586621679243885"><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
-</span><a href="#local-6989586621679243885"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span id="local-6989586621679243884"><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
-</span><a href="#local-6989586621679243884"><span class="hs-identifier hs-var">aux</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyBasedEraShelley</span></a></span><span> </span><span id="local-6989586621679243790"><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
+</span><a href="#local-6989586621679243790"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span id="local-6989586621679243789"><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
+</span><a href="#local-6989586621679243789"><span class="hs-identifier hs-var">aux</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-26"></span><span>      </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;era&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -59,13 +59,13 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyEra StandardCrypto)))
 Set (TxIn StandardCrypto)
-</span><a href="#local-6989586621679243883"><span class="hs-identifier hs-var">_inputs</span></a></span><span>
+</span><a href="#local-6989586621679243788"><span class="hs-identifier hs-var">_inputs</span></a></span><span>
 </span><span id="line-28"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;outputs&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictSeq (TxOut (ShelleyEra StandardCrypto)) -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyEra StandardCrypto))
 StrictSeq (TxOut (ShelleyEra StandardCrypto))
-</span><a href="#local-6989586621679243882"><span class="hs-identifier hs-var">_outputs</span></a></span><span>
+</span><a href="#local-6989586621679243787"><span class="hs-identifier hs-var">_outputs</span></a></span><span>
 </span><span id="line-29"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;certificates&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictSeq Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -76,22 +76,22 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyEra StandardCrypto)))
 StrictSeq (DCert StandardCrypto)
-</span><a href="#local-6989586621679243881"><span class="hs-identifier hs-var">_certs</span></a></span><span>
+</span><a href="#local-6989586621679243786"><span class="hs-identifier hs-var">_certs</span></a></span><span>
 </span><span id="line-30"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;withdrawals&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Map (RewardAcnt StandardCrypto) Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Map (RewardAcnt StandardCrypto) Coin
-</span><a href="#local-6989586621679243880"><span class="hs-identifier hs-var">withdrawals</span></a></span><span>
+</span><a href="#local-6989586621679243785"><span class="hs-identifier hs-var">withdrawals</span></a></span><span>
 </span><span id="line-31"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;fee&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Coin
-</span><a href="#local-6989586621679243879"><span class="hs-identifier hs-var">_txfee</span></a></span><span>
+</span><a href="#local-6989586621679243784"><span class="hs-identifier hs-var">_txfee</span></a></span><span>
 </span><span id="line-32"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;timetolive&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; SlotNo -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679243878"><span class="hs-identifier hs-var">_ttl</span></a></span><span>
+</span><a href="#local-6989586621679243783"><span class="hs-identifier hs-var">_ttl</span></a></span><span>
 </span><span id="line-33"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;update&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -102,7 +102,7 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyEra StandardCrypto) -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyEra StandardCrypto))
-</span><a href="#local-6989586621679243877"><span class="hs-identifier hs-var">_txUpdate</span></a></span><span>
+</span><a href="#local-6989586621679243782"><span class="hs-identifier hs-var">_txUpdate</span></a></span><span>
 </span><span id="line-34"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;metadata_hash&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -115,7 +115,7 @@ forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe
   (AuxiliaryDataHash (Crypto (ShelleyEra StandardCrypto)))
 StrictMaybe (AuxiliaryDataHash StandardCrypto)
-</span><a href="#local-6989586621679243876"><span class="hs-identifier hs-var">_mdHash</span></a></span><span>
+</span><a href="#local-6989586621679243781"><span class="hs-identifier hs-var">_mdHash</span></a></span><span>
 </span><span id="line-35"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;auxiliary_data&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -125,11 +125,11 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
 Maybe Metadata
-</span><a href="#local-6989586621679243884"><span class="hs-identifier hs-var">aux</span></a></span><span>
+</span><a href="#local-6989586621679243789"><span class="hs-identifier hs-var">aux</span></a></span><span>
 </span><span id="line-36"></span><span>      </span><span class="hs-special">]</span><span>
 </span><span id="line-37"></span><span>      </span><span class="hs-keyword">where</span><span>
 </span><span id="line-38"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Shelley.TxBody</span></span><span>
-</span><span id="line-39"></span><span>          </span><span class="hs-special">{</span><span> </span><span id="local-6989586621679243883"><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyEra StandardCrypto)))
+</span><span id="line-39"></span><span>          </span><span class="hs-special">{</span><span> </span><span id="local-6989586621679243788"><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyEra StandardCrypto)))
 _inputs :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -137,7 +137,7 @@ TxBody era
    Set (TxIn (Crypto era))
 _inputs :: Set (TxIn (Crypto (ShelleyEra StandardCrypto)))
 </span><span class="hs-identifier hs-var hs-var">_inputs</span></span></span><span>
-</span><span id="line-40"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243882"><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyEra StandardCrypto))
+</span><span id="line-40"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243787"><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyEra StandardCrypto))
 _outputs :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -145,7 +145,7 @@ TxBody era
    StrictSeq (TxOut era)
 _outputs :: StrictSeq (TxOut (ShelleyEra StandardCrypto))
 </span><span class="hs-identifier hs-var hs-var">_outputs</span></span></span><span>
-</span><span id="line-41"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243881"><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyEra StandardCrypto)))
+</span><span id="line-41"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243786"><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyEra StandardCrypto)))
 _certs :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -153,7 +153,7 @@ TxBody era
    StrictSeq (DCert (Crypto era))
 _certs :: StrictSeq (DCert (Crypto (ShelleyEra StandardCrypto)))
 </span><span class="hs-identifier hs-var hs-var">_certs</span></span></span><span>
-</span><span id="line-42"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243871"><span class="annot"><span class="annottext">Wdrl (Crypto (ShelleyEra StandardCrypto))
+</span><span id="line-42"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243776"><span class="annot"><span class="annottext">Wdrl (Crypto (ShelleyEra StandardCrypto))
 _wdrls :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -161,7 +161,7 @@ TxBody era
    Wdrl (Crypto era)
 _wdrls :: Wdrl (Crypto (ShelleyEra StandardCrypto))
 </span><span class="hs-identifier hs-var hs-var">_wdrls</span></span></span><span>
-</span><span id="line-43"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243879"><span class="annot"><span class="annottext">Coin
+</span><span id="line-43"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243784"><span class="annot"><span class="annottext">Coin
 _txfee :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -169,7 +169,7 @@ TxBody era
    Coin
 _txfee :: Coin
 </span><span class="hs-identifier hs-var hs-var">_txfee</span></span></span><span>
-</span><span id="line-44"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243878"><span class="annot"><span class="annottext">SlotNo
+</span><span id="line-44"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243783"><span class="annot"><span class="annottext">SlotNo
 _ttl :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -177,7 +177,7 @@ TxBody era
    SlotNo
 _ttl :: SlotNo
 </span><span class="hs-identifier hs-var hs-var">_ttl</span></span></span><span>
-</span><span id="line-45"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243877"><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyEra StandardCrypto))
+</span><span id="line-45"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243782"><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyEra StandardCrypto))
 _txUpdate :: forall era.
 TxBody era
 -&gt; (Era era, FromCBOR (PParamsDelta era),
@@ -185,7 +185,7 @@ TxBody era
    StrictMaybe (Update era)
 _txUpdate :: StrictMaybe (Update (ShelleyEra StandardCrypto))
 </span><span class="hs-identifier hs-var hs-var">_txUpdate</span></span></span><span>
-</span><span id="line-46"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243876"><span class="annot"><span class="annottext">StrictMaybe
+</span><span id="line-46"></span><span>          </span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243781"><span class="annot"><span class="annottext">StrictMaybe
   (AuxiliaryDataHash (Crypto (ShelleyEra StandardCrypto)))
 _mdHash :: forall era.
 TxBody era
@@ -198,15 +198,15 @@ _mdHash :: StrictMaybe
 </span><span id="line-47"></span><span>          </span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-48"></span><span>            </span><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
 TxBody (ShelleyEra StandardCrypto)
-</span><a href="#local-6989586621679243885"><span class="hs-identifier hs-var">body</span></a></span><span>
-</span><span id="line-49"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Wdrl</span></span><span> </span><span id="local-6989586621679243880"><span class="annot"><span class="annottext">Map (RewardAcnt StandardCrypto) Coin
-</span><a href="#local-6989586621679243880"><span class="hs-identifier hs-var">withdrawals</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Wdrl (Crypto (ShelleyEra StandardCrypto))
+</span><a href="#local-6989586621679243790"><span class="hs-identifier hs-var">body</span></a></span><span>
+</span><span id="line-49"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Wdrl</span></span><span> </span><span id="local-6989586621679243785"><span class="annot"><span class="annottext">Map (RewardAcnt StandardCrypto) Coin
+</span><a href="#local-6989586621679243785"><span class="hs-identifier hs-var">withdrawals</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Wdrl (Crypto (ShelleyEra StandardCrypto))
 Wdrl StandardCrypto
-</span><a href="#local-6989586621679243871"><span class="hs-identifier hs-var">_wdrls</span></a></span><span>
+</span><a href="#local-6989586621679243776"><span class="hs-identifier hs-var">_wdrls</span></a></span><span>
 </span><span id="line-50"></span><span>    </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ShelleyTxBody</span></a></span><span> </span><span class="annot"><span class="annottext">ShelleyBasedEra era
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyBasedEraAllegra</span></a></span><span> </span><span id="local-6989586621679243864"><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
-</span><a href="#local-6989586621679243864"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span id="local-6989586621679243863"><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
-</span><a href="#local-6989586621679243863"><span class="hs-identifier hs-var">aux</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyBasedEraAllegra</span></a></span><span> </span><span id="local-6989586621679243769"><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
+</span><a href="#local-6989586621679243769"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span id="local-6989586621679243768"><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
+</span><a href="#local-6989586621679243768"><span class="hs-identifier hs-var">aux</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-51"></span><span>      </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;era&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -217,13 +217,13 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
 Set (TxIn StandardCrypto)
-</span><a href="#local-6989586621679243862"><span class="hs-identifier hs-var">inputs</span></a></span><span>
+</span><a href="#local-6989586621679243767"><span class="hs-identifier hs-var">inputs</span></a></span><span>
 </span><span id="line-53"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;outputs&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text
 -&gt; StrictSeq (TxOut (ShelleyMAEra 'Allegra StandardCrypto)) -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Allegra StandardCrypto))
-</span><a href="#local-6989586621679243861"><span class="hs-identifier hs-var">outputs</span></a></span><span>
+</span><a href="#local-6989586621679243766"><span class="hs-identifier hs-var">outputs</span></a></span><span>
 </span><span id="line-54"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;certificates&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictSeq Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -234,25 +234,25 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
 StrictSeq (DCert StandardCrypto)
-</span><a href="#local-6989586621679243860"><span class="hs-identifier hs-var">certificates</span></a></span><span>
+</span><a href="#local-6989586621679243765"><span class="hs-identifier hs-var">certificates</span></a></span><span>
 </span><span id="line-55"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;withdrawals&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Map (RewardAcnt StandardCrypto) Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Map
   (RewardAcnt (Crypto (ShelleyMAEra 'Allegra StandardCrypto))) Coin
 Map (RewardAcnt StandardCrypto) Coin
-</span><a href="#local-6989586621679243859"><span class="hs-identifier hs-var">withdrawals</span></a></span><span>
+</span><a href="#local-6989586621679243764"><span class="hs-identifier hs-var">withdrawals</span></a></span><span>
 </span><span id="line-56"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;fee&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Coin
-</span><a href="#local-6989586621679243858"><span class="hs-identifier hs-var">txfee</span></a></span><span>
+</span><a href="#local-6989586621679243763"><span class="hs-identifier hs-var">txfee</span></a></span><span>
 </span><span id="line-57"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;validity_interval&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">ValidityInterval -&gt; Value
 </span><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyValidityInterval"><span class="hs-identifier hs-var">prettyValidityInterval</span></a></span><span> </span><span class="annot"><span class="annottext">ValidityInterval
-</span><a href="#local-6989586621679243856"><span class="hs-identifier hs-var">validity</span></a></span><span>
+</span><a href="#local-6989586621679243761"><span class="hs-identifier hs-var">validity</span></a></span><span>
 </span><span id="line-58"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;update&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -263,7 +263,7 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyMAEra 'Allegra StandardCrypto) -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Allegra StandardCrypto))
-</span><a href="#local-6989586621679243855"><span class="hs-identifier hs-var">update</span></a></span><span>
+</span><a href="#local-6989586621679243760"><span class="hs-identifier hs-var">update</span></a></span><span>
 </span><span id="line-59"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;auxiliary_data_hash&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -276,13 +276,13 @@ forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe
   (AuxiliaryDataHash (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
 StrictMaybe (AuxiliaryDataHash StandardCrypto)
-</span><a href="#local-6989586621679243854"><span class="hs-identifier hs-var">adHash</span></a></span><span>
+</span><a href="#local-6989586621679243759"><span class="hs-identifier hs-var">adHash</span></a></span><span>
 </span><span id="line-60"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;mint&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Value (ShelleyMAEra 'Allegra StandardCrypto)
 Coin
-</span><a href="#local-6989586621679243853"><span class="hs-identifier hs-var">mint</span></a></span><span>
+</span><a href="#local-6989586621679243758"><span class="hs-identifier hs-var">mint</span></a></span><span>
 </span><span id="line-61"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;auxiliary_data&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -294,37 +294,37 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyMAEra 'Allegra StandardCrypto))
 Maybe (AuxiliaryData (ShelleyLedgerEra era))
-</span><a href="#local-6989586621679243863"><span class="hs-identifier hs-var">aux</span></a></span><span>
+</span><a href="#local-6989586621679243768"><span class="hs-identifier hs-var">aux</span></a></span><span>
 </span><span id="line-62"></span><span>      </span><span class="hs-special">]</span><span>
 </span><span id="line-63"></span><span>      </span><span class="hs-keyword">where</span><span>
 </span><span id="line-64"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">ShelleyMA.TxBody</span></span><span>
-</span><span id="line-65"></span><span>          </span><span id="local-6989586621679243862"><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
-</span><a href="#local-6989586621679243862"><span class="hs-identifier hs-var">inputs</span></a></span></span><span>
-</span><span id="line-66"></span><span>          </span><span id="local-6989586621679243861"><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Allegra StandardCrypto))
-</span><a href="#local-6989586621679243861"><span class="hs-identifier hs-var">outputs</span></a></span></span><span>
-</span><span id="line-67"></span><span>          </span><span id="local-6989586621679243860"><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
-</span><a href="#local-6989586621679243860"><span class="hs-identifier hs-var">certificates</span></a></span></span><span>
-</span><span id="line-68"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Wdrl</span></span><span> </span><span id="local-6989586621679243859"><span class="annot"><span class="annottext">Map
+</span><span id="line-65"></span><span>          </span><span id="local-6989586621679243767"><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
+</span><a href="#local-6989586621679243767"><span class="hs-identifier hs-var">inputs</span></a></span></span><span>
+</span><span id="line-66"></span><span>          </span><span id="local-6989586621679243766"><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Allegra StandardCrypto))
+</span><a href="#local-6989586621679243766"><span class="hs-identifier hs-var">outputs</span></a></span></span><span>
+</span><span id="line-67"></span><span>          </span><span id="local-6989586621679243765"><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
+</span><a href="#local-6989586621679243765"><span class="hs-identifier hs-var">certificates</span></a></span></span><span>
+</span><span id="line-68"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Wdrl</span></span><span> </span><span id="local-6989586621679243764"><span class="annot"><span class="annottext">Map
   (RewardAcnt (Crypto (ShelleyMAEra 'Allegra StandardCrypto))) Coin
-</span><a href="#local-6989586621679243859"><span class="hs-identifier hs-var">withdrawals</span></a></span></span><span class="hs-special">)</span><span>
-</span><span id="line-69"></span><span>          </span><span id="local-6989586621679243858"><span class="annot"><span class="annottext">Coin
-</span><a href="#local-6989586621679243858"><span class="hs-identifier hs-var">txfee</span></a></span></span><span>
-</span><span id="line-70"></span><span>          </span><span id="local-6989586621679243856"><span class="annot"><span class="annottext">ValidityInterval
-</span><a href="#local-6989586621679243856"><span class="hs-identifier hs-var">validity</span></a></span></span><span>
-</span><span id="line-71"></span><span>          </span><span id="local-6989586621679243855"><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Allegra StandardCrypto))
-</span><a href="#local-6989586621679243855"><span class="hs-identifier hs-var">update</span></a></span></span><span>
-</span><span id="line-72"></span><span>          </span><span id="local-6989586621679243854"><span class="annot"><span class="annottext">StrictMaybe
+</span><a href="#local-6989586621679243764"><span class="hs-identifier hs-var">withdrawals</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-69"></span><span>          </span><span id="local-6989586621679243763"><span class="annot"><span class="annottext">Coin
+</span><a href="#local-6989586621679243763"><span class="hs-identifier hs-var">txfee</span></a></span></span><span>
+</span><span id="line-70"></span><span>          </span><span id="local-6989586621679243761"><span class="annot"><span class="annottext">ValidityInterval
+</span><a href="#local-6989586621679243761"><span class="hs-identifier hs-var">validity</span></a></span></span><span>
+</span><span id="line-71"></span><span>          </span><span id="local-6989586621679243760"><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Allegra StandardCrypto))
+</span><a href="#local-6989586621679243760"><span class="hs-identifier hs-var">update</span></a></span></span><span>
+</span><span id="line-72"></span><span>          </span><span id="local-6989586621679243759"><span class="annot"><span class="annottext">StrictMaybe
   (AuxiliaryDataHash (Crypto (ShelleyMAEra 'Allegra StandardCrypto)))
-</span><a href="#local-6989586621679243854"><span class="hs-identifier hs-var">adHash</span></a></span></span><span>
-</span><span id="line-73"></span><span>          </span><span id="local-6989586621679243853"><span class="annot"><span class="annottext">Value (ShelleyMAEra 'Allegra StandardCrypto)
-</span><a href="#local-6989586621679243853"><span class="hs-identifier hs-var">mint</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621679243759"><span class="hs-identifier hs-var">adHash</span></a></span></span><span>
+</span><span id="line-73"></span><span>          </span><span id="local-6989586621679243758"><span class="annot"><span class="annottext">Value (ShelleyMAEra 'Allegra StandardCrypto)
+</span><a href="#local-6989586621679243758"><span class="hs-identifier hs-var">mint</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-74"></span><span>            </span><span class="annot"><span class="annottext">TxBody (ShelleyMAEra 'Allegra StandardCrypto)
 TxBody (ShelleyLedgerEra era)
-</span><a href="#local-6989586621679243864"><span class="hs-identifier hs-var">body</span></a></span><span>
+</span><a href="#local-6989586621679243769"><span class="hs-identifier hs-var">body</span></a></span><span>
 </span><span id="line-75"></span><span>    </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ShelleyTxBody</span></a></span><span> </span><span class="annot"><span class="annottext">ShelleyBasedEra era
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyBasedEraMary</span></a></span><span> </span><span id="local-6989586621679243851"><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
-</span><a href="#local-6989586621679243851"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span id="local-6989586621679243850"><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
-</span><a href="#local-6989586621679243850"><span class="hs-identifier hs-var">aux</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.25.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ShelleyBasedEraMary</span></a></span><span> </span><span id="local-6989586621679243756"><span class="annot"><span class="annottext">TxBody (ShelleyLedgerEra era)
+</span><a href="#local-6989586621679243756"><span class="hs-identifier hs-var">body</span></a></span></span><span> </span><span id="local-6989586621679243755"><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyLedgerEra era))
+</span><a href="#local-6989586621679243755"><span class="hs-identifier hs-var">aux</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-76"></span><span>      </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;era&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -335,13 +335,13 @@ forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
 Set (TxIn StandardCrypto)
-</span><a href="#local-6989586621679243849"><span class="hs-identifier hs-var">inputs</span></a></span><span>
+</span><a href="#local-6989586621679243754"><span class="hs-identifier hs-var">inputs</span></a></span><span>
 </span><span id="line-78"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;outputs&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text
 -&gt; StrictSeq (TxOut (ShelleyMAEra 'Mary StandardCrypto)) -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Mary StandardCrypto))
-</span><a href="#local-6989586621679243848"><span class="hs-identifier hs-var">outputs</span></a></span><span>
+</span><a href="#local-6989586621679243753"><span class="hs-identifier hs-var">outputs</span></a></span><span>
 </span><span id="line-79"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;certificates&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictSeq Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -352,24 +352,24 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
 StrictSeq (DCert StandardCrypto)
-</span><a href="#local-6989586621679243847"><span class="hs-identifier hs-var">certificates</span></a></span><span>
+</span><a href="#local-6989586621679243752"><span class="hs-identifier hs-var">certificates</span></a></span><span>
 </span><span id="line-80"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;withdrawals&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Map (RewardAcnt StandardCrypto) Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Map (RewardAcnt (Crypto (ShelleyMAEra 'Mary StandardCrypto))) Coin
 Map (RewardAcnt StandardCrypto) Coin
-</span><a href="#local-6989586621679243846"><span class="hs-identifier hs-var">withdrawals</span></a></span><span>
+</span><a href="#local-6989586621679243751"><span class="hs-identifier hs-var">withdrawals</span></a></span><span>
 </span><span id="line-81"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;fee&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Coin -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Coin
-</span><a href="#local-6989586621679243845"><span class="hs-identifier hs-var">txfee</span></a></span><span>
+</span><a href="#local-6989586621679243750"><span class="hs-identifier hs-var">txfee</span></a></span><span>
 </span><span id="line-82"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;validity_interval&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">ValidityInterval -&gt; Value
 </span><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyValidityInterval"><span class="hs-identifier hs-var">prettyValidityInterval</span></a></span><span> </span><span class="annot"><span class="annottext">ValidityInterval
-</span><a href="#local-6989586621679243844"><span class="hs-identifier hs-var">validity</span></a></span><span>
+</span><a href="#local-6989586621679243749"><span class="hs-identifier hs-var">validity</span></a></span><span>
 </span><span id="line-83"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;update&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -380,7 +380,7 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-identifier hs-var">fmap</span></span><span> </span><span class="annot"><span class="annottext">Update (ShelleyMAEra 'Mary StandardCrypto) -&gt; Text
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Mary StandardCrypto))
-</span><a href="#local-6989586621679243843"><span class="hs-identifier hs-var">update</span></a></span><span>
+</span><a href="#local-6989586621679243748"><span class="hs-identifier hs-var">update</span></a></span><span>
 </span><span id="line-84"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;auxiliary_data_hash&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -393,13 +393,13 @@ forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe
   (AuxiliaryDataHash (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
 StrictMaybe (AuxiliaryDataHash StandardCrypto)
-</span><a href="#local-6989586621679243842"><span class="hs-identifier hs-var">adHash</span></a></span><span>
+</span><a href="#local-6989586621679243747"><span class="hs-identifier hs-var">adHash</span></a></span><span>
 </span><span id="line-85"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;mint&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Value StandardCrypto -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Value (ShelleyMAEra 'Mary StandardCrypto)
 Value StandardCrypto
-</span><a href="#local-6989586621679243841"><span class="hs-identifier hs-var">mint</span></a></span><span>
+</span><a href="#local-6989586621679243746"><span class="hs-identifier hs-var">mint</span></a></span><span>
 </span><span id="line-86"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;auxiliary_data&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Text -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
@@ -411,40 +411,40 @@ forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 forall a. Show a =&gt; a -&gt; Text
 </span><a href="Cardano.CLI.Helpers.html#textShow"><span class="hs-identifier hs-var">textShow</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (AuxiliaryData (ShelleyMAEra 'Mary StandardCrypto))
 Maybe (AuxiliaryData (ShelleyLedgerEra era))
-</span><a href="#local-6989586621679243850"><span class="hs-identifier hs-var">aux</span></a></span><span>
+</span><a href="#local-6989586621679243755"><span class="hs-identifier hs-var">aux</span></a></span><span>
 </span><span id="line-87"></span><span>      </span><span class="hs-special">]</span><span>
 </span><span id="line-88"></span><span>      </span><span class="hs-keyword">where</span><span>
 </span><span id="line-89"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">ShelleyMA.TxBody</span></span><span>
-</span><span id="line-90"></span><span>          </span><span id="local-6989586621679243849"><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
-</span><a href="#local-6989586621679243849"><span class="hs-identifier hs-var">inputs</span></a></span></span><span>
-</span><span id="line-91"></span><span>          </span><span id="local-6989586621679243848"><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Mary StandardCrypto))
-</span><a href="#local-6989586621679243848"><span class="hs-identifier hs-var">outputs</span></a></span></span><span>
-</span><span id="line-92"></span><span>          </span><span id="local-6989586621679243847"><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
-</span><a href="#local-6989586621679243847"><span class="hs-identifier hs-var">certificates</span></a></span></span><span>
-</span><span id="line-93"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Wdrl</span></span><span> </span><span id="local-6989586621679243846"><span class="annot"><span class="annottext">Map (RewardAcnt (Crypto (ShelleyMAEra 'Mary StandardCrypto))) Coin
-</span><a href="#local-6989586621679243846"><span class="hs-identifier hs-var">withdrawals</span></a></span></span><span class="hs-special">)</span><span>
-</span><span id="line-94"></span><span>          </span><span id="local-6989586621679243845"><span class="annot"><span class="annottext">Coin
-</span><a href="#local-6989586621679243845"><span class="hs-identifier hs-var">txfee</span></a></span></span><span>
-</span><span id="line-95"></span><span>          </span><span id="local-6989586621679243844"><span class="annot"><span class="annottext">ValidityInterval
-</span><a href="#local-6989586621679243844"><span class="hs-identifier hs-var">validity</span></a></span></span><span>
-</span><span id="line-96"></span><span>          </span><span id="local-6989586621679243843"><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Mary StandardCrypto))
-</span><a href="#local-6989586621679243843"><span class="hs-identifier hs-var">update</span></a></span></span><span>
-</span><span id="line-97"></span><span>          </span><span id="local-6989586621679243842"><span class="annot"><span class="annottext">StrictMaybe
+</span><span id="line-90"></span><span>          </span><span id="local-6989586621679243754"><span class="annot"><span class="annottext">Set (TxIn (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
+</span><a href="#local-6989586621679243754"><span class="hs-identifier hs-var">inputs</span></a></span></span><span>
+</span><span id="line-91"></span><span>          </span><span id="local-6989586621679243753"><span class="annot"><span class="annottext">StrictSeq (TxOut (ShelleyMAEra 'Mary StandardCrypto))
+</span><a href="#local-6989586621679243753"><span class="hs-identifier hs-var">outputs</span></a></span></span><span>
+</span><span id="line-92"></span><span>          </span><span id="local-6989586621679243752"><span class="annot"><span class="annottext">StrictSeq (DCert (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
+</span><a href="#local-6989586621679243752"><span class="hs-identifier hs-var">certificates</span></a></span></span><span>
+</span><span id="line-93"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.Wdrl</span></span><span> </span><span id="local-6989586621679243751"><span class="annot"><span class="annottext">Map (RewardAcnt (Crypto (ShelleyMAEra 'Mary StandardCrypto))) Coin
+</span><a href="#local-6989586621679243751"><span class="hs-identifier hs-var">withdrawals</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-94"></span><span>          </span><span id="local-6989586621679243750"><span class="annot"><span class="annottext">Coin
+</span><a href="#local-6989586621679243750"><span class="hs-identifier hs-var">txfee</span></a></span></span><span>
+</span><span id="line-95"></span><span>          </span><span id="local-6989586621679243749"><span class="annot"><span class="annottext">ValidityInterval
+</span><a href="#local-6989586621679243749"><span class="hs-identifier hs-var">validity</span></a></span></span><span>
+</span><span id="line-96"></span><span>          </span><span id="local-6989586621679243748"><span class="annot"><span class="annottext">StrictMaybe (Update (ShelleyMAEra 'Mary StandardCrypto))
+</span><a href="#local-6989586621679243748"><span class="hs-identifier hs-var">update</span></a></span></span><span>
+</span><span id="line-97"></span><span>          </span><span id="local-6989586621679243747"><span class="annot"><span class="annottext">StrictMaybe
   (AuxiliaryDataHash (Crypto (ShelleyMAEra 'Mary StandardCrypto)))
-</span><a href="#local-6989586621679243842"><span class="hs-identifier hs-var">adHash</span></a></span></span><span>
-</span><span id="line-98"></span><span>          </span><span id="local-6989586621679243841"><span class="annot"><span class="annottext">Value (ShelleyMAEra 'Mary StandardCrypto)
-</span><a href="#local-6989586621679243841"><span class="hs-identifier hs-var">mint</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621679243747"><span class="hs-identifier hs-var">adHash</span></a></span></span><span>
+</span><span id="line-98"></span><span>          </span><span id="local-6989586621679243746"><span class="annot"><span class="annottext">Value (ShelleyMAEra 'Mary StandardCrypto)
+</span><a href="#local-6989586621679243746"><span class="hs-identifier hs-var">mint</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-99"></span><span>            </span><span class="annot"><span class="annottext">TxBody (ShelleyMAEra 'Mary StandardCrypto)
 TxBody (ShelleyLedgerEra era)
-</span><a href="#local-6989586621679243851"><span class="hs-identifier hs-var">body</span></a></span><span>
+</span><a href="#local-6989586621679243756"><span class="hs-identifier hs-var">body</span></a></span><span>
 </span><span id="line-100"></span><span>
 </span><span id="line-101"></span><span class="annot"><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyValidityInterval"><span class="hs-identifier hs-type">prettyValidityInterval</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShelleyMA.ValidityInterval</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">JSON.Value</span></span><span>
 </span><span id="line-102"></span><span id="prettyValidityInterval"><span class="annot"><span class="annottext">prettyValidityInterval :: ValidityInterval -&gt; Value
 </span><a href="Cardano.CLI.Shelley.Run.Pretty.html#prettyValidityInterval"><span class="hs-identifier hs-var hs-var">prettyValidityInterval</span></a></span></span><span>
-</span><span id="line-103"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">ShelleyMA.ValidityInterval</span></span><span class="hs-special">{</span><span id="local-6989586621679243839"><span class="annot"><span class="annottext">StrictMaybe SlotNo
+</span><span id="line-103"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">ShelleyMA.ValidityInterval</span></span><span class="hs-special">{</span><span id="local-6989586621679243744"><span class="annot"><span class="annottext">StrictMaybe SlotNo
 invalidBefore :: ValidityInterval -&gt; StrictMaybe SlotNo
 invalidBefore :: StrictMaybe SlotNo
-</span><span class="hs-identifier hs-var hs-var">invalidBefore</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243837"><span class="annot"><span class="annottext">StrictMaybe SlotNo
+</span><span class="hs-identifier hs-var hs-var">invalidBefore</span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679243742"><span class="annot"><span class="annottext">StrictMaybe SlotNo
 invalidHereafter :: ValidityInterval -&gt; StrictMaybe SlotNo
 invalidHereafter :: StrictMaybe SlotNo
 </span><span class="hs-identifier hs-var hs-var">invalidHereafter</span></span></span><span class="hs-special">}</span><span> </span><span class="hs-glyph">=</span><span>
@@ -454,11 +454,11 @@ invalidHereafter :: StrictMaybe SlotNo
 </span><span class="hs-string">&quot;invalid_before&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe SlotNo -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe SlotNo
-</span><a href="#local-6989586621679243839"><span class="hs-identifier hs-var">invalidBefore</span></a></span><span>
+</span><a href="#local-6989586621679243744"><span class="hs-identifier hs-var">invalidBefore</span></a></span><span>
 </span><span id="line-106"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;invalid_hereafter&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; StrictMaybe SlotNo -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe SlotNo
-</span><a href="#local-6989586621679243837"><span class="hs-identifier hs-var">invalidHereafter</span></a></span><span>
+</span><a href="#local-6989586621679243742"><span class="hs-identifier hs-var">invalidHereafter</span></a></span><span>
 </span><span id="line-107"></span><span>      </span><span class="hs-special">]</span><span>
 </span><span id="line-108"></span></pre></body></html>
