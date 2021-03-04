@@ -1686,6 +1686,12 @@
     "link": "cardano-api/Cardano-Api-Value.html#v:negateValue"
   },
   {
+    "display_html": "<a href=\"#v:calcMinimumDeposit\">calcMinimumDeposit</a> &#8759; <a href=\"Cardano-Api-Value.html#t:Value\" title=\"Cardano.Api.Value\">Value</a> &#8594; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a> &#8594; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>",
+    "name": "calcMinimumDeposit",
+    "module": "Cardano.Api.Value",
+    "link": "cardano-api/Cardano-Api-Value.html#v:calcMinimumDeposit"
+  },
+  {
     "display_html": "<a href=\"#v:quantityToLovelace\">quantityToLovelace</a> &#8759; <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> &#8594; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>",
     "name": "quantityToLovelace",
     "module": "Cardano.Api.Value",
@@ -4666,6 +4672,12 @@
     "name": "fromMaryValue",
     "module": "Cardano.Api.Shelley",
     "link": "cardano-api/Cardano-Api-Shelley.html#v:fromMaryValue"
+  },
+  {
+    "display_html": "<a href=\"#v:calcMinimumDeposit\">calcMinimumDeposit</a> &#8759; <a href=\"Cardano-Api-Value.html#t:Value\" title=\"Cardano.Api.Value\">Value</a> &#8594; <a href=\"Cardano-Api-Shelley.html#t:Lovelace\" title=\"Cardano.Api.Shelley\">Lovelace</a> &#8594; <a href=\"Cardano-Api-Shelley.html#t:Lovelace\" title=\"Cardano.Api.Shelley\">Lovelace</a>",
+    "name": "calcMinimumDeposit",
+    "module": "Cardano.Api.Shelley",
+    "link": "cardano-api/Cardano-Api-Shelley.html#v:calcMinimumDeposit"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Tx\">Tx</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ShelleyTx\">ShelleyTx</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; Tx (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era) &#8594; <a href=\"Cardano-Api-Shelley.html#t:Tx\" title=\"Cardano.Api.Shelley\">Tx</a> era</li></ul>",
