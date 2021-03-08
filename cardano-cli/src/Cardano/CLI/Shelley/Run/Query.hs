@@ -43,7 +43,7 @@ import           Cardano.CLI.Shelley.Orphans ()
 import           Cardano.CLI.Shelley.Parsers (OutputFile (..), QueryCmd (..))
 import           Cardano.CLI.Types
 
-import           Cardano.Binary (decodeFull)
+import           Cardano.Binary (decodeAnnotator, decodeFull, fromCBOR, Annotator)
 import           Cardano.Crypto.Hash (hashToBytesAsHex)
 
 import qualified Cardano.Ledger.Crypto as Crypto
@@ -357,7 +357,7 @@ writeStakeAddressInfo mOutFile delegsAndRewards =
 writeLedgerState :: forall era ledgerera.
                     ShelleyLedgerEra era ~ ledgerera
                  => ToJSON (LedgerState era)
-                 => FromCBOR (LedgerState era)
+                 => FromCBOR (Annotator (LedgerState era))
                  => Maybe OutputFile
                  -> SerialisedLedgerState era
                  -> ExceptT ShelleyQueryCmdError IO ()
@@ -374,7 +374,7 @@ writeLedgerState mOutFile qState@(SerialisedLedgerState serLedgerState) =
      :: SerialisedLedgerState era
      -> Either LBS.ByteString (LedgerState era)
    decodeLedgerState (SerialisedLedgerState (Serialised ls)) =
-     first (const ls) (decodeFull ls)
+     first (const ls) (decodeAnnotator "LedgerState" fromCBOR ls)
 
 
 writeProtocolState :: Crypto.Crypto StandardCrypto
@@ -577,7 +577,7 @@ obtainLedgerEraClassConstraints
   => ShelleyBasedEra era
   -> ((Ledger.ShelleyBased ledgerera
       , ToJSON (LedgerState era)
-      , FromCBOR (LedgerState era)
+      , FromCBOR (Annotator (LedgerState era))
       ) => a) -> a
 obtainLedgerEraClassConstraints ShelleyBasedEraShelley f = f
 obtainLedgerEraClassConstraints ShelleyBasedEraAllegra f = f

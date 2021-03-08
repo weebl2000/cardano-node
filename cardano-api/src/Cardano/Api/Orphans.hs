@@ -249,7 +249,7 @@ instance Crypto.Crypto crypto => ToJSON (Shelley.RewardUpdate crypto) where
                           ]
 
 instance Crypto.Crypto crypto => ToJSON (Shelley.PulsingRewUpdate crypto) where
-  toJSON (Shelley.Pulsing _ _) = "calculating"
+  toJSON (Shelley.Pulsing _ _) = Aeson.Null
   toJSON (Shelley.Complete ru) = toJSON ru
 
 instance ToJSON Shelley.DeltaCoin where
