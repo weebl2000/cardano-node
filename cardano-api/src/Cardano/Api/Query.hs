@@ -33,7 +33,7 @@ module Cardano.Api.Query (
     ProtocolState(..),
 
     LedgerState(..),
-    decodeLedgerState,
+    decodeLedgerState',
   ) where
 
 import           Data.Aeson (ToJSON (..), object, (.=))
@@ -65,10 +65,10 @@ import qualified Cardano.Chain.Update.Validation.Interface as Byron.Update
 import qualified Cardano.Ledger.Core as Core
 import qualified Cardano.Ledger.Era as Ledger
 
+import qualified Cardano.Ledger.Shelley.Constraints as Shelley
 import qualified Shelley.Spec.Ledger.API as Shelley
 import qualified Shelley.Spec.Ledger.LedgerState as Shelley
 import qualified Shelley.Spec.Ledger.PParams as Shelley
-import qualified Cardano.Ledger.Shelley.Constraints as Shelley
 
 import           Cardano.Api.Address
 import           Cardano.Api.Block
@@ -177,13 +177,13 @@ newtype SerialisedLedgerState era
 data LedgerState era where
   LedgerState :: ShelleyLedgerEra era ~ ledgerera => Shelley.NewEpochState ledgerera -> LedgerState era
 
-decodeLedgerState ::
+decodeLedgerState' ::
   forall s era ledgerera.
   ( ShelleyLedgerEra era ~ ledgerera,
     Consensus.ShelleyBasedEra ledgerera
   ) =>
   Decoder s (LBS.ByteString -> LedgerState era)
-decodeLedgerState = (LedgerState <$>) <$> ((. Full) . runAnnotator <$> fromCBOR)
+decodeLedgerState' = (LedgerState <$>) <$> ((. Full) . runAnnotator <$> fromCBOR)
 
 -- TODO: Shelley based era class!
 instance ( IsShelleyBasedEra era
