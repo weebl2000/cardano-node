@@ -2730,6 +2730,12 @@
     "link": "cardano-api/Cardano-Api-IPC.html#t:LocalStateQueryClient"
   },
   {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:AcquireFailure\">AcquireFailure</a><ul class=\"subs\"><li>= <a href=\"#v:AcquireFailurePointTooOld\">AcquireFailurePointTooOld</a></li><li>| <a href=\"#v:AcquireFailurePointNotOnChain\">AcquireFailurePointNotOnChain</a></li></ul>",
+    "name": "AcquireFailure AcquireFailurePointNotOnChain AcquireFailurePointTooOld",
+    "module": "Cardano.Api.IPC",
+    "link": "cardano-api/Cardano-Api-IPC.html#t:AcquireFailure"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode <a href=\"Cardano-Api-Eras.html#t:AnyCardanoEra\" title=\"Cardano.Api.Eras\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:EraInMode\" title=\"Cardano.Api.Modes\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInEra\" title=\"Cardano.Api.IPC\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li></ul>",
     "name": "QueryInMode QueryInEra QueryCurrentEra",
     "module": "Cardano.Api.IPC",
@@ -2748,7 +2754,7 @@
     "link": "cardano-api/Cardano-Api-IPC.html#t:QueryInShelleyBasedEra"
   },
   {
-    "display_html": "<a href=\"#v:queryNodeLocalState\">queryNodeLocalState</a> &#8759; &#8704; mode result. <a href=\"Cardano-Api-IPC.html#t:LocalNodeConnectInfo\" title=\"Cardano.Api.IPC\">LocalNodeConnectInfo</a> mode &#8594; <a href=\"Cardano-Api-Block.html#t:ChainPoint\" title=\"Cardano.Api.Block\">ChainPoint</a> &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode result &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> AcquireFailure result)",
+    "display_html": "<a href=\"#v:queryNodeLocalState\">queryNodeLocalState</a> &#8759; &#8704; mode result. <a href=\"Cardano-Api-IPC.html#t:LocalNodeConnectInfo\" title=\"Cardano.Api.IPC\">LocalNodeConnectInfo</a> mode &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> <a href=\"Cardano-Api-Block.html#t:ChainPoint\" title=\"Cardano.Api.Block\">ChainPoint</a> &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode result &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-Api-IPC.html#t:AcquireFailure\" title=\"Cardano.Api.IPC\">AcquireFailure</a> result)",
     "name": "queryNodeLocalState",
     "module": "Cardano.Api.IPC",
     "link": "cardano-api/Cardano-Api-IPC.html#v:queryNodeLocalState"
@@ -4350,7 +4356,7 @@
     "link": "cardano-api/Cardano-Api.html#t:QueryInEra"
   },
   {
-    "display_html": "<a href=\"#v:queryNodeLocalState\">queryNodeLocalState</a> &#8759; &#8704; mode result. <a href=\"Cardano-Api.html#t:LocalNodeConnectInfo\" title=\"Cardano.Api\">LocalNodeConnectInfo</a> mode &#8594; <a href=\"Cardano-Api.html#t:ChainPoint\" title=\"Cardano.Api\">ChainPoint</a> &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode result &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> AcquireFailure result)",
+    "display_html": "<a href=\"#v:queryNodeLocalState\">queryNodeLocalState</a> &#8759; &#8704; mode result. <a href=\"Cardano-Api.html#t:LocalNodeConnectInfo\" title=\"Cardano.Api\">LocalNodeConnectInfo</a> mode &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> <a href=\"Cardano-Api.html#t:ChainPoint\" title=\"Cardano.Api\">ChainPoint</a> &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode result &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-Api-IPC.html#t:AcquireFailure\" title=\"Cardano.Api.IPC\">AcquireFailure</a> result)",
     "name": "queryNodeLocalState",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:queryNodeLocalState"
