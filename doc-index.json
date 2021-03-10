@@ -8952,6 +8952,12 @@
     "link": "hedgehog-extras/Hedgehog-Extras-Test-Process.html#v:execFlex"
   },
   {
+    "display_html": "<a href=\"#v:execFlex-39-\">execFlex'</a> &#8759; (MonadTest m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadCatch\" title=\"Control.Monad.Catch\">MonadCatch</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a>) &#8658; <a href=\"Hedgehog-Extras-Test-Process.html#t:ExecConfig\" title=\"Hedgehog.Extras.Test.Process\">ExecConfig</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a> &#8594; [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a>] &#8594; m <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a>",
+    "name": "execFlex'",
+    "module": "Hedgehog.Extras.Test.Process",
+    "link": "hedgehog-extras/Hedgehog-Extras-Test-Process.html#v:execFlex-39-"
+  },
+  {
     "display_html": "<a href=\"#v:procFlex\">procFlex</a> &#8759; (MonadTest m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadCatch\" title=\"Control.Monad.Catch\">MonadCatch</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a>) &#8658; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a> &#8594; [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a>] &#8594; m <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/process-1.6.9.0/System-Process.html#t:CreateProcess\" title=\"System.Process\">CreateProcess</a>",
     "name": "procFlex",
     "module": "Hedgehog.Extras.Test.Process",
@@ -8986,5 +8992,17 @@
     "name": "waitSecondsForProcess",
     "module": "Hedgehog.Extras.Test.Process",
     "link": "hedgehog-extras/Hedgehog-Extras-Test-Process.html#v:waitSecondsForProcess"
+  },
+  {
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:ExecConfig\">ExecConfig</a> = <a href=\"#v:ExecConfig\">ExecConfig</a> {<ul class=\"subs\"><li><a href=\"#v:execConfigEnv\">execConfigEnv</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-Maybe.html#t:Maybe\" title=\"Data.Maybe\">Maybe</a> [(<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a>, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-String.html#t:String\" title=\"Data.String\">String</a>)]</li></ul>}",
+    "name": "ExecConfig ExecConfig execConfigEnv",
+    "module": "Hedgehog.Extras.Test.Process",
+    "link": "hedgehog-extras/Hedgehog-Extras-Test-Process.html#t:ExecConfig"
+  },
+  {
+    "display_html": "<a href=\"#v:defaultExecConfig\">defaultExecConfig</a> &#8759; <a href=\"Hedgehog-Extras-Test-Process.html#t:ExecConfig\" title=\"Hedgehog.Extras.Test.Process\">ExecConfig</a>",
+    "name": "defaultExecConfig",
+    "module": "Hedgehog.Extras.Test.Process",
+    "link": "hedgehog-extras/Hedgehog-Extras-Test-Process.html#v:defaultExecConfig"
   }
 ]
