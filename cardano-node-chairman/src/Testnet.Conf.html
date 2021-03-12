@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE RecordWildCards #-}</span><span>
+</span><span id="line-2"></span><span>
+</span><span id="line-3"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Testnet.Conf</span><span>
+</span><span id="line-4"></span><span>  </span><span class="hs-special">(</span><span> </span><span class="annot"><a href="Testnet.Conf.html#Conf"><span class="hs-identifier">Conf</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><span id="line-5"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Testnet.Conf.html#mkConf"><span class="hs-identifier">mkConf</span></a></span><span>
+</span><span id="line-6"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-7"></span><span>
+</span><span id="line-8"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad</span></span><span>
+</span><span id="line-9"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Eq</span></span><span>
+</span><span id="line-10"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Function</span></span><span>
+</span><span id="line-11"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Int</span></span><span>
+</span><span id="line-12"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Maybe</span></span><span>
+</span><span id="line-13"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">System.FilePath.Posix</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-operator">(&lt;/&gt;)</span></span><span class="hs-special">)</span><span>
+</span><span id="line-14"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">System.IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">FilePath</span></span><span class="hs-special">)</span><span>
+</span><span id="line-15"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Text.Show</span></span><span>
+</span><span id="line-16"></span><span>
+</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier">Hedgehog.Extras.Test.Base</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">H</span></span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier">Hedgehog.Extras.Test.Process</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">H</span></span><span>
+</span><span id="line-19"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">System.FilePath.Posix</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">FP</span></span><span>
+</span><span id="line-20"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">System.Random</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">IO</span></span><span>
+</span><span id="line-21"></span><span>
+</span><span id="line-22"></span><span class="hs-keyword">data</span><span> </span><span id="Conf"><span class="annot"><a href="Testnet.Conf.html#Conf"><span class="hs-identifier hs-var">Conf</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Conf"><span class="annot"><a href="Testnet.Conf.html#Conf"><span class="hs-identifier hs-var">Conf</span></a></span></span><span>
+</span><span id="line-23"></span><span>  </span><span class="hs-special">{</span><span> </span><span id="tempAbsPath"><span class="annot"><span class="annottext">Conf -&gt; FilePath
+</span><a href="Testnet.Conf.html#tempAbsPath"><span class="hs-identifier hs-var hs-var">tempAbsPath</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-24"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="tempRelPath"><span class="annot"><span class="annottext">Conf -&gt; FilePath
+</span><a href="Testnet.Conf.html#tempRelPath"><span class="hs-identifier hs-var hs-var">tempRelPath</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-25"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="tempBaseAbsPath"><span class="annot"><span class="annottext">Conf -&gt; FilePath
+</span><a href="Testnet.Conf.html#tempBaseAbsPath"><span class="hs-identifier hs-var hs-var">tempBaseAbsPath</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-26"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="logDir"><span class="annot"><span class="annottext">Conf -&gt; FilePath
+</span><a href="Testnet.Conf.html#logDir"><span class="hs-identifier hs-var hs-var">logDir</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-27"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="base"><span class="annot"><span class="annottext">Conf -&gt; FilePath
+</span><a href="Testnet.Conf.html#base"><span class="hs-identifier hs-var hs-var">base</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-28"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="socketDir"><span class="annot"><span class="annottext">Conf -&gt; FilePath
+</span><a href="Testnet.Conf.html#socketDir"><span class="hs-identifier hs-var hs-var">socketDir</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-29"></span><span>  </span><span class="hs-special">,</span><span> </span><span id="testnetMagic"><span class="annot"><span class="annottext">Conf -&gt; Int
+</span><a href="Testnet.Conf.html#testnetMagic"><span class="hs-identifier hs-var hs-var">testnetMagic</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span>
+</span><span id="line-30"></span><span>  </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679200942"><span id="local-6989586621679200944"><span class="annot"><span class="annottext">Conf -&gt; Conf -&gt; Bool
+(Conf -&gt; Conf -&gt; Bool) -&gt; (Conf -&gt; Conf -&gt; Bool) -&gt; Eq Conf
+forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
+/= :: Conf -&gt; Conf -&gt; Bool
+$c/= :: Conf -&gt; Conf -&gt; Bool
+== :: Conf -&gt; Conf -&gt; Bool
+$c== :: Conf -&gt; Conf -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679200935"><span id="local-6989586621679200937"><span id="local-6989586621679200939"><span class="annot"><span class="annottext">Int -&gt; Conf -&gt; ShowS
+[Conf] -&gt; ShowS
+Conf -&gt; FilePath
+(Int -&gt; Conf -&gt; ShowS)
+-&gt; (Conf -&gt; FilePath) -&gt; ([Conf] -&gt; ShowS) -&gt; Show Conf
+forall a.
+(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; FilePath) -&gt; ([a] -&gt; ShowS) -&gt; Show a
+showList :: [Conf] -&gt; ShowS
+$cshowList :: [Conf] -&gt; ShowS
+show :: Conf -&gt; FilePath
+$cshow :: Conf -&gt; FilePath
+showsPrec :: Int -&gt; Conf -&gt; ShowS
+$cshowsPrec :: Int -&gt; Conf -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><span id="line-31"></span><span>
+</span><span id="line-32"></span><span class="annot"><a href="Testnet.Conf.html#mkConf"><span class="hs-identifier hs-type">mkConf</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-type">H.Integration</span></a></span><span> </span><span class="annot"><a href="Testnet.Conf.html#Conf"><span class="hs-identifier hs-type">Conf</span></a></span><span>
+</span><span id="line-33"></span><span id="mkConf"><span class="annot"><span class="annottext">mkConf :: FilePath -&gt; Maybe Int -&gt; Integration Conf
+</span><a href="Testnet.Conf.html#mkConf"><span class="hs-identifier hs-var hs-var">mkConf</span></a></span></span><span> </span><span id="local-6989586621679200933"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200933"><span class="hs-identifier hs-var">tempAbsPath</span></a></span></span><span> </span><span id="local-6989586621679200932"><span class="annot"><span class="annottext">Maybe Int
+</span><a href="#local-6989586621679200932"><span class="hs-identifier hs-var">maybeMagic</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-34"></span><span>  </span><span id="local-6989586621679200931"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679200931"><span class="hs-identifier hs-var">testnetMagic</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">IO Int -&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) Int
+forall (m :: * -&gt; *) a.
+(MonadTest m, MonadIO m, HasCallStack, Show a) =&gt;
+IO a -&gt; m a
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.noteShowIO</span></a></span><span> </span><span class="annot"><span class="annottext">(IO Int -&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) Int)
+-&gt; IO Int
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) Int
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">IO Int -&gt; (Int -&gt; IO Int) -&gt; Maybe Int -&gt; IO Int
+forall b a. b -&gt; (a -&gt; b) -&gt; Maybe a -&gt; b
+</span><span class="hs-identifier hs-var">maybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(Int, Int) -&gt; IO Int
+forall a (m :: * -&gt; *). (Random a, MonadIO m) =&gt; (a, a) -&gt; m a
+</span><span class="hs-identifier hs-var">IO.randomRIO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">1000</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Int
+</span><span class="hs-number">2000</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Int -&gt; IO Int
+forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
+</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Maybe Int
+</span><a href="#local-6989586621679200932"><span class="hs-identifier hs-var">maybeMagic</span></a></span><span>
+</span><span id="line-35"></span><span>  </span><span id="local-6989586621679200927"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200927"><span class="hs-identifier hs-var">tempBaseAbsPath</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall (m :: * -&gt; *) a.
+(MonadTest m, HasCallStack, Show a) =&gt;
+a -&gt; m a
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.noteShow</span></a></span><span> </span><span class="annot"><span class="annottext">(FilePath
+ -&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath)
+-&gt; FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ShowS
+</span><span class="hs-identifier hs-var">FP.takeDirectory</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200933"><span class="hs-identifier hs-var">tempAbsPath</span></a></span><span>
+</span><span id="line-36"></span><span>  </span><span id="local-6989586621679200924"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200924"><span class="hs-identifier hs-var">tempRelPath</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall (m :: * -&gt; *) a.
+(MonadTest m, HasCallStack, Show a) =&gt;
+a -&gt; m a
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.noteShow</span></a></span><span> </span><span class="annot"><span class="annottext">(FilePath
+ -&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath)
+-&gt; FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; ShowS
+</span><span class="hs-identifier hs-var">FP.makeRelative</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200927"><span class="hs-identifier hs-var">tempBaseAbsPath</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200933"><span class="hs-identifier hs-var">tempAbsPath</span></a></span><span>
+</span><span id="line-37"></span><span>  </span><span id="local-6989586621679200922"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200922"><span class="hs-identifier hs-var">base</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall (m :: * -&gt; *) a.
+(MonadTest m, MonadCatch m, HasCallStack, Show a) =&gt;
+m a -&gt; m a
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.noteShowM</span></a></span><span> </span><span class="annot"><span class="annottext">PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall (m :: * -&gt; *). (MonadTest m, MonadIO m) =&gt; m FilePath
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.getProjectBase</span></a></span><span>
+</span><span id="line-38"></span><span>  </span><span id="local-6989586621679200919"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200919"><span class="hs-identifier hs-var">socketDir</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall (m :: * -&gt; *) a.
+(MonadTest m, HasCallStack, Show a) =&gt;
+a -&gt; m a
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.noteShow</span></a></span><span> </span><span class="annot"><span class="annottext">(FilePath
+ -&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath)
+-&gt; FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200924"><span class="hs-identifier hs-var">tempRelPath</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; ShowS
+</span><span class="hs-operator hs-var">&lt;/&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><span class="hs-string">&quot;socket&quot;</span></span><span>
+</span><span id="line-39"></span><span>  </span><span id="local-6989586621679200918"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200918"><span class="hs-identifier hs-var">logDir</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">FilePath
+-&gt; FilePath
+-&gt; PropertyT (ReaderT IntegrationState (ResourceT IO)) FilePath
+forall (m :: * -&gt; *).
+(MonadTest m, HasCallStack) =&gt;
+FilePath -&gt; FilePath -&gt; m FilePath
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/src"><span class="hs-identifier hs-var">H.noteTempFile</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679200933"><span class="hs-identifier hs-var">tempAbsPath</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><span class="hs-string">&quot;/logs&quot;</span></span><span>
+</span><span id="line-40"></span><span>
+</span><span id="line-41"></span><span>  </span><span class="annot"><span class="annottext">Conf -&gt; Integration Conf
+forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
+</span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(Conf -&gt; Integration Conf) -&gt; Conf -&gt; Integration Conf
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Conf :: FilePath
+-&gt; FilePath
+-&gt; FilePath
+-&gt; FilePath
+-&gt; FilePath
+-&gt; FilePath
+-&gt; Int
+-&gt; Conf
+</span><a href="Testnet.Conf.html#Conf"><span class="hs-identifier hs-type">Conf</span></a></span><span> </span><span class="hs-special">{</span><span class="annot"><span class="annottext">Int
+FilePath
+logDir :: FilePath
+socketDir :: FilePath
+base :: FilePath
+tempRelPath :: FilePath
+tempBaseAbsPath :: FilePath
+testnetMagic :: Int
+tempAbsPath :: FilePath
+testnetMagic :: Int
+socketDir :: FilePath
+base :: FilePath
+logDir :: FilePath
+tempBaseAbsPath :: FilePath
+tempRelPath :: FilePath
+tempAbsPath :: FilePath
+</span><a href="#local-6989586621679200918"><span class="hs-glyph hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">..</span></a></span><span class="hs-special">}</span><span>
+</span><span id="line-42"></span></pre></body></html>

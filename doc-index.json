@@ -1026,7 +1026,7 @@
     "link": "cardano-api/Cardano-Api-TxMetadata.html#t:AsType"
   },
   {
-    "display_html": "<a href=\"#v:renderApplyMempoolPayloadErr\">renderApplyMempoolPayloadErr</a> &#8759; ApplyMempoolPayloadErr &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
+    "display_html": "<a href=\"#v:renderApplyMempoolPayloadErr\">renderApplyMempoolPayloadErr</a> &#8759; <a href=\"Cardano-Api-TxSubmit-Types.html#t:ApplyMempoolPayloadErr\" title=\"Cardano.Api.TxSubmit.Types\">ApplyMempoolPayloadErr</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
     "name": "renderApplyMempoolPayloadErr",
     "module": "Cardano.Api.TxSubmit.ErrorRender",
     "link": "cardano-api/Cardano-Api-TxSubmit-ErrorRender.html#v:renderApplyMempoolPayloadErr"
@@ -1044,10 +1044,16 @@
     "link": "cardano-api/Cardano-Api-TxSubmit-Types.html#t:SocketPath"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxSubmitStatus\">TxSubmitStatus</a><ul class=\"subs\"><li>= <a href=\"#v:TxSubmitOk\">TxSubmitOk</a> TxId</li><li>| <a href=\"#v:TxSubmitDecodeHex\">TxSubmitDecodeHex</a></li><li>| <a href=\"#v:TxSubmitEmpty\">TxSubmitEmpty</a></li><li>| <a href=\"#v:TxSubmitDecodeFail\">TxSubmitDecodeFail</a> DecoderError</li><li>| <a href=\"#v:TxSubmitBadTx\">TxSubmitBadTx</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li>| <a href=\"#v:TxSubmitFail\">TxSubmitFail</a> ApplyMempoolPayloadErr</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxSubmitStatus\">TxSubmitStatus</a><ul class=\"subs\"><li>= <a href=\"#v:TxSubmitOk\">TxSubmitOk</a> TxId</li><li>| <a href=\"#v:TxSubmitDecodeHex\">TxSubmitDecodeHex</a></li><li>| <a href=\"#v:TxSubmitEmpty\">TxSubmitEmpty</a></li><li>| <a href=\"#v:TxSubmitDecodeFail\">TxSubmitDecodeFail</a> DecoderError</li><li>| <a href=\"#v:TxSubmitBadTx\">TxSubmitBadTx</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li>| <a href=\"#v:TxSubmitFail\">TxSubmitFail</a> <a href=\"Cardano-Api-TxSubmit-Types.html#t:ApplyMempoolPayloadErr\" title=\"Cardano.Api.TxSubmit.Types\">ApplyMempoolPayloadErr</a></li></ul>",
     "name": "TxSubmitStatus TxSubmitOk TxSubmitDecodeHex TxSubmitEmpty TxSubmitDecodeFail TxSubmitBadTx TxSubmitFail",
     "module": "Cardano.Api.TxSubmit.Types",
     "link": "cardano-api/Cardano-Api-TxSubmit-Types.html#t:TxSubmitStatus"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ApplyMempoolPayloadErr\">ApplyMempoolPayloadErr</a><ul class=\"subs\"><li>= <a href=\"#v:MempoolTxErr\">MempoolTxErr</a> UTxOValidationError</li><li>| <a href=\"#v:MempoolDlgErr\">MempoolDlgErr</a> Error</li><li>| <a href=\"#v:MempoolUpdateProposalErr\">MempoolUpdateProposalErr</a> Error</li><li>| <a href=\"#v:MempoolUpdateVoteErr\">MempoolUpdateVoteErr</a> Error</li></ul>",
+    "name": "ApplyMempoolPayloadErr MempoolDlgErr MempoolTxErr MempoolUpdateProposalErr MempoolUpdateVoteErr",
+    "module": "Cardano.Api.TxSubmit.Types",
+    "link": "cardano-api/Cardano-Api-TxSubmit-Types.html#t:ApplyMempoolPayloadErr"
   },
   {
     "display_html": "<a href=\"#v:renderTxSubmitStatus\">renderTxSubmitStatus</a> &#8759; <a href=\"Cardano-Api-TxSubmit-Types.html#t:TxSubmitStatus\" title=\"Cardano.Api.TxSubmit.Types\">TxSubmitStatus</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
@@ -3474,8 +3480,8 @@
     "link": "cardano-api/Cardano-Api.html#t:TxBodyError"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxId\">TxId</a>",
-    "name": "TxId",
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:TxId\">TxId</a> = <a href=\"#v:TxId\">TxId</a> (Hash StandardCrypto EraIndependentTxBody)",
+    "name": "TxId TxId",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TxId"
   },
@@ -6934,6 +6940,126 @@
     "name": "main",
     "module": "Main",
     "link": "cardano-node-chairman/Main.html#v:main"
+  },
+  {
+    "display_html": "<a href=\"#v:integration\">integration</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a> &#8658; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/Hedgehog-Extras-Internal-Test-Integration.html#t:Integration\" title=\"Hedgehog.Extras.Internal.Test.Integration\">Integration</a> () &#8594; Property",
+    "name": "integration",
+    "module": "Test.Base",
+    "link": "cardano-node-chairman/Test-Base.html#v:integration"
+  },
+  {
+    "display_html": "<a href=\"#v:execCli\">execCli</a> &#8759; (MonadTest m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadCatch\" title=\"Control.Monad.Catch\">MonadCatch</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a>) &#8658; [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>] &#8594; m <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>",
+    "name": "execCli",
+    "module": "Test.Process",
+    "link": "cardano-node-chairman/Test-Process.html#v:execCli"
+  },
+  {
+    "display_html": "<a href=\"#v:procCli\">procCli</a> &#8759; (MonadTest m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadCatch\" title=\"Control.Monad.Catch\">MonadCatch</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a>) &#8658; [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>] &#8594; m <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/process-1.6.9.0/System-Process.html#t:CreateProcess\" title=\"System.Process\">CreateProcess</a>",
+    "name": "procCli",
+    "module": "Test.Process",
+    "link": "cardano-node-chairman/Test-Process.html#v:procCli"
+  },
+  {
+    "display_html": "<a href=\"#v:procNode\">procNode</a> &#8759; (MonadTest m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadCatch\" title=\"Control.Monad.Catch\">MonadCatch</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a>) &#8658; [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>] &#8594; m <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/process-1.6.9.0/System-Process.html#t:CreateProcess\" title=\"System.Process\">CreateProcess</a>",
+    "name": "procNode",
+    "module": "Test.Process",
+    "link": "cardano-node-chairman/Test-Process.html#v:procNode"
+  },
+  {
+    "display_html": "<a href=\"#v:procChairman\">procChairman</a> &#8759; (MonadTest m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadCatch\" title=\"Control.Monad.Catch\">MonadCatch</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/GHC-Stack.html#t:HasCallStack\" title=\"GHC.Stack\">HasCallStack</a>) &#8658; [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>] &#8594; m <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/process-1.6.9.0/System-Process.html#t:CreateProcess\" title=\"System.Process\">CreateProcess</a>",
+    "name": "procChairman",
+    "module": "Test.Process",
+    "link": "cardano-node-chairman/Test-Process.html#v:procChairman"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Conf\">Conf</a> = <a href=\"#v:Conf\">Conf</a> {<ul class=\"subs\"><li><a href=\"#v:tempAbsPath\">tempAbsPath</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a></li><li><a href=\"#v:tempRelPath\">tempRelPath</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a></li><li><a href=\"#v:tempBaseAbsPath\">tempBaseAbsPath</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a></li><li><a href=\"#v:logDir\">logDir</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a></li><li><a href=\"#v:base\">base</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a></li><li><a href=\"#v:socketDir\">socketDir</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a></li><li><a href=\"#v:testnetMagic\">testnetMagic</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li></ul>}",
+    "name": "Conf Conf base tempAbsPath tempRelPath tempBaseAbsPath logDir socketDir testnetMagic",
+    "module": "Testnet.Conf",
+    "link": "cardano-node-chairman/Testnet-Conf.html#t:Conf"
+  },
+  {
+    "display_html": "<a href=\"#v:mkConf\">mkConf</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a> &#8594; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/Hedgehog-Extras-Internal-Test-Integration.html#t:Integration\" title=\"Hedgehog.Extras.Internal.Test.Integration\">Integration</a> <a href=\"Testnet-Conf.html#t:Conf\" title=\"Testnet.Conf\">Conf</a>",
+    "name": "mkConf",
+    "module": "Testnet.Conf",
+    "link": "cardano-node-chairman/Testnet-Conf.html#v:mkConf"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ForkPoint\">ForkPoint</a><ul class=\"subs\"><li>= <a href=\"#v:AtVersion\">AtVersion</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li>| <a href=\"#v:AtEpoch\">AtEpoch</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li></ul>",
+    "name": "ForkPoint AtVersion AtEpoch",
+    "module": "Testnet.ByronShelley",
+    "link": "cardano-node-chairman/Testnet-ByronShelley.html#t:ForkPoint"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TestnetOptions\">TestnetOptions</a> = <a href=\"#v:TestnetOptions\">TestnetOptions</a> {<ul class=\"subs\"><li><a href=\"#v:numBftNodes\">numBftNodes</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:numPoolNodes\">numPoolNodes</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:activeSlotsCoeff\">activeSlotsCoeff</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Double\" title=\"Distribution.Compat.Prelude.Internal\">Double</a></li><li><a href=\"#v:epochLength\">epochLength</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:forkPoint\">forkPoint</a> &#8759; <a href=\"Testnet-ByronShelley.html#t:ForkPoint\" title=\"Testnet.ByronShelley\">ForkPoint</a></li></ul>}",
+    "name": "TestnetOptions TestnetOptions numBftNodes numPoolNodes activeSlotsCoeff epochLength forkPoint",
+    "module": "Testnet.ByronShelley",
+    "link": "cardano-node-chairman/Testnet-ByronShelley.html#t:TestnetOptions"
+  },
+  {
+    "display_html": "<a href=\"#v:defaultTestnetOptions\">defaultTestnetOptions</a> &#8759; <a href=\"Testnet-ByronShelley.html#t:TestnetOptions\" title=\"Testnet.ByronShelley\">TestnetOptions</a>",
+    "name": "defaultTestnetOptions",
+    "module": "Testnet.ByronShelley",
+    "link": "cardano-node-chairman/Testnet-ByronShelley.html#v:defaultTestnetOptions"
+  },
+  {
+    "display_html": "<a href=\"#v:testnet\">testnet</a> &#8759; <a href=\"Testnet-ByronShelley.html#t:TestnetOptions\" title=\"Testnet.ByronShelley\">TestnetOptions</a> &#8594; <a href=\"Testnet-Conf.html#t:Conf\" title=\"Testnet.Conf\">Conf</a> &#8594; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/Hedgehog-Extras-Internal-Test-Integration.html#t:Integration\" title=\"Hedgehog.Extras.Internal.Test.Integration\">Integration</a> [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>]",
+    "name": "testnet",
+    "module": "Testnet.ByronShelley",
+    "link": "cardano-node-chairman/Testnet-ByronShelley.html#v:testnet"
+  },
+  {
+    "display_html": "<a href=\"#v:dropNth\">dropNth</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a> &#8594; [a] &#8594; [a]",
+    "name": "dropNth",
+    "module": "Testnet.List",
+    "link": "cardano-node-chairman/Testnet-List.html#v:dropNth"
+  },
+  {
+    "display_html": "<a href=\"#v:testnet\">testnet</a> &#8759; <a href=\"Testnet-Byron.html#t:TestnetOptions\" title=\"Testnet.Byron\">TestnetOptions</a> &#8594; <a href=\"Testnet-Conf.html#t:Conf\" title=\"Testnet.Conf\">Conf</a> &#8594; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/Hedgehog-Extras-Internal-Test-Integration.html#t:Integration\" title=\"Hedgehog.Extras.Internal.Test.Integration\">Integration</a> [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>]",
+    "name": "testnet",
+    "module": "Testnet.Byron",
+    "link": "cardano-node-chairman/Testnet-Byron.html#v:testnet"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TestnetOptions\">TestnetOptions</a> = <a href=\"#v:TestnetOptions\">TestnetOptions</a> {<ul class=\"subs\"><li><a href=\"#v:numBftNodes\">numBftNodes</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:slotDuration\">slotDuration</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:securityParam\">securityParam</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:nPoorAddresses\">nPoorAddresses</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:totalBalance\">totalBalance</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li></ul>}",
+    "name": "TestnetOptions TestnetOptions securityParam totalBalance numBftNodes slotDuration nPoorAddresses",
+    "module": "Testnet.Byron",
+    "link": "cardano-node-chairman/Testnet-Byron.html#t:TestnetOptions"
+  },
+  {
+    "display_html": "<a href=\"#v:defaultTestnetOptions\">defaultTestnetOptions</a> &#8759; <a href=\"Testnet-Byron.html#t:TestnetOptions\" title=\"Testnet.Byron\">TestnetOptions</a>",
+    "name": "defaultTestnetOptions",
+    "module": "Testnet.Byron",
+    "link": "cardano-node-chairman/Testnet-Byron.html#v:defaultTestnetOptions"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TestnetOptions\">TestnetOptions</a> = <a href=\"#v:TestnetOptions\">TestnetOptions</a> {<ul class=\"subs\"><li><a href=\"#v:numPraosNodes\">numPraosNodes</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:numPoolNodes\">numPoolNodes</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:activeSlotsCoeff\">activeSlotsCoeff</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Double\" title=\"Distribution.Compat.Prelude.Internal\">Double</a></li><li><a href=\"#v:securityParam\">securityParam</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:epochLength\">epochLength</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li><li><a href=\"#v:slotLength\">slotLength</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Double\" title=\"Distribution.Compat.Prelude.Internal\">Double</a></li><li><a href=\"#v:maxLovelaceSupply\">maxLovelaceSupply</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Integer\" title=\"Distribution.Compat.Prelude.Internal\">Integer</a></li></ul>}",
+    "name": "TestnetOptions TestnetOptions securityParam maxLovelaceSupply numPoolNodes activeSlotsCoeff epochLength slotLength numPraosNodes",
+    "module": "Testnet.Shelley",
+    "link": "cardano-node-chairman/Testnet-Shelley.html#t:TestnetOptions"
+  },
+  {
+    "display_html": "<a href=\"#v:defaultTestnetOptions\">defaultTestnetOptions</a> &#8759; <a href=\"Testnet-Shelley.html#t:TestnetOptions\" title=\"Testnet.Shelley\">TestnetOptions</a>",
+    "name": "defaultTestnetOptions",
+    "module": "Testnet.Shelley",
+    "link": "cardano-node-chairman/Testnet-Shelley.html#v:defaultTestnetOptions"
+  },
+  {
+    "display_html": "<a href=\"#v:testnet\">testnet</a> &#8759; <a href=\"Testnet-Shelley.html#t:TestnetOptions\" title=\"Testnet.Shelley\">TestnetOptions</a> &#8594; <a href=\"Testnet-Conf.html#t:Conf\" title=\"Testnet.Conf\">Conf</a> &#8594; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/hedgehog-extras-0.1.0.0/noopt/doc/html/hedgehog-extras/Hedgehog-Extras-Internal-Test-Integration.html#t:Integration\" title=\"Hedgehog.Extras.Internal.Test.Integration\">Integration</a> [<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>]",
+    "name": "testnet",
+    "module": "Testnet.Shelley",
+    "link": "cardano-node-chairman/Testnet-Shelley.html#v:testnet"
+  },
+  {
+    "display_html": "<a href=\"#v:hprop_testnet\">hprop_testnet</a> &#8759; Property",
+    "name": "hprop_testnet",
+    "module": "Testnet.Shelley",
+    "link": "cardano-node-chairman/Testnet-Shelley.html#v:hprop_testnet"
+  },
+  {
+    "display_html": "<a href=\"#v:hprop_testnet_pause\">hprop_testnet_pause</a> &#8759; Property",
+    "name": "hprop_testnet_pause",
+    "module": "Testnet.Shelley",
+    "link": "cardano-node-chairman/Testnet-Shelley.html#v:hprop_testnet_pause"
   },
   {
     "display_html": "<a href=\"#v:toplevelExceptionHandler\">toplevelExceptionHandler</a> &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> a &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> a",
