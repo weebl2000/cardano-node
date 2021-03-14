@@ -1902,6 +1902,12 @@
     "link": "cardano-api/Cardano-Api-Value.html#v:fromShelleyLovelace"
   },
   {
+    "display_html": "<a href=\"#v:fromShelleyDeltaLovelace\">fromShelleyDeltaLovelace</a> &#8759; DeltaCoin &#8594; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>",
+    "name": "fromShelleyDeltaLovelace",
+    "module": "Cardano.Api.Value",
+    "link": "cardano-api/Cardano-Api-Value.html#v:fromShelleyDeltaLovelace"
+  },
+  {
     "display_html": "<a href=\"#v:toMaryValue\">toMaryValue</a> &#8759; <a href=\"Cardano-Api-Value.html#t:Value\" title=\"Cardano.Api.Value\">Value</a> &#8594; Value StandardCrypto",
     "name": "toMaryValue",
     "module": "Cardano.Api.Value",
@@ -2028,7 +2034,7 @@
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#t:AsType"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Certificate\">Certificate</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressRegistrationCertificate\">StakeAddressRegistrationCertificate</a> <a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDeregistrationCertificate\">StakeAddressDeregistrationCertificate</a> <a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDelegationCertificate\">StakeAddressDelegationCertificate</a> <a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a> <a href=\"Cardano-Api-Certificate.html#t:PoolId\" title=\"Cardano.Api.Certificate\">PoolId</a></li><li>| <a href=\"#v:StakePoolRegistrationCertificate\">StakePoolRegistrationCertificate</a> <a href=\"Cardano-Api-Certificate.html#t:StakePoolParameters\" title=\"Cardano.Api.Certificate\">StakePoolParameters</a></li><li>| <a href=\"#v:StakePoolRetirementCertificate\">StakePoolRetirementCertificate</a> <a href=\"Cardano-Api-Certificate.html#t:PoolId\" title=\"Cardano.Api.Certificate\">PoolId</a> <a href=\"Cardano-Api-ProtocolParameters.html#t:EpochNo\" title=\"Cardano.Api.ProtocolParameters\">EpochNo</a></li><li>| <a href=\"#v:GenesisKeyDelegationCertificate\">GenesisKeyDelegationCertificate</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisDelegateKey\" title=\"Cardano.Api.KeysShelley\">GenesisDelegateKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysPraos.html#t:VrfKey\" title=\"Cardano.Api.KeysPraos\">VrfKey</a>)</li><li>| <a href=\"#v:MIRCertificate\">MIRCertificate</a> MIRPot [(<a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a>, <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>)]</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Certificate\">Certificate</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressRegistrationCertificate\">StakeAddressRegistrationCertificate</a> <a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDeregistrationCertificate\">StakeAddressDeregistrationCertificate</a> <a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDelegationCertificate\">StakeAddressDelegationCertificate</a> <a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a> <a href=\"Cardano-Api-Certificate.html#t:PoolId\" title=\"Cardano.Api.Certificate\">PoolId</a></li><li>| <a href=\"#v:StakePoolRegistrationCertificate\">StakePoolRegistrationCertificate</a> <a href=\"Cardano-Api-Certificate.html#t:StakePoolParameters\" title=\"Cardano.Api.Certificate\">StakePoolParameters</a></li><li>| <a href=\"#v:StakePoolRetirementCertificate\">StakePoolRetirementCertificate</a> <a href=\"Cardano-Api-Certificate.html#t:PoolId\" title=\"Cardano.Api.Certificate\">PoolId</a> <a href=\"Cardano-Api-ProtocolParameters.html#t:EpochNo\" title=\"Cardano.Api.ProtocolParameters\">EpochNo</a></li><li>| <a href=\"#v:GenesisKeyDelegationCertificate\">GenesisKeyDelegationCertificate</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisDelegateKey\" title=\"Cardano.Api.KeysShelley\">GenesisDelegateKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysPraos.html#t:VrfKey\" title=\"Cardano.Api.KeysPraos\">VrfKey</a>)</li><li>| <a href=\"#v:MIRCertificate\">MIRCertificate</a> MIRPot <a href=\"Cardano-Api-Certificate.html#t:MIRTarget\" title=\"Cardano.Api.Certificate\">MIRTarget</a></li></ul>",
     "name": "Certificate StakeAddressRegistrationCertificate StakeAddressDeregistrationCertificate StakeAddressDelegationCertificate StakePoolRegistrationCertificate StakePoolRetirementCertificate GenesisKeyDelegationCertificate MIRCertificate",
     "module": "Cardano.Api.Certificate",
     "link": "cardano-api/Cardano-Api-Certificate.html#t:Certificate"
@@ -2088,7 +2094,7 @@
     "link": "cardano-api/Cardano-Api-Certificate.html#t:StakePoolMetadataReference"
   },
   {
-    "display_html": "<a href=\"#v:makeMIRCertificate\">makeMIRCertificate</a> &#8759; MIRPot &#8594; [(<a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a>, <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>)] &#8594; <a href=\"Cardano-Api-Certificate.html#t:Certificate\" title=\"Cardano.Api.Certificate\">Certificate</a>",
+    "display_html": "<a href=\"#v:makeMIRCertificate\">makeMIRCertificate</a> &#8759; MIRPot &#8594; <a href=\"Cardano-Api-Certificate.html#t:MIRTarget\" title=\"Cardano.Api.Certificate\">MIRTarget</a> &#8594; <a href=\"Cardano-Api-Certificate.html#t:Certificate\" title=\"Cardano.Api.Certificate\">Certificate</a>",
     "name": "makeMIRCertificate",
     "module": "Cardano.Api.Certificate",
     "link": "cardano-api/Cardano-Api-Certificate.html#v:makeMIRCertificate"
@@ -2098,6 +2104,12 @@
     "name": "makeGenesisKeyDelegationCertificate",
     "module": "Cardano.Api.Certificate",
     "link": "cardano-api/Cardano-Api-Certificate.html#v:makeGenesisKeyDelegationCertificate"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:MIRTarget\">MIRTarget</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressesMIR\">StakeAddressesMIR</a> [(<a href=\"Cardano-Api-Address.html#t:StakeCredential\" title=\"Cardano.Api.Address\">StakeCredential</a>, <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>)]</li><li>| <a href=\"#v:SendToOppositePotMIR\">SendToOppositePotMIR</a> <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a></li></ul>",
+    "name": "MIRTarget SendToOppositePotMIR StakeAddressesMIR",
+    "module": "Cardano.Api.Certificate",
+    "link": "cardano-api/Cardano-Api-Certificate.html#t:MIRTarget"
   },
   {
     "display_html": "<a href=\"#v:toShelleyCertificate\">toShelleyCertificate</a> &#8759; <a href=\"Cardano-Api-Certificate.html#t:Certificate\" title=\"Cardano.Api.Certificate\">Certificate</a> &#8594; DCert StandardCrypto",
@@ -4572,7 +4584,7 @@
     "link": "cardano-api/Cardano-Api.html#v:genesisUTxOPseudoTxIn"
   },
   {
-    "display_html": "<a href=\"#v:makeMIRCertificate\">makeMIRCertificate</a> &#8759; MIRPot &#8594; [(<a href=\"Cardano-Api.html#t:StakeCredential\" title=\"Cardano.Api\">StakeCredential</a>, <a href=\"Cardano-Api.html#t:Lovelace\" title=\"Cardano.Api\">Lovelace</a>)] &#8594; <a href=\"Cardano-Api.html#t:Certificate\" title=\"Cardano.Api\">Certificate</a>",
+    "display_html": "<a href=\"#v:makeMIRCertificate\">makeMIRCertificate</a> &#8759; MIRPot &#8594; <a href=\"Cardano-Api.html#t:MIRTarget\" title=\"Cardano.Api\">MIRTarget</a> &#8594; <a href=\"Cardano-Api.html#t:Certificate\" title=\"Cardano.Api\">Certificate</a>",
     "name": "makeMIRCertificate",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:makeMIRCertificate"
@@ -4582,6 +4594,12 @@
     "name": "makeGenesisKeyDelegationCertificate",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:makeGenesisKeyDelegationCertificate"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:MIRTarget\">MIRTarget</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressesMIR\">StakeAddressesMIR</a> [(<a href=\"Cardano-Api.html#t:StakeCredential\" title=\"Cardano.Api\">StakeCredential</a>, <a href=\"Cardano-Api.html#t:Lovelace\" title=\"Cardano.Api\">Lovelace</a>)]</li><li>| <a href=\"#v:SendToOppositePotMIR\">SendToOppositePotMIR</a> <a href=\"Cardano-Api.html#t:Lovelace\" title=\"Cardano.Api\">Lovelace</a></li></ul>",
+    "name": "MIRTarget SendToOppositePotMIR StakeAddressesMIR",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:MIRTarget"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:UpdateProposal\">UpdateProposal</a> = <a href=\"#v:UpdateProposal\">UpdateProposal</a> !(<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Map\" title=\"Distribution.Compat.Prelude.Internal\">Map</a> (<a href=\"Cardano-Api.html#t:Hash\" title=\"Cardano.Api\">Hash</a> <a href=\"Cardano-Api.html#t:GenesisKey\" title=\"Cardano.Api\">GenesisKey</a>) <a href=\"Cardano-Api.html#t:ProtocolParametersUpdate\" title=\"Cardano.Api\">ProtocolParametersUpdate</a>) !<a href=\"Cardano-Api.html#t:EpochNo\" title=\"Cardano.Api\">EpochNo</a>",
@@ -4938,7 +4956,7 @@
     "link": "cardano-api/Cardano-Api-Shelley.html#v:fromShelleyScriptHash"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Certificate\">Certificate</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressRegistrationCertificate\">StakeAddressRegistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDeregistrationCertificate\">StakeAddressDeregistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDelegationCertificate\">StakeAddressDelegationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a> <a href=\"Cardano-Api-Shelley.html#t:PoolId\" title=\"Cardano.Api.Shelley\">PoolId</a></li><li>| <a href=\"#v:StakePoolRegistrationCertificate\">StakePoolRegistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakePoolParameters\" title=\"Cardano.Api.Shelley\">StakePoolParameters</a></li><li>| <a href=\"#v:StakePoolRetirementCertificate\">StakePoolRetirementCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:PoolId\" title=\"Cardano.Api.Shelley\">PoolId</a> <a href=\"Cardano-Api-Shelley.html#t:EpochNo\" title=\"Cardano.Api.Shelley\">EpochNo</a></li><li>| <a href=\"#v:GenesisKeyDelegationCertificate\">GenesisKeyDelegationCertificate</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisDelegateKey\" title=\"Cardano.Api.KeysShelley\">GenesisDelegateKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-Shelley.html#t:VrfKey\" title=\"Cardano.Api.Shelley\">VrfKey</a>)</li><li>| <a href=\"#v:MIRCertificate\">MIRCertificate</a> MIRPot [(<a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a>, <a href=\"Cardano-Api-Shelley.html#t:Lovelace\" title=\"Cardano.Api.Shelley\">Lovelace</a>)]</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Certificate\">Certificate</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressRegistrationCertificate\">StakeAddressRegistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDeregistrationCertificate\">StakeAddressDeregistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDelegationCertificate\">StakeAddressDelegationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a> <a href=\"Cardano-Api-Shelley.html#t:PoolId\" title=\"Cardano.Api.Shelley\">PoolId</a></li><li>| <a href=\"#v:StakePoolRegistrationCertificate\">StakePoolRegistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakePoolParameters\" title=\"Cardano.Api.Shelley\">StakePoolParameters</a></li><li>| <a href=\"#v:StakePoolRetirementCertificate\">StakePoolRetirementCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:PoolId\" title=\"Cardano.Api.Shelley\">PoolId</a> <a href=\"Cardano-Api-Shelley.html#t:EpochNo\" title=\"Cardano.Api.Shelley\">EpochNo</a></li><li>| <a href=\"#v:GenesisKeyDelegationCertificate\">GenesisKeyDelegationCertificate</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisDelegateKey\" title=\"Cardano.Api.KeysShelley\">GenesisDelegateKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-Shelley.html#t:VrfKey\" title=\"Cardano.Api.Shelley\">VrfKey</a>)</li><li>| <a href=\"#v:MIRCertificate\">MIRCertificate</a> MIRPot <a href=\"Cardano-Api-Certificate.html#t:MIRTarget\" title=\"Cardano.Api.Certificate\">MIRTarget</a></li></ul>",
     "name": "Certificate StakeAddressRegistrationCertificate StakeAddressDeregistrationCertificate StakeAddressDelegationCertificate StakePoolRegistrationCertificate StakePoolRetirementCertificate GenesisKeyDelegationCertificate MIRCertificate",
     "module": "Cardano.Api.Shelley",
     "link": "cardano-api/Cardano-Api-Shelley.html#t:Certificate"
