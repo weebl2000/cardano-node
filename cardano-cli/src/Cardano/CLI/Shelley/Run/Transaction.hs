@@ -786,13 +786,13 @@ runTxGetTxId txfile = do
 
 runTxView :: InputTxFile -> ExceptT ShelleyTxCmdError IO ()
 runTxView txfile = do
-  InAnyCardanoEra _era txbody <-
+  InAnyCardanoEra era txbody <-
     case txfile of
       InputTxBodyFile (TxBodyFile txbodyFile) -> readFileTxBody txbodyFile
       InputTxFile (TxFile txFile) -> do
         InAnyCardanoEra era tx <- readFileTx txFile
         return . InAnyCardanoEra era $ getTxBody tx
-  liftIO $ BS.putStrLn $ friendlyTxBodyBS txbody
+  liftIO $ BS.putStrLn $ friendlyTxBodyBS era txbody
 
 runTxCreateWitness
   :: TxBodyFile

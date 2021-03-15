@@ -14,14 +14,12 @@ import           Cardano.Prelude hiding (undefined)
 import           Prelude (error)
 
 import           Cardano.Api as Api (AddressInEra (..),
-                   AddressTypeInEra (ByronAddressInAnyEra, ShelleyAddressInEra),
+                   AddressTypeInEra (ByronAddressInAnyEra, ShelleyAddressInEra), CardanoEra (..),
                    ShelleyBasedEra (ShelleyBasedEraAllegra, ShelleyBasedEraMary, ShelleyBasedEraShelley),
                    ShelleyEra, TxBody, serialiseToBech32)
 import           Cardano.Api.Byron (TxBody (ByronTxBody))
 import           Cardano.Api.Shelley (TxBody (ShelleyTxBody), fromShelleyAddr)
-import           Cardano.Binary (Annotated)
 import           Cardano.CLI.Helpers (textShow)
-import qualified Cardano.Chain.UTxO as Byron
 import           Cardano.Ledger.Shelley as Ledger (ShelleyEra)
 import           Cardano.Ledger.ShelleyMA (MaryOrAllegra (Allegra, Mary), ShelleyMAEra)
 import qualified Cardano.Ledger.ShelleyMA.TxBody as ShelleyMA
@@ -31,109 +29,32 @@ import           Data.Yaml.Pretty (defConfig, encodePretty, setConfCompare)
 import           Ouroboros.Consensus.Shelley.Protocol.Crypto (StandardCrypto)
 import           Shelley.Spec.Ledger.API (Addr (..), TxOut (TxOut))
 import qualified Shelley.Spec.Ledger.API as Shelley
+import qualified Shelley.Spec.Ledger.TxBody as Ledger
 
-friendlyTxBodyBS :: Api.TxBody era -> ByteString
-friendlyTxBodyBS =
-  encodePretty (setConfCompare compare defConfig) . friendlyTxBody
+friendlyTxBodyBS :: CardanoEra era -> Api.TxBody era -> ByteString
+friendlyTxBodyBS era txBody =
+  encodePretty (setConfCompare compare defConfig) $ friendlyTxBody' era txBody
 
-friendlyTxBody :: Api.TxBody era -> Value
-friendlyTxBody = \case
-  ByronTxBody tx ->
-    case friendlyTxBodyByron tx of
-      Object obj -> Object $ HashMap.insert "era" "Byron" obj
-      value      -> object ["era" .= String "Byron", "transaction" .= value]
-  ShelleyTxBody ShelleyBasedEraShelley body aux ->
-    Object $
-    HashMap.insert "era" "Shelley" $
-    HashMap.insert "auxiliary data" (toJSON $ textShow aux) $
-    friendlyTxBodyShelley body
-  ShelleyTxBody ShelleyBasedEraAllegra body aux ->
-    Object $
-    HashMap.insert "era" "Allegra" $
-    HashMap.insert "auxiliary data" (toJSON $ textShow aux) $
-    friendlyTxBodyAllegra body
-  ShelleyTxBody ShelleyBasedEraMary body aux ->
-    Object $
-    HashMap.insert "era" "Mary" $
-    HashMap.insert "auxiliary data" (toJSON $ textShow aux) $
-    friendlyTxBodyMary body
+friendlyTxBody' :: CardanoEra era -> TxBody era -> Value
+friendlyTxBody' era (ByronTxBody tx) = mergeEra era $ toJSON tx
+friendlyTxBody' era (ShelleyTxBody sbe txbody _mAuxData) = do
+  let hMap = case sbe of
+            ShelleyBasedEraShelley ->
+              Object $ HashMap.fromList
+                [ "inputs" .= Ledger._inputs txbody
+                , "outputs" .= fmap friendlyTxOutShelley (Ledger._outputs txbody)
+                , "certificates" .= fmap textShow (Ledger._certs txbody)
+                , "withdrawals" .= Shelley.unWdrl (Ledger._wdrls txbody)
+                , "fee" .= Ledger._txfee txbody
+                , "time to live" .= Ledger._ttl txbody
+                , "update" .= fmap textShow Ledger._txUpdate txbody
+                , "metadata hash" .= fmap textShow Ledger._mdHash txbody
+                ]
+            ShelleyBasedEraAllegra -> panic "TODO"
+            ShelleyBasedEraMary -> panic "TODO"
+  mergeEra era hMap
 
-friendlyTxBodyByron :: Annotated Byron.Tx ByteString -> Value
-friendlyTxBodyByron = toJSON
 
-friendlyTxBodyShelley
-  :: Shelley.TxBody (Ledger.ShelleyEra StandardCrypto) -> Object
-friendlyTxBodyShelley
-  Shelley.TxBody
-    { _inputs
-    , _outputs
-    , _certs
-    , _wdrls = Shelley.Wdrl withdrawals
-    , _txfee
-    , _ttl
-    , _txUpdate
-    , _mdHash
-    } =
-  HashMap.fromList
-    [ "inputs" .= _inputs
-    , "outputs" .= fmap friendlyTxOutShelley _outputs
-    , "certificates" .= fmap textShow _certs
-    , "withdrawals" .= withdrawals
-    , "fee" .= _txfee
-    , "time to live" .= _ttl
-    , "update" .= fmap textShow _txUpdate
-    , "metadata hash" .= fmap textShow _mdHash
-    ]
-
-friendlyTxBodyAllegra
-  :: ShelleyMA.TxBody (ShelleyMAEra 'Allegra StandardCrypto) -> Object
-friendlyTxBodyAllegra
-  (ShelleyMA.TxBody
-    inputs
-    outputs
-    certificates
-    (Shelley.Wdrl withdrawals)
-    txfee
-    validity
-    update
-    adHash
-    mint) =
-  HashMap.fromList
-    [ "inputs" .= inputs
-    , "outputs" .= fmap friendlyTxOutAllegra outputs
-    , "certificates" .= fmap textShow certificates
-    , "withdrawals" .= withdrawals
-    , "fee" .= txfee
-    , "validity interval" .= friendlyValidityInterval validity
-    , "update" .= fmap textShow update
-    , "auxiliary data hash" .= fmap textShow adHash
-    , "mint" .= mint
-    ]
-
-friendlyTxBodyMary
-  :: ShelleyMA.TxBody (ShelleyMAEra 'Mary StandardCrypto) -> Object
-friendlyTxBodyMary
-  (ShelleyMA.TxBody
-    inputs
-    outputs
-    certificates
-    (Shelley.Wdrl withdrawals)
-    txfee
-    validity
-    update
-    adHash
-    mint) =
-  HashMap.fromList
-    [ "inputs" .= inputs
-    , "outputs" .= fmap friendlyTxOutMary outputs
-    , "certificates" .= fmap textShow certificates
-    , "withdrawals" .= withdrawals
-    , "fee" .= txfee
-    , "validity interval" .= friendlyValidityInterval validity
-    , "update" .= fmap textShow update
-    , "auxiliary data hash" .= fmap textShow adHash
-    , "mint" .= mint
-    ]
 
 friendlyValidityInterval :: ShelleyMA.ValidityInterval -> Value
 friendlyValidityInterval
@@ -174,3 +95,10 @@ friendlyTxOutAllegra = toJSON
 
 friendlyTxOutMary :: TxOut (ShelleyMAEra 'Mary StandardCrypto) -> Value
 friendlyTxOutMary = toJSON
+
+mergeEra :: CardanoEra era -> JSON.Value -> JSON.Value
+mergeEra era (JSON.Object obj) =
+  case toJSON era of
+    JSON.Object e -> JSON.Object $ e <> obj
+    _ -> JSON.Object obj
+mergeEra _   _  = JSON.Null

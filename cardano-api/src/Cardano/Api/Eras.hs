@@ -43,12 +43,13 @@ module Cardano.Api.Eras
 
 import           Prelude
 
-import           Data.Type.Equality ((:~:) (Refl), TestEquality (..))
-
 import           Cardano.Ledger.Era as Ledger (Crypto)
+import           Data.Aeson
+import qualified Data.Aeson as Aeson
+import           Data.Type.Equality (TestEquality (..), (:~:) (Refl))
 
 import           Ouroboros.Consensus.Shelley.Eras as Ledger (StandardAllegra, StandardCrypto,
-                     StandardMary, StandardShelley)
+                   StandardMary, StandardShelley)
 
 import           Cardano.Api.HasTypeProxy
 
@@ -137,6 +138,12 @@ data CardanoEra era where
 deriving instance Eq   (CardanoEra era)
 deriving instance Ord  (CardanoEra era)
 deriving instance Show (CardanoEra era)
+
+instance ToJSON (CardanoEra era) where
+   toJSON ByronEra   = object ["era" .= Aeson.String "Byron" ]
+   toJSON ShelleyEra = object ["era" .= Aeson.String "Shelley" ]
+   toJSON AllegraEra = object ["era" .= Aeson.String "Alle" ]
+   toJSON MaryEra    = object ["era" .= Aeson.String "Mary" ]
 
 instance TestEquality CardanoEra where
     testEquality ByronEra   ByronEra   = Just Refl
