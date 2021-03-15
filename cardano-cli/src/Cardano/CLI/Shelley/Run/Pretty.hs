@@ -39,7 +39,9 @@ friendlyTxBodyBS =
 friendlyTxBody :: Api.TxBody era -> Value
 friendlyTxBody = \case
   ByronTxBody tx ->
-    _Object (HashMap.insert "era" "Byron") $ friendlyTxBodyByron tx
+    case friendlyTxBodyByron tx of
+      Object obj -> Object $ HashMap.insert "era" "Byron" obj
+      value      -> object ["era" .= String "Byron", "transaction" .= value]
   ShelleyTxBody ShelleyBasedEraShelley body aux ->
     Object $
     HashMap.insert "era" "Shelley" $
@@ -172,9 +174,3 @@ friendlyTxOutAllegra = toJSON
 
 friendlyTxOutMary :: TxOut (ShelleyMAEra 'Mary StandardCrypto) -> Value
 friendlyTxOutMary = toJSON
-
--- | Lens-ish modifier for a JSON.Object
-_Object :: (JSON.Object -> JSON.Object) -> JSON.Value -> JSON.Value
-_Object f = \case
-  Object a -> Object $ f a
-  v -> v
