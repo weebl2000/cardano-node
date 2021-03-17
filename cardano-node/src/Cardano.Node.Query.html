@@ -49,21 +49,21 @@
 </span><span id="line-49"></span><span>
 </span><span id="line-50"></span><span class="hs-comment">-- | Answer a general query about the current ledger state of the running node.</span><span>
 </span><span id="line-51"></span><span class="annot"><a href="Cardano.Node.Query.html#answerQuery"><span class="hs-identifier hs-type">answerQuery</span></a></span><span>
-</span><span id="line-52"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354313"><span class="annot"><a href="#local-6989586621679354313"><span class="hs-identifier hs-type">blk</span></a></span></span><span> </span><span id="local-6989586621679354312"><span class="annot"><a href="#local-6989586621679354312"><span class="hs-identifier hs-type">result</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RunNode</span></span><span> </span><span class="annot"><a href="#local-6989586621679354313"><span class="hs-identifier hs-type">blk</span></a></span><span>
-</span><span id="line-53"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Protocol</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354313"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BlockProtocol</span></span><span> </span><span class="annot"><a href="#local-6989586621679354313"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-54"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeKernel</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">RemoteConnectionId</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalConnectionId</span></span><span> </span><span class="annot"><a href="#local-6989586621679354313"><span class="hs-identifier hs-type">blk</span></a></span><span>
-</span><span id="line-55"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HF.HardForkCompatQuery</span></span><span> </span><span class="annot"><a href="#local-6989586621679354313"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354312"><span class="hs-identifier hs-type">result</span></a></span><span>
-</span><span id="line-56"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354312"><span class="hs-identifier hs-type">result</span></a></span><span>
+</span><span id="line-52"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354309"><span class="annot"><a href="#local-6989586621679354309"><span class="hs-identifier hs-type">blk</span></a></span></span><span> </span><span id="local-6989586621679354308"><span class="annot"><a href="#local-6989586621679354308"><span class="hs-identifier hs-type">result</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RunNode</span></span><span> </span><span class="annot"><a href="#local-6989586621679354309"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-53"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Protocol</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354309"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BlockProtocol</span></span><span> </span><span class="annot"><a href="#local-6989586621679354309"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-54"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeKernel</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">RemoteConnectionId</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalConnectionId</span></span><span> </span><span class="annot"><a href="#local-6989586621679354309"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-55"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HF.HardForkCompatQuery</span></span><span> </span><span class="annot"><a href="#local-6989586621679354309"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354308"><span class="hs-identifier hs-type">result</span></a></span><span>
+</span><span id="line-56"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354308"><span class="hs-identifier hs-type">result</span></a></span><span>
 </span><span id="line-57"></span><span id="answerQuery"><span class="annot"><span class="annottext">answerQuery :: Protocol IO blk (BlockProtocol blk)
 -&gt; NodeKernel IO RemoteConnectionId LocalConnectionId blk
 -&gt; HardForkCompatQuery blk result
 -&gt; IO result
-</span><a href="Cardano.Node.Query.html#answerQuery"><span class="hs-identifier hs-var hs-var">answerQuery</span></a></span></span><span> </span><span id="local-6989586621679354282"><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354282"><span class="hs-identifier hs-var">protocol</span></a></span></span><span> </span><span id="local-6989586621679354281"><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
-</span><a href="#local-6989586621679354281"><span class="hs-identifier hs-var">nodeKernel</span></a></span></span><span> </span><span id="local-6989586621679354280"><span class="annot"><span class="annottext">HardForkCompatQuery blk result
-</span><a href="#local-6989586621679354280"><span class="hs-identifier hs-var">query</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-58"></span><span>    </span><span id="local-6989586621679354279"><span class="annot"><span class="annottext">ExtLedgerState blk
-</span><a href="#local-6989586621679354279"><span class="hs-identifier hs-var">extLedgerState</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">STM (ExtLedgerState blk) -&gt; IO (ExtLedgerState blk)
+</span><a href="Cardano.Node.Query.html#answerQuery"><span class="hs-identifier hs-var hs-var">answerQuery</span></a></span></span><span> </span><span id="local-6989586621679354278"><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
+</span><a href="#local-6989586621679354278"><span class="hs-identifier hs-var">protocol</span></a></span></span><span> </span><span id="local-6989586621679354277"><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
+</span><a href="#local-6989586621679354277"><span class="hs-identifier hs-var">nodeKernel</span></a></span></span><span> </span><span id="local-6989586621679354276"><span class="annot"><span class="annottext">HardForkCompatQuery blk result
+</span><a href="#local-6989586621679354276"><span class="hs-identifier hs-var">query</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-58"></span><span>    </span><span id="local-6989586621679354275"><span class="annot"><span class="annottext">ExtLedgerState blk
+</span><a href="#local-6989586621679354275"><span class="hs-identifier hs-var">extLedgerState</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">STM (ExtLedgerState blk) -&gt; IO (ExtLedgerState blk)
 forall a. STM a -&gt; IO a
 </span><span class="hs-identifier hs-var">atomically</span></span><span> </span><span class="annot"><span class="annottext">(STM (ExtLedgerState blk) -&gt; IO (ExtLedgerState blk))
 -&gt; STM (ExtLedgerState blk) -&gt; IO (ExtLedgerState blk)
@@ -73,7 +73,7 @@ forall (m :: * -&gt; *) blk.
 (Monad (STM m), IsLedger (LedgerState blk)) =&gt;
 ChainDB m blk -&gt; STM m (ExtLedgerState blk)
 </span><span class="hs-identifier hs-var">ChainDB.getCurrentLedger</span></span><span> </span><span class="annot"><span class="annottext">ChainDB IO blk
-</span><a href="#local-6989586621679354276"><span class="hs-identifier hs-var">chainDB</span></a></span><span>
+</span><a href="#local-6989586621679354272"><span class="hs-identifier hs-var">chainDB</span></a></span><span>
 </span><span id="line-59"></span><span>    </span><span class="annot"><span class="annottext">result -&gt; IO result
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(result -&gt; IO result) -&gt; result -&gt; IO result
@@ -85,45 +85,45 @@ RunNode blk =&gt;
 Protocol IO blk (BlockProtocol blk)
 -&gt; ExtLedgerState blk -&gt; HardForkCompatQuery blk result -&gt; result
 </span><a href="Cardano.Node.Query.html#answerQueryWithLedgerState"><span class="hs-identifier hs-var">answerQueryWithLedgerState</span></a></span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354282"><span class="hs-identifier hs-var">protocol</span></a></span><span> </span><span class="annot"><span class="annottext">ExtLedgerState blk
-</span><a href="#local-6989586621679354279"><span class="hs-identifier hs-var">extLedgerState</span></a></span><span> </span><span class="annot"><span class="annottext">HardForkCompatQuery blk result
-</span><a href="#local-6989586621679354280"><span class="hs-identifier hs-var">query</span></a></span><span>
+</span><a href="#local-6989586621679354278"><span class="hs-identifier hs-var">protocol</span></a></span><span> </span><span class="annot"><span class="annottext">ExtLedgerState blk
+</span><a href="#local-6989586621679354275"><span class="hs-identifier hs-var">extLedgerState</span></a></span><span> </span><span class="annot"><span class="annottext">HardForkCompatQuery blk result
+</span><a href="#local-6989586621679354276"><span class="hs-identifier hs-var">query</span></a></span><span>
 </span><span id="line-60"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-61"></span><span>    </span><span id="local-6989586621679354276"><span class="annot"><span class="annottext">chainDB :: ChainDB IO blk
-</span><a href="#local-6989586621679354276"><span class="hs-identifier hs-var hs-var">chainDB</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
+</span><span id="line-61"></span><span>    </span><span id="local-6989586621679354272"><span class="annot"><span class="annottext">chainDB :: ChainDB IO blk
+</span><a href="#local-6989586621679354272"><span class="hs-identifier hs-var hs-var">chainDB</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
 -&gt; ChainDB IO blk
 forall (m :: * -&gt; *) remotePeer localPeer blk.
 NodeKernel m remotePeer localPeer blk -&gt; ChainDB m blk
 </span><span class="hs-identifier hs-var hs-var">getChainDB</span></span><span> </span><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
-</span><a href="#local-6989586621679354281"><span class="hs-identifier hs-var">nodeKernel</span></a></span><span>
+</span><a href="#local-6989586621679354277"><span class="hs-identifier hs-var">nodeKernel</span></a></span><span>
 </span><span id="line-62"></span><span>
 </span><span id="line-63"></span><span class="hs-comment">-- | Answer a general query about the given ledger state.</span><span>
 </span><span id="line-64"></span><span class="annot"><a href="Cardano.Node.Query.html#answerQueryWithLedgerState"><span class="hs-identifier hs-type">answerQueryWithLedgerState</span></a></span><span>
-</span><span id="line-65"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354401"><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span></span><span> </span><span id="local-6989586621679354399"><span class="annot"><a href="#local-6989586621679354399"><span class="hs-identifier hs-type">result</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RunNode</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span>
-</span><span id="line-66"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Protocol</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BlockProtocol</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-67"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExtLedgerState</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span>
-</span><span id="line-68"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HF.HardForkCompatQuery</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354399"><span class="hs-identifier hs-type">result</span></a></span><span>
-</span><span id="line-69"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679354399"><span class="hs-identifier hs-type">result</span></a></span><span>
+</span><span id="line-65"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354397"><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span></span><span> </span><span id="local-6989586621679354395"><span class="annot"><a href="#local-6989586621679354395"><span class="hs-identifier hs-type">result</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">RunNode</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-66"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Protocol</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BlockProtocol</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-67"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExtLedgerState</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-68"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HF.HardForkCompatQuery</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354395"><span class="hs-identifier hs-type">result</span></a></span><span>
+</span><span id="line-69"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679354395"><span class="hs-identifier hs-type">result</span></a></span><span>
 </span><span id="line-70"></span><span id="answerQueryWithLedgerState"><span class="annot"><span class="annottext">answerQueryWithLedgerState :: Protocol IO blk (BlockProtocol blk)
 -&gt; ExtLedgerState blk -&gt; HardForkCompatQuery blk result -&gt; result
-</span><a href="Cardano.Node.Query.html#answerQueryWithLedgerState"><span class="hs-identifier hs-var hs-var">answerQueryWithLedgerState</span></a></span></span><span> </span><span id="local-6989586621679354274"><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354274"><span class="hs-identifier hs-var">protocol</span></a></span></span><span> </span><span id="local-6989586621679354273"><span class="annot"><span class="annottext">ExtLedgerState blk
-</span><a href="#local-6989586621679354273"><span class="hs-identifier hs-var">extLedgerState</span></a></span></span><span> </span><span id="local-6989586621679354272"><span class="annot"><span class="annottext">HardForkCompatQuery blk result
-</span><a href="#local-6989586621679354272"><span class="hs-identifier hs-var">query</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Identity result -&gt; result
+</span><a href="Cardano.Node.Query.html#answerQueryWithLedgerState"><span class="hs-identifier hs-var hs-var">answerQueryWithLedgerState</span></a></span></span><span> </span><span id="local-6989586621679354270"><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
+</span><a href="#local-6989586621679354270"><span class="hs-identifier hs-var">protocol</span></a></span></span><span> </span><span id="local-6989586621679354269"><span class="annot"><span class="annottext">ExtLedgerState blk
+</span><a href="#local-6989586621679354269"><span class="hs-identifier hs-var">extLedgerState</span></a></span></span><span> </span><span id="local-6989586621679354268"><span class="annot"><span class="annottext">HardForkCompatQuery blk result
+</span><a href="#local-6989586621679354268"><span class="hs-identifier hs-var">query</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Identity result -&gt; result
 forall a. Identity a -&gt; a
 </span><span class="hs-identifier hs-var hs-var">runIdentity</span></span><span> </span><span class="annot"><span class="annottext">(Identity result -&gt; result) -&gt; Identity result -&gt; result
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
 </span><span id="line-71"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354274"><span class="hs-identifier hs-var">protocol</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679354270"><span class="hs-identifier hs-var">protocol</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-72"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Consensus.ProtocolByron</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-73"></span><span>        </span><span class="annot"><span class="annottext">Identity result
 (blk ~ ByronBlockHFC) =&gt; Identity result
-</span><a href="#local-6989586621679354269"><span class="hs-identifier hs-var">byronQuery</span></a></span><span>
+</span><a href="#local-6989586621679354265"><span class="hs-identifier hs-var">byronQuery</span></a></span><span>
 </span><span id="line-74"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Consensus.ProtocolShelley</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-75"></span><span>        </span><span class="annot"><span class="annottext">Identity result
 forall era. (blk ~ ShelleyBlockHFC era) =&gt; Identity result
-</span><a href="#local-6989586621679354267"><span class="hs-identifier hs-var">shelleyBasedQuery</span></a></span><span>
+</span><a href="#local-6989586621679354263"><span class="hs-identifier hs-var">shelleyBasedQuery</span></a></span><span>
 </span><span id="line-76"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Consensus.ProtocolCardano</span></span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-77"></span><span>        </span><span class="annot"><span class="annottext">(forall result.
  Query
@@ -157,7 +157,7 @@ Query
 forall (m :: * -&gt; *) result'.
 Monad m =&gt;
 Query blk result' -&gt; m result'
-</span><a href="#local-6989586621679354264"><span class="hs-identifier hs-var">answerQueryHelper</span></a></span><span>
+</span><a href="#local-6989586621679354260"><span class="hs-identifier hs-var">answerQueryHelper</span></a></span><span>
 </span><span id="line-79"></span><span>          </span><span class="annot"><span class="annottext">HardForkCompatQuery blk result
 HardForkCompatQuery
   (HardForkBlock
@@ -165,11 +165,11 @@ HardForkCompatQuery
        ShelleyBlock (AllegraEra StandardCrypto),
        ShelleyBlock (MaryEra StandardCrypto)])
   result
-</span><a href="#local-6989586621679354272"><span class="hs-identifier hs-var">query</span></a></span><span>
+</span><a href="#local-6989586621679354268"><span class="hs-identifier hs-var">query</span></a></span><span>
 </span><span id="line-80"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-81"></span><span>    </span><span class="annot"><a href="#local-6989586621679354263"><span class="hs-identifier hs-type">cfg</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TopLevelConfig</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span>
-</span><span id="line-82"></span><span>    </span><span id="local-6989586621679354263"><span class="annot"><span class="annottext">cfg :: TopLevelConfig blk
-</span><a href="#local-6989586621679354263"><span class="hs-identifier hs-var hs-var">cfg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ProtocolInfo IO blk -&gt; TopLevelConfig blk
+</span><span id="line-81"></span><span>    </span><span class="annot"><a href="#local-6989586621679354259"><span class="hs-identifier hs-type">cfg</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">TopLevelConfig</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-82"></span><span>    </span><span id="local-6989586621679354259"><span class="annot"><span class="annottext">cfg :: TopLevelConfig blk
+</span><a href="#local-6989586621679354259"><span class="hs-identifier hs-var hs-var">cfg</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ProtocolInfo IO blk -&gt; TopLevelConfig blk
 forall (m :: * -&gt; *) b. ProtocolInfo m b -&gt; TopLevelConfig b
 </span><span class="hs-identifier hs-var hs-var">pInfoConfig</span></span><span> </span><span class="annot"><span class="annottext">(ProtocolInfo IO blk -&gt; TopLevelConfig blk)
 -&gt; ProtocolInfo IO blk -&gt; TopLevelConfig blk
@@ -179,15 +179,15 @@ forall (m :: * -&gt; *) blk p.
 IOLike m =&gt;
 Protocol m blk p -&gt; ProtocolInfo m blk
 </span><span class="hs-identifier hs-var">Consensus.protocolInfo</span></span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354274"><span class="hs-identifier hs-var">protocol</span></a></span><span>
+</span><a href="#local-6989586621679354270"><span class="hs-identifier hs-var">protocol</span></a></span><span>
 </span><span id="line-83"></span><span>
-</span><span id="line-84"></span><span>    </span><span class="annot"><a href="#local-6989586621679354264"><span class="hs-identifier hs-type">answerQueryHelper</span></a></span><span>
-</span><span id="line-85"></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354373"><span class="annot"><a href="#local-6989586621679354373"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679354372"><span class="annot"><a href="#local-6989586621679354372"><span class="hs-identifier hs-type">result'</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679354373"><span class="hs-identifier hs-type">m</span></a></span><span>
-</span><span id="line-86"></span><span>      </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Query</span></span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354372"><span class="hs-identifier hs-type">result'</span></a></span><span>
-</span><span id="line-87"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679354373"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354372"><span class="hs-identifier hs-type">result'</span></a></span><span>
-</span><span id="line-88"></span><span>    </span><span id="local-6989586621679354264"><span class="annot"><span class="annottext">answerQueryHelper :: Query blk result' -&gt; m result'
-</span><a href="#local-6989586621679354264"><span class="hs-identifier hs-var hs-var">answerQueryHelper</span></a></span></span><span> </span><span id="local-6989586621679354261"><span class="annot"><span class="annottext">Query blk result'
-</span><a href="#local-6989586621679354261"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">result' -&gt; m result'
+</span><span id="line-84"></span><span>    </span><span class="annot"><a href="#local-6989586621679354260"><span class="hs-identifier hs-type">answerQueryHelper</span></a></span><span>
+</span><span id="line-85"></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354369"><span class="annot"><a href="#local-6989586621679354369"><span class="hs-identifier hs-type">m</span></a></span></span><span> </span><span id="local-6989586621679354368"><span class="annot"><a href="#local-6989586621679354368"><span class="hs-identifier hs-type">result'</span></a></span></span><span class="hs-operator">.</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Monad</span></span><span> </span><span class="annot"><a href="#local-6989586621679354369"><span class="hs-identifier hs-type">m</span></a></span><span>
+</span><span id="line-86"></span><span>      </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Query</span></span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354368"><span class="hs-identifier hs-type">result'</span></a></span><span>
+</span><span id="line-87"></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="#local-6989586621679354369"><span class="hs-identifier hs-type">m</span></a></span><span> </span><span class="annot"><a href="#local-6989586621679354368"><span class="hs-identifier hs-type">result'</span></a></span><span>
+</span><span id="line-88"></span><span>    </span><span id="local-6989586621679354260"><span class="annot"><span class="annottext">answerQueryHelper :: Query blk result' -&gt; m result'
+</span><a href="#local-6989586621679354260"><span class="hs-identifier hs-var hs-var">answerQueryHelper</span></a></span></span><span> </span><span id="local-6989586621679354257"><span class="annot"><span class="annottext">Query blk result'
+</span><a href="#local-6989586621679354257"><span class="hs-identifier hs-var">q</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">result' -&gt; m result'
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(result' -&gt; m result') -&gt; result' -&gt; m result'
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -201,13 +201,13 @@ ExtLedgerCfg blk
 </span><span class="hs-identifier hs-var">Consensus.answerQuery</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">TopLevelConfig blk -&gt; ExtLedgerCfg blk
 forall blk. TopLevelConfig blk -&gt; ExtLedgerCfg blk
 </span><span class="hs-identifier hs-var">ExtLedgerCfg</span></span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk
-</span><a href="#local-6989586621679354263"><span class="hs-identifier hs-var">cfg</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Query blk result'
-</span><a href="#local-6989586621679354261"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="annot"><span class="annottext">ExtLedgerState blk
-</span><a href="#local-6989586621679354273"><span class="hs-identifier hs-var">extLedgerState</span></a></span><span>
+</span><a href="#local-6989586621679354259"><span class="hs-identifier hs-var">cfg</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Query blk result'
+</span><a href="#local-6989586621679354257"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="annot"><span class="annottext">ExtLedgerState blk
+</span><a href="#local-6989586621679354269"><span class="hs-identifier hs-var">extLedgerState</span></a></span><span>
 </span><span id="line-90"></span><span>
-</span><span id="line-91"></span><span>    </span><span class="annot"><a href="#local-6989586621679354269"><span class="hs-identifier hs-type">byronQuery</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByronBlockHFC</span></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Identity</span></span><span> </span><span class="annot"><a href="#local-6989586621679354399"><span class="hs-identifier hs-type">result</span></a></span><span>
-</span><span id="line-92"></span><span>    </span><span id="local-6989586621679354269"><span class="annot"><span class="annottext">byronQuery :: Identity result
-</span><a href="#local-6989586621679354269"><span class="hs-identifier hs-var hs-var">byronQuery</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-91"></span><span>    </span><span class="annot"><a href="#local-6989586621679354265"><span class="hs-identifier hs-type">byronQuery</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByronBlockHFC</span></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Identity</span></span><span> </span><span class="annot"><a href="#local-6989586621679354395"><span class="hs-identifier hs-type">result</span></a></span><span>
+</span><span id="line-92"></span><span>    </span><span id="local-6989586621679354265"><span class="annot"><span class="annottext">byronQuery :: Identity result
+</span><a href="#local-6989586621679354265"><span class="hs-identifier hs-var hs-var">byronQuery</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-93"></span><span>        </span><span class="annot"><span class="annottext">EpochSize
 -&gt; SlotLength
 -&gt; (forall result. Query blk result -&gt; Identity result)
@@ -221,47 +221,47 @@ EpochSize
 -&gt; forall result. HardForkCompatQuery blk result -&gt; m result
 </span><span class="hs-identifier hs-var">HF.singleEraCompatQuery</span></span><span>
 </span><span id="line-94"></span><span>          </span><span class="annot"><span class="annottext">EpochSize
-</span><a href="#local-6989586621679354258"><span class="hs-identifier hs-var">epochSize</span></a></span><span>
+</span><a href="#local-6989586621679354254"><span class="hs-identifier hs-var">epochSize</span></a></span><span>
 </span><span id="line-95"></span><span>          </span><span class="annot"><span class="annottext">SlotLength
-</span><a href="#local-6989586621679354257"><span class="hs-identifier hs-var">slotLength</span></a></span><span>
+</span><a href="#local-6989586621679354253"><span class="hs-identifier hs-var">slotLength</span></a></span><span>
 </span><span id="line-96"></span><span>          </span><span class="annot"><span class="annottext">forall result. Query blk result -&gt; Identity result
 forall (m :: * -&gt; *) result'.
 Monad m =&gt;
 Query blk result' -&gt; m result'
-</span><a href="#local-6989586621679354264"><span class="hs-identifier hs-var">answerQueryHelper</span></a></span><span>
+</span><a href="#local-6989586621679354260"><span class="hs-identifier hs-var">answerQueryHelper</span></a></span><span>
 </span><span id="line-97"></span><span>          </span><span class="annot"><span class="annottext">HardForkCompatQuery blk result
-</span><a href="#local-6989586621679354272"><span class="hs-identifier hs-var">query</span></a></span><span>
+</span><a href="#local-6989586621679354268"><span class="hs-identifier hs-var">query</span></a></span><span>
 </span><span id="line-98"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-99"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">DegenLedgerConfig</span></span><span> </span><span id="local-6989586621679354256"><span class="annot"><span class="annottext">PartialLedgerConfig ByronBlock
-</span><a href="#local-6989586621679354256"><span class="hs-identifier hs-var">ledgerConfig</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk -&gt; LedgerConfig blk
+</span><span id="line-99"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">DegenLedgerConfig</span></span><span> </span><span id="local-6989586621679354252"><span class="annot"><span class="annottext">PartialLedgerConfig ByronBlock
+</span><a href="#local-6989586621679354252"><span class="hs-identifier hs-var">ledgerConfig</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk -&gt; LedgerConfig blk
 forall blk. TopLevelConfig blk -&gt; LedgerConfig blk
 </span><span class="hs-identifier hs-var">configLedger</span></span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk
-</span><a href="#local-6989586621679354263"><span class="hs-identifier hs-var">cfg</span></a></span><span>
-</span><span id="line-100"></span><span>        </span><span id="local-6989586621679354255"><span class="annot"><span class="annottext">genesis :: LedgerConfig ByronBlock
-</span><a href="#local-6989586621679354255"><span class="hs-identifier hs-var hs-var">genesis</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByronPartialLedgerConfig -&gt; LedgerConfig ByronBlock
+</span><a href="#local-6989586621679354259"><span class="hs-identifier hs-var">cfg</span></a></span><span>
+</span><span id="line-100"></span><span>        </span><span id="local-6989586621679354251"><span class="annot"><span class="annottext">genesis :: LedgerConfig ByronBlock
+</span><a href="#local-6989586621679354251"><span class="hs-identifier hs-var hs-var">genesis</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ByronPartialLedgerConfig -&gt; LedgerConfig ByronBlock
 </span><span class="hs-identifier hs-var hs-var">CanHardFork.byronLedgerConfig</span></span><span> </span><span class="annot"><span class="annottext">PartialLedgerConfig ByronBlock
 ByronPartialLedgerConfig
-</span><a href="#local-6989586621679354256"><span class="hs-identifier hs-var">ledgerConfig</span></a></span><span>
-</span><span id="line-101"></span><span>        </span><span id="local-6989586621679354258"><span class="annot"><span class="annottext">epochSize :: EpochSize
-</span><a href="#local-6989586621679354258"><span class="hs-identifier hs-var hs-var">epochSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochSlots -&gt; EpochSize
+</span><a href="#local-6989586621679354252"><span class="hs-identifier hs-var">ledgerConfig</span></a></span><span>
+</span><span id="line-101"></span><span>        </span><span id="local-6989586621679354254"><span class="annot"><span class="annottext">epochSize :: EpochSize
+</span><a href="#local-6989586621679354254"><span class="hs-identifier hs-var hs-var">epochSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">EpochSlots -&gt; EpochSize
 </span><span class="hs-identifier hs-var">Byron.fromByronEpochSlots</span></span><span> </span><span class="annot"><span class="annottext">(EpochSlots -&gt; EpochSize) -&gt; EpochSlots -&gt; EpochSize
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Config -&gt; EpochSlots
 </span><span class="hs-identifier hs-var">Byron.configEpochSlots</span></span><span> </span><span class="annot"><span class="annottext">LedgerConfig ByronBlock
 Config
-</span><a href="#local-6989586621679354255"><span class="hs-identifier hs-var">genesis</span></a></span><span>
-</span><span id="line-102"></span><span>        </span><span id="local-6989586621679354257"><span class="annot"><span class="annottext">slotLength :: SlotLength
-</span><a href="#local-6989586621679354257"><span class="hs-identifier hs-var hs-var">slotLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Natural -&gt; SlotLength
+</span><a href="#local-6989586621679354251"><span class="hs-identifier hs-var">genesis</span></a></span><span>
+</span><span id="line-102"></span><span>        </span><span id="local-6989586621679354253"><span class="annot"><span class="annottext">slotLength :: SlotLength
+</span><a href="#local-6989586621679354253"><span class="hs-identifier hs-var hs-var">slotLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Natural -&gt; SlotLength
 </span><span class="hs-identifier hs-var">Byron.fromByronSlotLength</span></span><span> </span><span class="annot"><span class="annottext">(Natural -&gt; SlotLength) -&gt; Natural -&gt; SlotLength
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Config -&gt; Natural
 </span><span class="hs-identifier hs-var">Byron.genesisSlotLength</span></span><span> </span><span class="annot"><span class="annottext">LedgerConfig ByronBlock
 Config
-</span><a href="#local-6989586621679354255"><span class="hs-identifier hs-var">genesis</span></a></span><span>
+</span><a href="#local-6989586621679354251"><span class="hs-identifier hs-var">genesis</span></a></span><span>
 </span><span id="line-103"></span><span>
-</span><span id="line-104"></span><span>    </span><span id="local-6989586621679354389"><span class="annot"><a href="#local-6989586621679354267"><span class="hs-identifier hs-type">shelleyBasedQuery</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621679354401"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShelleyBlockHFC</span></span><span> </span><span class="annot"><a href="#local-6989586621679354389"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Identity</span></span><span> </span><span class="annot"><a href="#local-6989586621679354399"><span class="hs-identifier hs-type">result</span></a></span></span><span>
-</span><span id="line-105"></span><span>    </span><span id="local-6989586621679354267"><span class="annot"><span class="annottext">shelleyBasedQuery :: Identity result
-</span><a href="#local-6989586621679354267"><span class="hs-identifier hs-var hs-var">shelleyBasedQuery</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-104"></span><span>    </span><span id="local-6989586621679354385"><span class="annot"><a href="#local-6989586621679354263"><span class="hs-identifier hs-type">shelleyBasedQuery</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="#local-6989586621679354397"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="annot"><span class="hs-glyph hs-type">~</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ShelleyBlockHFC</span></span><span> </span><span class="annot"><a href="#local-6989586621679354385"><span class="hs-identifier hs-type">era</span></a></span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Identity</span></span><span> </span><span class="annot"><a href="#local-6989586621679354395"><span class="hs-identifier hs-type">result</span></a></span></span><span>
+</span><span id="line-105"></span><span>    </span><span id="local-6989586621679354263"><span class="annot"><span class="annottext">shelleyBasedQuery :: Identity result
+</span><a href="#local-6989586621679354263"><span class="hs-identifier hs-var hs-var">shelleyBasedQuery</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-106"></span><span>        </span><span class="annot"><span class="annottext">EpochSize
 -&gt; SlotLength
 -&gt; (forall result. Query blk result -&gt; Identity result)
@@ -275,24 +275,24 @@ EpochSize
 -&gt; forall result. HardForkCompatQuery blk result -&gt; m result
 </span><span class="hs-identifier hs-var">HF.singleEraCompatQuery</span></span><span>
 </span><span id="line-107"></span><span>          </span><span class="annot"><span class="annottext">EpochSize
-</span><a href="#local-6989586621679354249"><span class="hs-identifier hs-var">epochSize</span></a></span><span>
+</span><a href="#local-6989586621679354245"><span class="hs-identifier hs-var">epochSize</span></a></span><span>
 </span><span id="line-108"></span><span>          </span><span class="annot"><span class="annottext">SlotLength
-</span><a href="#local-6989586621679354248"><span class="hs-identifier hs-var">slotLength</span></a></span><span>
+</span><a href="#local-6989586621679354244"><span class="hs-identifier hs-var">slotLength</span></a></span><span>
 </span><span id="line-109"></span><span>          </span><span class="annot"><span class="annottext">forall result. Query blk result -&gt; Identity result
 forall (m :: * -&gt; *) result'.
 Monad m =&gt;
 Query blk result' -&gt; m result'
-</span><a href="#local-6989586621679354264"><span class="hs-identifier hs-var">answerQueryHelper</span></a></span><span>
+</span><a href="#local-6989586621679354260"><span class="hs-identifier hs-var">answerQueryHelper</span></a></span><span>
 </span><span id="line-110"></span><span>          </span><span class="annot"><span class="annottext">HardForkCompatQuery blk result
-</span><a href="#local-6989586621679354272"><span class="hs-identifier hs-var">query</span></a></span><span>
+</span><a href="#local-6989586621679354268"><span class="hs-identifier hs-var">query</span></a></span><span>
 </span><span id="line-111"></span><span>      </span><span class="hs-keyword">where</span><span>
-</span><span id="line-112"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">DegenLedgerConfig</span></span><span> </span><span id="local-6989586621679354247"><span class="annot"><span class="annottext">PartialLedgerConfig (ShelleyBlock era)
-</span><a href="#local-6989586621679354247"><span class="hs-identifier hs-var">ledgerConfig</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk -&gt; LedgerConfig blk
+</span><span id="line-112"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">DegenLedgerConfig</span></span><span> </span><span id="local-6989586621679354243"><span class="annot"><span class="annottext">PartialLedgerConfig (ShelleyBlock era)
+</span><a href="#local-6989586621679354243"><span class="hs-identifier hs-var">ledgerConfig</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk -&gt; LedgerConfig blk
 forall blk. TopLevelConfig blk -&gt; LedgerConfig blk
 </span><span class="hs-identifier hs-var">configLedger</span></span><span> </span><span class="annot"><span class="annottext">TopLevelConfig blk
-</span><a href="#local-6989586621679354263"><span class="hs-identifier hs-var">cfg</span></a></span><span>
-</span><span id="line-113"></span><span>        </span><span id="local-6989586621679354246"><span class="annot"><span class="annottext">genesis :: ShelleyGenesis era
-</span><a href="#local-6989586621679354246"><span class="hs-identifier hs-var hs-var">genesis</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShelleyLedgerConfig era -&gt; ShelleyGenesis era
+</span><a href="#local-6989586621679354259"><span class="hs-identifier hs-var">cfg</span></a></span><span>
+</span><span id="line-113"></span><span>        </span><span id="local-6989586621679354242"><span class="annot"><span class="annottext">genesis :: ShelleyGenesis era
+</span><a href="#local-6989586621679354242"><span class="hs-identifier hs-var hs-var">genesis</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShelleyLedgerConfig era -&gt; ShelleyGenesis era
 forall era. ShelleyLedgerConfig era -&gt; ShelleyGenesis era
 </span><span class="hs-identifier hs-var">shelleyLedgerGenesis</span></span><span> </span><span class="annot"><span class="annottext">(ShelleyLedgerConfig era -&gt; ShelleyGenesis era)
 -&gt; ShelleyLedgerConfig era -&gt; ShelleyGenesis era
@@ -303,20 +303,20 @@ forall era.
 ShelleyPartialLedgerConfig era -&gt; ShelleyLedgerConfig era
 </span><span class="hs-identifier hs-var hs-var">CanHardFork.shelleyLedgerConfig</span></span><span> </span><span class="annot"><span class="annottext">PartialLedgerConfig (ShelleyBlock era)
 ShelleyPartialLedgerConfig era
-</span><a href="#local-6989586621679354247"><span class="hs-identifier hs-var">ledgerConfig</span></a></span><span>
-</span><span id="line-115"></span><span>        </span><span id="local-6989586621679354249"><span class="annot"><span class="annottext">epochSize :: EpochSize
-</span><a href="#local-6989586621679354249"><span class="hs-identifier hs-var hs-var">epochSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShelleyGenesis era -&gt; EpochSize
+</span><a href="#local-6989586621679354243"><span class="hs-identifier hs-var">ledgerConfig</span></a></span><span>
+</span><span id="line-115"></span><span>        </span><span id="local-6989586621679354245"><span class="annot"><span class="annottext">epochSize :: EpochSize
+</span><a href="#local-6989586621679354245"><span class="hs-identifier hs-var hs-var">epochSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ShelleyGenesis era -&gt; EpochSize
 forall era. ShelleyGenesis era -&gt; EpochSize
 </span><span class="hs-identifier hs-var hs-var">SL.sgEpochLength</span></span><span> </span><span class="annot"><span class="annottext">ShelleyGenesis era
-</span><a href="#local-6989586621679354246"><span class="hs-identifier hs-var">genesis</span></a></span><span>
-</span><span id="line-116"></span><span>        </span><span id="local-6989586621679354248"><span class="annot"><span class="annottext">slotLength :: SlotLength
-</span><a href="#local-6989586621679354248"><span class="hs-identifier hs-var hs-var">slotLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">NominalDiffTime -&gt; SlotLength
+</span><a href="#local-6989586621679354242"><span class="hs-identifier hs-var">genesis</span></a></span><span>
+</span><span id="line-116"></span><span>        </span><span id="local-6989586621679354244"><span class="annot"><span class="annottext">slotLength :: SlotLength
+</span><a href="#local-6989586621679354244"><span class="hs-identifier hs-var hs-var">slotLength</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">NominalDiffTime -&gt; SlotLength
 </span><span class="hs-identifier hs-var">WCT.mkSlotLength</span></span><span> </span><span class="annot"><span class="annottext">(NominalDiffTime -&gt; SlotLength) -&gt; NominalDiffTime -&gt; SlotLength
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ShelleyGenesis era -&gt; NominalDiffTime
 forall era. ShelleyGenesis era -&gt; NominalDiffTime
 </span><span class="hs-identifier hs-var hs-var">SL.sgSlotLength</span></span><span> </span><span class="annot"><span class="annottext">ShelleyGenesis era
-</span><a href="#local-6989586621679354246"><span class="hs-identifier hs-var">genesis</span></a></span><span>
+</span><a href="#local-6989586621679354242"><span class="hs-identifier hs-var">genesis</span></a></span><span>
 </span><span id="line-117"></span><span>
 </span><span id="line-118"></span><span class="hs-comment">-- | To avoid confusing 'HFI.Qry' with 'HF.Query' and 'HF.HardForkCompatQuery,</span><span>
 </span><span id="line-119"></span><span class="hs-comment">-- we introduce a type synonym for the former which we can use in docstrings</span><span>
@@ -327,13 +327,13 @@ forall era. ShelleyGenesis era -&gt; NominalDiffTime
 </span><span id="line-124"></span><span class="hs-comment">--</span><span>
 </span><span id="line-125"></span><span class="hs-comment">-- * 'Consensus.Query' and 'HF.HardForkCompatQuery' are more general queries</span><span>
 </span><span id="line-126"></span><span class="hs-comment">--   that can ask for anything related to the ledger state.</span><span>
-</span><span id="line-127"></span><span class="hs-keyword">type</span><span> </span><span id="InterpreterQuery"><span class="annot"><a href="Cardano.Node.Query.html#InterpreterQuery"><span class="hs-identifier hs-var">InterpreterQuery</span></a></span></span><span> </span><span id="local-6989586621679354241"><span class="annot"><a href="#local-6989586621679354241"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HFI.Qry</span></span><span> </span><span class="annot"><a href="#local-6989586621679354241"><span class="hs-identifier hs-type">a</span></a></span><span>
+</span><span id="line-127"></span><span class="hs-keyword">type</span><span> </span><span id="InterpreterQuery"><span class="annot"><a href="Cardano.Node.Query.html#InterpreterQuery"><span class="hs-identifier hs-var">InterpreterQuery</span></a></span></span><span> </span><span id="local-6989586621679354237"><span class="annot"><a href="#local-6989586621679354237"><span class="hs-identifier hs-type">a</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HFI.Qry</span></span><span> </span><span class="annot"><a href="#local-6989586621679354237"><span class="hs-identifier hs-type">a</span></a></span><span>
 </span><span id="line-128"></span><span>
 </span><span id="line-129"></span><span class="hs-comment">-- | Return the start time of the epoch of the given slot.</span><span>
 </span><span id="line-130"></span><span class="annot"><a href="Cardano.Node.Query.html#qryEpochStartTimeOfSlot"><span class="hs-identifier hs-type">qryEpochStartTimeOfSlot</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SlotNo</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Cardano.Node.Query.html#InterpreterQuery"><span class="hs-identifier hs-type">InterpreterQuery</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">WCT.RelativeTime</span></span><span>
 </span><span id="line-131"></span><span id="qryEpochStartTimeOfSlot"><span class="annot"><span class="annottext">qryEpochStartTimeOfSlot :: SlotNo -&gt; InterpreterQuery RelativeTime
-</span><a href="Cardano.Node.Query.html#qryEpochStartTimeOfSlot"><span class="hs-identifier hs-var hs-var">qryEpochStartTimeOfSlot</span></a></span></span><span> </span><span id="local-6989586621679354240"><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679354240"><span class="hs-identifier hs-var">slotNo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(forall (f :: * -&gt; *). Expr f RelativeTime)
+</span><a href="Cardano.Node.Query.html#qryEpochStartTimeOfSlot"><span class="hs-identifier hs-var hs-var">qryEpochStartTimeOfSlot</span></a></span></span><span> </span><span id="local-6989586621679354236"><span class="annot"><span class="annottext">SlotNo
+</span><a href="#local-6989586621679354236"><span class="hs-identifier hs-var">slotNo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(forall (f :: * -&gt; *). Expr f RelativeTime)
 -&gt; InterpreterQuery RelativeTime
 forall a. (forall (f :: * -&gt; *). Expr f a) -&gt; Qry a
 </span><span class="hs-identifier hs-var">HFI.qryFromExpr</span></span><span> </span><span class="annot"><span class="annottext">((forall (f :: * -&gt; *). Expr f RelativeTime)
@@ -351,11 +351,11 @@ forall (f :: * -&gt; *). Expr f SlotNo -&gt; Expr f SlotInEra
 </span><span class="hs-identifier hs-var">HFI.EAbsToRelSlot</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SlotNo -&gt; Expr f SlotNo
 forall a (f :: * -&gt; *). Show a =&gt; a -&gt; Expr f a
 </span><span class="hs-identifier hs-var">HFI.ELit</span></span><span> </span><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679354240"><span class="hs-identifier hs-var">slotNo</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((f SlotInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime)
+</span><a href="#local-6989586621679354236"><span class="hs-identifier hs-var">slotNo</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((f SlotInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime)
 -&gt; (f SlotInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679354235"><span class="annot"><span class="annottext">f SlotInEra
-</span><a href="#local-6989586621679354235"><span class="hs-identifier hs-var">slotInEra</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679354231"><span class="annot"><span class="annottext">f SlotInEra
+</span><a href="#local-6989586621679354231"><span class="hs-identifier hs-var">slotInEra</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-133"></span><span>    </span><span class="annot"><span class="annottext">Expr f TimeInEra
 -&gt; (f TimeInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime
 forall (f :: * -&gt; *) a1 a.
@@ -365,17 +365,17 @@ forall (f :: * -&gt; *). Expr f SlotInEra -&gt; Expr f TimeInEra
 </span><span class="hs-identifier hs-var">HFI.ERelSlotToTime</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">f SlotInEra -&gt; Expr f SlotInEra
 forall (f :: * -&gt; *) a. f a -&gt; Expr f a
 </span><span class="hs-identifier hs-var">HFI.EVar</span></span><span> </span><span class="annot"><span class="annottext">f SlotInEra
-</span><a href="#local-6989586621679354235"><span class="hs-identifier hs-var">slotInEra</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((f TimeInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime)
+</span><a href="#local-6989586621679354231"><span class="hs-identifier hs-var">slotInEra</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">((f TimeInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime)
 -&gt; (f TimeInEra -&gt; Expr f RelativeTime) -&gt; Expr f RelativeTime
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679354232"><span class="annot"><span class="annottext">f TimeInEra
-</span><a href="#local-6989586621679354232"><span class="hs-identifier hs-var">timeInEra</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679354228"><span class="annot"><span class="annottext">f TimeInEra
+</span><a href="#local-6989586621679354228"><span class="hs-identifier hs-var">timeInEra</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-134"></span><span>    </span><span class="annot"><span class="annottext">Expr f TimeInEra -&gt; Expr f RelativeTime
 forall (f :: * -&gt; *). Expr f TimeInEra -&gt; Expr f RelativeTime
 </span><span class="hs-identifier hs-var">HFI.ERelToAbsTime</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">f TimeInEra -&gt; Expr f TimeInEra
 forall (f :: * -&gt; *) a. f a -&gt; Expr f a
 </span><span class="hs-identifier hs-var">HFI.EVar</span></span><span> </span><span class="annot"><span class="annottext">f TimeInEra
-</span><a href="#local-6989586621679354232"><span class="hs-identifier hs-var">timeInEra</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679354228"><span class="hs-identifier hs-var">timeInEra</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-135"></span><span>
 </span><span id="line-136"></span><span class="hs-comment">-- | Execute the 'qryEpochStartTimeOfSlot' 'InterpreterQuery' against the</span><span>
 </span><span id="line-137"></span><span class="hs-comment">-- current ledger state.</span><span>
@@ -385,21 +385,21 @@ forall (f :: * -&gt; *) a. f a -&gt; Expr f a
 </span><span id="line-141"></span><span class="hs-comment">-- scratch, we don't know yet when the transition to Shelley will happen, so we</span><span>
 </span><span id="line-142"></span><span class="hs-comment">-- can't do conversions for slots from the Shelley era.</span><span>
 </span><span id="line-143"></span><span class="annot"><a href="Cardano.Node.Query.html#getEpochStartTimeOfSlot"><span class="hs-identifier hs-type">getEpochStartTimeOfSlot</span></a></span><span>
-</span><span id="line-144"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354230"><span class="annot"><a href="#local-6989586621679354230"><span class="hs-identifier hs-type">blk</span></a></span></span><span class="hs-operator">.</span><span>  </span><span class="annot"><span class="hs-identifier hs-type">RunNode</span></span><span> </span><span class="annot"><a href="#local-6989586621679354230"><span class="hs-identifier hs-type">blk</span></a></span><span>
-</span><span id="line-145"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Protocol</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354230"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BlockProtocol</span></span><span> </span><span class="annot"><a href="#local-6989586621679354230"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-146"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeKernel</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">RemoteConnectionId</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalConnectionId</span></span><span> </span><span class="annot"><a href="#local-6989586621679354230"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-144"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="hs-keyword">forall</span><span> </span><span id="local-6989586621679354226"><span class="annot"><a href="#local-6989586621679354226"><span class="hs-identifier hs-type">blk</span></a></span></span><span class="hs-operator">.</span><span>  </span><span class="annot"><span class="hs-identifier hs-type">RunNode</span></span><span> </span><span class="annot"><a href="#local-6989586621679354226"><span class="hs-identifier hs-type">blk</span></a></span><span>
+</span><span id="line-145"></span><span>  </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Consensus.Protocol</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><a href="#local-6989586621679354226"><span class="hs-identifier hs-type">blk</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">BlockProtocol</span></span><span> </span><span class="annot"><a href="#local-6989586621679354226"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-146"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">NodeKernel</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">RemoteConnectionId</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">LocalConnectionId</span></span><span> </span><span class="annot"><a href="#local-6989586621679354226"><span class="hs-identifier hs-type">blk</span></a></span><span>
 </span><span id="line-147"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">SlotNo</span></span><span>
 </span><span id="line-148"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">HFI.PastHorizonException</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">UTCTime</span></span><span class="hs-special">)</span><span>
 </span><span id="line-149"></span><span id="getEpochStartTimeOfSlot"><span class="annot"><span class="annottext">getEpochStartTimeOfSlot :: Protocol IO blk (BlockProtocol blk)
 -&gt; NodeKernel IO RemoteConnectionId LocalConnectionId blk
 -&gt; SlotNo
 -&gt; IO (Either PastHorizonException UTCTime)
-</span><a href="Cardano.Node.Query.html#getEpochStartTimeOfSlot"><span class="hs-identifier hs-var hs-var">getEpochStartTimeOfSlot</span></a></span></span><span> </span><span id="local-6989586621679354229"><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354229"><span class="hs-identifier hs-var">protocol</span></a></span></span><span> </span><span id="local-6989586621679354228"><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
-</span><a href="#local-6989586621679354228"><span class="hs-identifier hs-var">nodeKernel</span></a></span></span><span> </span><span id="local-6989586621679354227"><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679354227"><span class="hs-identifier hs-var">slotNo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-150"></span><span>    </span><span id="local-6989586621679354226"><span class="annot"><span class="annottext">Interpreter (HardForkIndices blk)
-</span><a href="#local-6989586621679354226"><span class="hs-identifier hs-var">interpreter</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
+</span><a href="Cardano.Node.Query.html#getEpochStartTimeOfSlot"><span class="hs-identifier hs-var hs-var">getEpochStartTimeOfSlot</span></a></span></span><span> </span><span id="local-6989586621679354225"><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
+</span><a href="#local-6989586621679354225"><span class="hs-identifier hs-var">protocol</span></a></span></span><span> </span><span id="local-6989586621679354224"><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
+</span><a href="#local-6989586621679354224"><span class="hs-identifier hs-var">nodeKernel</span></a></span></span><span> </span><span id="local-6989586621679354223"><span class="annot"><span class="annottext">SlotNo
+</span><a href="#local-6989586621679354223"><span class="hs-identifier hs-var">slotNo</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-150"></span><span>    </span><span id="local-6989586621679354222"><span class="annot"><span class="annottext">Interpreter (HardForkIndices blk)
+</span><a href="#local-6989586621679354222"><span class="hs-identifier hs-var">interpreter</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
 -&gt; NodeKernel IO RemoteConnectionId LocalConnectionId blk
 -&gt; HardForkCompatQuery blk (Interpreter (HardForkIndices blk))
 -&gt; IO (Interpreter (HardForkIndices blk))
@@ -410,8 +410,8 @@ Protocol IO blk (BlockProtocol blk)
 -&gt; HardForkCompatQuery blk result
 -&gt; IO result
 </span><a href="Cardano.Node.Query.html#answerQuery"><span class="hs-identifier hs-var">answerQuery</span></a></span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354229"><span class="hs-identifier hs-var">protocol</span></a></span><span> </span><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
-</span><a href="#local-6989586621679354228"><span class="hs-identifier hs-var">nodeKernel</span></a></span><span> </span><span class="annot"><span class="annottext">HardForkCompatQuery blk (Interpreter (HardForkIndices blk))
+</span><a href="#local-6989586621679354225"><span class="hs-identifier hs-var">protocol</span></a></span><span> </span><span class="annot"><span class="annottext">NodeKernel IO RemoteConnectionId LocalConnectionId blk
+</span><a href="#local-6989586621679354224"><span class="hs-identifier hs-var">nodeKernel</span></a></span><span> </span><span class="annot"><span class="annottext">HardForkCompatQuery blk (Interpreter (HardForkIndices blk))
 forall blk.
 HardForkCompatQuery blk (Interpreter (HardForkIndices blk))
 </span><span class="hs-identifier hs-var">HF.compatGetInterpreter</span></span><span>
@@ -442,7 +442,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span>
 </span><span id="line-168"></span><span>      </span><span class="annot"><span class="annottext">SystemStart -&gt; RelativeTime -&gt; UTCTime
 </span><span class="hs-identifier hs-var">WCT.fromRelativeTime</span></span><span> </span><span class="annot"><span class="annottext">SystemStart
-</span><a href="#local-6989586621679354223"><span class="hs-identifier hs-var">systemStart</span></a></span><span> </span><span class="annot"><span class="annottext">(RelativeTime -&gt; UTCTime)
+</span><a href="#local-6989586621679354219"><span class="hs-identifier hs-var">systemStart</span></a></span><span> </span><span class="annot"><span class="annottext">(RelativeTime -&gt; UTCTime)
 -&gt; Either PastHorizonException RelativeTime
 -&gt; Either PastHorizonException UTCTime
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -454,12 +454,12 @@ forall (xs :: [*]) a.
 HasCallStack =&gt;
 Interpreter xs -&gt; Qry a -&gt; Either PastHorizonException a
 </span><span class="hs-identifier hs-var">HFI.interpretQuery</span></span><span> </span><span class="annot"><span class="annottext">Interpreter (HardForkIndices blk)
-</span><a href="#local-6989586621679354226"><span class="hs-identifier hs-var">interpreter</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SlotNo -&gt; InterpreterQuery RelativeTime
+</span><a href="#local-6989586621679354222"><span class="hs-identifier hs-var">interpreter</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SlotNo -&gt; InterpreterQuery RelativeTime
 </span><a href="Cardano.Node.Query.html#qryEpochStartTimeOfSlot"><span class="hs-identifier hs-var">qryEpochStartTimeOfSlot</span></a></span><span> </span><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679354227"><span class="hs-identifier hs-var">slotNo</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679354223"><span class="hs-identifier hs-var">slotNo</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-170"></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-171"></span><span>    </span><span id="local-6989586621679354223"><span class="annot"><span class="annottext">systemStart :: SystemStart
-</span><a href="#local-6989586621679354223"><span class="hs-identifier hs-var hs-var">systemStart</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-171"></span><span>    </span><span id="local-6989586621679354219"><span class="annot"><span class="annottext">systemStart :: SystemStart
+</span><a href="#local-6989586621679354219"><span class="hs-identifier hs-var hs-var">systemStart</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-172"></span><span>          </span><span class="annot"><span class="annottext">BlockConfig blk -&gt; SystemStart
 forall blk.
 ConfigSupportsNode blk =&gt;
@@ -501,5 +501,5 @@ Protocol m blk p -&gt; ProtocolInfo m blk
 -&gt; Protocol IO blk (BlockProtocol blk) -&gt; SystemStart
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Protocol IO blk (BlockProtocol blk)
-</span><a href="#local-6989586621679354229"><span class="hs-identifier hs-var">protocol</span></a></span><span>
+</span><a href="#local-6989586621679354225"><span class="hs-identifier hs-var">protocol</span></a></span><span>
 </span><span id="line-177"></span></pre></body></html>
