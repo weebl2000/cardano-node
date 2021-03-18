@@ -4266,8 +4266,8 @@
     "link": "cardano-api/Cardano-Api.html#t:TextEnvelope"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TextEnvelopeType\">TextEnvelopeType</a>",
-    "name": "TextEnvelopeType",
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:TextEnvelopeType\">TextEnvelopeType</a> = <a href=\"#v:TextEnvelopeType\">TextEnvelopeType</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a>",
+    "name": "TextEnvelopeType TextEnvelopeType",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TextEnvelopeType"
   },
