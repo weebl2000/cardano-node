@@ -7314,42 +7314,6 @@
     "link": "cardano-node/Cardano-Tracing-Metrics.html#v:threadStatsProjection"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:MeasureTxs\">MeasureTxs</a> blk<ul class=\"subs\"><li>= <a href=\"#v:MeasureTxsTimeStart\">MeasureTxsTimeStart</a> (GenTx blk) !<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word\" title=\"Distribution.Compat.Prelude.Internal\">Word</a> !<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word\" title=\"Distribution.Compat.Prelude.Internal\">Word</a> !Time</li><li>| <a href=\"#v:MeasureTxsTimeStop\">MeasureTxsTimeStop</a> !<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.26.0/noopt/doc/html/cardano-api/Cardano-Api-Block.html#t:SlotNo\" title=\"Cardano.Api.Block\">SlotNo</a> blk [GenTx blk] !Time</li></ul>",
-    "name": "MeasureTxs MeasureTxsTimeStart MeasureTxsTimeStop",
-    "module": "Cardano.Tracing.MicroBenchmarking",
-    "link": "cardano-node/Cardano-Tracing-MicroBenchmarking.html#t:MeasureTxs"
-  },
-  {
-    "display_html": "<a href=\"#v:measureTxsStart\">measureTxsStart</a> &#8759; &#8704; blk. <a href=\"Cardano-Node-Configuration-Logging.html#t:Trace\" title=\"Cardano.Node.Configuration.Logging\">Trace</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a> &#8594; <a href=\"Cardano-Tracing-OrphanInstances-Common.html#t:Tracer\" title=\"Cardano.Tracing.OrphanInstances.Common\">Tracer</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (TraceEventMempool blk)",
-    "name": "measureTxsStart",
-    "module": "Cardano.Tracing.MicroBenchmarking",
-    "link": "cardano-node/Cardano-Tracing-MicroBenchmarking.html#v:measureTxsStart"
-  },
-  {
-    "display_html": "<a href=\"#v:measureTxsEnd\">measureTxsEnd</a> &#8759; &#8704; blk. <a href=\"Cardano-Node-Configuration-Logging.html#t:Trace\" title=\"Cardano.Node.Configuration.Logging\">Trace</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a> &#8594; <a href=\"Cardano-Tracing-OrphanInstances-Common.html#t:Tracer\" title=\"Cardano.Tracing.OrphanInstances.Common\">Tracer</a> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (TraceForgeEvent blk)",
-    "name": "measureTxsEnd",
-    "module": "Cardano.Tracing.MicroBenchmarking",
-    "link": "cardano-node/Cardano-Tracing-MicroBenchmarking.html#v:measureTxsEnd"
-  },
-  {
-    "display_html": "<span class=\"keyword\">class</span> <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Monad\" title=\"Distribution.Compat.Prelude.Internal\">Monad</a> m &#8658; <a href=\"#t:Outcome\">Outcome</a> (m &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>) a <span class=\"keyword\">where</span><ul class=\"subs\"><li><span class=\"keyword\">type</span> <a href=\"#t:IntermediateValue\">IntermediateValue</a> a</li><li><span class=\"keyword\">type</span> <a href=\"#t:OutcomeMetric\">OutcomeMetric</a> a</li><li><a href=\"#v:classifyObservable\">classifyObservable</a> &#8759; a &#8594; m OutcomeProgressionStatus</li><li><a href=\"#v:captureObservableValue\">captureObservableValue</a> &#8759; a &#8594; m (<a href=\"Cardano-Tracing-MicroBenchmarking.html#t:IntermediateValue\" title=\"Cardano.Tracing.MicroBenchmarking\">IntermediateValue</a> a)</li><li><a href=\"#v:computeOutcomeMetric\">computeOutcomeMetric</a> &#8759; a &#8594; <a href=\"Cardano-Tracing-MicroBenchmarking.html#t:IntermediateValue\" title=\"Cardano.Tracing.MicroBenchmarking\">IntermediateValue</a> a &#8594; <a href=\"Cardano-Tracing-MicroBenchmarking.html#t:IntermediateValue\" title=\"Cardano.Tracing.MicroBenchmarking\">IntermediateValue</a> a &#8594; m (<a href=\"Cardano-Tracing-MicroBenchmarking.html#t:OutcomeMetric\" title=\"Cardano.Tracing.MicroBenchmarking\">OutcomeMetric</a> a)</li></ul>",
-    "name": "Outcome IntermediateValue OutcomeMetric classifyObservable captureObservableValue computeOutcomeMetric",
-    "module": "Cardano.Tracing.MicroBenchmarking",
-    "link": "cardano-node/Cardano-Tracing-MicroBenchmarking.html#t:Outcome"
-  },
-  {
-    "display_html": "<span class=\"keyword\">type</span> <a href=\"#t:OutcomeEnhancedTracer\">OutcomeEnhancedTracer</a> (m &#8759; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a> &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>) a = <a href=\"Cardano-Tracing-OrphanInstances-Common.html#t:Tracer\" title=\"Cardano.Tracing.OrphanInstances.Common\">Tracer</a> m (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> a (OutcomeFidelity (<a href=\"Cardano-Tracing-MicroBenchmarking.html#t:OutcomeMetric\" title=\"Cardano.Tracing.MicroBenchmarking\">OutcomeMetric</a> a)))",
-    "name": "OutcomeEnhancedTracer",
-    "module": "Cardano.Tracing.MicroBenchmarking",
-    "link": "cardano-node/Cardano-Tracing-MicroBenchmarking.html#t:OutcomeEnhancedTracer"
-  },
-  {
-    "display_html": "<a href=\"#v:mkOutcomeExtractor\">mkOutcomeExtractor</a> &#8759; (<a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/base-4.14.1.0/Control-Monad-IO-Class.html#t:MonadIO\" title=\"Control.Monad.IO.Class\">MonadIO</a> m, <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/exceptions-0.10.4/Control-Monad-Catch.html#t:MonadMask\" title=\"Control.Monad.Catch\">MonadMask</a> m, <a href=\"Cardano-Tracing-MicroBenchmarking.html#t:Outcome\" title=\"Cardano.Tracing.MicroBenchmarking\">Outcome</a> m a) &#8658; m (<a href=\"Cardano-Tracing-MicroBenchmarking.html#t:OutcomeEnhancedTracer\" title=\"Cardano.Tracing.MicroBenchmarking\">OutcomeEnhancedTracer</a> m a &#8594; <a href=\"Cardano-Tracing-OrphanInstances-Common.html#t:Tracer\" title=\"Cardano.Tracing.OrphanInstances.Common\">Tracer</a> m a)",
-    "name": "mkOutcomeExtractor",
-    "module": "Cardano.Tracing.MicroBenchmarking",
-    "link": "cardano-node/Cardano-Tracing-MicroBenchmarking.html#v:mkOutcomeExtractor"
-  },
-  {
     "display_html": "<span class=\"keyword\">class</span> <a href=\"#t:ToObject\">ToObject</a> a <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:toObject\">toObject</a> &#8759; <a href=\"Cardano-Tracing-OrphanInstances-Common.html#t:TracingVerbosity\" title=\"Cardano.Tracing.OrphanInstances.Common\">TracingVerbosity</a> &#8594; a &#8594; Object</li><li><a href=\"#v:textTransformer\">textTransformer</a> &#8759; a &#8594; Object &#8594; <a href=\"file:///opt/ghc/8.10.3/share/doc/ghc-8.10.3/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li></ul>",
     "name": "ToObject textTransformer toObject",
     "module": "Cardano.Tracing.OrphanInstances.Common",
