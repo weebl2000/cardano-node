@@ -25,7 +25,7 @@
 </span><span id="line-25"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
 </span><span id="line-26"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-27"></span><span>
-</span><span id="line-28"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Byron</span></a></span><span>
+</span><span id="line-28"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Byron</span></a></span><span>
 </span><span id="line-29"></span><span>
 </span><span id="line-30"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Crypto.Hash</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Crypto</span></span><span>
 </span><span id="line-31"></span><span>
@@ -478,7 +478,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">LB.readFile</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><a href="#local-6989586621679359990"><span class="hs-identifier hs-var">delegCertFile</span></a></span><span>
-</span><span id="line-178"></span><span>         </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronSigningKey</span></a></span><span> </span><span id="local-6989586621679359983"><span class="annot"><a href="#local-6989586621679359983"><span class="hs-identifier hs-var">signingKey</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByronProtocolInstantiationError
+</span><span id="line-178"></span><span>         </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronSigningKey</span></a></span><span> </span><span id="local-6989586621679359983"><span class="annot"><a href="#local-6989586621679359983"><span class="hs-identifier hs-var">signingKey</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByronProtocolInstantiationError
 -&gt; Maybe (SigningKey ByronKey)
 -&gt; ExceptT ByronProtocolInstantiationError IO (SigningKey ByronKey)
 forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; Maybe a -&gt; ExceptT x m a
@@ -496,10 +496,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a.
 SerialiseAsRawBytes a =&gt;
 AsType a -&gt; ByteString -&gt; Maybe a
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">deserialiseFromRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AsType ByronKey -&gt; AsType (SigningKey ByronKey)
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">deserialiseFromRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AsType ByronKey -&gt; AsType (SigningKey ByronKey)
 forall a. AsType a -&gt; AsType (SigningKey a)
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">AsType ByronKey
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.3/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsByronKey</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Maybe (SigningKey ByronKey))
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">AsType ByronKey
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsByronKey</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Maybe (SigningKey ByronKey))
 -&gt; ByteString -&gt; Maybe (SigningKey ByronKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
