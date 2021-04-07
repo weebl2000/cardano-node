@@ -71,18 +71,18 @@ forall a. String -&gt; InfoMod a
 </span><span id="line-34"></span><span id="nodeRunParser"><span class="annot"><span class="annottext">nodeRunParser :: Parser PartialNodeConfiguration
 </span><a href="Cardano.Node.Parsers.html#nodeRunParser"><span class="hs-identifier hs-var hs-var">nodeRunParser</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-35"></span><span>  </span><span class="hs-comment">-- Filepaths</span><span>
-</span><span id="line-36"></span><span>  </span><span id="local-6989586621679354831"><span class="annot"><span class="annottext">Last String
-</span><a href="#local-6989586621679354831"><span class="hs-identifier hs-var">topFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Last String)
+</span><span id="line-36"></span><span>  </span><span id="local-6989586621679354869"><span class="annot"><span class="annottext">Last String
+</span><a href="#local-6989586621679354869"><span class="hs-identifier hs-var">topFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Last String)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseTopologyFile"><span class="hs-identifier hs-var">parseTopologyFile</span></a></span><span>
-</span><span id="line-37"></span><span>  </span><span id="local-6989586621679354829"><span class="annot"><span class="annottext">Last String
-</span><a href="#local-6989586621679354829"><span class="hs-identifier hs-var">dbFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Last String)
+</span><span id="line-37"></span><span>  </span><span id="local-6989586621679354867"><span class="annot"><span class="annottext">Last String
+</span><a href="#local-6989586621679354867"><span class="hs-identifier hs-var">dbFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Last String)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseDbPath"><span class="hs-identifier hs-var">parseDbPath</span></a></span><span>
-</span><span id="line-38"></span><span>  </span><span id="local-6989586621679354827"><span class="annot"><span class="annottext">Last SocketPath
-</span><a href="#local-6989586621679354827"><span class="hs-identifier hs-var">socketFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span>   </span><span class="annot"><span class="annottext">Parser SocketPath -&gt; Parser (Last SocketPath)
+</span><span id="line-38"></span><span>  </span><span id="local-6989586621679354865"><span class="annot"><span class="annottext">Last SocketPath
+</span><a href="#local-6989586621679354865"><span class="hs-identifier hs-var">socketFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span>   </span><span class="annot"><span class="annottext">Parser SocketPath -&gt; Parser (Last SocketPath)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">(Parser SocketPath -&gt; Parser (Last SocketPath))
 -&gt; Parser SocketPath -&gt; Parser (Last SocketPath)
@@ -92,74 +92,74 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;Path to a cardano-node socket&quot;</span></span><span>
 </span><span id="line-39"></span><span>
 </span><span id="line-40"></span><span>  </span><span class="hs-comment">-- Protocol files</span><span>
-</span><span id="line-41"></span><span>  </span><span id="local-6989586621679354825"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621679354825"><span class="hs-identifier hs-var">byronCertFile</span></a></span></span><span>   </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
+</span><span id="line-41"></span><span>  </span><span id="local-6989586621679354863"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621679354863"><span class="hs-identifier hs-var">byronCertFile</span></a></span></span><span>   </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseByronDelegationCert"><span class="hs-identifier hs-var">parseByronDelegationCert</span></a></span><span>
-</span><span id="line-42"></span><span>  </span><span id="local-6989586621679354822"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621679354822"><span class="hs-identifier hs-var">byronKeyFile</span></a></span></span><span>    </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
+</span><span id="line-42"></span><span>  </span><span id="local-6989586621679354860"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621679354860"><span class="hs-identifier hs-var">byronKeyFile</span></a></span></span><span>    </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseByronSigningKey"><span class="hs-identifier hs-var">parseByronSigningKey</span></a></span><span>
-</span><span id="line-43"></span><span>  </span><span id="local-6989586621679354820"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621679354820"><span class="hs-identifier hs-var">shelleyKESFile</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
+</span><span id="line-43"></span><span>  </span><span id="local-6989586621679354858"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621679354858"><span class="hs-identifier hs-var">shelleyKESFile</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseKesKeyFilePath"><span class="hs-identifier hs-var">parseKesKeyFilePath</span></a></span><span>
-</span><span id="line-44"></span><span>  </span><span id="local-6989586621679354818"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621679354818"><span class="hs-identifier hs-var">shelleyVRFFile</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
+</span><span id="line-44"></span><span>  </span><span id="local-6989586621679354856"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621679354856"><span class="hs-identifier hs-var">shelleyVRFFile</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseVrfKeyFilePath"><span class="hs-identifier hs-var">parseVrfKeyFilePath</span></a></span><span>
-</span><span id="line-45"></span><span>  </span><span id="local-6989586621679354816"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621679354816"><span class="hs-identifier hs-var">shelleyCertFile</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
+</span><span id="line-45"></span><span>  </span><span id="local-6989586621679354854"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621679354854"><span class="hs-identifier hs-var">shelleyCertFile</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseOperationalCertFilePath"><span class="hs-identifier hs-var">parseOperationalCertFilePath</span></a></span><span>
-</span><span id="line-46"></span><span>  </span><span id="local-6989586621679354814"><span class="annot"><span class="annottext">Maybe String
-</span><a href="#local-6989586621679354814"><span class="hs-identifier hs-var">shelleyBulkCredsFile</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
+</span><span id="line-46"></span><span>  </span><span id="local-6989586621679354852"><span class="annot"><span class="annottext">Maybe String
+</span><a href="#local-6989586621679354852"><span class="hs-identifier hs-var">shelleyBulkCredsFile</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Maybe String)
 forall (f :: * -&gt; *) a. Alternative f =&gt; f a -&gt; f (Maybe a)
 </span><span class="hs-identifier hs-var">optional</span></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseBulkCredsFilePath"><span class="hs-identifier hs-var">parseBulkCredsFilePath</span></a></span><span>
 </span><span id="line-47"></span><span>
 </span><span id="line-48"></span><span>  </span><span class="hs-comment">-- Node Address</span><span>
-</span><span id="line-49"></span><span>  </span><span id="local-6989586621679354812"><span class="annot"><span class="annottext">Last NodeHostIPv4Address
-</span><a href="#local-6989586621679354812"><span class="hs-identifier hs-var">nIPv4Address</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser NodeHostIPv4Address -&gt; Parser (Last NodeHostIPv4Address)
+</span><span id="line-49"></span><span>  </span><span id="local-6989586621679354850"><span class="annot"><span class="annottext">Last NodeHostIPv4Address
+</span><a href="#local-6989586621679354850"><span class="hs-identifier hs-var">nIPv4Address</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser NodeHostIPv4Address -&gt; Parser (Last NodeHostIPv4Address)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser NodeHostIPv4Address
 </span><a href="Cardano.Node.Parsers.html#parseHostIPv4Addr"><span class="hs-identifier hs-var">parseHostIPv4Addr</span></a></span><span>
-</span><span id="line-50"></span><span>  </span><span id="local-6989586621679354810"><span class="annot"><span class="annottext">Last NodeHostIPv6Address
-</span><a href="#local-6989586621679354810"><span class="hs-identifier hs-var">nIPv6Address</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser NodeHostIPv6Address -&gt; Parser (Last NodeHostIPv6Address)
+</span><span id="line-50"></span><span>  </span><span id="local-6989586621679354848"><span class="annot"><span class="annottext">Last NodeHostIPv6Address
+</span><a href="#local-6989586621679354848"><span class="hs-identifier hs-var">nIPv6Address</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser NodeHostIPv6Address -&gt; Parser (Last NodeHostIPv6Address)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser NodeHostIPv6Address
 </span><a href="Cardano.Node.Parsers.html#parseHostIPv6Addr"><span class="hs-identifier hs-var">parseHostIPv6Addr</span></a></span><span>
-</span><span id="line-51"></span><span>  </span><span id="local-6989586621679354808"><span class="annot"><span class="annottext">Last PortNumber
-</span><a href="#local-6989586621679354808"><span class="hs-identifier hs-var">nPortNumber</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser PortNumber -&gt; Parser (Last PortNumber)
+</span><span id="line-51"></span><span>  </span><span id="local-6989586621679354846"><span class="annot"><span class="annottext">Last PortNumber
+</span><a href="#local-6989586621679354846"><span class="hs-identifier hs-var">nPortNumber</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser PortNumber -&gt; Parser (Last PortNumber)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser PortNumber
 </span><a href="Cardano.Node.Parsers.html#parsePort"><span class="hs-identifier hs-var">parsePort</span></a></span><span>
 </span><span id="line-52"></span><span>
 </span><span id="line-53"></span><span>  </span><span class="hs-comment">-- NodeConfiguration filepath</span><span>
-</span><span id="line-54"></span><span>  </span><span id="local-6989586621679354806"><span class="annot"><span class="annottext">Last String
-</span><a href="#local-6989586621679354806"><span class="hs-identifier hs-var">nodeConfigFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Last String)
+</span><span id="line-54"></span><span>  </span><span id="local-6989586621679354844"><span class="annot"><span class="annottext">Last String
+</span><a href="#local-6989586621679354844"><span class="hs-identifier hs-var">nodeConfigFp</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser String -&gt; Parser (Last String)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser String
 </span><a href="Cardano.Node.Parsers.html#parseConfigFile"><span class="hs-identifier hs-var">parseConfigFile</span></a></span><span>
 </span><span id="line-55"></span><span>
-</span><span id="line-56"></span><span>  </span><span id="local-6989586621679354804"><span class="annot"><span class="annottext">Last Bool
-</span><a href="#local-6989586621679354804"><span class="hs-identifier hs-var">validate</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Bool -&gt; Parser (Last Bool)
+</span><span id="line-56"></span><span>  </span><span id="local-6989586621679354842"><span class="annot"><span class="annottext">Last Bool
+</span><a href="#local-6989586621679354842"><span class="hs-identifier hs-var">validate</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser Bool -&gt; Parser (Last Bool)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser Bool
 </span><a href="Cardano.Node.Parsers.html#parseValidateDB"><span class="hs-identifier hs-var">parseValidateDB</span></a></span><span>
-</span><span id="line-57"></span><span>  </span><span id="local-6989586621679354802"><span class="annot"><span class="annottext">Last (Maybe Fd)
-</span><a href="#local-6989586621679354802"><span class="hs-identifier hs-var">shutdownIPC</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser (Maybe Fd) -&gt; Parser (Last (Maybe Fd))
+</span><span id="line-57"></span><span>  </span><span id="local-6989586621679354840"><span class="annot"><span class="annottext">Last (Maybe Fd)
+</span><a href="#local-6989586621679354840"><span class="hs-identifier hs-var">shutdownIPC</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser (Maybe Fd) -&gt; Parser (Last (Maybe Fd))
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser (Maybe Fd)
 </span><a href="Cardano.Node.Parsers.html#parseShutdownIPC"><span class="hs-identifier hs-var">parseShutdownIPC</span></a></span><span>
 </span><span id="line-58"></span><span>
-</span><span id="line-59"></span><span>  </span><span id="local-6989586621679354800"><span class="annot"><span class="annottext">Last MaxSlotNo
-</span><a href="#local-6989586621679354800"><span class="hs-identifier hs-var">shutdownOnSlotSynced</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser MaxSlotNo -&gt; Parser (Last MaxSlotNo)
+</span><span id="line-59"></span><span>  </span><span id="local-6989586621679354838"><span class="annot"><span class="annottext">Last MaxSlotNo
+</span><a href="#local-6989586621679354838"><span class="hs-identifier hs-var">shutdownOnSlotSynced</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Parser MaxSlotNo -&gt; Parser (Last MaxSlotNo)
 forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#lastOption"><span class="hs-identifier hs-var">lastOption</span></a></span><span> </span><span class="annot"><span class="annottext">Parser MaxSlotNo
 </span><a href="Cardano.Node.Parsers.html#parseShutdownOnSlotSynced"><span class="hs-identifier hs-var">parseShutdownOnSlotSynced</span></a></span><span>
@@ -186,35 +186,35 @@ forall a. Parser a -&gt; Parser (Last a)
 </span><a href="Cardano.Node.Configuration.POM.html#PartialNodeConfiguration"><span class="hs-identifier hs-type">PartialNodeConfiguration</span></a></span><span>
 </span><span id="line-62"></span><span>           </span><span class="hs-special">{</span><span> </span><span class="annot"><span class="annottext">pncNodeIPv4Addr :: Last NodeHostIPv4Address
 </span><a href="Cardano.Node.Configuration.POM.html#pncNodeIPv4Addr"><span class="hs-identifier hs-var">pncNodeIPv4Addr</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last NodeHostIPv4Address
-</span><a href="#local-6989586621679354812"><span class="hs-identifier hs-var">nIPv4Address</span></a></span><span>
+</span><a href="#local-6989586621679354850"><span class="hs-identifier hs-var">nIPv4Address</span></a></span><span>
 </span><span id="line-63"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncNodeIPv6Addr :: Last NodeHostIPv6Address
 </span><a href="Cardano.Node.Configuration.POM.html#pncNodeIPv6Addr"><span class="hs-identifier hs-var">pncNodeIPv6Addr</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last NodeHostIPv6Address
-</span><a href="#local-6989586621679354810"><span class="hs-identifier hs-var">nIPv6Address</span></a></span><span>
+</span><a href="#local-6989586621679354848"><span class="hs-identifier hs-var">nIPv6Address</span></a></span><span>
 </span><span id="line-64"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncNodePortNumber :: Last PortNumber
 </span><a href="Cardano.Node.Configuration.POM.html#pncNodePortNumber"><span class="hs-identifier hs-var">pncNodePortNumber</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last PortNumber
-</span><a href="#local-6989586621679354808"><span class="hs-identifier hs-var">nPortNumber</span></a></span><span>
+</span><a href="#local-6989586621679354846"><span class="hs-identifier hs-var">nPortNumber</span></a></span><span>
 </span><span id="line-65"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncConfigFile :: Last ConfigYamlFilePath
 </span><a href="Cardano.Node.Configuration.POM.html#pncConfigFile"><span class="hs-identifier hs-var">pncConfigFile</span></a></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; ConfigYamlFilePath
 </span><a href="Cardano.Node.Types.html#ConfigYamlFilePath"><span class="hs-identifier hs-var">ConfigYamlFilePath</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; ConfigYamlFilePath)
 -&gt; Last String -&gt; Last ConfigYamlFilePath
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Last String
-</span><a href="#local-6989586621679354806"><span class="hs-identifier hs-var">nodeConfigFp</span></a></span><span>
+</span><a href="#local-6989586621679354844"><span class="hs-identifier hs-var">nodeConfigFp</span></a></span><span>
 </span><span id="line-66"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncTopologyFile :: Last TopologyFile
 </span><a href="Cardano.Node.Configuration.POM.html#pncTopologyFile"><span class="hs-identifier hs-var">pncTopologyFile</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; TopologyFile
 </span><a href="Cardano.Node.Types.html#TopologyFile"><span class="hs-identifier hs-var">TopologyFile</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; TopologyFile) -&gt; Last String -&gt; Last TopologyFile
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Last String
-</span><a href="#local-6989586621679354831"><span class="hs-identifier hs-var">topFp</span></a></span><span>
+</span><a href="#local-6989586621679354869"><span class="hs-identifier hs-var">topFp</span></a></span><span>
 </span><span id="line-67"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncDatabaseFile :: Last DbFile
 </span><a href="Cardano.Node.Configuration.POM.html#pncDatabaseFile"><span class="hs-identifier hs-var">pncDatabaseFile</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; DbFile
 </span><a href="Cardano.Node.Types.html#DbFile"><span class="hs-identifier hs-var">DbFile</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; DbFile) -&gt; Last String -&gt; Last DbFile
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
 </span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Last String
-</span><a href="#local-6989586621679354829"><span class="hs-identifier hs-var">dbFp</span></a></span><span>
+</span><a href="#local-6989586621679354867"><span class="hs-identifier hs-var">dbFp</span></a></span><span>
 </span><span id="line-68"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncSocketPath :: Last SocketPath
 </span><a href="Cardano.Node.Configuration.POM.html#pncSocketPath"><span class="hs-identifier hs-var">pncSocketPath</span></a></span><span>   </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last SocketPath
-</span><a href="#local-6989586621679354827"><span class="hs-identifier hs-var">socketFp</span></a></span><span>
+</span><a href="#local-6989586621679354865"><span class="hs-identifier hs-var">socketFp</span></a></span><span>
 </span><span id="line-69"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncDiffusionMode :: Last DiffusionMode
 </span><a href="Cardano.Node.Configuration.POM.html#pncDiffusionMode"><span class="hs-identifier hs-var">pncDiffusionMode</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last DiffusionMode
 forall a. Monoid a =&gt; a
@@ -262,13 +262,13 @@ shelleyBulkCredsFile :: Maybe String
 </span><span id="line-77"></span><span>             </span><span class="hs-special">}</span><span>
 </span><span id="line-78"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncValidateDB :: Last Bool
 </span><a href="Cardano.Node.Configuration.POM.html#pncValidateDB"><span class="hs-identifier hs-var">pncValidateDB</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last Bool
-</span><a href="#local-6989586621679354804"><span class="hs-identifier hs-var">validate</span></a></span><span>
+</span><a href="#local-6989586621679354842"><span class="hs-identifier hs-var">validate</span></a></span><span>
 </span><span id="line-79"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncShutdownIPC :: Last (Maybe Fd)
 </span><a href="Cardano.Node.Configuration.POM.html#pncShutdownIPC"><span class="hs-identifier hs-var">pncShutdownIPC</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last (Maybe Fd)
-</span><a href="#local-6989586621679354802"><span class="hs-identifier hs-var">shutdownIPC</span></a></span><span>
+</span><a href="#local-6989586621679354840"><span class="hs-identifier hs-var">shutdownIPC</span></a></span><span>
 </span><span id="line-80"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncShutdownOnSlotSynced :: Last MaxSlotNo
 </span><a href="Cardano.Node.Configuration.POM.html#pncShutdownOnSlotSynced"><span class="hs-identifier hs-var">pncShutdownOnSlotSynced</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last MaxSlotNo
-</span><a href="#local-6989586621679354800"><span class="hs-identifier hs-var">shutdownOnSlotSynced</span></a></span><span>
+</span><a href="#local-6989586621679354838"><span class="hs-identifier hs-var">shutdownOnSlotSynced</span></a></span><span>
 </span><span id="line-81"></span><span>           </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">pncProtocolConfig :: Last NodeProtocolConfiguration
 </span><a href="Cardano.Node.Configuration.POM.html#pncProtocolConfig"><span class="hs-identifier hs-var">pncProtocolConfig</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Last NodeProtocolConfiguration
 forall a. Monoid a =&gt; a
@@ -297,8 +297,8 @@ forall a. Monoid a =&gt; a
 </span><span id="line-88"></span><span>
 </span><span id="line-89"></span><span class="annot"><a href="Cardano.Node.Parsers.html#parseSocketPath"><span class="hs-identifier hs-type">parseSocketPath</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><a href="Cardano.Node.Types.html#SocketPath"><span class="hs-identifier hs-type">SocketPath</span></a></span><span>
 </span><span id="line-90"></span><span id="parseSocketPath"><span class="annot"><span class="annottext">parseSocketPath :: Text -&gt; Parser SocketPath
-</span><a href="Cardano.Node.Parsers.html#parseSocketPath"><span class="hs-identifier hs-var hs-var">parseSocketPath</span></a></span></span><span> </span><span id="local-6989586621679354767"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679354767"><span class="hs-identifier hs-var">helpMessage</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Cardano.Node.Parsers.html#parseSocketPath"><span class="hs-identifier hs-var hs-var">parseSocketPath</span></a></span></span><span> </span><span id="local-6989586621679354805"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679354805"><span class="hs-identifier hs-var">helpMessage</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-91"></span><span>  </span><span class="annot"><span class="annottext">String -&gt; SocketPath
 </span><a href="Cardano.Node.Types.html#SocketPath"><span class="hs-identifier hs-var">SocketPath</span></a></span><span> </span><span class="annot"><span class="annottext">(String -&gt; SocketPath) -&gt; Parser String -&gt; Parser SocketPath
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
@@ -317,7 +317,7 @@ forall (f :: * -&gt; *) a. String -&gt; Mod f a
 </span><span class="hs-identifier hs-var">help</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Text -&gt; String
 forall a b. ConvertText a b =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">toS</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679354767"><span class="hs-identifier hs-var">helpMessage</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679354805"><span class="hs-identifier hs-var">helpMessage</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-94"></span><span>        </span><span class="annot"><span class="annottext">Mod OptionFields String
 -&gt; Mod OptionFields String -&gt; Mod OptionFields String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
@@ -405,8 +405,8 @@ forall (f :: * -&gt; *) a. String -&gt; Mod f a
 </span><span id="line-113"></span><span>
 </span><span id="line-114"></span><span class="annot"><a href="Cardano.Node.Parsers.html#parseNodeHostIPv4Address"><span class="hs-identifier hs-type">parseNodeHostIPv4Address</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Cardano.Node.Types.html#NodeHostIPv4Address"><span class="hs-identifier hs-type">NodeHostIPv4Address</span></a></span><span>
 </span><span id="line-115"></span><span id="parseNodeHostIPv4Address"><span class="annot"><span class="annottext">parseNodeHostIPv4Address :: String -&gt; Either String NodeHostIPv4Address
-</span><a href="Cardano.Node.Parsers.html#parseNodeHostIPv4Address"><span class="hs-identifier hs-var hs-var">parseNodeHostIPv4Address</span></a></span></span><span> </span><span id="local-6989586621679354755"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679354755"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Cardano.Node.Parsers.html#parseNodeHostIPv4Address"><span class="hs-identifier hs-var hs-var">parseNodeHostIPv4Address</span></a></span></span><span> </span><span id="local-6989586621679354793"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679354793"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-116"></span><span>  </span><span class="annot"><span class="annottext">Either String NodeHostIPv4Address
 -&gt; (IPv4 -&gt; Either String NodeHostIPv4Address)
 -&gt; Maybe IPv4
@@ -423,7 +423,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;Failed to parse: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679354755"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621679354793"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span>
 </span><span id="line-119"></span><span>      </span><span class="annot"><span class="annottext">String
@@ -442,12 +442,12 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><span id="line-121"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Maybe IPv4
 forall a. Read a =&gt; String -&gt; Maybe a
 </span><span class="hs-identifier hs-var">readMaybe</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679354755"><span class="hs-identifier hs-var">str</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679354793"><span class="hs-identifier hs-var">str</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-122"></span><span>
 </span><span id="line-123"></span><span class="annot"><a href="Cardano.Node.Parsers.html#parseNodeHostIPv6Address"><span class="hs-identifier hs-type">parseNodeHostIPv6Address</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Either</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="annot"><a href="Cardano.Node.Types.html#NodeHostIPv6Address"><span class="hs-identifier hs-type">NodeHostIPv6Address</span></a></span><span>
 </span><span id="line-124"></span><span id="parseNodeHostIPv6Address"><span class="annot"><span class="annottext">parseNodeHostIPv6Address :: String -&gt; Either String NodeHostIPv6Address
-</span><a href="Cardano.Node.Parsers.html#parseNodeHostIPv6Address"><span class="hs-identifier hs-var hs-var">parseNodeHostIPv6Address</span></a></span></span><span> </span><span id="local-6989586621679354750"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679354750"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Cardano.Node.Parsers.html#parseNodeHostIPv6Address"><span class="hs-identifier hs-var hs-var">parseNodeHostIPv6Address</span></a></span></span><span> </span><span id="local-6989586621679354788"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679354788"><span class="hs-identifier hs-var">str</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-125"></span><span>  </span><span class="annot"><span class="annottext">Either String NodeHostIPv6Address
 -&gt; (IPv6 -&gt; Either String NodeHostIPv6Address)
 -&gt; Maybe IPv6
@@ -464,7 +464,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-string">&quot;Failed to parse: &quot;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679354750"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621679354788"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span>
 </span><span id="line-128"></span><span>      </span><span class="annot"><span class="annottext">String
@@ -483,7 +483,7 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><span id="line-130"></span><span>    </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Maybe IPv6
 forall a. Read a =&gt; String -&gt; Maybe a
 </span><span class="hs-identifier hs-var">readMaybe</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679354750"><span class="hs-identifier hs-var">str</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679354788"><span class="hs-identifier hs-var">str</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-131"></span><span>
 </span><span id="line-132"></span><span class="annot"><a href="Cardano.Node.Parsers.html#parsePort"><span class="hs-identifier hs-type">parsePort</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Parser</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span><span>
 </span><span id="line-133"></span><span id="parsePort"><span class="annot"><span class="annottext">parsePort :: Parser PortNumber
@@ -978,7 +978,7 @@ forall (f :: * -&gt; *) a. HasCompleter f =&gt; Completer -&gt; Mod f a
 </span><span id="line-256"></span><span>
 </span><span id="line-257"></span><span class="hs-comment">-- | Produce just the brief help header for a given CLI option parser,</span><span>
 </span><span id="line-258"></span><span class="hs-comment">--   without the options.</span><span>
-</span><span id="line-259"></span><span id="local-6989586621679354736"><span class="annot"><a href="Cardano.Node.Parsers.html#parserHelpHeader"><span class="hs-identifier hs-type">parserHelpHeader</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Opt.Parser</span></span><span> </span><span class="annot"><a href="#local-6989586621679354736"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">OptI.Doc</span></span></span><span>
+</span><span id="line-259"></span><span id="local-6989586621679354774"><span class="annot"><a href="Cardano.Node.Parsers.html#parserHelpHeader"><span class="hs-identifier hs-type">parserHelpHeader</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Opt.Parser</span></span><span> </span><span class="annot"><a href="#local-6989586621679354774"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">OptI.Doc</span></span></span><span>
 </span><span id="line-260"></span><span id="parserHelpHeader"><span class="annot"><span class="annottext">parserHelpHeader :: String -&gt; Parser a -&gt; Doc
 </span><a href="Cardano.Node.Parsers.html#parserHelpHeader"><span class="hs-identifier hs-var hs-var">parserHelpHeader</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Parser a -&gt; String -&gt; Doc) -&gt; String -&gt; Parser a -&gt; Doc
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
@@ -991,7 +991,7 @@ forall a. Monoid a =&gt; a
 </span><span id="line-261"></span><span>
 </span><span id="line-262"></span><span class="hs-comment">-- | Produce just the options help for a given CLI option parser,</span><span>
 </span><span id="line-263"></span><span class="hs-comment">--   without the header.</span><span>
-</span><span id="line-264"></span><span id="local-6989586621679354732"><span class="annot"><a href="Cardano.Node.Parsers.html#parserHelpOptions"><span class="hs-identifier hs-type">parserHelpOptions</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Opt.Parser</span></span><span> </span><span class="annot"><a href="#local-6989586621679354732"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">OptI.Doc</span></span></span><span>
+</span><span id="line-264"></span><span id="local-6989586621679354770"><span class="annot"><a href="Cardano.Node.Parsers.html#parserHelpOptions"><span class="hs-identifier hs-type">parserHelpOptions</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Opt.Parser</span></span><span> </span><span class="annot"><a href="#local-6989586621679354770"><span class="hs-identifier hs-type">a</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">OptI.Doc</span></span></span><span>
 </span><span id="line-265"></span><span id="parserHelpOptions"><span class="annot"><span class="annottext">parserHelpOptions :: Parser a -&gt; Doc
 </span><a href="Cardano.Node.Parsers.html#parserHelpOptions"><span class="hs-identifier hs-var hs-var">parserHelpOptions</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Doc -&gt; Maybe Doc -&gt; Doc
 forall a. a -&gt; Maybe a -&gt; a
@@ -1018,8 +1018,8 @@ forall a. Monoid a =&gt; a
 </span><span id="line-267"></span><span class="hs-comment">-- | Render the help pretty document.</span><span>
 </span><span id="line-268"></span><span class="annot"><a href="Cardano.Node.Parsers.html#renderHelpDoc"><span class="hs-identifier hs-type">renderHelpDoc</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">OptI.Doc</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-269"></span><span id="renderHelpDoc"><span class="annot"><span class="annottext">renderHelpDoc :: Int -&gt; Doc -&gt; String
-</span><a href="Cardano.Node.Parsers.html#renderHelpDoc"><span class="hs-identifier hs-var hs-var">renderHelpDoc</span></a></span></span><span> </span><span id="local-6989586621679354729"><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679354729"><span class="hs-identifier hs-var">cols</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><a href="Cardano.Node.Parsers.html#renderHelpDoc"><span class="hs-identifier hs-var hs-var">renderHelpDoc</span></a></span></span><span> </span><span id="local-6989586621679354767"><span class="annot"><span class="annottext">Int
+</span><a href="#local-6989586621679354767"><span class="hs-identifier hs-var">cols</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-270"></span><span>  </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SimpleDoc -&gt; String -&gt; String
 </span><span class="hs-operator hs-var">`OptI.displayS`</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(SimpleDoc -&gt; String) -&gt; (Doc -&gt; SimpleDoc) -&gt; Doc -&gt; String
@@ -1029,5 +1029,5 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Float -&gt; Int -&gt; Doc -&gt; SimpleDoc
 </span><span class="hs-identifier hs-var">OptI.renderPretty</span></span><span> </span><span class="annot"><span class="annottext">Float
 </span><span class="hs-number">1.0</span></span><span> </span><span class="annot"><span class="annottext">Int
-</span><a href="#local-6989586621679354729"><span class="hs-identifier hs-var">cols</span></a></span><span>
+</span><a href="#local-6989586621679354767"><span class="hs-identifier hs-var">cols</span></a></span><span>
 </span><span id="line-271"></span></pre></body></html>
