@@ -110,7 +110,7 @@ let
         # cardano-cli-test depends on cardano-cli
         packages.cardano-cli.preCheck = "
           export CARDANO_CLI=${config.hsPkgs.cardano-cli.components.exes.cardano-cli}/bin/cardano-cli${pkgs.stdenv.hostPlatform.extensions.executable}
-          export DIFF=${diffutils}/bin/diff
+          export DIFF=${pkgs.diffutils}/bin/diff
         ";
 
         packages.cardano-node-chairman.components.tests.chairman-tests.build-tools =
