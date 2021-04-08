@@ -6,7 +6,8 @@ import qualified Prelude
 
 import           Hedgehog (MonadTest)
 import           Hedgehog.Extras.Test.Base (failMessage)
-import           Hedgehog.Extras.Test.Process (execFlex)
+import           System.Environment (lookupEnv)
+import           System.Process (readProcessWithExitCode)
 
 diffVsFile
   :: (MonadIO m, MonadTest m)
@@ -14,10 +15,11 @@ diffVsFile
   -> FilePath -- ^ reference file
   -> m ()
 diffVsFile actualContent referenceFile = do
+  bin <- liftIO $ fromMaybe "diff" <$> lookupEnv "DIFF"
   (diffExitCode, diffStdout, diffStderr) <-
     liftIO $
-      execFlex
-        "diff"
+      readProcessWithExitCode
+        bin
         ["-u", "--", "-", referenceFile]
         actualContent
   case diffExitCode of
