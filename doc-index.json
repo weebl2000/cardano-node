@@ -1386,42 +1386,6 @@
     "link": "cardano-api/Cardano-Api-Script.html#t:AsType"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:KesKey\">KesKey</a>",
-    "name": "KesKey",
-    "module": "Cardano.Api.KeysPraos",
-    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:KesKey"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:VrfKey\">VrfKey</a>",
-    "name": "VrfKey",
-    "module": "Cardano.Api.KeysPraos",
-    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:VrfKey"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsHash AsVerificationKey AsSigningKey AsKesKey AsVrfKey",
-    "module": "Cardano.Api.KeysPraos",
-    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:AsType"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:Hash\">Hash</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
-    "name": "Hash KesKeyHash VrfKeyHash",
-    "module": "Cardano.Api.KeysPraos",
-    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:Hash"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:VerificationKey\">VerificationKey</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
-    "name": "VerificationKey KesVerificationKey VrfVerificationKey",
-    "module": "Cardano.Api.KeysPraos",
-    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:VerificationKey"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:SigningKey\">SigningKey</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
-    "name": "SigningKey KesSigningKey VrfSigningKey",
-    "module": "Cardano.Api.KeysPraos",
-    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:SigningKey"
-  },
-  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ByronKey\">ByronKey</a>",
     "name": "ByronKey",
     "module": "Cardano.Api.KeysByron",
@@ -1482,36 +1446,6 @@
     "link": "cardano-api/Cardano-Api-KeysByron.html#v:toByronSigningKey"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:StakePoolMetadata\">StakePoolMetadata</a> = <a href=\"#v:StakePoolMetadata\">StakePoolMetadata</a> {<ul class=\"subs\"><li><a href=\"#v:stakePoolName\">stakePoolName</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li><a href=\"#v:stakePoolDescription\">stakePoolDescription</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li><a href=\"#v:stakePoolTicker\">stakePoolTicker</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li><a href=\"#v:stakePoolHomepage\">stakePoolHomepage</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li></ul>}",
-    "name": "StakePoolMetadata StakePoolMetadata stakePoolName stakePoolDescription stakePoolTicker stakePoolHomepage",
-    "module": "Cardano.Api.StakePoolMetadata",
-    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadata"
-  },
-  {
-    "display_html": "<a href=\"#v:validateAndHashStakePoolMetadata\">validateAndHashStakePoolMetadata</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadataValidationError\" title=\"Cardano.Api.StakePoolMetadata\">StakePoolMetadataValidationError</a> (<a href=\"Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadata\" title=\"Cardano.Api.StakePoolMetadata\">StakePoolMetadata</a>, <a href=\"Cardano-Api-StakePoolMetadata.html#t:Hash\" title=\"Cardano.Api.StakePoolMetadata\">Hash</a> <a href=\"Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadata\" title=\"Cardano.Api.StakePoolMetadata\">StakePoolMetadata</a>)",
-    "name": "validateAndHashStakePoolMetadata",
-    "module": "Cardano.Api.StakePoolMetadata",
-    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#v:validateAndHashStakePoolMetadata"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:StakePoolMetadataValidationError\">StakePoolMetadataValidationError</a><ul class=\"subs\"><li>= <a href=\"#v:StakePoolMetadataJsonDecodeError\">StakePoolMetadataJsonDecodeError</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a></li><li>| <a href=\"#v:StakePoolMetadataInvalidLengthError\">StakePoolMetadataInvalidLengthError</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li></ul>",
-    "name": "StakePoolMetadataValidationError StakePoolMetadataJsonDecodeError StakePoolMetadataInvalidLengthError",
-    "module": "Cardano.Api.StakePoolMetadata",
-    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadataValidationError"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsKesKey AsVrfKey AsByronKey AsByronKeyLegacy AsStakePoolMetadata",
-    "module": "Cardano.Api.StakePoolMetadata",
-    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:AsType"
-  },
-  {
-    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:Hash\">Hash</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
-    "name": "Hash PaymentKeyHash PaymentExtendedKeyHash StakeKeyHash StakeExtendedKeyHash GenesisKeyHash GenesisExtendedKeyHash GenesisDelegateKeyHash GenesisDelegateExtendedKeyHash GenesisUTxOKeyHash StakePoolKeyHash KesKeyHash VrfKeyHash ByronKeyHash ByronKeyHashLegacy StakePoolMetadataHash",
-    "module": "Cardano.Api.StakePoolMetadata",
-    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:Hash"
-  },
-  {
     "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:ByronUpdateProposal\">ByronUpdateProposal</a> = <a href=\"#v:ByronUpdateProposal\">ByronUpdateProposal</a> {<ul class=\"subs\"><li><a href=\"#v:unByronUpdateProposal\">unByronUpdateProposal</a> &#8759; AProposal <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a></li></ul>}",
     "name": "ByronUpdateProposal ByronUpdateProposal unByronUpdateProposal",
     "module": "Cardano.Api.SpecialByron",
@@ -1564,6 +1498,72 @@
     "name": "toByronLedgertoByronVote",
     "module": "Cardano.Api.SpecialByron",
     "link": "cardano-api/Cardano-Api-SpecialByron.html#v:toByronLedgertoByronVote"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:KesKey\">KesKey</a>",
+    "name": "KesKey",
+    "module": "Cardano.Api.KeysPraos",
+    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:KesKey"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:VrfKey\">VrfKey</a>",
+    "name": "VrfKey",
+    "module": "Cardano.Api.KeysPraos",
+    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:VrfKey"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
+    "name": "AsType AsHash AsVerificationKey AsSigningKey AsKesKey AsVrfKey",
+    "module": "Cardano.Api.KeysPraos",
+    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:AsType"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:Hash\">Hash</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
+    "name": "Hash KesKeyHash VrfKeyHash",
+    "module": "Cardano.Api.KeysPraos",
+    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:Hash"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:VerificationKey\">VerificationKey</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
+    "name": "VerificationKey KesVerificationKey VrfVerificationKey",
+    "module": "Cardano.Api.KeysPraos",
+    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:VerificationKey"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:SigningKey\">SigningKey</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
+    "name": "SigningKey KesSigningKey VrfSigningKey",
+    "module": "Cardano.Api.KeysPraos",
+    "link": "cardano-api/Cardano-Api-KeysPraos.html#t:SigningKey"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:StakePoolMetadata\">StakePoolMetadata</a> = <a href=\"#v:StakePoolMetadata\">StakePoolMetadata</a> {<ul class=\"subs\"><li><a href=\"#v:stakePoolName\">stakePoolName</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li><a href=\"#v:stakePoolDescription\">stakePoolDescription</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li><a href=\"#v:stakePoolTicker\">stakePoolTicker</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li><a href=\"#v:stakePoolHomepage\">stakePoolHomepage</a> &#8759; !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li></ul>}",
+    "name": "StakePoolMetadata StakePoolMetadata stakePoolName stakePoolDescription stakePoolTicker stakePoolHomepage",
+    "module": "Cardano.Api.StakePoolMetadata",
+    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadata"
+  },
+  {
+    "display_html": "<a href=\"#v:validateAndHashStakePoolMetadata\">validateAndHashStakePoolMetadata</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadataValidationError\" title=\"Cardano.Api.StakePoolMetadata\">StakePoolMetadataValidationError</a> (<a href=\"Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadata\" title=\"Cardano.Api.StakePoolMetadata\">StakePoolMetadata</a>, <a href=\"Cardano-Api-StakePoolMetadata.html#t:Hash\" title=\"Cardano.Api.StakePoolMetadata\">Hash</a> <a href=\"Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadata\" title=\"Cardano.Api.StakePoolMetadata\">StakePoolMetadata</a>)",
+    "name": "validateAndHashStakePoolMetadata",
+    "module": "Cardano.Api.StakePoolMetadata",
+    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#v:validateAndHashStakePoolMetadata"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:StakePoolMetadataValidationError\">StakePoolMetadataValidationError</a><ul class=\"subs\"><li>= <a href=\"#v:StakePoolMetadataJsonDecodeError\">StakePoolMetadataJsonDecodeError</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:String\" title=\"Distribution.Compat.Prelude.Internal\">String</a></li><li>| <a href=\"#v:StakePoolMetadataInvalidLengthError\">StakePoolMetadataInvalidLengthError</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Int\" title=\"Distribution.Compat.Prelude.Internal\">Int</a></li></ul>",
+    "name": "StakePoolMetadataValidationError StakePoolMetadataJsonDecodeError StakePoolMetadataInvalidLengthError",
+    "module": "Cardano.Api.StakePoolMetadata",
+    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:StakePoolMetadataValidationError"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
+    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata",
+    "module": "Cardano.Api.StakePoolMetadata",
+    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:AsType"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:Hash\">Hash</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
+    "name": "Hash PaymentKeyHash PaymentExtendedKeyHash StakeKeyHash StakeExtendedKeyHash GenesisKeyHash GenesisExtendedKeyHash GenesisDelegateKeyHash GenesisDelegateExtendedKeyHash GenesisUTxOKeyHash StakePoolKeyHash ByronKeyHash ByronKeyHashLegacy KesKeyHash VrfKeyHash StakePoolMetadataHash",
+    "module": "Cardano.Api.StakePoolMetadata",
+    "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:Hash"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Address\">Address</a> addrtype <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ByronAddress\">ByronAddress</a> &#8759; Address &#8594; <a href=\"Cardano-Api-Address.html#t:Address\" title=\"Cardano.Api.Address\">Address</a> <a href=\"Cardano-Api-Address.html#t:ByronAddr\" title=\"Cardano.Api.Address\">ByronAddr</a></li><li><a href=\"#v:ShelleyAddress\">ShelleyAddress</a> &#8759; Network &#8594; PaymentCredential StandardCrypto &#8594; StakeReference StandardCrypto &#8594; <a href=\"Cardano-Api-Address.html#t:Address\" title=\"Cardano.Api.Address\">Address</a> <a href=\"Cardano-Api-Address.html#t:ShelleyAddr\" title=\"Cardano.Api.Address\">ShelleyAddr</a></li></ul>",
@@ -2029,7 +2029,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsKesKey AsVrfKey AsByronKey AsByronKeyLegacy AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal",
+    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal",
     "module": "Cardano.Api.ProtocolParameters",
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#t:AsType"
   },
@@ -2131,7 +2131,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsKesKey AsVrfKey AsByronKey AsByronKeyLegacy AsStakePoolMetadata AsPolicyId AsAssetName AsCertificate",
+    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsCertificate",
     "module": "Cardano.Api.Certificate",
     "link": "cardano-api/Cardano-Api-Certificate.html#t:AsType"
   },
@@ -2959,7 +2959,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTx AsByronTx AsShelleyTx AsWitness AsByronWitness AsShelleyWitness AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsKesKey AsVrfKey AsByronKey AsByronKeyLegacy AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal AsCertificate AsOperationalCertificate AsOperationalCertificateIssueCounter",
+    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTx AsByronTx AsShelleyTx AsWitness AsByronWitness AsShelleyWitness AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal AsCertificate AsOperationalCertificate AsOperationalCertificateIssueCounter",
     "module": "Cardano.Api.OperationalCertificate",
     "link": "cardano-api/Cardano-Api-OperationalCertificate.html#t:AsType"
   },
@@ -3133,7 +3133,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:Hash\">Hash</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a>",
-    "name": "Hash HeaderHash PaymentKeyHash PaymentExtendedKeyHash StakeKeyHash StakeExtendedKeyHash GenesisKeyHash GenesisExtendedKeyHash GenesisDelegateKeyHash GenesisDelegateExtendedKeyHash GenesisUTxOKeyHash StakePoolKeyHash KesKeyHash VrfKeyHash ByronKeyHash ByronKeyHashLegacy StakePoolMetadataHash",
+    "name": "Hash HeaderHash PaymentKeyHash PaymentExtendedKeyHash StakeKeyHash StakeExtendedKeyHash GenesisKeyHash GenesisExtendedKeyHash GenesisDelegateKeyHash GenesisDelegateExtendedKeyHash GenesisUTxOKeyHash StakePoolKeyHash ByronKeyHash ByronKeyHashLegacy KesKeyHash VrfKeyHash StakePoolMetadataHash",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:Hash"
   },
