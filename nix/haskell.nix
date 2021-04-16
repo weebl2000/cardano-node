@@ -135,6 +135,7 @@ let
       (lib.optionalAttrs profiling {
         enableLibraryProfiling = true;
         packages.cardano-node.components.exes.cardano-node.enableExecutableProfiling = true;
+        packages.shelley-spec-ledger.components.library.profilingDetail = "toplevel-functions";
       })
       {
         packages = lib.genAttrs assertedPackages
