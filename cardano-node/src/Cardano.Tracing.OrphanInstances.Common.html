@@ -70,20 +70,20 @@
 </span><span id="line-70"></span><span class="hs-comment">-- consensus interfaces are sometimes instantiated to 'Void', when there are</span><span>
 </span><span id="line-71"></span><span class="hs-comment">-- no cases needed.</span><span>
 </span><span id="line-72"></span><span class="hs-comment">--</span><span>
-</span><span id="line-73"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353329"><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Void</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-74"></span><span>  </span><span id="local-6989586621679353327"><span class="annot"><span class="annottext">toObject :: TracingVerbosity -&gt; Void -&gt; Object
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">toObject</span></span></span><span> </span><span id="local-6989586621679353325"><span class="annot"><span class="annottext">TracingVerbosity
-</span><a href="#local-6989586621679353325"><span class="hs-identifier hs-var">_verb</span></a></span></span><span> </span><span id="local-6989586621679353324"><span class="annot"><span class="annottext">Void
-</span><a href="#local-6989586621679353324"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Void
-</span><a href="#local-6989586621679353324"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span>
+</span><span id="line-73"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679358032"><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Void</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-74"></span><span>  </span><span id="local-6989586621679358030"><span class="annot"><span class="annottext">toObject :: TracingVerbosity -&gt; Void -&gt; Object
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">toObject</span></span></span><span> </span><span id="local-6989586621679358028"><span class="annot"><span class="annottext">TracingVerbosity
+</span><a href="#local-6989586621679358028"><span class="hs-identifier hs-var">_verb</span></a></span></span><span> </span><span id="local-6989586621679358027"><span class="annot"><span class="annottext">Void
+</span><a href="#local-6989586621679358027"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Void
+</span><a href="#local-6989586621679358027"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-keyword">of</span><span> </span><span class="hs-special">{</span><span class="hs-special">}</span><span>
 </span><span id="line-75"></span><span>
-</span><span id="line-76"></span><span id="local-6989586621679353318"><span id="local-6989586621679353320"><span id="local-6989586621679353322"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span></span></span><span>
+</span><span id="line-76"></span><span id="local-6989586621679358021"><span id="local-6989586621679358023"><span id="local-6989586621679358025"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span></span></span><span>
 </span><span id="line-77"></span><span>
-</span><span id="line-78"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353314"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-79"></span><span>  </span><span id="local-6989586621679353312"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser TracingVerbosity
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679353309"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679353309"><span class="hs-identifier hs-var">str</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679353309"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-78"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679358017"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-79"></span><span>  </span><span id="local-6989586621679358015"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser TracingVerbosity
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679358012"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679358012"><span class="hs-identifier hs-var">str</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679358012"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-80"></span><span>    </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;MinimalVerbosity&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; Parser TracingVerbosity
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
@@ -99,8 +99,8 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><span class="hs-identifier hs-var">NormalVerbosity</span></span><span>
-</span><span id="line-83"></span><span>    </span><span id="local-6989586621679353305"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679353305"><span class="hs-identifier hs-var">invalid</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
+</span><span id="line-83"></span><span>    </span><span id="local-6989586621679358008"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679358008"><span class="hs-identifier hs-var">invalid</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser TracingVerbosity)
 -&gt; String -&gt; Parser TracingVerbosity
@@ -111,12 +111,12 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679353305"><span class="hs-identifier hs-var">invalid</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><a href="#local-6989586621679358008"><span class="hs-identifier hs-var">invalid</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot; is not a valid TracingVerbosity&quot;</span></span><span>
-</span><span id="line-85"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679353303"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679353303"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
+</span><span id="line-85"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679358006"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679358006"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser TracingVerbosity)
 -&gt; String -&gt; Parser TracingVerbosity
@@ -131,12 +131,12 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679353303"><span class="hs-identifier hs-var">invalid</span></a></span><span>
+</span><a href="#local-6989586621679358006"><span class="hs-identifier hs-var">invalid</span></a></span><span>
 </span><span id="line-87"></span><span>
-</span><span id="line-88"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353299"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-89"></span><span>  </span><span id="local-6989586621679353298"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser PortNumber
-</span><a href="#local-6989586621679353298"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Number</span></span><span> </span><span id="local-6989586621679353296"><span class="annot"><span class="annottext">Scientific
-</span><a href="#local-6989586621679353296"><span class="hs-identifier hs-var">portNum</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Maybe PortNumber
+</span><span id="line-88"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679358002"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-89"></span><span>  </span><span id="local-6989586621679358001"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser PortNumber
+</span><a href="#local-6989586621679358001"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Number</span></span><span> </span><span id="local-6989586621679357999"><span class="annot"><span class="annottext">Scientific
+</span><a href="#local-6989586621679357999"><span class="hs-identifier hs-var">portNum</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">String -&gt; Maybe PortNumber
 forall a. Read a =&gt; String -&gt; Maybe a
 </span><span class="hs-identifier hs-var">readMaybe</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Maybe PortNumber)
 -&gt; (Integer -&gt; String) -&gt; Integer -&gt; Maybe PortNumber
@@ -149,12 +149,12 @@ forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Scientific -&gt; Integer
 </span><span class="hs-identifier hs-var hs-var">coefficient</span></span><span> </span><span class="annot"><span class="annottext">Scientific
-</span><a href="#local-6989586621679353296"><span class="hs-identifier hs-var">portNum</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-90"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679353293"><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679353293"><span class="hs-identifier hs-var">port</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">PortNumber -&gt; Parser PortNumber
+</span><a href="#local-6989586621679357999"><span class="hs-identifier hs-var">portNum</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-90"></span><span>    </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679357996"><span class="annot"><span class="annottext">PortNumber
+</span><a href="#local-6989586621679357996"><span class="hs-identifier hs-var">port</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">PortNumber -&gt; Parser PortNumber
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">PortNumber
-</span><a href="#local-6989586621679353293"><span class="hs-identifier hs-var">port</span></a></span><span>
+</span><a href="#local-6989586621679357996"><span class="hs-identifier hs-var">port</span></a></span><span>
 </span><span id="line-91"></span><span>    </span><span class="annot"><span class="annottext">Maybe PortNumber
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser PortNumber
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
@@ -163,12 +163,12 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Scientific -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Scientific
-</span><a href="#local-6989586621679353296"><span class="hs-identifier hs-var">portNum</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
+</span><a href="#local-6989586621679357999"><span class="hs-identifier hs-var">portNum</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; ShowS
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot; is not a valid port number.&quot;</span></span><span>
-</span><span id="line-92"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679353292"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679353292"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser PortNumber
+</span><span id="line-92"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679357995"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679357995"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser PortNumber
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser PortNumber) -&gt; String -&gt; Parser PortNumber
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -182,21 +182,21 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679353292"><span class="hs-identifier hs-var">invalid</span></a></span><span>
+</span><a href="#local-6989586621679357995"><span class="hs-identifier hs-var">invalid</span></a></span><span>
 </span><span id="line-94"></span><span>
-</span><span id="line-95"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353289"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Update.ApplicationName</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-96"></span><span>  </span><span id="local-6989586621679353288"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser ApplicationName
-</span><a href="#local-6989586621679353288"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679353287"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679353287"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ApplicationName -&gt; Parser ApplicationName
+</span><span id="line-95"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679357992"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Update.ApplicationName</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-96"></span><span>  </span><span id="local-6989586621679357991"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser ApplicationName
+</span><a href="#local-6989586621679357991"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679357990"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679357990"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ApplicationName -&gt; Parser ApplicationName
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ApplicationName -&gt; Parser ApplicationName)
 -&gt; ApplicationName -&gt; Parser ApplicationName
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ApplicationName
 </span><span class="hs-identifier hs-var">Update.ApplicationName</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679353287"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-97"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679353285"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679353285"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621679357990"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-97"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679357988"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679357988"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span>
 </span><span id="line-98"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; Parser ApplicationName
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser ApplicationName)
@@ -212,44 +212,44 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679353285"><span class="hs-identifier hs-var">invalid</span></a></span><span>
+</span><a href="#local-6989586621679357988"><span class="hs-identifier hs-var">invalid</span></a></span><span>
 </span><span id="line-100"></span><span>
-</span><span id="line-101"></span><span id="local-6989586621679353284"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353277"><span id="local-6989586621679353279"><span id="local-6989586621679353281"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">HeaderHash</span></span><span> </span><span class="annot"><a href="#local-6989586621679353284"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Tip</span></span><span> </span><span class="annot"><a href="#local-6989586621679353284"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-102"></span><span>  </span><span id="local-6989586621679353275"><span class="annot"><span class="annottext">toJSON :: Tip blk -&gt; Value
-</span><a href="#local-6989586621679353275"><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></a></span></span><span> </span><span class="annot"><span class="annottext">Tip blk
+</span><span id="line-101"></span><span id="local-6989586621679357987"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679357980"><span id="local-6989586621679357982"><span id="local-6989586621679357984"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">HeaderHash</span></span><span> </span><span class="annot"><a href="#local-6989586621679357987"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Tip</span></span><span> </span><span class="annot"><a href="#local-6989586621679357987"><span class="hs-identifier hs-type">blk</span></a></span><span class="hs-special">)</span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-102"></span><span>  </span><span id="local-6989586621679357978"><span class="annot"><span class="annottext">toJSON :: Tip blk -&gt; Value
+</span><a href="#local-6989586621679357978"><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></a></span></span><span> </span><span class="annot"><span class="annottext">Tip blk
 </span><span class="hs-identifier hs-var">TipGenesis</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;genesis&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Bool -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">Bool
 </span><span class="hs-identifier hs-var">True</span></span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-103"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Tip</span></span><span> </span><span id="local-6989586621679353271"><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679353271"><span class="hs-identifier hs-var">slotNo</span></a></span></span><span> </span><span id="local-6989586621679353270"><span class="annot"><span class="annottext">HeaderHash blk
-</span><a href="#local-6989586621679353270"><span class="hs-identifier hs-var">headerHash</span></a></span></span><span> </span><span id="local-6989586621679353269"><span class="annot"><span class="annottext">BlockNo
-</span><a href="#local-6989586621679353269"><span class="hs-identifier hs-var">blockNo</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-103"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Tip</span></span><span> </span><span id="local-6989586621679357974"><span class="annot"><span class="annottext">SlotNo
+</span><a href="#local-6989586621679357974"><span class="hs-identifier hs-var">slotNo</span></a></span></span><span> </span><span id="local-6989586621679357973"><span class="annot"><span class="annottext">HeaderHash blk
+</span><a href="#local-6989586621679357973"><span class="hs-identifier hs-var">headerHash</span></a></span></span><span> </span><span id="local-6989586621679357972"><span class="annot"><span class="annottext">BlockNo
+</span><a href="#local-6989586621679357972"><span class="hs-identifier hs-var">blockNo</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-104"></span><span>    </span><span class="annot"><span class="annottext">[Pair] -&gt; Value
 </span><span class="hs-identifier hs-var">object</span></span><span>
 </span><span id="line-105"></span><span>      </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;slotNo&quot;</span></span><span>     </span><span class="annot"><span class="annottext">Text -&gt; SlotNo -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">SlotNo
-</span><a href="#local-6989586621679353271"><span class="hs-identifier hs-var">slotNo</span></a></span><span>
+</span><a href="#local-6989586621679357974"><span class="hs-identifier hs-var">slotNo</span></a></span><span>
 </span><span id="line-106"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;headerHash&quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; HeaderHash blk -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">HeaderHash blk
-</span><a href="#local-6989586621679353270"><span class="hs-identifier hs-var">headerHash</span></a></span><span>
+</span><a href="#local-6989586621679357973"><span class="hs-identifier hs-var">headerHash</span></a></span><span>
 </span><span id="line-107"></span><span>      </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;blockNo&quot;</span></span><span>    </span><span class="annot"><span class="annottext">Text -&gt; BlockNo -&gt; Pair
 forall kv v. (KeyValue kv, ToJSON v) =&gt; Text -&gt; v -&gt; kv
 </span><span class="hs-operator hs-var">.=</span></span><span> </span><span class="annot"><span class="annottext">BlockNo
-</span><a href="#local-6989586621679353269"><span class="hs-identifier hs-var">blockNo</span></a></span><span>
+</span><a href="#local-6989586621679357972"><span class="hs-identifier hs-var">blockNo</span></a></span><span>
 </span><span id="line-108"></span><span>      </span><span class="hs-special">]</span></span><span>
 </span><span id="line-109"></span><span>
-</span><span id="line-110"></span><span id="local-6989586621679353268"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353261"><span id="local-6989586621679353263"><span id="local-6989586621679353265"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">OneEraHash</span></span><span> </span><span class="annot"><a href="#local-6989586621679353268"><span class="hs-identifier hs-type">xs</span></a></span><span class="hs-special">)</span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-111"></span><span>  </span><span id="local-6989586621679353260"><span class="annot"><span class="annottext">toJSON :: OneEraHash xs -&gt; Value
-</span><a href="#local-6989586621679353260"><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">OneEraHash</span></span><span> </span><span id="local-6989586621679353258"><span class="annot"><span class="annottext">ShortByteString
-</span><a href="#local-6989586621679353258"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-110"></span><span id="local-6989586621679357971"><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679357964"><span id="local-6989586621679357966"><span id="local-6989586621679357968"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">OneEraHash</span></span><span> </span><span class="annot"><a href="#local-6989586621679357971"><span class="hs-identifier hs-type">xs</span></a></span><span class="hs-special">)</span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-111"></span><span>  </span><span id="local-6989586621679357963"><span class="annot"><span class="annottext">toJSON :: OneEraHash xs -&gt; Value
+</span><a href="#local-6989586621679357963"><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">OneEraHash</span></span><span> </span><span id="local-6989586621679357961"><span class="annot"><span class="annottext">ShortByteString
+</span><a href="#local-6989586621679357961"><span class="hs-identifier hs-var">bs</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-112"></span><span>    </span><span class="annot"><span class="annottext">Text -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Value)
@@ -273,19 +273,19 @@ cat b c -&gt; cat a b -&gt; cat a c
 </span><span class="hs-identifier hs-var">SBS.fromShort</span></span><span> </span><span class="annot"><span class="annottext">(ShortByteString -&gt; Value) -&gt; ShortByteString -&gt; Value
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ShortByteString
-</span><a href="#local-6989586621679353258"><span class="hs-identifier hs-var">bs</span></a></span></span><span>
+</span><a href="#local-6989586621679357961"><span class="hs-identifier hs-var">bs</span></a></span></span><span>
 </span><span id="line-113"></span><span>
-</span><span id="line-114"></span><span id="local-6989586621679353247"><span id="local-6989586621679353249"><span id="local-6989586621679353251"><span id="local-6989586621679353253"><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByronHash</span></span></span></span></span></span><span>
-</span><span id="line-115"></span><span id="local-6989586621679353239"><span id="local-6989586621679353241"><span id="local-6989586621679353243"><span id="local-6989586621679353245"><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BlockNo</span></span></span></span></span></span><span>
+</span><span id="line-114"></span><span id="local-6989586621679357950"><span id="local-6989586621679357952"><span id="local-6989586621679357954"><span id="local-6989586621679357956"><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByronHash</span></span></span></span></span></span><span>
+</span><span id="line-115"></span><span id="local-6989586621679357942"><span id="local-6989586621679357944"><span id="local-6989586621679357946"><span id="local-6989586621679357948"><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">BlockNo</span></span></span></span></span></span><span>
 </span><span id="line-116"></span><span>
-</span><span id="line-117"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353237"><span class="annot"><span class="hs-identifier hs-type">HasPrivacyAnnotation</span></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">ResourceStats</span></span></span><span>
+</span><span id="line-117"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679357940"><span class="annot"><span class="hs-identifier hs-type">HasPrivacyAnnotation</span></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">ResourceStats</span></span></span><span>
 </span><span id="line-118"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">HasSeverityAnnotation</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ResourceStats</span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-119"></span><span>  </span><span id="local-6989586621679353233"><span class="annot"><span class="annottext">getSeverityAnnotation :: ResourceStats -&gt; Severity
+</span><span id="line-119"></span><span>  </span><span id="local-6989586621679357936"><span class="annot"><span class="annottext">getSeverityAnnotation :: ResourceStats -&gt; Severity
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">getSeverityAnnotation</span></span></span><span> </span><span class="annot"><span class="annottext">ResourceStats
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Severity
 </span><span class="hs-identifier hs-var">Info</span></span><span>
 </span><span id="line-120"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Transformable</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ResourceStats</span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-121"></span><span>  </span><span id="local-6989586621679353225"><span class="annot"><span class="annottext">trTransformer :: TracingVerbosity -&gt; Trace IO Text -&gt; Tracer IO ResourceStats
+</span><span id="line-121"></span><span>  </span><span id="local-6989586621679357928"><span class="annot"><span class="annottext">trTransformer :: TracingVerbosity -&gt; Trace IO Text -&gt; Tracer IO ResourceStats
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">trTransformer</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; Trace IO Text -&gt; Tracer IO ResourceStats
 forall b (m :: * -&gt; *) a.
 (ToObject b, MonadIO m, HasPrivacyAnnotation b,
@@ -293,18 +293,18 @@ forall b (m :: * -&gt; *) a.
 TracingVerbosity -&gt; Trace m a -&gt; Tracer m b
 </span><span class="hs-identifier hs-var">trStructured</span></span><span>
 </span><span id="line-122"></span><span>
-</span><span id="line-123"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679353221"><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ResourceStats</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-124"></span><span>  </span><span id="local-6989586621679353220"><span class="annot"><span class="annottext">toObject :: TracingVerbosity -&gt; ResourceStats -&gt; Object
-</span><a href="#local-6989586621679353220"><span class="hs-identifier hs-var hs-var hs-var hs-var">toObject</span></a></span></span><span> </span><span id="local-6989586621679353219"><span class="annot"><span class="annottext">TracingVerbosity
-</span><a href="#local-6989586621679353219"><span class="hs-identifier hs-var">_verb</span></a></span></span><span> </span><span id="local-6989586621679353218"><span class="annot"><span class="annottext">ResourceStats
-</span><a href="#local-6989586621679353218"><span class="hs-identifier hs-var">stats</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-123"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679357924"><span class="annot"><span class="hs-identifier hs-type">ToObject</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">ResourceStats</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-124"></span><span>  </span><span id="local-6989586621679357923"><span class="annot"><span class="annottext">toObject :: TracingVerbosity -&gt; ResourceStats -&gt; Object
+</span><a href="#local-6989586621679357923"><span class="hs-identifier hs-var hs-var hs-var hs-var">toObject</span></a></span></span><span> </span><span id="local-6989586621679357922"><span class="annot"><span class="annottext">TracingVerbosity
+</span><a href="#local-6989586621679357922"><span class="hs-identifier hs-var">_verb</span></a></span></span><span> </span><span id="local-6989586621679357921"><span class="annot"><span class="annottext">ResourceStats
+</span><a href="#local-6989586621679357921"><span class="hs-identifier hs-var">stats</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-125"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ResourceStats -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">ResourceStats
-</span><a href="#local-6989586621679353218"><span class="hs-identifier hs-var">stats</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-126"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span> </span><span id="local-6989586621679353216"><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679353216"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679353216"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679357921"><span class="hs-identifier hs-var">stats</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-126"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Object</span></span><span> </span><span id="local-6989586621679357919"><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679357919"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679357919"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-127"></span><span>      </span><span class="annot"><span class="annottext">Value
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Object
 forall a. Monoid a =&gt; a
