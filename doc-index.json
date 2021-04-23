@@ -2274,6 +2274,12 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxOutValue"
   },
   {
+    "display_html": "<a href=\"#v:serialiseAddressForTxOut\">serialiseAddressForTxOut</a> &#8759; <a href=\"Cardano-Api-Address.html#t:AddressInEra\" title=\"Cardano.Api.Address\">AddressInEra</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
+    "name": "serialiseAddressForTxOut",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#v:serialiseAddressForTxOut"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxFee\">TxFee</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxFeeImplicit\">TxFeeImplicit</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxFeesImplicitInEra\" title=\"Cardano.Api.TxBody\">TxFeesImplicitInEra</a> era &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxFee\" title=\"Cardano.Api.TxBody\">TxFee</a> era</li><li><a href=\"#v:TxFeeExplicit\">TxFeeExplicit</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxFeesExplicitInEra\" title=\"Cardano.Api.TxBody\">TxFeesExplicitInEra</a> era &#8594; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a> &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxFee\" title=\"Cardano.Api.TxBody\">TxFee</a> era</li></ul>",
     "name": "TxFee TxFeeImplicit TxFeeExplicit",
     "module": "Cardano.Api.TxBody",
