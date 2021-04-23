@@ -1950,6 +1950,12 @@
     "link": "cardano-api/Cardano-Api-Value.html#v:toByronLovelace"
   },
   {
+    "display_html": "<a href=\"#v:fromByronLovelace\">fromByronLovelace</a> &#8759; Lovelace &#8594; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>",
+    "name": "fromByronLovelace",
+    "module": "Cardano.Api.Value",
+    "link": "cardano-api/Cardano-Api-Value.html#v:fromByronLovelace"
+  },
+  {
     "display_html": "<a href=\"#v:toShelleyLovelace\">toShelleyLovelace</a> &#8759; <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a> &#8594; Coin",
     "name": "toShelleyLovelace",
     "module": "Cardano.Api.Value",
