@@ -1404,6 +1404,12 @@
     "link": "cardano-api/Cardano-Api-Script.html#v:toShelleyScript"
   },
   {
+    "display_html": "<a href=\"#v:fromShelleyBasedScript\">fromShelleyBasedScript</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; Script (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptInEra\" title=\"Cardano.Api.Script\">ScriptInEra</a> era",
+    "name": "fromShelleyBasedScript",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#v:fromShelleyBasedScript"
+  },
+  {
     "display_html": "<a href=\"#v:toShelleyMultiSig\">toShelleyMultiSig</a> &#8759; <a href=\"Cardano-Api-Script.html#t:SimpleScript\" title=\"Cardano.Api.Script\">SimpleScript</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> &#8594; MultiSig StandardCrypto",
     "name": "toShelleyMultiSig",
     "module": "Cardano.Api.Script",
