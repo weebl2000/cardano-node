@@ -18,8 +18,8 @@
 </span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
 </span><span id="line-19"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-20"></span><span>
-</span><span id="line-21"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Byron</span></a></span><span>
-</span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Protocol.Types</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Protocol</span></span><span>
+</span><span id="line-21"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Byron</span></a></span><span>
+</span><span id="line-22"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Protocol.Types</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Protocol</span></span><span>
 </span><span id="line-23"></span><span>
 </span><span id="line-24"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Crypto.Hash</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Crypto</span></span><span>
 </span><span id="line-25"></span><span>
@@ -137,7 +137,7 @@ forall blk.
  TraceConstraints blk) =&gt;
 BlockType blk -&gt; ProtocolInfoArgs IO blk -&gt; SomeConsensusProtocol
 </span><a href="Cardano.Node.Protocol.Types.html#SomeConsensusProtocol"><span class="hs-identifier hs-var">SomeConsensusProtocol</span></a></span><span> </span><span class="annot"><span class="annottext">BlockType (HardForkBlock '[ByronBlock])
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">Protocol.ByronBlockType</span></a></span><span> </span><span class="annot"><span class="annottext">(ProtocolInfoArgs IO (HardForkBlock '[ByronBlock])
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">Protocol.ByronBlockType</span></a></span><span> </span><span class="annot"><span class="annottext">(ProtocolInfoArgs IO (HardForkBlock '[ByronBlock])
  -&gt; SomeConsensusProtocol)
 -&gt; ProtocolInfoArgs IO (HardForkBlock '[ByronBlock])
 -&gt; SomeConsensusProtocol
@@ -147,7 +147,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall (m :: * -&gt; *).
 ProtocolParamsByron
 -&gt; ProtocolInfoArgs m (HardForkBlock '[ByronBlock])
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">Protocol.ProtocolInfoArgsByron</span></a></span><span> </span><span class="annot"><span class="annottext">(ProtocolParamsByron
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">Protocol.ProtocolInfoArgsByron</span></a></span><span> </span><span class="annot"><span class="annottext">(ProtocolParamsByron
  -&gt; ProtocolInfoArgs IO (HardForkBlock '[ByronBlock]))
 -&gt; ProtocolParamsByron
 -&gt; ProtocolInfoArgs IO (HardForkBlock '[ByronBlock])
@@ -429,7 +429,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ByteString
 </span><span class="hs-identifier hs-var">LB.readFile</span></span><span> </span><span class="annot"><span class="annottext">FilePath
 </span><a href="#local-6989586621679366552"><span class="hs-identifier hs-var">delegCertFile</span></a></span><span>
-</span><span id="line-153"></span><span>         </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronSigningKey</span></a></span><span> </span><span id="local-6989586621679366545"><span class="annot"><a href="#local-6989586621679366545"><span class="hs-identifier hs-var">signingKey</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByronProtocolInstantiationError
+</span><span id="line-153"></span><span>         </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">ByronSigningKey</span></a></span><span> </span><span id="local-6989586621679366545"><span class="annot"><a href="#local-6989586621679366545"><span class="hs-identifier hs-var">signingKey</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">ByronProtocolInstantiationError
 -&gt; Maybe (SigningKey ByronKey)
 -&gt; ExceptT ByronProtocolInstantiationError IO (SigningKey ByronKey)
 forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; Maybe a -&gt; ExceptT x m a
@@ -447,10 +447,10 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a.
 SerialiseAsRawBytes a =&gt;
 AsType a -&gt; ByteString -&gt; Maybe a
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">deserialiseFromRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AsType ByronKey -&gt; AsType (SigningKey ByronKey)
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">deserialiseFromRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">AsType ByronKey -&gt; AsType (SigningKey ByronKey)
 forall a. AsType a -&gt; AsType (SigningKey a)
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">AsType ByronKey
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsByronKey</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Maybe (SigningKey ByronKey))
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">AsType ByronKey
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">AsByronKey</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Maybe (SigningKey ByronKey))
 -&gt; ByteString -&gt; Maybe (SigningKey ByronKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString

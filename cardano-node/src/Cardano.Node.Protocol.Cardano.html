@@ -28,8 +28,8 @@
 </span><span id="line-28"></span><span>
 </span><span id="line-29"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Ouroboros.Consensus.Cardano.Condense</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
 </span><span id="line-30"></span><span>
-</span><span id="line-31"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Orphans</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
-</span><span id="line-32"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Protocol.Types</span></a></span><span>
+</span><span id="line-31"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Orphans</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-32"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api.Protocol.Types</span></a></span><span>
 </span><span id="line-33"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Node.Types.html"><span class="hs-identifier">Cardano.Node.Types</span></a></span><span>
 </span><span id="line-34"></span><span>
 </span><span id="line-35"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Tracing.OrphanInstances.Byron.html"><span class="hs-identifier">Cardano.Tracing.OrphanInstances.Byron</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
@@ -317,7 +317,7 @@ forall blk.
  TraceConstraints blk) =&gt;
 BlockType blk -&gt; ProtocolInfoArgs IO blk -&gt; SomeConsensusProtocol
 </span><a href="Cardano.Node.Protocol.Types.html#SomeConsensusProtocol"><span class="hs-identifier hs-var">SomeConsensusProtocol</span></a></span><span> </span><span class="annot"><span class="annottext">BlockType (HardForkBlock (CardanoEras StandardCrypto))
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">CardanoBlockType</span></a></span><span> </span><span class="annot"><span class="annottext">(ProtocolInfoArgs IO (HardForkBlock (CardanoEras StandardCrypto))
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">CardanoBlockType</span></a></span><span> </span><span class="annot"><span class="annottext">(ProtocolInfoArgs IO (HardForkBlock (CardanoEras StandardCrypto))
  -&gt; SomeConsensusProtocol)
 -&gt; ProtocolInfoArgs IO (HardForkBlock (CardanoEras StandardCrypto))
 -&gt; SomeConsensusProtocol
@@ -347,7 +347,7 @@ ProtocolParamsByron
 -&gt; ProtocolParamsTransition
      (ShelleyBlock StandardAllegra) (ShelleyBlock StandardMary)
 -&gt; ProtocolInfoArgs m (HardForkBlock (CardanoEras StandardCrypto))
-</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.26.1/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ProtocolInfoArgsCardano</span></a></span><span>
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">ProtocolInfoArgsCardano</span></a></span><span>
 </span><span id="line-112"></span><span>        </span><span class="annot"><span class="annottext">ProtocolParamsByron :: Config
 -&gt; Maybe PBftSignatureThreshold
 -&gt; ProtocolVersion
