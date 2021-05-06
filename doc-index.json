@@ -2214,6 +2214,12 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBody"
   },
   {
+    "display_html": "<a href=\"#v:getTransactionBodyContent\">getTransactionBodyContent</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-TxBody.html#t:TxBodyError\" title=\"Cardano.Api.TxBody\">TxBodyError</a> era) (<a href=\"Cardano-Api-TxBody.html#t:TxBodyContent\" title=\"Cardano.Api.TxBody\">TxBodyContent</a> <a href=\"Cardano-Api-TxBody.html#t:ViewTx\" title=\"Cardano.Api.TxBody\">ViewTx</a> era)",
+    "name": "getTransactionBodyContent",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#v:getTransactionBodyContent"
+  },
+  {
     "display_html": "<a href=\"#v:makeTransactionBody\">makeTransactionBody</a> &#8759; &#8704; era. <a href=\"Cardano-Api-Eras.html#t:IsCardanoEra\" title=\"Cardano.Api.Eras\">IsCardanoEra</a> era &#8658; <a href=\"Cardano-Api-TxBody.html#t:TxBodyContent\" title=\"Cardano.Api.TxBody\">TxBodyContent</a> <a href=\"Cardano-Api-TxBody.html#t:BuildTx\" title=\"Cardano.Api.TxBody\">BuildTx</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-TxBody.html#t:TxBodyError\" title=\"Cardano.Api.TxBody\">TxBodyError</a> era) (<a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era)",
     "name": "makeTransactionBody",
     "module": "Cardano.Api.TxBody",
@@ -2226,8 +2232,8 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBodyContent"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api-TxMetadata.html#t:TxMetadataRangeError\" title=\"Cardano.Api.TxMetadata\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li></ul>",
-    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api-TxMetadata.html#t:TxMetadataRangeError\" title=\"Cardano.Api.TxMetadata\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li><li>| <a href=\"#v:TxBodyAuxDataHashInvalidError\">TxBodyAuxDataHashInvalidError</a></li><li>| <a href=\"#v:TxBodyMintBeforeMaryError\">TxBodyMintBeforeMaryError</a></li></ul>",
+    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError TxBodyAuxDataHashInvalidError TxBodyMintBeforeMaryError",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBodyError"
   },
@@ -3630,6 +3636,12 @@
     "link": "cardano-api/Cardano-Api.html#t:TxBody"
   },
   {
+    "display_html": "<a href=\"#v:getTransactionBodyContent\">getTransactionBodyContent</a> &#8759; <a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api.html#t:TxBodyError\" title=\"Cardano.Api\">TxBodyError</a> era) (<a href=\"Cardano-Api.html#t:TxBodyContent\" title=\"Cardano.Api\">TxBodyContent</a> <a href=\"Cardano-Api.html#t:ViewTx\" title=\"Cardano.Api\">ViewTx</a> era)",
+    "name": "getTransactionBodyContent",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#v:getTransactionBodyContent"
+  },
+  {
     "display_html": "<a href=\"#v:makeTransactionBody\">makeTransactionBody</a> &#8759; &#8704; era. <a href=\"Cardano-Api.html#t:IsCardanoEra\" title=\"Cardano.Api\">IsCardanoEra</a> era &#8658; <a href=\"Cardano-Api.html#t:TxBodyContent\" title=\"Cardano.Api\">TxBodyContent</a> <a href=\"Cardano-Api.html#t:BuildTx\" title=\"Cardano.Api\">BuildTx</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api.html#t:TxBodyError\" title=\"Cardano.Api\">TxBodyError</a> era) (<a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era)",
     "name": "makeTransactionBody",
     "module": "Cardano.Api",
@@ -3642,8 +3654,8 @@
     "link": "cardano-api/Cardano-Api.html#t:TxBodyContent"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api.html#t:TxMetadataRangeError\" title=\"Cardano.Api\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li></ul>",
-    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api.html#t:TxMetadataRangeError\" title=\"Cardano.Api\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li><li>| <a href=\"#v:TxBodyAuxDataHashInvalidError\">TxBodyAuxDataHashInvalidError</a></li><li>| <a href=\"#v:TxBodyMintBeforeMaryError\">TxBodyMintBeforeMaryError</a></li></ul>",
+    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError TxBodyAuxDataHashInvalidError TxBodyMintBeforeMaryError",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TxBodyError"
   },
@@ -3682,6 +3694,12 @@
     "name": "TxOutValue TxOutValue TxOutAdaOnly",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TxOutValue"
+  },
+  {
+    "display_html": "<a href=\"#v:serialiseAddressForTxOut\">serialiseAddressForTxOut</a> &#8759; <a href=\"Cardano-Api.html#t:AddressInEra\" title=\"Cardano.Api\">AddressInEra</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
+    "name": "serialiseAddressForTxOut",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#v:serialiseAddressForTxOut"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxFee\">TxFee</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxFeeImplicit\">TxFeeImplicit</a> &#8759; <a href=\"Cardano-Api.html#t:TxFeesImplicitInEra\" title=\"Cardano.Api\">TxFeesImplicitInEra</a> era &#8594; <a href=\"Cardano-Api.html#t:TxFee\" title=\"Cardano.Api\">TxFee</a> era</li><li><a href=\"#v:TxFeeExplicit\">TxFeeExplicit</a> &#8759; <a href=\"Cardano-Api.html#t:TxFeesExplicitInEra\" title=\"Cardano.Api\">TxFeesExplicitInEra</a> era &#8594; <a href=\"Cardano-Api.html#t:Lovelace\" title=\"Cardano.Api\">Lovelace</a> &#8594; <a href=\"Cardano-Api.html#t:TxFee\" title=\"Cardano.Api\">TxFee</a> era</li></ul>",
