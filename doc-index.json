@@ -534,6 +534,12 @@
     "link": "cardano-api/Cardano-Api-Modes.html#t:AnyConsensusMode"
   },
   {
+    "display_html": "<a href=\"#v:renderMode\">renderMode</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:AnyConsensusMode\" title=\"Cardano.Api.Modes\">AnyConsensusMode</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
+    "name": "renderMode",
+    "module": "Cardano.Api.Modes",
+    "link": "cardano-api/Cardano-Api-Modes.html#v:renderMode"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ConsensusModeIsMultiEra\">ConsensusModeIsMultiEra</a> mode <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:CardanoModeIsMultiEra\">CardanoModeIsMultiEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> <a href=\"Cardano-Api-Modes.html#t:CardanoMode\" title=\"Cardano.Api.Modes\">CardanoMode</a></li></ul>",
     "name": "ConsensusModeIsMultiEra CardanoModeIsMultiEra",
     "module": "Cardano.Api.Modes",
@@ -2790,8 +2796,8 @@
     "link": "cardano-api/Cardano-Api-Block.html#t:Hash"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInMode\" title=\"Cardano.Api.Query\">QueryInMode</a> mode <a href=\"Cardano-Api-Eras.html#t:AnyCardanoEra\" title=\"Cardano.Api.Eras\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:EraInMode\" title=\"Cardano.Api.Modes\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInEra\" title=\"Cardano.Api.Query\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInMode\" title=\"Cardano.Api.Query\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li></ul>",
-    "name": "QueryInMode QueryInEra QueryCurrentEra",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInMode\" title=\"Cardano.Api.Query\">QueryInMode</a> mode <a href=\"Cardano-Api-Eras.html#t:AnyCardanoEra\" title=\"Cardano.Api.Eras\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:EraInMode\" title=\"Cardano.Api.Modes\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInEra\" title=\"Cardano.Api.Query\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInMode\" title=\"Cardano.Api.Query\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li><li><a href=\"#v:QueryEraHistory\">QueryEraHistory</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-Query.html#t:QueryInMode\" title=\"Cardano.Api.Query\">QueryInMode</a> mode (<a href=\"Cardano-Api-Query.html#t:EraHistory\" title=\"Cardano.Api.Query\">EraHistory</a> mode)</li></ul>",
+    "name": "QueryInMode QueryInEra QueryCurrentEra QueryEraHistory",
     "module": "Cardano.Api.Query",
     "link": "cardano-api/Cardano-Api-Query.html#t:QueryInMode"
   },
@@ -2842,6 +2848,30 @@
     "name": "DebugLedgerState DebugLedgerState",
     "module": "Cardano.Api.Query",
     "link": "cardano-api/Cardano-Api-Query.html#t:DebugLedgerState"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:EraHistory\">EraHistory</a> mode <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:EraHistory\">EraHistory</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusBlockForMode\" title=\"Cardano.Api.Modes\">ConsensusBlockForMode</a> mode ~ HardForkBlock xs &#8658; <a href=\"Cardano-Api-Modes.html#t:ConsensusMode\" title=\"Cardano.Api.Modes\">ConsensusMode</a> mode &#8594; Interpreter xs &#8594; <a href=\"Cardano-Api-Query.html#t:EraHistory\" title=\"Cardano.Api.Query\">EraHistory</a> mode</li></ul>",
+    "name": "EraHistory EraHistory",
+    "module": "Cardano.Api.Query",
+    "link": "cardano-api/Cardano-Api-Query.html#t:EraHistory"
+  },
+  {
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:SlotsInEpoch\">SlotsInEpoch</a> = <a href=\"#v:SlotsInEpoch\">SlotsInEpoch</a> <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>",
+    "name": "SlotsInEpoch SlotsInEpoch",
+    "module": "Cardano.Api.Query",
+    "link": "cardano-api/Cardano-Api-Query.html#t:SlotsInEpoch"
+  },
+  {
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:SlotsToEpochEnd\">SlotsToEpochEnd</a> = <a href=\"#v:SlotsToEpochEnd\">SlotsToEpochEnd</a> <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>",
+    "name": "SlotsToEpochEnd SlotsToEpochEnd",
+    "module": "Cardano.Api.Query",
+    "link": "cardano-api/Cardano-Api-Query.html#t:SlotsToEpochEnd"
+  },
+  {
+    "display_html": "<a href=\"#v:slotToEpoch\">slotToEpoch</a> &#8759; <a href=\"Cardano-Api-Block.html#t:SlotNo\" title=\"Cardano.Api.Block\">SlotNo</a> &#8594; <a href=\"Cardano-Api-Query.html#t:EraHistory\" title=\"Cardano.Api.Query\">EraHistory</a> mode &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> PastHorizonException (<a href=\"Cardano-Api-ProtocolParameters.html#t:EpochNo\" title=\"Cardano.Api.ProtocolParameters\">EpochNo</a>, <a href=\"Cardano-Api-Query.html#t:SlotsInEpoch\" title=\"Cardano.Api.Query\">SlotsInEpoch</a>, <a href=\"Cardano-Api-Query.html#t:SlotsToEpochEnd\" title=\"Cardano.Api.Query\">SlotsToEpochEnd</a>)",
+    "name": "slotToEpoch",
+    "module": "Cardano.Api.Query",
+    "link": "cardano-api/Cardano-Api-Query.html#v:slotToEpoch"
   },
   {
     "display_html": "<a href=\"#v:connectToLocalNode\">connectToLocalNode</a> &#8759; <a href=\"Cardano-Api-IPC.html#t:LocalNodeConnectInfo\" title=\"Cardano.Api.IPC\">LocalNodeConnectInfo</a> mode &#8594; <a href=\"Cardano-Api-IPC.html#t:LocalNodeClientProtocolsInMode\" title=\"Cardano.Api.IPC\">LocalNodeClientProtocolsInMode</a> mode &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> ()",
@@ -2976,8 +3006,8 @@
     "link": "cardano-api/Cardano-Api-IPC.html#t:AcquireFailure"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode <a href=\"Cardano-Api-Eras.html#t:AnyCardanoEra\" title=\"Cardano.Api.Eras\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:EraInMode\" title=\"Cardano.Api.Modes\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInEra\" title=\"Cardano.Api.IPC\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li></ul>",
-    "name": "QueryInMode QueryInEra QueryCurrentEra",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode <a href=\"Cardano-Api-Eras.html#t:AnyCardanoEra\" title=\"Cardano.Api.Eras\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:EraInMode\" title=\"Cardano.Api.Modes\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInEra\" title=\"Cardano.Api.IPC\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li><li><a href=\"#v:QueryEraHistory\">QueryEraHistory</a> &#8759; <a href=\"Cardano-Api-Modes.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api.Modes\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api-IPC.html#t:QueryInMode\" title=\"Cardano.Api.IPC\">QueryInMode</a> mode (<a href=\"Cardano-Api-Query.html#t:EraHistory\" title=\"Cardano.Api.Query\">EraHistory</a> mode)</li></ul>",
+    "name": "QueryInMode QueryInEra QueryCurrentEra QueryEraHistory",
     "module": "Cardano.Api.IPC",
     "link": "cardano-api/Cardano-Api-IPC.html#t:QueryInMode"
   },
@@ -4686,6 +4716,12 @@
     "link": "cardano-api/Cardano-Api.html#t:AnyConsensusMode"
   },
   {
+    "display_html": "<a href=\"#v:renderMode\">renderMode</a> &#8759; <a href=\"Cardano-Api.html#t:AnyConsensusMode\" title=\"Cardano.Api\">AnyConsensusMode</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a>",
+    "name": "renderMode",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#v:renderMode"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ConsensusMode\">ConsensusMode</a> mode <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:CardanoMode\">CardanoMode</a> &#8759; <a href=\"Cardano-Api.html#t:ConsensusMode\" title=\"Cardano.Api\">ConsensusMode</a> <a href=\"Cardano-Api.html#t:CardanoMode\" title=\"Cardano.Api\">CardanoMode</a></li></ul>",
     "name": "ConsensusMode CardanoMode",
     "module": "Cardano.Api",
@@ -4806,8 +4842,8 @@
     "link": "cardano-api/Cardano-Api.html#t:LocalStateQueryClient"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode <a href=\"Cardano-Api.html#t:AnyCardanoEra\" title=\"Cardano.Api\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api.html#t:EraInMode\" title=\"Cardano.Api\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api.html#t:QueryInEra\" title=\"Cardano.Api\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li></ul>",
-    "name": "QueryInMode QueryInEra QueryCurrentEra",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:QueryInMode\">QueryInMode</a> mode result <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:QueryCurrentEra\">QueryCurrentEra</a> &#8759; <a href=\"Cardano-Api.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode <a href=\"Cardano-Api.html#t:AnyCardanoEra\" title=\"Cardano.Api\">AnyCardanoEra</a></li><li><a href=\"#v:QueryInEra\">QueryInEra</a> &#8759; <a href=\"Cardano-Api.html#t:EraInMode\" title=\"Cardano.Api\">EraInMode</a> era mode &#8594; <a href=\"Cardano-Api.html#t:QueryInEra\" title=\"Cardano.Api\">QueryInEra</a> era result &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> EraMismatch result)</li><li><a href=\"#v:QueryEraHistory\">QueryEraHistory</a> &#8759; <a href=\"Cardano-Api.html#t:ConsensusModeIsMultiEra\" title=\"Cardano.Api\">ConsensusModeIsMultiEra</a> mode &#8594; <a href=\"Cardano-Api.html#t:QueryInMode\" title=\"Cardano.Api\">QueryInMode</a> mode (<a href=\"Cardano-Api-Query.html#t:EraHistory\" title=\"Cardano.Api.Query\">EraHistory</a> mode)</li></ul>",
+    "name": "QueryInMode QueryInEra QueryCurrentEra QueryEraHistory",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:QueryInMode"
   },
@@ -4954,6 +4990,24 @@
     "name": "SomeNodeClientProtocol SomeNodeClientProtocol",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:SomeNodeClientProtocol"
+  },
+  {
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:SlotsInEpoch\">SlotsInEpoch</a> = <a href=\"#v:SlotsInEpoch\">SlotsInEpoch</a> <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>",
+    "name": "SlotsInEpoch SlotsInEpoch",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:SlotsInEpoch"
+  },
+  {
+    "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:SlotsToEpochEnd\">SlotsToEpochEnd</a> = <a href=\"#v:SlotsToEpochEnd\">SlotsToEpochEnd</a> <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>",
+    "name": "SlotsToEpochEnd SlotsToEpochEnd",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:SlotsToEpochEnd"
+  },
+  {
+    "display_html": "<a href=\"#v:slotToEpoch\">slotToEpoch</a> &#8759; <a href=\"Cardano-Api.html#t:SlotNo\" title=\"Cardano.Api\">SlotNo</a> &#8594; <a href=\"Cardano-Api-Query.html#t:EraHistory\" title=\"Cardano.Api.Query\">EraHistory</a> mode &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> PastHorizonException (<a href=\"Cardano-Api.html#t:EpochNo\" title=\"Cardano.Api\">EpochNo</a>, <a href=\"Cardano-Api.html#t:SlotsInEpoch\" title=\"Cardano.Api\">SlotsInEpoch</a>, <a href=\"Cardano-Api.html#t:SlotsToEpochEnd\" title=\"Cardano.Api\">SlotsToEpochEnd</a>)",
+    "name": "slotToEpoch",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#v:slotToEpoch"
   },
   {
     "display_html": "module <a href=\"Cardano-Api.html\">Cardano.Api</a>",
