@@ -922,7 +922,10 @@ runTxView txfile = do
       InputTxFile (TxFile txFile) -> do
         InAnyCardanoEra era tx <- readFileTx txFile
         return . InAnyCardanoEra era $ getTxBody tx
-  liftIO $ BS.putStr $ friendlyTxBodyBS era txbody
+  liftIO $
+    case friendlyTxBodyBS era txbody of
+      Right text -> BS.putStr text
+      Left err   -> die $ toS err
 
 runTxCreateWitness
   :: TxBodyFile
