@@ -72,6 +72,12 @@
     "link": "cardano-api-test/Test-Cardano-Api-Typed-Gen.html#v:genSimpleScript"
   },
   {
+    "display_html": "<a href=\"#v:genPlutusScript\">genPlutusScript</a> &#8759; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:PlutusScriptVersion\" title=\"Cardano.Api.Script\">PlutusScriptVersion</a> lang &#8594; Gen (<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:PlutusScript\" title=\"Cardano.Api.Script\">PlutusScript</a> lang)",
+    "name": "genPlutusScript",
+    "module": "Test.Cardano.Api.Typed.Gen",
+    "link": "cardano-api-test/Test-Cardano-Api-Typed-Gen.html#v:genPlutusScript"
+  },
+  {
     "display_html": "<a href=\"#v:genScriptInAnyLang\">genScriptInAnyLang</a> &#8759; Gen <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:ScriptInAnyLang\" title=\"Cardano.Api.Script\">ScriptInAnyLang</a>",
     "name": "genScriptInAnyLang",
     "module": "Test.Cardano.Api.Typed.Gen",
@@ -88,12 +94,6 @@
     "name": "genScriptHash",
     "module": "Test.Cardano.Api.Typed.Gen",
     "link": "cardano-api-test/Test-Cardano-Api-Typed-Gen.html#v:genScriptHash"
-  },
-  {
-    "display_html": "<a href=\"#v:canonicaliseScriptVersion\">canonicaliseScriptVersion</a> &#8759; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:ScriptInEra\" title=\"Cardano.Api.Script\">ScriptInEra</a> era &#8594; <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:ScriptInEra\" title=\"Cardano.Api.Script\">ScriptInEra</a> era",
-    "name": "canonicaliseScriptVersion",
-    "module": "Test.Cardano.Api.Typed.Gen",
-    "link": "cardano-api-test/Test-Cardano-Api-Typed-Gen.html#v:canonicaliseScriptVersion"
   },
   {
     "display_html": "<a href=\"#v:genOperationalCertificate\">genOperationalCertificate</a> &#8759; Gen <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-OperationalCertificate.html#t:OperationalCertificate\" title=\"Cardano.Api.OperationalCertificate\">OperationalCertificate</a>",
@@ -487,7 +487,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary",
+    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary",
     "module": "Cardano.Api.Eras",
     "link": "cardano-api/Cardano-Api-Eras.html#t:AsType"
   },
@@ -834,7 +834,7 @@
     "link": "cardano-api/Cardano-Api-SerialiseRaw.html#t:UsingRawBytesHex"
   },
   {
-    "display_html": "<span class=\"keyword\">class</span> <a href=\"Cardano-Api-SerialiseCBOR.html#t:SerialiseAsCBOR\" title=\"Cardano.Api.SerialiseCBOR\">SerialiseAsCBOR</a> a &#8658; <a href=\"#t:HasTextEnvelope\">HasTextEnvelope</a> a <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:textEnvelopeType\">textEnvelopeType</a> &#8759; <a href=\"Cardano-Api-HasTypeProxy.html#t:AsType\" title=\"Cardano.Api.HasTypeProxy\">AsType</a> a &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeType\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeType</a></li><li><a href=\"#v:textEnvelopeDefaultDescr\">textEnvelopeDefaultDescr</a> &#8759; a &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeDescr\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeDescr</a></li></ul>",
+    "display_html": "<span class=\"keyword\">class</span> <a href=\"Cardano-Api-SerialiseCBOR.html#t:SerialiseAsCBOR\" title=\"Cardano.Api.SerialiseCBOR\">SerialiseAsCBOR</a> a &#8658; <a href=\"#t:HasTextEnvelope\">HasTextEnvelope</a> a <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:textEnvelopeType\">textEnvelopeType</a> &#8759; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:AsType\" title=\"Cardano.Api.SerialiseTextEnvelope\">AsType</a> a &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeType\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeType</a></li><li><a href=\"#v:textEnvelopeDefaultDescr\">textEnvelopeDefaultDescr</a> &#8759; a &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeDescr\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeDescr</a></li></ul>",
     "name": "HasTextEnvelope textEnvelopeType textEnvelopeDefaultDescr",
     "module": "Cardano.Api.SerialiseTextEnvelope",
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope"
@@ -876,13 +876,13 @@
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#v:serialiseToTextEnvelope"
   },
   {
-    "display_html": "<a href=\"#v:deserialiseFromTextEnvelope\">deserialiseFromTextEnvelope</a> &#8759; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">HasTextEnvelope</a> a &#8658; <a href=\"Cardano-Api-HasTypeProxy.html#t:AsType\" title=\"Cardano.Api.HasTypeProxy\">AsType</a> a &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelope</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeError\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeError</a> a",
+    "display_html": "<a href=\"#v:deserialiseFromTextEnvelope\">deserialiseFromTextEnvelope</a> &#8759; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">HasTextEnvelope</a> a &#8658; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:AsType\" title=\"Cardano.Api.SerialiseTextEnvelope\">AsType</a> a &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelope</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeError\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeError</a> a",
     "name": "deserialiseFromTextEnvelope",
     "module": "Cardano.Api.SerialiseTextEnvelope",
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#v:deserialiseFromTextEnvelope"
   },
   {
-    "display_html": "<a href=\"#v:readFileTextEnvelope\">readFileTextEnvelope</a> &#8759; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">HasTextEnvelope</a> a &#8658; <a href=\"Cardano-Api-HasTypeProxy.html#t:AsType\" title=\"Cardano.Api.HasTypeProxy\">AsType</a> a &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeError\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeError</a>) a)",
+    "display_html": "<a href=\"#v:readFileTextEnvelope\">readFileTextEnvelope</a> &#8759; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">HasTextEnvelope</a> a &#8658; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:AsType\" title=\"Cardano.Api.SerialiseTextEnvelope\">AsType</a> a &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeError\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeError</a>) a)",
     "name": "readFileTextEnvelope",
     "module": "Cardano.Api.SerialiseTextEnvelope",
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#v:readFileTextEnvelope"
@@ -912,7 +912,7 @@
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#v:readTextEnvelopeOfTypeFromFile"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:FromSomeType\">FromSomeType</a> (c &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Constraint\" title=\"Data.Kind\">Constraint</a>) b <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:FromSomeType\">FromSomeType</a> &#8759; c a &#8658; <a href=\"Cardano-Api-HasTypeProxy.html#t:AsType\" title=\"Cardano.Api.HasTypeProxy\">AsType</a> a &#8594; (a &#8594; b) &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:FromSomeType\" title=\"Cardano.Api.SerialiseTextEnvelope\">FromSomeType</a> c b</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:FromSomeType\">FromSomeType</a> (c &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Constraint\" title=\"Data.Kind\">Constraint</a>) b <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:FromSomeType\">FromSomeType</a> &#8759; c a &#8658; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:AsType\" title=\"Cardano.Api.SerialiseTextEnvelope\">AsType</a> a &#8594; (a &#8594; b) &#8594; <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:FromSomeType\" title=\"Cardano.Api.SerialiseTextEnvelope\">FromSomeType</a> c b</li></ul>",
     "name": "FromSomeType FromSomeType",
     "module": "Cardano.Api.SerialiseTextEnvelope",
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#t:FromSomeType"
@@ -928,6 +928,12 @@
     "name": "readFileTextEnvelopeAnyOf",
     "module": "Cardano.Api.SerialiseTextEnvelope",
     "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#v:readFileTextEnvelopeAnyOf"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
+    "name": "AsType AsTextEnvelope",
+    "module": "Cardano.Api.SerialiseTextEnvelope",
+    "link": "cardano-api/Cardano-Api-SerialiseTextEnvelope.html#t:AsType"
   },
   {
     "display_html": "<span class=\"keyword\">class</span> (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Eq\" title=\"Distribution.Compat.Prelude.Internal\">Eq</a> (<a href=\"Cardano-Api-Key.html#t:VerificationKey\" title=\"Cardano.Api.Key\">VerificationKey</a> keyrole), <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Show\" title=\"Distribution.Compat.Prelude.Internal\">Show</a> (<a href=\"Cardano-Api-Key.html#t:VerificationKey\" title=\"Cardano.Api.Key\">VerificationKey</a> keyrole), <a href=\"Cardano-Api-SerialiseRaw.html#t:SerialiseAsRawBytes\" title=\"Cardano.Api.SerialiseRaw\">SerialiseAsRawBytes</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> keyrole), <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">HasTextEnvelope</a> (<a href=\"Cardano-Api-Key.html#t:VerificationKey\" title=\"Cardano.Api.Key\">VerificationKey</a> keyrole), <a href=\"Cardano-Api-SerialiseTextEnvelope.html#t:HasTextEnvelope\" title=\"Cardano.Api.SerialiseTextEnvelope\">HasTextEnvelope</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> keyrole)) &#8658; <a href=\"#t:Key\">Key</a> keyrole <span class=\"keyword\">where</span><ul class=\"subs\"><li><span class=\"keyword\">data</span> <a href=\"#t:VerificationKey\">VerificationKey</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a></li><li><span class=\"keyword\">data</span> <a href=\"#t:SigningKey\">SigningKey</a> keyrole &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/Data-Kind.html#t:Type\" title=\"Data.Kind\">Type</a></li><li><a href=\"#v:getVerificationKey\">getVerificationKey</a> &#8759; <a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> keyrole &#8594; <a href=\"Cardano-Api-Key.html#t:VerificationKey\" title=\"Cardano.Api.Key\">VerificationKey</a> keyrole</li><li><a href=\"#v:deterministicSigningKey\">deterministicSigningKey</a> &#8759; <a href=\"Cardano-Api-Key.html#t:AsType\" title=\"Cardano.Api.Key\">AsType</a> keyrole &#8594; Seed &#8594; <a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> keyrole</li><li><a href=\"#v:deterministicSigningKeySeedSize\">deterministicSigningKeySeedSize</a> &#8759; <a href=\"Cardano-Api-Key.html#t:AsType\" title=\"Cardano.Api.Key\">AsType</a> keyrole &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word\" title=\"Distribution.Compat.Prelude.Internal\">Word</a></li><li><a href=\"#v:verificationKeyHash\">verificationKeyHash</a> &#8759; <a href=\"Cardano-Api-Key.html#t:VerificationKey\" title=\"Cardano.Api.Key\">VerificationKey</a> keyrole &#8594; <a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> keyrole</li></ul>",
@@ -1051,7 +1057,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsTxMetadata",
+    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsTxMetadata",
     "module": "Cardano.Api.TxMetadata",
     "link": "cardano-api/Cardano-Api-TxMetadata.html#t:AsType"
   },
@@ -1201,7 +1207,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey",
+    "name": "AsType AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey",
     "module": "Cardano.Api.KeysShelley",
     "link": "cardano-api/Cardano-Api-KeysShelley.html#t:AsType"
   },
@@ -1248,8 +1254,8 @@
     "link": "cardano-api/Cardano-Api-Script.html#t:SimpleScriptVersion"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScriptVersion\">PlutusScriptVersion</a> lang",
-    "name": "PlutusScriptVersion",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScriptVersion\">PlutusScriptVersion</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:PlutusScriptV1\">PlutusScriptV1</a> &#8759; <a href=\"Cardano-Api-Script.html#t:PlutusScriptVersion\" title=\"Cardano.Api.Script\">PlutusScriptVersion</a> PlutusScriptV1</li></ul>",
+    "name": "PlutusScriptVersion PlutusScriptV1",
     "module": "Cardano.Api.Script",
     "link": "cardano-api/Cardano-Api-Script.html#t:PlutusScriptVersion"
   },
@@ -1272,7 +1278,7 @@
     "link": "cardano-api/Cardano-Api-Script.html#t:IsSimpleScriptLanguage"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Script\">Script</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScript\">SimpleScript</a> &#8759; !(<a href=\"Cardano-Api-Script.html#t:SimpleScriptVersion\" title=\"Cardano.Api.Script\">SimpleScriptVersion</a> lang) &#8594; !(<a href=\"Cardano-Api-Script.html#t:SimpleScript\" title=\"Cardano.Api.Script\">SimpleScript</a> lang) &#8594; <a href=\"Cardano-Api-Script.html#t:Script\" title=\"Cardano.Api.Script\">Script</a> lang</li><li><a href=\"#v:PlutusScript\">PlutusScript</a> &#8759; !(<a href=\"Cardano-Api-Script.html#t:PlutusScriptVersion\" title=\"Cardano.Api.Script\">PlutusScriptVersion</a> lang) &#8594; () &#8594; <a href=\"Cardano-Api-Script.html#t:Script\" title=\"Cardano.Api.Script\">Script</a> lang</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Script\">Script</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScript\">SimpleScript</a> &#8759; !(<a href=\"Cardano-Api-Script.html#t:SimpleScriptVersion\" title=\"Cardano.Api.Script\">SimpleScriptVersion</a> lang) &#8594; !(<a href=\"Cardano-Api-Script.html#t:SimpleScript\" title=\"Cardano.Api.Script\">SimpleScript</a> lang) &#8594; <a href=\"Cardano-Api-Script.html#t:Script\" title=\"Cardano.Api.Script\">Script</a> lang</li><li><a href=\"#v:PlutusScript\">PlutusScript</a> &#8759; !(<a href=\"Cardano-Api-Script.html#t:PlutusScriptVersion\" title=\"Cardano.Api.Script\">PlutusScriptVersion</a> lang) &#8594; !(<a href=\"Cardano-Api-Script.html#t:PlutusScript\" title=\"Cardano.Api.Script\">PlutusScript</a> lang) &#8594; <a href=\"Cardano-Api-Script.html#t:Script\" title=\"Cardano.Api.Script\">Script</a> lang</li></ul>",
     "name": "Script SimpleScript PlutusScript",
     "module": "Cardano.Api.Script",
     "link": "cardano-api/Cardano-Api-Script.html#t:Script"
@@ -1326,8 +1332,8 @@
     "link": "cardano-api/Cardano-Api-Script.html#t:WitCtxStake"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptWitness\">ScriptWitness</a> witctx era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptWitness\">SimpleScriptWitness</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> lang era &#8594; <a href=\"Cardano-Api-Script.html#t:SimpleScriptVersion\" title=\"Cardano.Api.Script\">SimpleScriptVersion</a> lang &#8594; <a href=\"Cardano-Api-Script.html#t:SimpleScript\" title=\"Cardano.Api.Script\">SimpleScript</a> lang &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptWitness\" title=\"Cardano.Api.Script\">ScriptWitness</a> witctx era</li></ul>",
-    "name": "ScriptWitness SimpleScriptWitness",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptWitness\">ScriptWitness</a> witctx era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptWitness\">SimpleScriptWitness</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> lang era &#8594; <a href=\"Cardano-Api-Script.html#t:SimpleScriptVersion\" title=\"Cardano.Api.Script\">SimpleScriptVersion</a> lang &#8594; <a href=\"Cardano-Api-Script.html#t:SimpleScript\" title=\"Cardano.Api.Script\">SimpleScript</a> lang &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptWitness\" title=\"Cardano.Api.Script\">ScriptWitness</a> witctx era</li><li><a href=\"#v:PlutusScriptWitness\">PlutusScriptWitness</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> lang era &#8594; <a href=\"Cardano-Api-Script.html#t:PlutusScriptVersion\" title=\"Cardano.Api.Script\">PlutusScriptVersion</a> lang &#8594; <a href=\"Cardano-Api-Script.html#t:PlutusScript\" title=\"Cardano.Api.Script\">PlutusScript</a> lang &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptDatum\" title=\"Cardano.Api.Script\">ScriptDatum</a> witctx &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptRedeemer\" title=\"Cardano.Api.Script\">ScriptRedeemer</a> &#8594; <a href=\"Cardano-Api-Script.html#t:ExecutionUnits\" title=\"Cardano.Api.Script\">ExecutionUnits</a> &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptWitness\" title=\"Cardano.Api.Script\">ScriptWitness</a> witctx era</li></ul>",
+    "name": "ScriptWitness SimpleScriptWitness PlutusScriptWitness",
     "module": "Cardano.Api.Script",
     "link": "cardano-api/Cardano-Api-Script.html#t:ScriptWitness"
   },
@@ -1350,8 +1356,20 @@
     "link": "cardano-api/Cardano-Api-Script.html#t:ScriptWitnessInCtx"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptLanguageInEra\">ScriptLanguageInEra</a> lang era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptV1InShelley\">SimpleScriptV1InShelley</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:ShelleyEra\" title=\"Cardano.Api.Eras\">ShelleyEra</a></li><li><a href=\"#v:SimpleScriptV1InAllegra\">SimpleScriptV1InAllegra</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:AllegraEra\" title=\"Cardano.Api.Eras\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV1InMary\">SimpleScriptV1InMary</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:MaryEra\" title=\"Cardano.Api.Eras\">MaryEra</a></li><li><a href=\"#v:SimpleScriptV2InAllegra\">SimpleScriptV2InAllegra</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV2\" title=\"Cardano.Api.Script\">SimpleScriptV2</a> <a href=\"Cardano-Api-Eras.html#t:AllegraEra\" title=\"Cardano.Api.Eras\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV2InMary\">SimpleScriptV2InMary</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV2\" title=\"Cardano.Api.Script\">SimpleScriptV2</a> <a href=\"Cardano-Api-Eras.html#t:MaryEra\" title=\"Cardano.Api.Eras\">MaryEra</a></li></ul>",
-    "name": "ScriptLanguageInEra SimpleScriptV1InShelley SimpleScriptV1InAllegra SimpleScriptV1InMary SimpleScriptV2InAllegra SimpleScriptV2InMary",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptDatum\">ScriptDatum</a> witctx <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ScriptDatumForTxIn\">ScriptDatumForTxIn</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptData\" title=\"Cardano.Api.Script\">ScriptData</a> &#8594; <a href=\"Cardano-Api-Script.html#t:ScriptDatum\" title=\"Cardano.Api.Script\">ScriptDatum</a> <a href=\"Cardano-Api-Script.html#t:WitCtxTxIn\" title=\"Cardano.Api.Script\">WitCtxTxIn</a></li><li><a href=\"#v:NoScriptDatumForMint\">NoScriptDatumForMint</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptDatum\" title=\"Cardano.Api.Script\">ScriptDatum</a> <a href=\"Cardano-Api-Script.html#t:WitCtxMint\" title=\"Cardano.Api.Script\">WitCtxMint</a></li><li><a href=\"#v:NoScriptDatumForStake\">NoScriptDatumForStake</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptDatum\" title=\"Cardano.Api.Script\">ScriptDatum</a> <a href=\"Cardano-Api-Script.html#t:WitCtxStake\" title=\"Cardano.Api.Script\">WitCtxStake</a></li></ul>",
+    "name": "ScriptDatum ScriptDatumForTxIn NoScriptDatumForMint NoScriptDatumForStake",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#t:ScriptDatum"
+  },
+  {
+    "display_html": "<span class=\"keyword\">type</span> <a href=\"#t:ScriptRedeemer\">ScriptRedeemer</a> = <a href=\"Cardano-Api-Script.html#t:ScriptData\" title=\"Cardano.Api.Script\">ScriptData</a>",
+    "name": "ScriptRedeemer",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#t:ScriptRedeemer"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptLanguageInEra\">ScriptLanguageInEra</a> lang era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptV1InShelley\">SimpleScriptV1InShelley</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:ShelleyEra\" title=\"Cardano.Api.Eras\">ShelleyEra</a></li><li><a href=\"#v:SimpleScriptV1InAllegra\">SimpleScriptV1InAllegra</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:AllegraEra\" title=\"Cardano.Api.Eras\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV1InMary\">SimpleScriptV1InMary</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:MaryEra\" title=\"Cardano.Api.Eras\">MaryEra</a></li><li><a href=\"#v:SimpleScriptV1InAlonzo\">SimpleScriptV1InAlonzo</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV1\" title=\"Cardano.Api.Script\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li><li><a href=\"#v:SimpleScriptV2InAllegra\">SimpleScriptV2InAllegra</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV2\" title=\"Cardano.Api.Script\">SimpleScriptV2</a> <a href=\"Cardano-Api-Eras.html#t:AllegraEra\" title=\"Cardano.Api.Eras\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV2InMary\">SimpleScriptV2InMary</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV2\" title=\"Cardano.Api.Script\">SimpleScriptV2</a> <a href=\"Cardano-Api-Eras.html#t:MaryEra\" title=\"Cardano.Api.Eras\">MaryEra</a></li><li><a href=\"#v:SimpleScriptV2InAlonzo\">SimpleScriptV2InAlonzo</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> <a href=\"Cardano-Api-Script.html#t:SimpleScriptV2\" title=\"Cardano.Api.Script\">SimpleScriptV2</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li><li><a href=\"#v:PlutusScriptV1InAlonzo\">PlutusScriptV1InAlonzo</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptLanguageInEra\" title=\"Cardano.Api.Script\">ScriptLanguageInEra</a> PlutusScriptV1 <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li></ul>",
+    "name": "ScriptLanguageInEra SimpleScriptV1InShelley SimpleScriptV1InAllegra SimpleScriptV1InMary SimpleScriptV1InAlonzo SimpleScriptV2InAllegra SimpleScriptV2InMary SimpleScriptV2InAlonzo PlutusScriptV1InAlonzo",
     "module": "Cardano.Api.Script",
     "link": "cardano-api/Cardano-Api-Script.html#t:ScriptLanguageInEra"
   },
@@ -1396,6 +1414,24 @@
     "name": "adjustSimpleScriptVersion",
     "module": "Cardano.Api.Script",
     "link": "cardano-api/Cardano-Api-Script.html#v:adjustSimpleScriptVersion"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScript\">PlutusScript</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:PlutusScriptSerialised\">PlutusScriptSerialised</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString-Short.html#t:ShortByteString\" title=\"Data.ByteString.Short\">ShortByteString</a> &#8594; <a href=\"Cardano-Api-Script.html#t:PlutusScript\" title=\"Cardano.Api.Script\">PlutusScript</a> lang</li></ul>",
+    "name": "PlutusScript PlutusScriptSerialised",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#t:PlutusScript"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptData\">ScriptData</a> = <a href=\"#v:ScriptData\">ScriptData</a>",
+    "name": "ScriptData ScriptData",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#t:ScriptData"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ExecutionUnits\">ExecutionUnits</a> = <a href=\"#v:ExecutionUnits\">ExecutionUnits</a> {<ul class=\"subs\"><li><a href=\"#v:executionSteps\">executionSteps</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a></li><li><a href=\"#v:executionMemory\">executionMemory</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a></li></ul>}",
+    "name": "ExecutionUnits ExecutionUnits executionSteps executionMemory",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#t:ExecutionUnits"
   },
   {
     "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:ScriptHash\">ScriptHash</a> = <a href=\"#v:ScriptHash\">ScriptHash</a> (ScriptHash StandardCrypto)",
@@ -1446,6 +1482,18 @@
     "link": "cardano-api/Cardano-Api-Script.html#v:fromAllegraTimelock"
   },
   {
+    "display_html": "<a href=\"#v:toAlonzoExUnits\">toAlonzoExUnits</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ExecutionUnits\" title=\"Cardano.Api.Script\">ExecutionUnits</a> &#8594; ExUnits",
+    "name": "toAlonzoExUnits",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#v:toAlonzoExUnits"
+  },
+  {
+    "display_html": "<a href=\"#v:fromAlonzoExUnits\">fromAlonzoExUnits</a> &#8759; ExUnits &#8594; <a href=\"Cardano-Api-Script.html#t:ExecutionUnits\" title=\"Cardano.Api.Script\">ExecutionUnits</a>",
+    "name": "fromAlonzoExUnits",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#v:fromAlonzoExUnits"
+  },
+  {
     "display_html": "<a href=\"#v:toShelleyScriptHash\">toShelleyScriptHash</a> &#8759; <a href=\"Cardano-Api-Script.html#t:ScriptHash\" title=\"Cardano.Api.Script\">ScriptHash</a> &#8594; ScriptHash StandardCrypto",
     "name": "toShelleyScriptHash",
     "module": "Cardano.Api.Script",
@@ -1459,7 +1507,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash",
+    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsSimpleScript AsPlutusScript",
     "module": "Cardano.Api.Script",
     "link": "cardano-api/Cardano-Api-Script.html#t:AsType"
   },
@@ -1477,7 +1525,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsByronKey AsByronKeyLegacy",
+    "name": "AsType AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsByronKey AsByronKeyLegacy",
     "module": "Cardano.Api.KeysByron",
     "link": "cardano-api/Cardano-Api-KeysByron.html#t:AsType"
   },
@@ -1591,7 +1639,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsHash AsVerificationKey AsSigningKey AsKesKey AsVrfKey",
+    "name": "AsType AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsKesKey AsVrfKey",
     "module": "Cardano.Api.KeysPraos",
     "link": "cardano-api/Cardano-Api-KeysPraos.html#t:AsType"
   },
@@ -1633,7 +1681,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata",
+    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsSimpleScript AsPlutusScript AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata",
     "module": "Cardano.Api.StakePoolMetadata",
     "link": "cardano-api/Cardano-Api-StakePoolMetadata.html#t:AsType"
   },
@@ -2005,7 +2053,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsPolicyId AsAssetName",
+    "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsSimpleScript AsPlutusScript AsPolicyId AsAssetName",
     "module": "Cardano.Api.Value",
     "link": "cardano-api/Cardano-Api-Value.html#t:AsType"
   },
@@ -2113,7 +2161,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal",
+    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsSimpleScript AsPlutusScript AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal",
     "module": "Cardano.Api.ProtocolParameters",
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#t:AsType"
   },
@@ -2215,7 +2263,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsCertificate",
+    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsSimpleScript AsPlutusScript AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsCertificate",
     "module": "Cardano.Api.Certificate",
     "link": "cardano-api/Cardano-Api-Certificate.html#t:AsType"
   },
@@ -3157,7 +3205,7 @@
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
-    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTx AsByronTx AsShelleyTx AsKeyWitness AsByronWitness AsShelleyWitness AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal AsCertificate AsOperationalCertificate AsOperationalCertificateIssueCounter",
+    "name": "AsType AsByronAddr AsShelleyAddr AsByronAddress AsShelleyAddress AsAddress AsAddressAny AsAddressInEra AsStakeAddress AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTx AsByronTx AsShelleyTx AsKeyWitness AsByronWitness AsShelleyWitness AsTextEnvelope AsTxMetadata AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptHash AsSimpleScript AsPlutusScript AsByronKey AsByronKeyLegacy AsKesKey AsVrfKey AsStakePoolMetadata AsPolicyId AsAssetName AsUpdateProposal AsCertificate AsOperationalCertificate AsOperationalCertificateIssueCounter",
     "module": "Cardano.Api.OperationalCertificate",
     "link": "cardano-api/Cardano-Api-OperationalCertificate.html#t:AsType"
   },
@@ -4200,8 +4248,8 @@
     "link": "cardano-api/Cardano-Api.html#t:SimpleScriptVersion"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScriptVersion\">PlutusScriptVersion</a> lang",
-    "name": "PlutusScriptVersion",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScriptVersion\">PlutusScriptVersion</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:PlutusScriptV1\">PlutusScriptV1</a> &#8759; <a href=\"Cardano-Api.html#t:PlutusScriptVersion\" title=\"Cardano.Api\">PlutusScriptVersion</a> PlutusScriptV1</li></ul>",
+    "name": "PlutusScriptVersion PlutusScriptV1",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:PlutusScriptVersion"
   },
@@ -4224,7 +4272,7 @@
     "link": "cardano-api/Cardano-Api.html#t:IsSimpleScriptLanguage"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Script\">Script</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScript\">SimpleScript</a> &#8759; !(<a href=\"Cardano-Api.html#t:SimpleScriptVersion\" title=\"Cardano.Api\">SimpleScriptVersion</a> lang) &#8594; !(<a href=\"Cardano-Api.html#t:SimpleScript\" title=\"Cardano.Api\">SimpleScript</a> lang) &#8594; <a href=\"Cardano-Api.html#t:Script\" title=\"Cardano.Api\">Script</a> lang</li><li><a href=\"#v:PlutusScript\">PlutusScript</a> &#8759; !(<a href=\"Cardano-Api.html#t:PlutusScriptVersion\" title=\"Cardano.Api\">PlutusScriptVersion</a> lang) &#8594; () &#8594; <a href=\"Cardano-Api.html#t:Script\" title=\"Cardano.Api\">Script</a> lang</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Script\">Script</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScript\">SimpleScript</a> &#8759; !(<a href=\"Cardano-Api.html#t:SimpleScriptVersion\" title=\"Cardano.Api\">SimpleScriptVersion</a> lang) &#8594; !(<a href=\"Cardano-Api.html#t:SimpleScript\" title=\"Cardano.Api\">SimpleScript</a> lang) &#8594; <a href=\"Cardano-Api.html#t:Script\" title=\"Cardano.Api\">Script</a> lang</li><li><a href=\"#v:PlutusScript\">PlutusScript</a> &#8759; !(<a href=\"Cardano-Api.html#t:PlutusScriptVersion\" title=\"Cardano.Api\">PlutusScriptVersion</a> lang) &#8594; !(<a href=\"Cardano-Api.html#t:PlutusScript\" title=\"Cardano.Api\">PlutusScript</a> lang) &#8594; <a href=\"Cardano-Api.html#t:Script\" title=\"Cardano.Api\">Script</a> lang</li></ul>",
     "name": "Script SimpleScript PlutusScript",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:Script"
@@ -4278,8 +4326,8 @@
     "link": "cardano-api/Cardano-Api.html#t:WitCtxStake"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptWitness\">ScriptWitness</a> witctx era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptWitness\">SimpleScriptWitness</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> lang era &#8594; <a href=\"Cardano-Api.html#t:SimpleScriptVersion\" title=\"Cardano.Api\">SimpleScriptVersion</a> lang &#8594; <a href=\"Cardano-Api.html#t:SimpleScript\" title=\"Cardano.Api\">SimpleScript</a> lang &#8594; <a href=\"Cardano-Api.html#t:ScriptWitness\" title=\"Cardano.Api\">ScriptWitness</a> witctx era</li></ul>",
-    "name": "ScriptWitness SimpleScriptWitness",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptWitness\">ScriptWitness</a> witctx era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptWitness\">SimpleScriptWitness</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> lang era &#8594; <a href=\"Cardano-Api.html#t:SimpleScriptVersion\" title=\"Cardano.Api\">SimpleScriptVersion</a> lang &#8594; <a href=\"Cardano-Api.html#t:SimpleScript\" title=\"Cardano.Api\">SimpleScript</a> lang &#8594; <a href=\"Cardano-Api.html#t:ScriptWitness\" title=\"Cardano.Api\">ScriptWitness</a> witctx era</li><li><a href=\"#v:PlutusScriptWitness\">PlutusScriptWitness</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> lang era &#8594; <a href=\"Cardano-Api.html#t:PlutusScriptVersion\" title=\"Cardano.Api\">PlutusScriptVersion</a> lang &#8594; <a href=\"Cardano-Api.html#t:PlutusScript\" title=\"Cardano.Api\">PlutusScript</a> lang &#8594; <a href=\"Cardano-Api.html#t:ScriptDatum\" title=\"Cardano.Api\">ScriptDatum</a> witctx &#8594; <a href=\"Cardano-Api.html#t:ScriptRedeemer\" title=\"Cardano.Api\">ScriptRedeemer</a> &#8594; <a href=\"Cardano-Api-Script.html#t:ExecutionUnits\" title=\"Cardano.Api.Script\">ExecutionUnits</a> &#8594; <a href=\"Cardano-Api.html#t:ScriptWitness\" title=\"Cardano.Api\">ScriptWitness</a> witctx era</li></ul>",
+    "name": "ScriptWitness SimpleScriptWitness PlutusScriptWitness",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:ScriptWitness"
   },
@@ -4302,8 +4350,20 @@
     "link": "cardano-api/Cardano-Api.html#t:ScriptWitnessInCtx"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptLanguageInEra\">ScriptLanguageInEra</a> lang era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptV1InShelley\">SimpleScriptV1InShelley</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api.html#t:ShelleyEra\" title=\"Cardano.Api\">ShelleyEra</a></li><li><a href=\"#v:SimpleScriptV1InAllegra\">SimpleScriptV1InAllegra</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api.html#t:AllegraEra\" title=\"Cardano.Api\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV1InMary\">SimpleScriptV1InMary</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api.html#t:MaryEra\" title=\"Cardano.Api\">MaryEra</a></li><li><a href=\"#v:SimpleScriptV2InAllegra\">SimpleScriptV2InAllegra</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV2\" title=\"Cardano.Api\">SimpleScriptV2</a> <a href=\"Cardano-Api.html#t:AllegraEra\" title=\"Cardano.Api\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV2InMary\">SimpleScriptV2InMary</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV2\" title=\"Cardano.Api\">SimpleScriptV2</a> <a href=\"Cardano-Api.html#t:MaryEra\" title=\"Cardano.Api\">MaryEra</a></li></ul>",
-    "name": "ScriptLanguageInEra SimpleScriptV1InShelley SimpleScriptV1InAllegra SimpleScriptV1InMary SimpleScriptV2InAllegra SimpleScriptV2InMary",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptDatum\">ScriptDatum</a> witctx <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ScriptDatumForTxIn\">ScriptDatumForTxIn</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptData\" title=\"Cardano.Api\">ScriptData</a> &#8594; <a href=\"Cardano-Api.html#t:ScriptDatum\" title=\"Cardano.Api\">ScriptDatum</a> <a href=\"Cardano-Api.html#t:WitCtxTxIn\" title=\"Cardano.Api\">WitCtxTxIn</a></li><li><a href=\"#v:NoScriptDatumForMint\">NoScriptDatumForMint</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptDatum\" title=\"Cardano.Api\">ScriptDatum</a> <a href=\"Cardano-Api.html#t:WitCtxMint\" title=\"Cardano.Api\">WitCtxMint</a></li><li><a href=\"#v:NoScriptDatumForStake\">NoScriptDatumForStake</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptDatum\" title=\"Cardano.Api\">ScriptDatum</a> <a href=\"Cardano-Api.html#t:WitCtxStake\" title=\"Cardano.Api\">WitCtxStake</a></li></ul>",
+    "name": "ScriptDatum ScriptDatumForTxIn NoScriptDatumForMint NoScriptDatumForStake",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:ScriptDatum"
+  },
+  {
+    "display_html": "<span class=\"keyword\">type</span> <a href=\"#t:ScriptRedeemer\">ScriptRedeemer</a> = <a href=\"Cardano-Api.html#t:ScriptData\" title=\"Cardano.Api\">ScriptData</a>",
+    "name": "ScriptRedeemer",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:ScriptRedeemer"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptLanguageInEra\">ScriptLanguageInEra</a> lang era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:SimpleScriptV1InShelley\">SimpleScriptV1InShelley</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api.html#t:ShelleyEra\" title=\"Cardano.Api\">ShelleyEra</a></li><li><a href=\"#v:SimpleScriptV1InAllegra\">SimpleScriptV1InAllegra</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api.html#t:AllegraEra\" title=\"Cardano.Api\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV1InMary\">SimpleScriptV1InMary</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api.html#t:MaryEra\" title=\"Cardano.Api\">MaryEra</a></li><li><a href=\"#v:SimpleScriptV1InAlonzo\">SimpleScriptV1InAlonzo</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV1\" title=\"Cardano.Api\">SimpleScriptV1</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li><li><a href=\"#v:SimpleScriptV2InAllegra\">SimpleScriptV2InAllegra</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV2\" title=\"Cardano.Api\">SimpleScriptV2</a> <a href=\"Cardano-Api.html#t:AllegraEra\" title=\"Cardano.Api\">AllegraEra</a></li><li><a href=\"#v:SimpleScriptV2InMary\">SimpleScriptV2InMary</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV2\" title=\"Cardano.Api\">SimpleScriptV2</a> <a href=\"Cardano-Api.html#t:MaryEra\" title=\"Cardano.Api\">MaryEra</a></li><li><a href=\"#v:SimpleScriptV2InAlonzo\">SimpleScriptV2InAlonzo</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> <a href=\"Cardano-Api.html#t:SimpleScriptV2\" title=\"Cardano.Api\">SimpleScriptV2</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li><li><a href=\"#v:PlutusScriptV1InAlonzo\">PlutusScriptV1InAlonzo</a> &#8759; <a href=\"Cardano-Api.html#t:ScriptLanguageInEra\" title=\"Cardano.Api\">ScriptLanguageInEra</a> PlutusScriptV1 <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li></ul>",
+    "name": "ScriptLanguageInEra SimpleScriptV1InShelley SimpleScriptV1InAllegra SimpleScriptV1InMary SimpleScriptV1InAlonzo SimpleScriptV2InAllegra SimpleScriptV2InMary SimpleScriptV2InAlonzo PlutusScriptV1InAlonzo",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:ScriptLanguageInEra"
   },
@@ -4348,6 +4408,18 @@
     "name": "adjustSimpleScriptVersion",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:adjustSimpleScriptVersion"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScript\">PlutusScript</a> lang",
+    "name": "PlutusScript",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:PlutusScript"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptData\">ScriptData</a> = <a href=\"#v:ScriptData\">ScriptData</a>",
+    "name": "ScriptData ScriptData",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:ScriptData"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptHash\">ScriptHash</a>",
@@ -4432,6 +4504,12 @@
     "name": "writeFileJSON",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:writeFileJSON"
+  },
+  {
+    "display_html": "<a href=\"#v:prettyPrintJSON\">prettyPrintJSON</a> &#8759; <a href=\"Cardano-Api.html#t:ToJSON\" title=\"Cardano.Api\">ToJSON</a> a &#8658; a &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a>",
+    "name": "prettyPrintJSON",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#v:prettyPrintJSON"
   },
   {
     "display_html": "<span class=\"keyword\">class</span> (<a href=\"Cardano-Api.html#t:HasTypeProxy\" title=\"Cardano.Api\">HasTypeProxy</a> a, <a href=\"Cardano-Api.html#t:SerialiseAsRawBytes\" title=\"Cardano.Api\">SerialiseAsRawBytes</a> a) &#8658; <a href=\"#t:SerialiseAsBech32\">SerialiseAsBech32</a> a",
@@ -5322,6 +5400,12 @@
     "link": "cardano-api/Cardano-Api-Shelley.html#v:fromShelleyScriptHash"
   },
   {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:PlutusScript\">PlutusScript</a> lang <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:PlutusScriptSerialised\">PlutusScriptSerialised</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString-Short.html#t:ShortByteString\" title=\"Data.ByteString.Short\">ShortByteString</a> &#8594; <a href=\"Cardano-Api-Shelley.html#t:PlutusScript\" title=\"Cardano.Api.Shelley\">PlutusScript</a> lang</li></ul>",
+    "name": "PlutusScript PlutusScriptSerialised",
+    "module": "Cardano.Api.Shelley",
+    "link": "cardano-api/Cardano-Api-Shelley.html#t:PlutusScript"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:Certificate\">Certificate</a><ul class=\"subs\"><li>= <a href=\"#v:StakeAddressRegistrationCertificate\">StakeAddressRegistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDeregistrationCertificate\">StakeAddressDeregistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a></li><li>| <a href=\"#v:StakeAddressDelegationCertificate\">StakeAddressDelegationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakeCredential\" title=\"Cardano.Api.Shelley\">StakeCredential</a> <a href=\"Cardano-Api-Shelley.html#t:PoolId\" title=\"Cardano.Api.Shelley\">PoolId</a></li><li>| <a href=\"#v:StakePoolRegistrationCertificate\">StakePoolRegistrationCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:StakePoolParameters\" title=\"Cardano.Api.Shelley\">StakePoolParameters</a></li><li>| <a href=\"#v:StakePoolRetirementCertificate\">StakePoolRetirementCertificate</a> <a href=\"Cardano-Api-Shelley.html#t:PoolId\" title=\"Cardano.Api.Shelley\">PoolId</a> <a href=\"Cardano-Api-Shelley.html#t:EpochNo\" title=\"Cardano.Api.Shelley\">EpochNo</a></li><li>| <a href=\"#v:GenesisKeyDelegationCertificate\">GenesisKeyDelegationCertificate</a> (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisKey\" title=\"Cardano.Api.KeysShelley\">GenesisKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:GenesisDelegateKey\" title=\"Cardano.Api.KeysShelley\">GenesisDelegateKey</a>) (<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-Shelley.html#t:VrfKey\" title=\"Cardano.Api.Shelley\">VrfKey</a>)</li><li>| <a href=\"#v:MIRCertificate\">MIRCertificate</a> MIRPot <a href=\"Cardano-Api-Certificate.html#t:MIRTarget\" title=\"Cardano.Api.Certificate\">MIRTarget</a></li></ul>",
     "name": "Certificate StakeAddressRegistrationCertificate StakeAddressDeregistrationCertificate StakeAddressDelegationCertificate StakePoolRegistrationCertificate StakePoolRetirementCertificate GenesisKeyDelegationCertificate MIRCertificate",
     "module": "Cardano.Api.Shelley",
@@ -5866,6 +5950,24 @@
     "name": "parseValue",
     "module": "Cardano.CLI.Mary.ValueParser",
     "link": "cardano-cli/Cardano-CLI-Mary-ValueParser.html#v:parseValue"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptDecodeError\">ScriptDecodeError</a><ul class=\"subs\"><li>= <a href=\"#v:ScriptDecodeTextEnvelopeError\">ScriptDecodeTextEnvelopeError</a> <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-SerialiseTextEnvelope.html#t:TextEnvelopeError\" title=\"Cardano.Api.SerialiseTextEnvelope\">TextEnvelopeError</a></li><li>| <a href=\"#v:ScriptDecodeSimpleScriptError\">ScriptDecodeSimpleScriptError</a> <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-SerialiseJSON.html#t:JsonDecodeError\" title=\"Cardano.Api.SerialiseJSON\">JsonDecodeError</a></li></ul>",
+    "name": "ScriptDecodeError ScriptDecodeTextEnvelopeError ScriptDecodeSimpleScriptError",
+    "module": "Cardano.CLI.Shelley.Script",
+    "link": "cardano-cli/Cardano-CLI-Shelley-Script.html#t:ScriptDecodeError"
+  },
+  {
+    "display_html": "<a href=\"#v:deserialiseScriptInAnyLang\">deserialiseScriptInAnyLang</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> <a href=\"Cardano-CLI-Shelley-Script.html#t:ScriptDecodeError\" title=\"Cardano.CLI.Shelley.Script\">ScriptDecodeError</a> <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:ScriptInAnyLang\" title=\"Cardano.Api.Script\">ScriptInAnyLang</a>",
+    "name": "deserialiseScriptInAnyLang",
+    "module": "Cardano.CLI.Shelley.Script",
+    "link": "cardano-cli/Cardano-CLI-Shelley-Script.html#v:deserialiseScriptInAnyLang"
+  },
+  {
+    "display_html": "<a href=\"#v:readFileScriptInAnyLang\">readFileScriptInAnyLang</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a> &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/mtl-2.2.2/Control-Monad-Except.html#t:ExceptT\" title=\"Control.Monad.Except\">ExceptT</a> (<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> <a href=\"Cardano-CLI-Shelley-Script.html#t:ScriptDecodeError\" title=\"Cardano.CLI.Shelley.Script\">ScriptDecodeError</a>) <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> <a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Script.html#t:ScriptInAnyLang\" title=\"Cardano.Api.Script\">ScriptInAnyLang</a>",
+    "name": "readFileScriptInAnyLang",
+    "module": "Cardano.CLI.Shelley.Script",
+    "link": "cardano-cli/Cardano-CLI-Shelley-Script.html#v:readFileScriptInAnyLang"
   },
   {
     "display_html": "<a href=\"#v:toplevelExceptionHandler\">toplevelExceptionHandler</a> &#8759; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> a &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/System-IO.html#t:IO\" title=\"System.IO\">IO</a> a",
@@ -6468,8 +6570,8 @@
     "link": "cardano-cli/Cardano-CLI-Shelley-Run-Address-Info.html#t:ShelleyAddressInfoError"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ShelleyAddressCmdError\">ShelleyAddressCmdError</a><ul class=\"subs\"><li>= <a href=\"#v:ShelleyAddressCmdAddressInfoError\">ShelleyAddressCmdAddressInfoError</a> !<a href=\"Cardano-CLI-Shelley-Run-Address-Info.html#t:ShelleyAddressInfoError\" title=\"Cardano.CLI.Shelley.Run.Address.Info\">ShelleyAddressInfoError</a></li><li>| <a href=\"#v:ShelleyAddressCmdAesonDecodeError\">ShelleyAddressCmdAesonDecodeError</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:FilePath\" title=\"Distribution.Compat.Prelude.Internal\">FilePath</a> !<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/Data-Text.html#t:Text\" title=\"Data.Text\">Text</a></li><li>| <a href=\"#v:ShelleyAddressCmdReadKeyFileError\">ShelleyAddressCmdReadKeyFileError</a> !(<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> <a href=\"Cardano-CLI-Shelley-Key.html#t:InputDecodeError\" title=\"Cardano.CLI.Shelley.Key\">InputDecodeError</a>)</li><li>| <a href=\"#v:ShelleyAddressCmdReadFileException\">ShelleyAddressCmdReadFileException</a> !(<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> ())</li><li>| <a href=\"#v:ShelleyAddressCmdVerificationKeyTextOrFileError\">ShelleyAddressCmdVerificationKeyTextOrFileError</a> !<a href=\"Cardano-CLI-Shelley-Key.html#t:VerificationKeyTextOrFileError\" title=\"Cardano.CLI.Shelley.Key\">VerificationKeyTextOrFileError</a></li><li>| <a href=\"#v:ShelleyAddressCmdWriteFileError\">ShelleyAddressCmdWriteFileError</a> !(<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> ())</li></ul>",
-    "name": "ShelleyAddressCmdError ShelleyAddressCmdAddressInfoError ShelleyAddressCmdAesonDecodeError ShelleyAddressCmdReadKeyFileError ShelleyAddressCmdReadFileException ShelleyAddressCmdVerificationKeyTextOrFileError ShelleyAddressCmdWriteFileError",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ShelleyAddressCmdError\">ShelleyAddressCmdError</a><ul class=\"subs\"><li>= <a href=\"#v:ShelleyAddressCmdAddressInfoError\">ShelleyAddressCmdAddressInfoError</a> !<a href=\"Cardano-CLI-Shelley-Run-Address-Info.html#t:ShelleyAddressInfoError\" title=\"Cardano.CLI.Shelley.Run.Address.Info\">ShelleyAddressInfoError</a></li><li>| <a href=\"#v:ShelleyAddressCmdReadKeyFileError\">ShelleyAddressCmdReadKeyFileError</a> !(<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> <a href=\"Cardano-CLI-Shelley-Key.html#t:InputDecodeError\" title=\"Cardano.CLI.Shelley.Key\">InputDecodeError</a>)</li><li>| <a href=\"#v:ShelleyAddressCmdReadScriptFileError\">ShelleyAddressCmdReadScriptFileError</a> !(<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> <a href=\"Cardano-CLI-Shelley-Script.html#t:ScriptDecodeError\" title=\"Cardano.CLI.Shelley.Script\">ScriptDecodeError</a>)</li><li>| <a href=\"#v:ShelleyAddressCmdVerificationKeyTextOrFileError\">ShelleyAddressCmdVerificationKeyTextOrFileError</a> !<a href=\"Cardano-CLI-Shelley-Key.html#t:VerificationKeyTextOrFileError\" title=\"Cardano.CLI.Shelley.Key\">VerificationKeyTextOrFileError</a></li><li>| <a href=\"#v:ShelleyAddressCmdWriteFileError\">ShelleyAddressCmdWriteFileError</a> !(<a href=\"file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/Cardano-Api-Error.html#t:FileError\" title=\"Cardano.Api.Error\">FileError</a> ())</li></ul>",
+    "name": "ShelleyAddressCmdError ShelleyAddressCmdAddressInfoError ShelleyAddressCmdReadKeyFileError ShelleyAddressCmdReadScriptFileError ShelleyAddressCmdVerificationKeyTextOrFileError ShelleyAddressCmdWriteFileError",
     "module": "Cardano.CLI.Shelley.Run.Address",
     "link": "cardano-cli/Cardano-CLI-Shelley-Run-Address.html#t:ShelleyAddressCmdError"
   },

@@ -38,11 +38,11 @@
 </span><span id="line-38"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">PlutusCore.Evaluation.Machine.ExBudgeting</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Plutus</span></span><span>
 </span><span id="line-39"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">PlutusCore.Evaluation.Machine.ExBudgetingDefaults</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Plutus</span></span><span>
 </span><span id="line-40"></span><span>
-</span><span id="line-41"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401933"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-42"></span><span>  </span><span id="local-6989586621679401931"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser TracingVerbosity
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679401928"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401928"><span class="hs-identifier hs-var">str</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401928"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-41"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679402038"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-42"></span><span>  </span><span id="local-6989586621679402036"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser TracingVerbosity
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679402033"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679402033"><span class="hs-identifier hs-var">str</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679402033"><span class="hs-identifier hs-var">str</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-43"></span><span>    </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;MinimalVerbosity&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">TracingVerbosity -&gt; Parser TracingVerbosity
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
@@ -58,8 +58,8 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">TracingVerbosity
 </span><span class="hs-identifier hs-var">NormalVerbosity</span></span><span>
-</span><span id="line-46"></span><span>    </span><span id="local-6989586621679401924"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401924"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
+</span><span id="line-46"></span><span>    </span><span id="local-6989586621679402029"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679402029"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser TracingVerbosity)
 -&gt; String -&gt; Parser TracingVerbosity
@@ -70,12 +70,12 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; String
 </span><span class="hs-identifier hs-var">Text.unpack</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401924"><span class="hs-identifier hs-var">err</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
+</span><a href="#local-6989586621679402029"><span class="hs-identifier hs-var">err</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; String
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot; is not a valid TracingVerbosity&quot;</span></span><span>
-</span><span id="line-48"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679401922"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401922"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
+</span><span id="line-48"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679402027"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679402027"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser TracingVerbosity
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser TracingVerbosity)
 -&gt; String -&gt; Parser TracingVerbosity
@@ -90,30 +90,30 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401922"><span class="hs-identifier hs-var">invalid</span></a></span><span>
+</span><a href="#local-6989586621679402027"><span class="hs-identifier hs-var">invalid</span></a></span><span>
 </span><span id="line-50"></span><span>
-</span><span id="line-51"></span><span id="local-6989586621679401915"><span id="local-6989586621679401917"><span id="local-6989586621679401919"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span></span></span><span>
+</span><span id="line-51"></span><span id="local-6989586621679402020"><span id="local-6989586621679402022"><span id="local-6989586621679402024"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">TracingVerbosity</span></span></span></span></span><span>
 </span><span id="line-52"></span><span>
-</span><span id="line-53"></span><span id="local-6989586621679401906"><span id="local-6989586621679401908"><span id="local-6989586621679401910"><span id="local-6989586621679401912"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Alonzo.PParamsUpdate</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Alonzo.AlonzoEra</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span class="hs-special">)</span><span class="hs-special">)</span></span></span></span></span><span>
-</span><span id="line-54"></span><span id="local-6989586621679401897"><span id="local-6989586621679401899"><span id="local-6989586621679401901"><span id="local-6989586621679401903"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.ExUnits</span></span></span></span></span></span><span>
-</span><span id="line-55"></span><span id="local-6989586621679401889"><span id="local-6989586621679401891"><span id="local-6989586621679401893"><span id="local-6989586621679401895"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Prices</span></span></span></span></span></span><span>
-</span><span id="line-56"></span><span id="local-6989586621679401881"><span id="local-6989586621679401883"><span id="local-6989586621679401885"><span id="local-6989586621679401887"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Language</span></span></span></span></span></span><span>
-</span><span id="line-57"></span><span id="local-6989586621679401877"><span id="local-6989586621679401879"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSONKey</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Language</span></span></span></span><span>
+</span><span id="line-53"></span><span id="local-6989586621679402011"><span id="local-6989586621679402013"><span id="local-6989586621679402015"><span id="local-6989586621679402017"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Alonzo.PParamsUpdate</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Alonzo.AlonzoEra</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span class="hs-special">)</span><span class="hs-special">)</span></span></span></span></span><span>
+</span><span id="line-54"></span><span id="local-6989586621679402002"><span id="local-6989586621679402004"><span id="local-6989586621679402006"><span id="local-6989586621679402008"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.ExUnits</span></span></span></span></span></span><span>
+</span><span id="line-55"></span><span id="local-6989586621679401994"><span id="local-6989586621679401996"><span id="local-6989586621679401998"><span id="local-6989586621679402000"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Prices</span></span></span></span></span></span><span>
+</span><span id="line-56"></span><span id="local-6989586621679401986"><span id="local-6989586621679401988"><span id="local-6989586621679401990"><span id="local-6989586621679401992"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Language</span></span></span></span></span></span><span>
+</span><span id="line-57"></span><span id="local-6989586621679401982"><span id="local-6989586621679401984"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ToJSONKey</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Language</span></span></span></span><span>
 </span><span id="line-58"></span><span>
-</span><span id="line-59"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401869"><span id="local-6989586621679401871"><span id="local-6989586621679401873"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.CostModel</span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-60"></span><span>  </span><span id="local-6989586621679401868"><span class="annot"><span class="annottext">toJSON :: CostModel -&gt; Value
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Alonzo.CostModel</span></span><span> </span><span id="local-6989586621679401865"><span class="annot"><span class="annottext">Map Text Integer
-</span><a href="#local-6989586621679401865"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map Text Integer -&gt; Value
+</span><span id="line-59"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401974"><span id="local-6989586621679401976"><span id="local-6989586621679401978"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.CostModel</span></span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-60"></span><span>  </span><span id="local-6989586621679401973"><span class="annot"><span class="annottext">toJSON :: CostModel -&gt; Value
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Alonzo.CostModel</span></span><span> </span><span id="local-6989586621679401970"><span class="annot"><span class="annottext">Map Text Integer
+</span><a href="#local-6989586621679401970"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Map Text Integer -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">Map Text Integer
-</span><a href="#local-6989586621679401865"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679401970"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-61"></span><span>
-</span><span id="line-62"></span><span id="local-6989586621679401861"><span id="local-6989586621679401863"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Prices</span></span></span></span><span>
-</span><span id="line-63"></span><span id="local-6989586621679401857"><span id="local-6989586621679401859"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.ExUnits</span></span></span></span><span>
+</span><span id="line-62"></span><span id="local-6989586621679401966"><span id="local-6989586621679401968"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.Prices</span></span></span></span><span>
+</span><span id="line-63"></span><span id="local-6989586621679401962"><span id="local-6989586621679401964"><span class="hs-keyword">deriving</span><span> </span><span class="hs-keyword">instance</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.ExUnits</span></span></span></span><span>
 </span><span id="line-64"></span><span>
-</span><span id="line-65"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401850"><span id="local-6989586621679401852"><span id="local-6989586621679401854"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.CompactAddr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span class="hs-special">)</span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-66"></span><span>  </span><span id="local-6989586621679401849"><span class="annot"><span class="annottext">toJSON :: CompactAddr StandardCrypto -&gt; Value
-</span><a href="#local-6989586621679401849"><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Value
+</span><span id="line-65"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401955"><span id="local-6989586621679401957"><span id="local-6989586621679401959"><span class="annot"><span class="hs-identifier hs-type">ToJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.CompactAddr</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">StandardCrypto</span></span><span class="hs-special">)</span></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-66"></span><span>  </span><span id="local-6989586621679401954"><span class="annot"><span class="annottext">toJSON :: CompactAddr StandardCrypto -&gt; Value
+</span><a href="#local-6989586621679401954"><span class="hs-identifier hs-var hs-var hs-var hs-var">toJSON</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Addr StandardCrypto -&gt; Value
 forall a. ToJSON a =&gt; a -&gt; Value
 </span><span class="hs-identifier hs-var">toJSON</span></span><span> </span><span class="annot"><span class="annottext">(Addr StandardCrypto -&gt; Value)
 -&gt; (CompactAddr StandardCrypto -&gt; Addr StandardCrypto)
@@ -130,19 +130,19 @@ forall crypto. Crypto crypto =&gt; CompactAddr crypto -&gt; Addr crypto
 </span><span id="line-69"></span><span class="hs-comment">--instance (ToJSON a, Ledger.Compactible a) =&gt; ToJSON (Ledger.CompactForm a) where</span><span>
 </span><span id="line-70"></span><span class="hs-comment">--  toJSON = toJSON  . Ledger.fromCompact</span><span>
 </span><span id="line-71"></span><span>
-</span><span id="line-72"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401844"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Update.ApplicationName</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-73"></span><span>  </span><span id="local-6989586621679401843"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser ApplicationName
-</span><a href="#local-6989586621679401843"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679401842"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401842"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ApplicationName -&gt; Parser ApplicationName
+</span><span id="line-72"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401949"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Update.ApplicationName</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-73"></span><span>  </span><span id="local-6989586621679401948"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser ApplicationName
+</span><a href="#local-6989586621679401948"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span> </span><span id="local-6989586621679401947"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679401947"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">ApplicationName -&gt; Parser ApplicationName
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(ApplicationName -&gt; Parser ApplicationName)
 -&gt; ApplicationName -&gt; Parser ApplicationName
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ApplicationName
 </span><span class="hs-identifier hs-var">Update.ApplicationName</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401842"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-74"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679401840"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401840"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span>
+</span><a href="#local-6989586621679401947"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-74"></span><span>  </span><span class="annot"><span class="hs-identifier hs-var">parseJSON</span></span><span> </span><span id="local-6989586621679401945"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679401945"><span class="hs-identifier hs-var">invalid</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span>
 </span><span id="line-75"></span><span>    </span><span class="annot"><span class="annottext">String -&gt; Parser ApplicationName
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser ApplicationName)
@@ -158,14 +158,14 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401840"><span class="hs-identifier hs-var">invalid</span></a></span><span>
+</span><a href="#local-6989586621679401945"><span class="hs-identifier hs-var">invalid</span></a></span><span>
 </span><span id="line-77"></span><span>
 </span><span id="line-78"></span><span class="hs-comment">-- We defer parsing of the cost model so that we can</span><span>
 </span><span id="line-79"></span><span class="hs-comment">-- read it as a filepath. This is to reduce further pollution</span><span>
 </span><span id="line-80"></span><span class="hs-comment">-- of the genesis file.</span><span>
-</span><span id="line-81"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401837"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.AlonzoGenesis</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-82"></span><span>  </span><span id="local-6989586621679401836"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser AlonzoGenesis
-</span><a href="#local-6989586621679401836"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-81"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401942"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.AlonzoGenesis</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-82"></span><span>  </span><span id="local-6989586621679401941"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser AlonzoGenesis
+</span><a href="#local-6989586621679401941"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-83"></span><span>    </span><span class="annot"><span class="annottext">String
 -&gt; (Object -&gt; Parser AlonzoGenesis)
 -&gt; Value
@@ -177,65 +177,65 @@ forall a. String -&gt; (Object -&gt; Parser a) -&gt; Value -&gt; Parser a
 -&gt; Value
 -&gt; Parser AlonzoGenesis
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679401834"><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-84"></span><span>      </span><span id="local-6989586621679401833"><span class="annot"><span class="annottext">Coin
-</span><a href="#local-6989586621679401833"><span class="hs-identifier hs-var">adaPerUTxOWord</span></a></span></span><span>       </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Coin
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679401939"><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-84"></span><span>      </span><span id="local-6989586621679401938"><span class="annot"><span class="annottext">Coin
+</span><a href="#local-6989586621679401938"><span class="hs-identifier hs-var">adaPerUTxOWord</span></a></span></span><span>       </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Coin
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;adaPerUTxOWord&quot;</span></span><span>
-</span><span id="line-85"></span><span>      </span><span id="local-6989586621679401831"><span class="annot"><span class="annottext">Maybe (Map Language CostModel)
-</span><a href="#local-6989586621679401831"><span class="hs-identifier hs-var">cModels</span></a></span></span><span>              </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser (Maybe (Map Language CostModel))
+</span><span id="line-85"></span><span>      </span><span id="local-6989586621679401936"><span class="annot"><span class="annottext">Maybe (Map Language CostModel)
+</span><a href="#local-6989586621679401936"><span class="hs-identifier hs-var">cModels</span></a></span></span><span>              </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser (Maybe (Map Language CostModel))
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser (Maybe a)
 </span><span class="hs-operator hs-var">.:?</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;costModels&quot;</span></span><span>
-</span><span id="line-86"></span><span>      </span><span id="local-6989586621679401829"><span class="annot"><span class="annottext">Prices
-</span><a href="#local-6989586621679401829"><span class="hs-identifier hs-var">prices</span></a></span></span><span>               </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Prices
+</span><span id="line-86"></span><span>      </span><span id="local-6989586621679401934"><span class="annot"><span class="annottext">Prices
+</span><a href="#local-6989586621679401934"><span class="hs-identifier hs-var">prices</span></a></span></span><span>               </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Prices
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;executionPrices&quot;</span></span><span>
-</span><span id="line-87"></span><span>      </span><span id="local-6989586621679401828"><span class="annot"><span class="annottext">ExUnits
-</span><a href="#local-6989586621679401828"><span class="hs-identifier hs-var">maxTxExUnits</span></a></span></span><span>         </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser ExUnits
+</span><span id="line-87"></span><span>      </span><span id="local-6989586621679401933"><span class="annot"><span class="annottext">ExUnits
+</span><a href="#local-6989586621679401933"><span class="hs-identifier hs-var">maxTxExUnits</span></a></span></span><span>         </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser ExUnits
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;maxTxExUnits&quot;</span></span><span>
-</span><span id="line-88"></span><span>      </span><span id="local-6989586621679401827"><span class="annot"><span class="annottext">ExUnits
-</span><a href="#local-6989586621679401827"><span class="hs-identifier hs-var">maxBlockExUnits</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser ExUnits
+</span><span id="line-88"></span><span>      </span><span id="local-6989586621679401932"><span class="annot"><span class="annottext">ExUnits
+</span><a href="#local-6989586621679401932"><span class="hs-identifier hs-var">maxBlockExUnits</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser ExUnits
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;maxBlockExUnits&quot;</span></span><span>
-</span><span id="line-89"></span><span>      </span><span id="local-6989586621679401826"><span class="annot"><span class="annottext">Natural
-</span><a href="#local-6989586621679401826"><span class="hs-identifier hs-var">maxValSize</span></a></span></span><span>           </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Natural
+</span><span id="line-89"></span><span>      </span><span id="local-6989586621679401931"><span class="annot"><span class="annottext">Natural
+</span><a href="#local-6989586621679401931"><span class="hs-identifier hs-var">maxValSize</span></a></span></span><span>           </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Natural
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;maxValueSize&quot;</span></span><span>
-</span><span id="line-90"></span><span>      </span><span id="local-6989586621679401825"><span class="annot"><span class="annottext">Natural
-</span><a href="#local-6989586621679401825"><span class="hs-identifier hs-var">collateralPercentage</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Natural
+</span><span id="line-90"></span><span>      </span><span id="local-6989586621679401930"><span class="annot"><span class="annottext">Natural
+</span><a href="#local-6989586621679401930"><span class="hs-identifier hs-var">collateralPercentage</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Natural
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;collateralPercentage&quot;</span></span><span>
-</span><span id="line-91"></span><span>      </span><span id="local-6989586621679401824"><span class="annot"><span class="annottext">Natural
-</span><a href="#local-6989586621679401824"><span class="hs-identifier hs-var">maxCollateralInputs</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
-</span><a href="#local-6989586621679401834"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Natural
+</span><span id="line-91"></span><span>      </span><span id="local-6989586621679401929"><span class="annot"><span class="annottext">Natural
+</span><a href="#local-6989586621679401929"><span class="hs-identifier hs-var">maxCollateralInputs</span></a></span></span><span>  </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Object
+</span><a href="#local-6989586621679401939"><span class="hs-identifier hs-var">o</span></a></span><span> </span><span class="annot"><span class="annottext">Object -&gt; Text -&gt; Parser Natural
 forall a. FromJSON a =&gt; Object -&gt; Text -&gt; Parser a
 </span><span class="hs-operator hs-var">.:</span></span><span>  </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;maxCollateralInputs&quot;</span></span><span>
 </span><span id="line-92"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Maybe (Map Language CostModel)
-</span><a href="#local-6989586621679401831"><span class="hs-identifier hs-var">cModels</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679401936"><span class="hs-identifier hs-var">cModels</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-93"></span><span>        </span><span class="annot"><span class="annottext">Maybe (Map Language CostModel)
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-94"></span><span>          </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">CostModel -&gt; Maybe (Map Text Integer)
 </span><span class="hs-identifier hs-var">Plutus.extractModelParams</span></span><span> </span><span class="annot"><span class="annottext">CostModel
 </span><span class="hs-identifier hs-var">Plutus.defaultCostModel</span></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-95"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679401821"><span class="annot"><span class="annottext">Map Text Integer
-</span><a href="#local-6989586621679401821"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-95"></span><span>            </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679401926"><span class="annot"><span class="annottext">Map Text Integer
+</span><a href="#local-6989586621679401926"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-96"></span><span>              </span><span class="annot"><span class="annottext">AlonzoGenesis -&gt; Parser AlonzoGenesis
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">AlonzoGenesis :: Coin
@@ -251,46 +251,46 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-97"></span><span>                </span><span class="annot"><span class="annottext">Coin
 adaPerUTxOWord :: Coin
 adaPerUTxOWord :: Coin
-</span><a href="#local-6989586621679401819"><span class="hs-identifier hs-var hs-var">adaPerUTxOWord</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401924"><span class="hs-identifier hs-var hs-var">adaPerUTxOWord</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-98"></span><span>                </span><span class="annot"><span class="annottext">costmdls :: Map Language CostModel
-</span><a href="#local-6989586621679401818"><span class="hs-identifier hs-var">costmdls</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Language -&gt; CostModel -&gt; Map Language CostModel
+</span><a href="#local-6989586621679401923"><span class="hs-identifier hs-var">costmdls</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Language -&gt; CostModel -&gt; Map Language CostModel
 forall k a. k -&gt; a -&gt; Map k a
 </span><span class="hs-identifier hs-var">Map.singleton</span></span><span> </span><span class="annot"><span class="annottext">Language
 </span><span class="hs-identifier hs-var">Alonzo.PlutusV1</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Map Text Integer -&gt; CostModel
 </span><span class="hs-identifier hs-var">Alonzo.CostModel</span></span><span> </span><span class="annot"><span class="annottext">Map Text Integer
-</span><a href="#local-6989586621679401821"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401926"><span class="hs-identifier hs-var">m</span></a></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
 </span><span id="line-99"></span><span>                </span><span class="annot"><span class="annottext">Prices
 prices :: Prices
 prices :: Prices
-</span><a href="#local-6989586621679401815"><span class="hs-identifier hs-var hs-var">prices</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401920"><span class="hs-identifier hs-var hs-var">prices</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-100"></span><span>                </span><span class="annot"><span class="annottext">ExUnits
 maxTxExUnits :: ExUnits
 maxTxExUnits :: ExUnits
-</span><a href="#local-6989586621679401814"><span class="hs-identifier hs-var hs-var">maxTxExUnits</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401919"><span class="hs-identifier hs-var hs-var">maxTxExUnits</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-101"></span><span>                </span><span class="annot"><span class="annottext">ExUnits
 maxBlockExUnits :: ExUnits
 maxBlockExUnits :: ExUnits
-</span><a href="#local-6989586621679401813"><span class="hs-identifier hs-var hs-var">maxBlockExUnits</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401918"><span class="hs-identifier hs-var hs-var">maxBlockExUnits</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-102"></span><span>                </span><span class="annot"><span class="annottext">Natural
 maxValSize :: Natural
 maxValSize :: Natural
-</span><a href="#local-6989586621679401812"><span class="hs-identifier hs-var hs-var">maxValSize</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401917"><span class="hs-identifier hs-var hs-var">maxValSize</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-103"></span><span>                </span><span class="annot"><span class="annottext">Natural
 collateralPercentage :: Natural
 collateralPercentage :: Natural
-</span><a href="#local-6989586621679401811"><span class="hs-identifier hs-var hs-var">collateralPercentage</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401916"><span class="hs-identifier hs-var hs-var">collateralPercentage</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-104"></span><span>                </span><span class="annot"><span class="annottext">Natural
 maxCollateralInputs :: Natural
 maxCollateralInputs :: Natural
-</span><a href="#local-6989586621679401810"><span class="hs-identifier hs-var hs-var">maxCollateralInputs</span></a></span><span>
+</span><a href="#local-6989586621679401915"><span class="hs-identifier hs-var hs-var">maxCollateralInputs</span></a></span><span>
 </span><span id="line-105"></span><span>              </span><span class="hs-special">}</span><span>
 </span><span id="line-106"></span><span>            </span><span class="annot"><span class="annottext">Maybe (Map Text Integer)
 </span><span class="hs-identifier hs-var">Nothing</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser AlonzoGenesis
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Failed to extract the cost model params from Plutus.defaultCostModel&quot;</span></span><span>
-</span><span id="line-107"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679401809"><span class="annot"><span class="annottext">Map Language CostModel
-</span><a href="#local-6989586621679401809"><span class="hs-identifier hs-var">costmdls</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-107"></span><span>        </span><span class="annot"><span class="hs-identifier hs-type">Just</span></span><span> </span><span id="local-6989586621679401914"><span class="annot"><span class="annottext">Map Language CostModel
+</span><a href="#local-6989586621679401914"><span class="hs-identifier hs-var">costmdls</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-108"></span><span>          </span><span class="annot"><span class="annottext">AlonzoGenesis -&gt; Parser AlonzoGenesis
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">AlonzoGenesis :: Coin
@@ -306,50 +306,50 @@ forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span id="line-109"></span><span>            </span><span class="annot"><span class="annottext">Coin
 adaPerUTxOWord :: Coin
 adaPerUTxOWord :: Coin
-</span><a href="#local-6989586621679401819"><span class="hs-identifier hs-var hs-var">adaPerUTxOWord</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401924"><span class="hs-identifier hs-var hs-var">adaPerUTxOWord</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-110"></span><span>            </span><span class="annot"><span class="annottext">Map Language CostModel
 costmdls :: Map Language CostModel
 costmdls :: Map Language CostModel
-</span><a href="#local-6989586621679401809"><span class="hs-identifier hs-var hs-var">costmdls</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401914"><span class="hs-identifier hs-var hs-var">costmdls</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-111"></span><span>            </span><span class="annot"><span class="annottext">Prices
 prices :: Prices
 prices :: Prices
-</span><a href="#local-6989586621679401815"><span class="hs-identifier hs-var hs-var">prices</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401920"><span class="hs-identifier hs-var hs-var">prices</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-112"></span><span>            </span><span class="annot"><span class="annottext">ExUnits
 maxTxExUnits :: ExUnits
 maxTxExUnits :: ExUnits
-</span><a href="#local-6989586621679401814"><span class="hs-identifier hs-var hs-var">maxTxExUnits</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401919"><span class="hs-identifier hs-var hs-var">maxTxExUnits</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-113"></span><span>            </span><span class="annot"><span class="annottext">ExUnits
 maxBlockExUnits :: ExUnits
 maxBlockExUnits :: ExUnits
-</span><a href="#local-6989586621679401813"><span class="hs-identifier hs-var hs-var">maxBlockExUnits</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401918"><span class="hs-identifier hs-var hs-var">maxBlockExUnits</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-114"></span><span>            </span><span class="annot"><span class="annottext">Natural
 maxValSize :: Natural
 maxValSize :: Natural
-</span><a href="#local-6989586621679401812"><span class="hs-identifier hs-var hs-var">maxValSize</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401917"><span class="hs-identifier hs-var hs-var">maxValSize</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-115"></span><span>            </span><span class="annot"><span class="annottext">Natural
 collateralPercentage :: Natural
 collateralPercentage :: Natural
-</span><a href="#local-6989586621679401811"><span class="hs-identifier hs-var hs-var">collateralPercentage</span></a></span><span class="hs-special">,</span><span>
+</span><a href="#local-6989586621679401916"><span class="hs-identifier hs-var hs-var">collateralPercentage</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-116"></span><span>            </span><span class="annot"><span class="annottext">Natural
 maxCollateralInputs :: Natural
 maxCollateralInputs :: Natural
-</span><a href="#local-6989586621679401810"><span class="hs-identifier hs-var hs-var">maxCollateralInputs</span></a></span><span>
+</span><a href="#local-6989586621679401915"><span class="hs-identifier hs-var hs-var">maxCollateralInputs</span></a></span><span>
 </span><span id="line-117"></span><span>          </span><span class="hs-special">}</span><span>
 </span><span id="line-118"></span><span>
-</span><span id="line-119"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401806"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Language</span></span></span><span>  </span><span class="hs-keyword">where</span><span>
-</span><span id="line-120"></span><span>  </span><span id="local-6989586621679401805"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser Language
-</span><a href="#local-6989586621679401805"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span id="local-6989586621679401804"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401804"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-119"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401911"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Language</span></span></span><span>  </span><span class="hs-keyword">where</span><span>
+</span><span id="line-120"></span><span>  </span><span id="local-6989586621679401910"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser Language
+</span><a href="#local-6989586621679401910"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span id="local-6989586621679401909"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679401909"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-121"></span><span>    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401804"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679401909"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-122"></span><span>      </span><span class="annot"><span class="hs-identifier hs-type">Aeson.String</span></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;PlutusV1&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Language -&gt; Parser Language
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">Language
 </span><span class="hs-identifier hs-var">Alonzo.PlutusV1</span></span><span>
-</span><span id="line-123"></span><span>      </span><span id="local-6989586621679401803"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401803"><span class="hs-identifier hs-var">wrong</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser Language
+</span><span id="line-123"></span><span>      </span><span id="local-6989586621679401908"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679401908"><span class="hs-identifier hs-var">wrong</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser Language
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser Language) -&gt; String -&gt; Parser Language
 forall a b. (a -&gt; b) -&gt; a -&gt; b
@@ -360,19 +360,19 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401803"><span class="hs-identifier hs-var">wrong</span></a></span><span>
+</span><a href="#local-6989586621679401908"><span class="hs-identifier hs-var">wrong</span></a></span><span>
 </span><span id="line-125"></span><span>
-</span><span id="line-126"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401800"><span class="annot"><span class="hs-identifier hs-type">FromJSONKey</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Language</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-127"></span><span>  </span><span id="local-6989586621679401798"><span class="annot"><span class="annottext">fromJSONKey :: FromJSONKeyFunction Language
+</span><span id="line-126"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401905"><span class="annot"><span class="hs-identifier hs-type">FromJSONKey</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Language</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-127"></span><span>  </span><span id="local-6989586621679401903"><span class="annot"><span class="annottext">fromJSONKey :: FromJSONKeyFunction Language
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">fromJSONKey</span></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Language) -&gt; FromJSONKeyFunction Language
 forall a. (Text -&gt; a) -&gt; FromJSONKeyFunction a
 </span><span class="hs-identifier hs-var">FromJSONKeyText</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Language
-</span><a href="#local-6989586621679401795"><span class="hs-identifier hs-var">parseLang</span></a></span><span>
+</span><a href="#local-6989586621679401900"><span class="hs-identifier hs-var">parseLang</span></a></span><span>
 </span><span id="line-128"></span><span>   </span><span class="hs-keyword">where</span><span>
-</span><span id="line-129"></span><span>     </span><span class="annot"><a href="#local-6989586621679401795"><span class="hs-identifier hs-type">parseLang</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Language</span></span><span>
-</span><span id="line-130"></span><span>     </span><span id="local-6989586621679401795"><span class="annot"><span class="annottext">parseLang :: Text -&gt; Language
-</span><a href="#local-6989586621679401795"><span class="hs-identifier hs-var hs-var">parseLang</span></a></span></span><span> </span><span id="local-6989586621679401794"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401794"><span class="hs-identifier hs-var">lang</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-129"></span><span>     </span><span class="annot"><a href="#local-6989586621679401900"><span class="hs-identifier hs-type">parseLang</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Language</span></span><span>
+</span><span id="line-130"></span><span>     </span><span id="local-6989586621679401900"><span class="annot"><span class="annottext">parseLang :: Text -&gt; Language
+</span><a href="#local-6989586621679401900"><span class="hs-identifier hs-var hs-var">parseLang</span></a></span></span><span> </span><span id="local-6989586621679401899"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679401899"><span class="hs-identifier hs-var">lang</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-131"></span><span>       </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either String Language
 forall a. FromJSON a =&gt; ByteString -&gt; Either String a
 </span><span class="hs-identifier hs-var">eitherDecode</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Either String Language)
@@ -383,52 +383,52 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
 </span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401794"><span class="hs-identifier hs-var">lang</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-132"></span><span>         </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679401791"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679401791"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Language
+</span><a href="#local-6989586621679401899"><span class="hs-identifier hs-var">lang</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-132"></span><span>         </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679401896"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679401896"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Language
 forall a. HasCallStack =&gt; Text -&gt; a
 </span><span class="hs-identifier hs-var">panic</span></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; Language) -&gt; Text -&gt; Language
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
 </span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679401791"><span class="hs-identifier hs-var">err</span></a></span><span>
-</span><span id="line-133"></span><span>         </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679401788"><span class="annot"><span class="annottext">Language
-</span><a href="#local-6989586621679401788"><span class="hs-identifier hs-var">lang'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Language
-</span><a href="#local-6989586621679401788"><span class="hs-identifier hs-var">lang'</span></a></span><span>
+</span><a href="#local-6989586621679401896"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-133"></span><span>         </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679401893"><span class="annot"><span class="annottext">Language
+</span><a href="#local-6989586621679401893"><span class="hs-identifier hs-var">lang'</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Language
+</span><a href="#local-6989586621679401893"><span class="hs-identifier hs-var">lang'</span></a></span><span>
 </span><span id="line-134"></span><span>
-</span><span id="line-135"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401784"><span id="local-6989586621679401786"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.CostModel</span></span></span></span><span>
-</span><span id="line-136"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401780"><span id="local-6989586621679401782"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Data.MemoBytes.MemoBytes</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span class="hs-special">)</span><span class="hs-special">)</span></span></span><span>
+</span><span id="line-135"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401889"><span id="local-6989586621679401891"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.CostModel</span></span></span></span><span>
+</span><span id="line-136"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401885"><span id="local-6989586621679401887"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Data.MemoBytes.MemoBytes</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Map</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Integer</span></span><span class="hs-special">)</span><span class="hs-special">)</span></span></span><span>
 </span><span id="line-137"></span><span>
-</span><span id="line-138"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401777"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SBS.ShortByteString</span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-139"></span><span>  </span><span id="local-6989586621679401776"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser ShortByteString
-</span><a href="#local-6989586621679401776"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span id="local-6989586621679401775"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401775"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401775"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-140"></span><span>                  </span><span class="annot"><span class="hs-identifier hs-type">Aeson.String</span></span><span> </span><span id="local-6989586621679401774"><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401774"><span class="hs-identifier hs-var">b16</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-138"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679401882"><span class="annot"><span class="hs-identifier hs-type">FromJSON</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">SBS.ShortByteString</span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-139"></span><span>  </span><span id="local-6989586621679401881"><span class="annot"><span class="annottext">parseJSON :: Value -&gt; Parser ShortByteString
+</span><a href="#local-6989586621679401881"><span class="hs-identifier hs-var hs-var hs-var hs-var">parseJSON</span></a></span></span><span> </span><span id="local-6989586621679401880"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679401880"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679401880"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-140"></span><span>                  </span><span class="annot"><span class="hs-identifier hs-type">Aeson.String</span></span><span> </span><span id="local-6989586621679401879"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679401879"><span class="hs-identifier hs-var">b16</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-141"></span><span>                    </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either String ByteString
 </span><span class="hs-identifier hs-var">Base16.decode</span></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Either String ByteString)
 -&gt; ByteString -&gt; Either String ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
 </span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span> </span><span class="annot"><span class="annottext">Text
-</span><a href="#local-6989586621679401774"><span class="hs-identifier hs-var">b16</span></a></span><span> </span><span class="hs-keyword">of</span><span>
-</span><span id="line-142"></span><span>                      </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679401772"><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679401772"><span class="hs-identifier hs-var">decoded</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ShortByteString -&gt; Parser ShortByteString
+</span><a href="#local-6989586621679401879"><span class="hs-identifier hs-var">b16</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-142"></span><span>                      </span><span class="annot"><span class="hs-identifier hs-type">Right</span></span><span> </span><span id="local-6989586621679401877"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679401877"><span class="hs-identifier hs-var">decoded</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">ShortByteString -&gt; Parser ShortByteString
 forall (m :: * -&gt; *) a. Monad m =&gt; a -&gt; m a
 </span><span class="hs-identifier hs-var">return</span></span><span> </span><span class="annot"><span class="annottext">(ShortByteString -&gt; Parser ShortByteString)
 -&gt; ShortByteString -&gt; Parser ShortByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ShortByteString
 </span><span class="hs-identifier hs-var">SBS.toShort</span></span><span> </span><span class="annot"><span class="annottext">ByteString
-</span><a href="#local-6989586621679401772"><span class="hs-identifier hs-var">decoded</span></a></span><span>
-</span><span id="line-143"></span><span>                      </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679401770"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679401770"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser ShortByteString
+</span><a href="#local-6989586621679401877"><span class="hs-identifier hs-var">decoded</span></a></span><span>
+</span><span id="line-143"></span><span>                      </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span id="local-6989586621679401875"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679401875"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser ShortByteString
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679401770"><span class="hs-identifier hs-var">err</span></a></span><span>
-</span><span id="line-144"></span><span>                  </span><span id="local-6989586621679401769"><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401769"><span class="hs-identifier hs-var">wrong</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser ShortByteString
+</span><a href="#local-6989586621679401875"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-144"></span><span>                  </span><span id="local-6989586621679401874"><span class="annot"><span class="annottext">Value
+</span><a href="#local-6989586621679401874"><span class="hs-identifier hs-var">wrong</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">String -&gt; Parser ShortByteString
 forall (m :: * -&gt; *) a. MonadFail m =&gt; String -&gt; m a
 </span><span class="hs-identifier hs-var">fail</span></span><span> </span><span class="annot"><span class="annottext">(String -&gt; Parser ShortByteString)
 -&gt; String -&gt; Parser ShortByteString
@@ -440,5 +440,5 @@ forall a. Semigroup a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Value -&gt; String
 forall a b. (Show a, ConvertText String b) =&gt; a -&gt; b
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Value
-</span><a href="#local-6989586621679401769"><span class="hs-identifier hs-var">wrong</span></a></span><span>
+</span><a href="#local-6989586621679401874"><span class="hs-identifier hs-var">wrong</span></a></span><span>
 </span><span id="line-146"></span></pre></body></html>
