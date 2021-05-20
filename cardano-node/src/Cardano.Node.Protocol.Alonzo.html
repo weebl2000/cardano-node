@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE FlexibleContexts #-}</span><span>
+</span><span id="line-2"></span><span class="hs-pragma">{-# LANGUAGE ScopedTypeVariables #-}</span><span>
+</span><span id="line-3"></span><span>
+</span><span id="line-4"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Cardano.Node.Protocol.Alonzo</span><span>
+</span><span id="line-5"></span><span>  </span><span class="hs-special">(</span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoProtocolInstantiationError"><span class="hs-identifier">AlonzoProtocolInstantiationError</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
+</span><span id="line-6"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier">renderAlonzoProtocolInstantiationError</span></a></span><span>
+</span><span id="line-7"></span><span>    </span><span class="annot"><span class="hs-comment">-- * Reusable parts</span></span><span>
+</span><span id="line-8"></span><span>  </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#readAlonzoGenesis"><span class="hs-identifier">readAlonzoGenesis</span></a></span><span>
+</span><span id="line-9"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-10"></span><span>
+</span><span id="line-11"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span>
+</span><span id="line-12"></span><span>
+</span><span id="line-13"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier">Cardano.Api</span></a></span><span>
+</span><span id="line-14"></span><span>
+</span><span id="line-15"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad.Trans.Except.Extra</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">firstExceptT</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">handleIOExceptT</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">hoistEither</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">left</span></span><span class="hs-special">)</span><span>
+</span><span id="line-16"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Aeson</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Aeson</span></span><span>
+</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LBS</span></span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-19"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">System.IO.Error</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">isDoesNotExistError</span></span><span class="hs-special">)</span><span>
+</span><span id="line-20"></span><span>
+</span><span id="line-21"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Ledger.Alonzo.Translation</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Alonzo</span></span><span>
+</span><span id="line-22"></span><span>
+</span><span id="line-23"></span><span>
+</span><span id="line-24"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Node.Orphans.html"><span class="hs-identifier">Cardano.Node.Orphans</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-25"></span><span>
+</span><span id="line-26"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Tracing.OrphanInstances.HardFork.html"><span class="hs-identifier">Cardano.Tracing.OrphanInstances.HardFork</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-27"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="Cardano.Tracing.OrphanInstances.Shelley.html"><span class="hs-identifier">Cardano.Tracing.OrphanInstances.Shelley</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span>
+</span><span id="line-28"></span><span>
+</span><span id="line-29"></span><span>
+</span><span id="line-30"></span><span class="hs-comment">--</span><span>
+</span><span id="line-31"></span><span class="hs-comment">-- Alonzo genesis</span><span>
+</span><span id="line-32"></span><span class="hs-comment">--</span><span>
+</span><span id="line-33"></span><span>
+</span><span id="line-34"></span><span class="hs-comment">-- | In order to avoid introducing a separate Alonzo genesis file, we</span><span>
+</span><span id="line-35"></span><span class="hs-comment">-- have added additional fields to the Shelley genesis that are required</span><span>
+</span><span id="line-36"></span><span class="hs-comment">-- when hardforking to Alonzo. Unfortunately the 'ShelleyGenesis' 'FromJSON'</span><span>
+</span><span id="line-37"></span><span class="hs-comment">-- instance exists in cardano-ledger-specs so we must duplicate code for now.</span><span>
+</span><span id="line-38"></span><span>
+</span><span id="line-39"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#readAlonzoGenesis"><span class="hs-identifier hs-type">readAlonzoGenesis</span></a></span><span>
+</span><span id="line-40"></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-41"></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoProtocolInstantiationError"><span class="hs-identifier hs-type">AlonzoProtocolInstantiationError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.AlonzoGenesis</span></span><span>
+</span><span id="line-42"></span><span id="readAlonzoGenesis"><span class="annot"><span class="annottext">readAlonzoGenesis :: FilePath
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+</span><a href="Cardano.Node.Protocol.Alonzo.html#readAlonzoGenesis"><span class="hs-identifier hs-var hs-var">readAlonzoGenesis</span></a></span></span><span> </span><span id="local-6989586621679409375"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409375"><span class="hs-identifier hs-var">fpath</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-43"></span><span>  </span><span class="annot"><span class="annottext">ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+</span><a href="#local-6989586621679409374"><span class="hs-identifier hs-var">readAndDecode</span></a></span><span>
+</span><span id="line-44"></span><span>    </span><span class="annot"><span class="annottext">ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+-&gt; (AlonzoProtocolInstantiationError
+    -&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis)
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall e (m :: * -&gt; *) a.
+MonadError e m =&gt;
+m a -&gt; (e -&gt; m a) -&gt; m a
+</span><span class="hs-operator hs-var">`catchError`</span></span><span> </span><span class="hs-glyph">\</span><span id="local-6989586621679409372"><span class="annot"><span class="annottext">AlonzoProtocolInstantiationError
+</span><a href="#local-6989586621679409372"><span class="hs-identifier hs-var">err</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
+</span><span id="line-45"></span><span>      </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">AlonzoProtocolInstantiationError
+</span><a href="#local-6989586621679409372"><span class="hs-identifier hs-var">err</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-46"></span><span>        </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisFileError"><span class="hs-identifier hs-type">AlonzoGenesisFileError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">FileIOError</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679409369"><span class="annot"><span class="annottext">IOException
+</span><a href="#local-6989586621679409369"><span class="hs-identifier hs-var">ioe</span></a></span></span><span class="hs-special">)</span><span>
+</span><span id="line-47"></span><span>          </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">IOException -&gt; Bool
+</span><span class="hs-identifier hs-var">isDoesNotExistError</span></span><span> </span><span class="annot"><span class="annottext">IOException
+</span><a href="#local-6989586621679409369"><span class="hs-identifier hs-var">ioe</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">AlonzoProtocolInstantiationError
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
+</span><span class="hs-identifier hs-var">left</span></span><span> </span><span class="annot"><span class="annottext">(AlonzoProtocolInstantiationError
+ -&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis)
+-&gt; AlonzoProtocolInstantiationError
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; AlonzoProtocolInstantiationError
+</span><a href="Cardano.Node.Protocol.Alonzo.html#GenesisFileNotFound"><span class="hs-identifier hs-var">GenesisFileNotFound</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409375"><span class="hs-identifier hs-var">fpath</span></a></span><span>
+</span><span id="line-48"></span><span>        </span><span class="annot"><span class="annottext">AlonzoProtocolInstantiationError
+</span><span class="hs-identifier">_</span></span><span>                           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">AlonzoProtocolInstantiationError
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall (m :: * -&gt; *) x a. Monad m =&gt; x -&gt; ExceptT x m a
+</span><span class="hs-identifier hs-var">left</span></span><span> </span><span class="annot"><span class="annottext">AlonzoProtocolInstantiationError
+</span><a href="#local-6989586621679409372"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-49"></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-50"></span><span>  </span><span class="annot"><a href="#local-6989586621679409374"><span class="hs-identifier hs-type">readAndDecode</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ExceptT</span></span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoProtocolInstantiationError"><span class="hs-identifier hs-type">AlonzoProtocolInstantiationError</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IO</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Alonzo.AlonzoGenesis</span></span><span>
+</span><span id="line-51"></span><span>  </span><span id="local-6989586621679409374"><span class="annot"><span class="annottext">readAndDecode :: ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+</span><a href="#local-6989586621679409374"><span class="hs-identifier hs-var hs-var">readAndDecode</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-52"></span><span>      </span><span id="local-6989586621679409367"><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679409367"><span class="hs-identifier hs-var">lbs</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">(IOException -&gt; AlonzoProtocolInstantiationError)
+-&gt; IO ByteString
+-&gt; ExceptT AlonzoProtocolInstantiationError IO ByteString
+forall (m :: * -&gt; *) x a.
+MonadIO m =&gt;
+(IOException -&gt; x) -&gt; IO a -&gt; ExceptT x m a
+</span><span class="hs-identifier hs-var">handleIOExceptT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FileError () -&gt; AlonzoProtocolInstantiationError
+</span><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisFileError"><span class="hs-identifier hs-var">AlonzoGenesisFileError</span></a></span><span> </span><span class="annot"><span class="annottext">(FileError () -&gt; AlonzoProtocolInstantiationError)
+-&gt; (IOException -&gt; FileError ())
+-&gt; IOException
+-&gt; AlonzoProtocolInstantiationError
+forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
+Category cat =&gt;
+cat b c -&gt; cat a b -&gt; cat a c
+</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IOException -&gt; FileError ()
+forall e. FilePath -&gt; IOException -&gt; FileError e
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">FileIOError</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409375"><span class="hs-identifier hs-var">fpath</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(IO ByteString
+ -&gt; ExceptT AlonzoProtocolInstantiationError IO ByteString)
+-&gt; IO ByteString
+-&gt; ExceptT AlonzoProtocolInstantiationError IO ByteString
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; IO ByteString
+</span><span class="hs-identifier hs-var">LBS.readFile</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409375"><span class="hs-identifier hs-var">fpath</span></a></span><span>
+</span><span id="line-53"></span><span>      </span><span class="annot"><span class="annottext">(FilePath -&gt; AlonzoProtocolInstantiationError)
+-&gt; ExceptT FilePath IO AlonzoGenesis
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall (m :: * -&gt; *) x y a.
+Functor m =&gt;
+(x -&gt; y) -&gt; ExceptT x m a -&gt; ExceptT y m a
+</span><span class="hs-identifier hs-var">firstExceptT</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">FilePath -&gt; Text -&gt; AlonzoProtocolInstantiationError
+</span><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisDecodeError"><span class="hs-identifier hs-var">AlonzoGenesisDecodeError</span></a></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409375"><span class="hs-identifier hs-var">fpath</span></a></span><span> </span><span class="annot"><span class="annottext">(Text -&gt; AlonzoProtocolInstantiationError)
+-&gt; (FilePath -&gt; Text)
+-&gt; FilePath
+-&gt; AlonzoProtocolInstantiationError
+forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
+Category cat =&gt;
+cat b c -&gt; cat a b -&gt; cat a c
+</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span class="hs-special">)</span><span>
+</span><span id="line-54"></span><span>        </span><span class="annot"><span class="annottext">(ExceptT FilePath IO AlonzoGenesis
+ -&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis)
+-&gt; (Either FilePath AlonzoGenesis
+    -&gt; ExceptT FilePath IO AlonzoGenesis)
+-&gt; Either FilePath AlonzoGenesis
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall k (cat :: k -&gt; k -&gt; *) (b :: k) (c :: k) (a :: k).
+Category cat =&gt;
+cat b c -&gt; cat a b -&gt; cat a c
+</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Either FilePath AlonzoGenesis -&gt; ExceptT FilePath IO AlonzoGenesis
+forall (m :: * -&gt; *) x a. Monad m =&gt; Either x a -&gt; ExceptT x m a
+</span><span class="hs-identifier hs-var">hoistEither</span></span><span> </span><span class="annot"><span class="annottext">(Either FilePath AlonzoGenesis
+ -&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis)
+-&gt; Either FilePath AlonzoGenesis
+-&gt; ExceptT AlonzoProtocolInstantiationError IO AlonzoGenesis
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either FilePath AlonzoGenesis
+forall a. FromJSON a =&gt; ByteString -&gt; Either FilePath a
+</span><span class="hs-identifier hs-var">Aeson.eitherDecode'</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="#local-6989586621679409367"><span class="hs-identifier hs-var">lbs</span></a></span><span>
+</span><span id="line-55"></span><span>
+</span><span id="line-56"></span><span>
+</span><span id="line-57"></span><span class="hs-keyword">data</span><span> </span><span id="AlonzoProtocolInstantiationError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">AlonzoProtocolInstantiationError</span></a></span></span><span>
+</span><span id="line-58"></span><span>  </span><span class="hs-glyph">=</span><span> </span><span id="InvalidCostModelError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#InvalidCostModelError"><span class="hs-identifier hs-var">InvalidCostModelError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-59"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="CostModelExtractionError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#CostModelExtractionError"><span class="hs-identifier hs-var">CostModelExtractionError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-60"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="AlonzoCostModelFileError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoCostModelFileError"><span class="hs-identifier hs-var">AlonzoCostModelFileError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">FileError</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-61"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="AlonzoCostModelDecodeError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoCostModelDecodeError"><span class="hs-identifier hs-var">AlonzoCostModelDecodeError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-62"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="AlonzoGenesisFileError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisFileError"><span class="hs-identifier hs-var">AlonzoGenesisFileError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-type">FileError</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-63"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="AlonzoGenesisDecodeError"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisDecodeError"><span class="hs-identifier hs-var">AlonzoGenesisDecodeError</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-64"></span><span>  </span><span class="hs-glyph">|</span><span> </span><span id="GenesisFileNotFound"><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#GenesisFileNotFound"><span class="hs-identifier hs-var">GenesisFileNotFound</span></a></span></span><span> </span><span class="hs-glyph">!</span><span class="annot"><span class="hs-identifier hs-type">FilePath</span></span><span>
+</span><span id="line-65"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span id="local-6989586621679409352"><span id="local-6989586621679409354"><span id="local-6989586621679409356"><span class="annot"><span class="annottext">Int -&gt; AlonzoProtocolInstantiationError -&gt; ShowS
+[AlonzoProtocolInstantiationError] -&gt; ShowS
+AlonzoProtocolInstantiationError -&gt; FilePath
+(Int -&gt; AlonzoProtocolInstantiationError -&gt; ShowS)
+-&gt; (AlonzoProtocolInstantiationError -&gt; FilePath)
+-&gt; ([AlonzoProtocolInstantiationError] -&gt; ShowS)
+-&gt; Show AlonzoProtocolInstantiationError
+forall a.
+(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; FilePath) -&gt; ([a] -&gt; ShowS) -&gt; Show a
+showList :: [AlonzoProtocolInstantiationError] -&gt; ShowS
+$cshowList :: [AlonzoProtocolInstantiationError] -&gt; ShowS
+show :: AlonzoProtocolInstantiationError -&gt; FilePath
+$cshow :: AlonzoProtocolInstantiationError -&gt; FilePath
+showsPrec :: Int -&gt; AlonzoProtocolInstantiationError -&gt; ShowS
+$cshowsPrec :: Int -&gt; AlonzoProtocolInstantiationError -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span>
+</span><span id="line-66"></span><span>
+</span><span id="line-67"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-type">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoProtocolInstantiationError"><span class="hs-identifier hs-type">AlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span>
+</span><span id="line-68"></span><span id="renderAlonzoProtocolInstantiationError"><span class="annot"><span class="annottext">renderAlonzoProtocolInstantiationError :: AlonzoProtocolInstantiationError -&gt; Text
+</span><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var hs-var">renderAlonzoProtocolInstantiationError</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#InvalidCostModelError"><span class="hs-identifier hs-type">InvalidCostModelError</span></a></span><span> </span><span id="local-6989586621679409350"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409350"><span class="hs-identifier hs-var">fp</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-69"></span><span>  </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot;Invalid cost model: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
+forall a b. (Show a, ConvertText FilePath b) =&gt; a -&gt; b
+</span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409350"><span class="hs-identifier hs-var">fp</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-70"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#CostModelExtractionError"><span class="hs-identifier hs-type">CostModelExtractionError</span></a></span><span> </span><span id="local-6989586621679409348"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409348"><span class="hs-identifier hs-var">fp</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-71"></span><span>  </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot;Error extracting the cost model at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
+forall a b. (Show a, ConvertText FilePath b) =&gt; a -&gt; b
+</span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409348"><span class="hs-identifier hs-var">fp</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-72"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoCostModelFileError"><span class="hs-identifier hs-type">AlonzoCostModelFileError</span></a></span><span> </span><span id="local-6989586621679409347"><span class="annot"><span class="annottext">FileError ()
+</span><a href="#local-6989586621679409347"><span class="hs-identifier hs-var">err</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-73"></span><span>  </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; Text) -&gt; FilePath -&gt; Text
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FileError () -&gt; FilePath
+forall e. Error e =&gt; e -&gt; FilePath
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError ()
+</span><a href="#local-6989586621679409347"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-74"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoCostModelDecodeError"><span class="hs-identifier hs-type">AlonzoCostModelDecodeError</span></a></span><span> </span><span id="local-6989586621679409345"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409345"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span id="local-6989586621679409344"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679409344"><span class="hs-identifier hs-var">err</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-75"></span><span>  </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot;Error decoding cost model at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ShowS
+forall a b. (Show a, ConvertText FilePath b) =&gt; a -&gt; b
+</span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409345"><span class="hs-identifier hs-var">fp</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot; Error: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679409344"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-76"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisFileError"><span class="hs-identifier hs-type">AlonzoGenesisFileError</span></a></span><span> </span><span id="local-6989586621679409343"><span class="annot"><span class="annottext">FileError ()
+</span><a href="#local-6989586621679409343"><span class="hs-identifier hs-var">err</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-77"></span><span>  </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">(FilePath -&gt; Text) -&gt; FilePath -&gt; Text
+forall a b. (a -&gt; b) -&gt; a -&gt; b
+</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">FileError () -&gt; FilePath
+forall e. Error e =&gt; e -&gt; FilePath
+</span><a href="../file:///home/runner/work/cardano-node/cardano-node/dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-api-1.27.0/noopt/doc/html/cardano-api/src"><span class="hs-identifier hs-var">displayError</span></a></span><span> </span><span class="annot"><span class="annottext">FileError ()
+</span><a href="#local-6989586621679409343"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-78"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#AlonzoGenesisDecodeError"><span class="hs-identifier hs-type">AlonzoGenesisDecodeError</span></a></span><span> </span><span id="local-6989586621679409342"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409342"><span class="hs-identifier hs-var">fp</span></a></span></span><span> </span><span id="local-6989586621679409341"><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679409341"><span class="hs-identifier hs-var">err</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-79"></span><span>  </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot;Error decoding genesis at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409342"><span class="hs-identifier hs-var">fp</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot; Error: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="#local-6989586621679409341"><span class="hs-identifier hs-var">err</span></a></span><span>
+</span><span id="line-80"></span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#renderAlonzoProtocolInstantiationError"><span class="hs-identifier hs-var">renderAlonzoProtocolInstantiationError</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Node.Protocol.Alonzo.html#GenesisFileNotFound"><span class="hs-identifier hs-type">GenesisFileNotFound</span></a></span><span> </span><span id="local-6989586621679409340"><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409340"><span class="hs-identifier hs-var">fp</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span>
+</span><span id="line-81"></span><span>  </span><span class="annot"><span class="annottext">Text
+</span><span class="hs-string">&quot;Genesis file not found at: &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
+forall a. Semigroup a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">FilePath -&gt; Text
+</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="annot"><span class="annottext">FilePath
+</span><a href="#local-6989586621679409340"><span class="hs-identifier hs-var">fp</span></a></span><span>
+</span><span id="line-82"></span><span>
+</span><span id="line-83"></span></pre></body></html>
