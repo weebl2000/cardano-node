@@ -1,4 +1,5 @@
 {-# LANGUAGE GADTs #-}
+{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE TupleSections #-}
@@ -27,6 +28,7 @@ module Test.Cardano.Api.Typed.Gen
   , genStakeAddress
   , genTx
   , genTxBody
+  , genTxBodyContent
   , genValue
   , genValueDefault
   , genVerificationKey
@@ -39,9 +41,9 @@ import           Cardano.Api.Shelley
 import           Cardano.Prelude
 
 import           Control.Monad.Fail (fail)
+import qualified Data.ByteString.Short as SBS
 import qualified Data.Map.Strict as Map
 import           Data.String
-import qualified Data.ByteString.Short as SBS
 
 import qualified Cardano.Binary as CBOR
 import qualified Cardano.Crypto.Hash as Crypto
@@ -322,14 +324,16 @@ genTxBodyByron = do
     Left err -> fail (show err)
     Right txBody -> pure txBody
 
-genTxIn :: Gen TxIn
-genTxIn = TxIn <$> genTxId <*> genTxIndex
+genTxIn :: CardanoEra era -> Gen TxIn
+genTxIn era = TxIn <$> genTxId <*> genTxIndex era
 
 genTxId :: Gen TxId
 genTxId = TxId <$> genShelleyHash
 
-genTxIndex :: Gen TxIx
-genTxIndex = TxIx <$> Gen.word Range.constantBounded
+genTxIndex :: CardanoEra era -> Gen TxIx
+genTxIndex = \case
+  ByronEra -> TxIx . fromIntegral <$> Gen.word32 Range.constantBounded
+  _        -> TxIx                <$> Gen.word   Range.constantBounded
 
 genTxOutValue :: CardanoEra era -> Gen (TxOutValue era)
 genTxOutValue era =
@@ -508,7 +512,7 @@ genTxMintValue era =
 
 genTxBodyContent :: CardanoEra era -> Gen (TxBodyContent BuildTx era)
 genTxBodyContent era = do
-  trxIns <- Gen.list (Range.constant 1 10) genTxIn
+  trxIns <- Gen.list (Range.constant 1 10) (genTxIn era)
   trxOuts <- Gen.list (Range.constant 1 10) (genTxOut era)
   fee <- genTxFee era
   validityRange <- genTxValidityRange era
@@ -680,4 +684,3 @@ genProtocolParameters =
     <*> return Nothing
     <*> return Nothing
     <*> return Nothing
-
