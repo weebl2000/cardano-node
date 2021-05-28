@@ -468,6 +468,12 @@
     "link": "cardano-api/Cardano-Api-Eras.html#t:InAnyShelleyBasedEra"
   },
   {
+    "display_html": "<a href=\"#v:shelleyBasedToCardanoEra\">shelleyBasedToCardanoEra</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; <a href=\"Cardano-Api-Eras.html#t:CardanoEra\" title=\"Cardano.Api.Eras\">CardanoEra</a> era",
+    "name": "shelleyBasedToCardanoEra",
+    "module": "Cardano.Api.Eras",
+    "link": "cardano-api/Cardano-Api-Eras.html#v:shelleyBasedToCardanoEra"
+  },
+  {
     "display_html": "<span class=\"keyword\">type family</span> <a href=\"#t:ShelleyLedgerEra\">ShelleyLedgerEra</a> era <span class=\"keyword\">where ...</span>",
     "name": "ShelleyLedgerEra",
     "module": "Cardano.Api.Eras",
@@ -1524,6 +1530,18 @@
     "link": "cardano-api/Cardano-Api-Script.html#v:fromAlonzoScriptData"
   },
   {
+    "display_html": "<a href=\"#v:toAlonzoLanguage\">toAlonzoLanguage</a> &#8759; <a href=\"Cardano-Api-Script.html#t:AnyPlutusScriptVersion\" title=\"Cardano.Api.Script\">AnyPlutusScriptVersion</a> &#8594; Language",
+    "name": "toAlonzoLanguage",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#v:toAlonzoLanguage"
+  },
+  {
+    "display_html": "<a href=\"#v:fromAlonzoLanguage\">fromAlonzoLanguage</a> &#8759; Language &#8594; <a href=\"Cardano-Api-Script.html#t:AnyPlutusScriptVersion\" title=\"Cardano.Api.Script\">AnyPlutusScriptVersion</a>",
+    "name": "fromAlonzoLanguage",
+    "module": "Cardano.Api.Script",
+    "link": "cardano-api/Cardano-Api-Script.html#v:fromAlonzoLanguage"
+  },
+  {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
     "name": "AsType AsByronEra AsShelleyEra AsAllegraEra AsMaryEra AsAlonzoEra AsByron AsShelley AsAllegra AsMary AsHash AsVerificationKey AsSigningKey AsTextEnvelope AsPaymentKey AsPaymentExtendedKey AsStakeKey AsStakeExtendedKey AsGenesisKey AsGenesisExtendedKey AsGenesisDelegateKey AsGenesisDelegateExtendedKey AsGenesisUTxOKey AsStakePoolKey AsSimpleScriptV1 AsSimpleScriptV2 AsPlutusScriptV1 AsScript AsScriptInAnyLang AsScriptInEra AsScriptData AsScriptHash AsSimpleScript AsPlutusScript",
     "module": "Cardano.Api.Script",
@@ -2178,6 +2196,12 @@
     "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:toShelleyUpdate"
   },
   {
+    "display_html": "<a href=\"#v:toLedgerPParams\">toLedgerPParams</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParameters\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParameters</a> &#8594; PParams (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era)",
+    "name": "toLedgerPParams",
+    "module": "Cardano.Api.ProtocolParameters",
+    "link": "cardano-api/Cardano-Api-ProtocolParameters.html#v:toLedgerPParams"
+  },
+  {
     "display_html": "<a href=\"#v:fromShelleyPParams\">fromShelleyPParams</a> &#8759; PParams ledgerera &#8594; <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParameters\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParameters</a>",
     "name": "fromShelleyPParams",
     "module": "Cardano.Api.ProtocolParameters",
@@ -2328,16 +2352,10 @@
     "link": "cardano-api/Cardano-Api-Certificate.html#t:AsType"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBody\">TxBody</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ByronTxBody\">ByronTxBody</a> &#8759; Annotated Tx <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a> &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> <a href=\"Cardano-Api-Eras.html#t:ByronEra\" title=\"Cardano.Api.Eras\">ByronEra</a></li><li><a href=\"#v:ShelleyTxBody\">ShelleyTxBody</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; TxBody (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8594; [Script (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era)] &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (AuxiliaryData (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era)) &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era</li></ul>",
-    "name": "TxBody ByronTxBody ShelleyTxBody",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBody\">TxBody</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ByronTxBody\">ByronTxBody</a> &#8759; Annotated Tx <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/Data-ByteString.html#t:ByteString\" title=\"Data.ByteString\">ByteString</a> &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> <a href=\"Cardano-Api-Eras.html#t:ByronEra\" title=\"Cardano.Api.Eras\">ByronEra</a></li><li><a href=\"#v:ShelleyTxBody\">ShelleyTxBody</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; TxBody (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8594; [Script (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era)] &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBodyRedeemers\" title=\"Cardano.Api.TxBody\">TxBodyRedeemers</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (AuxiliaryData (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era)) &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era</li><li><span class=\"keyword\">pattern</span> <a href=\"#v:TxBody\">TxBody</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxBodyContent\" title=\"Cardano.Api.TxBody\">TxBodyContent</a> <a href=\"Cardano-Api-TxBody.html#t:ViewTx\" title=\"Cardano.Api.TxBody\">ViewTx</a> era &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era</li></ul>",
+    "name": "TxBody TxBody ByronTxBody ShelleyTxBody",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBody"
-  },
-  {
-    "display_html": "<a href=\"#v:getTransactionBodyContent\">getTransactionBodyContent</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-TxBody.html#t:TxBodyError\" title=\"Cardano.Api.TxBody\">TxBodyError</a> era) (<a href=\"Cardano-Api-TxBody.html#t:TxBodyContent\" title=\"Cardano.Api.TxBody\">TxBodyContent</a> <a href=\"Cardano-Api-TxBody.html#t:ViewTx\" title=\"Cardano.Api.TxBody\">ViewTx</a> era)",
-    "name": "getTransactionBodyContent",
-    "module": "Cardano.Api.TxBody",
-    "link": "cardano-api/Cardano-Api-TxBody.html#v:getTransactionBodyContent"
   },
   {
     "display_html": "<a href=\"#v:makeTransactionBody\">makeTransactionBody</a> &#8759; &#8704; era. <a href=\"Cardano-Api-Eras.html#t:IsCardanoEra\" title=\"Cardano.Api.Eras\">IsCardanoEra</a> era &#8658; <a href=\"Cardano-Api-TxBody.html#t:TxBodyContent\" title=\"Cardano.Api.TxBody\">TxBodyContent</a> <a href=\"Cardano-Api-TxBody.html#t:BuildTx\" title=\"Cardano.Api.TxBody\">BuildTx</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-TxBody.html#t:TxBodyError\" title=\"Cardano.Api.TxBody\">TxBodyError</a> era) (<a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> era)",
@@ -2346,22 +2364,22 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#v:makeTransactionBody"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyContent\">TxBodyContent</a> build era = <a href=\"#v:TxBodyContent\">TxBodyContent</a> {<ul class=\"subs\"><li><a href=\"#v:txIns\">txIns</a> &#8759; [(<a href=\"Cardano-Api-TxBody.html#t:TxIn\" title=\"Cardano.Api.TxBody\">TxIn</a>, <a href=\"Cardano-Api-TxBody.html#t:BuildTxWith\" title=\"Cardano.Api.TxBody\">BuildTxWith</a> build (<a href=\"Cardano-Api-Script.html#t:Witness\" title=\"Cardano.Api.Script\">Witness</a> <a href=\"Cardano-Api-Script.html#t:WitCtxTxIn\" title=\"Cardano.Api.Script\">WitCtxTxIn</a> era))]</li><li><a href=\"#v:txOuts\">txOuts</a> &#8759; [<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era]</li><li><a href=\"#v:txFee\">txFee</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxFee\" title=\"Cardano.Api.TxBody\">TxFee</a> era</li><li><a href=\"#v:txValidityRange\">txValidityRange</a> &#8759; (<a href=\"Cardano-Api-TxBody.html#t:TxValidityLowerBound\" title=\"Cardano.Api.TxBody\">TxValidityLowerBound</a> era, <a href=\"Cardano-Api-TxBody.html#t:TxValidityUpperBound\" title=\"Cardano.Api.TxBody\">TxValidityUpperBound</a> era)</li><li><a href=\"#v:txMetadata\">txMetadata</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxMetadataInEra\" title=\"Cardano.Api.TxBody\">TxMetadataInEra</a> era</li><li><a href=\"#v:txAuxScripts\">txAuxScripts</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxAuxScripts\" title=\"Cardano.Api.TxBody\">TxAuxScripts</a> era</li><li><a href=\"#v:txWithdrawals\">txWithdrawals</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxWithdrawals\" title=\"Cardano.Api.TxBody\">TxWithdrawals</a> build era</li><li><a href=\"#v:txCertificates\">txCertificates</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxCertificates\" title=\"Cardano.Api.TxBody\">TxCertificates</a> build era</li><li><a href=\"#v:txUpdateProposal\">txUpdateProposal</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxUpdateProposal\" title=\"Cardano.Api.TxBody\">TxUpdateProposal</a> era</li><li><a href=\"#v:txMintValue\">txMintValue</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxMintValue\" title=\"Cardano.Api.TxBody\">TxMintValue</a> build era</li></ul>}",
-    "name": "TxBodyContent TxBodyContent txMetadata txFee txIns txOuts txValidityRange txAuxScripts txWithdrawals txCertificates txUpdateProposal txMintValue",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyContent\">TxBodyContent</a> build era = <a href=\"#v:TxBodyContent\">TxBodyContent</a> {<ul class=\"subs\"><li><a href=\"#v:txIns\">txIns</a> &#8759; [(<a href=\"Cardano-Api-TxBody.html#t:TxIn\" title=\"Cardano.Api.TxBody\">TxIn</a>, <a href=\"Cardano-Api-TxBody.html#t:BuildTxWith\" title=\"Cardano.Api.TxBody\">BuildTxWith</a> build (<a href=\"Cardano-Api-Script.html#t:Witness\" title=\"Cardano.Api.Script\">Witness</a> <a href=\"Cardano-Api-Script.html#t:WitCtxTxIn\" title=\"Cardano.Api.Script\">WitCtxTxIn</a> era))]</li><li><a href=\"#v:txOuts\">txOuts</a> &#8759; [<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era]</li><li><a href=\"#v:txFee\">txFee</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxFee\" title=\"Cardano.Api.TxBody\">TxFee</a> era</li><li><a href=\"#v:txValidityRange\">txValidityRange</a> &#8759; (<a href=\"Cardano-Api-TxBody.html#t:TxValidityLowerBound\" title=\"Cardano.Api.TxBody\">TxValidityLowerBound</a> era, <a href=\"Cardano-Api-TxBody.html#t:TxValidityUpperBound\" title=\"Cardano.Api.TxBody\">TxValidityUpperBound</a> era)</li><li><a href=\"#v:txMetadata\">txMetadata</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxMetadataInEra\" title=\"Cardano.Api.TxBody\">TxMetadataInEra</a> era</li><li><a href=\"#v:txAuxScripts\">txAuxScripts</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxAuxScripts\" title=\"Cardano.Api.TxBody\">TxAuxScripts</a> era</li><li><a href=\"#v:txExtraKeyWits\">txExtraKeyWits</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxExtraKeyWitnesses\" title=\"Cardano.Api.TxBody\">TxExtraKeyWitnesses</a> era</li><li><a href=\"#v:txProtocolParams\">txProtocolParams</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:BuildTxWith\" title=\"Cardano.Api.TxBody\">BuildTxWith</a> build (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParameters\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParameters</a>)</li><li><a href=\"#v:txWithdrawals\">txWithdrawals</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxWithdrawals\" title=\"Cardano.Api.TxBody\">TxWithdrawals</a> build era</li><li><a href=\"#v:txCertificates\">txCertificates</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxCertificates\" title=\"Cardano.Api.TxBody\">TxCertificates</a> build era</li><li><a href=\"#v:txUpdateProposal\">txUpdateProposal</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxUpdateProposal\" title=\"Cardano.Api.TxBody\">TxUpdateProposal</a> era</li><li><a href=\"#v:txMintValue\">txMintValue</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxMintValue\" title=\"Cardano.Api.TxBody\">TxMintValue</a> build era</li></ul>}",
+    "name": "TxBodyContent TxBodyContent txMetadata txFee txIns txOuts txValidityRange txAuxScripts txExtraKeyWits txProtocolParams txWithdrawals txCertificates txUpdateProposal txMintValue",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBodyContent"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api-TxMetadata.html#t:TxMetadataRangeError\" title=\"Cardano.Api.TxMetadata\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li><li>| <a href=\"#v:TxBodyAuxDataHashInvalidError\">TxBodyAuxDataHashInvalidError</a></li><li>| <a href=\"#v:TxBodyMintBeforeMaryError\">TxBodyMintBeforeMaryError</a></li></ul>",
-    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError TxBodyAuxDataHashInvalidError TxBodyMintBeforeMaryError",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api-Value.html#t:Quantity\" title=\"Cardano.Api.Value\">Quantity</a> (<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api-TxMetadata.html#t:TxMetadataRangeError\" title=\"Cardano.Api.TxMetadata\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li><li>| <a href=\"#v:TxBodyAuxDataHashInvalidError\">TxBodyAuxDataHashInvalidError</a></li><li>| <a href=\"#v:TxBodyMintBeforeMaryError\">TxBodyMintBeforeMaryError</a></li><li>| <a href=\"#v:TxBodyMissingProtocolParams\">TxBodyMissingProtocolParams</a></li></ul>",
+    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError TxBodyAuxDataHashInvalidError TxBodyMintBeforeMaryError TxBodyMissingProtocolParams",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBodyError"
   },
   {
-    "display_html": "<a href=\"#v:makeByronTransaction\">makeByronTransaction</a> &#8759; [<a href=\"Cardano-Api-TxBody.html#t:TxIn\" title=\"Cardano.Api.TxBody\">TxIn</a>] &#8594; [<a href=\"Cardano-Api-TxBody.html#t:TxOut\" title=\"Cardano.Api.TxBody\">TxOut</a> <a href=\"Cardano-Api-Eras.html#t:ByronEra\" title=\"Cardano.Api.Eras\">ByronEra</a>] &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api-TxBody.html#t:TxBodyError\" title=\"Cardano.Api.TxBody\">TxBodyError</a> <a href=\"Cardano-Api-Eras.html#t:ByronEra\" title=\"Cardano.Api.Eras\">ByronEra</a>) (<a href=\"Cardano-Api-TxBody.html#t:TxBody\" title=\"Cardano.Api.TxBody\">TxBody</a> <a href=\"Cardano-Api-Eras.html#t:ByronEra\" title=\"Cardano.Api.Eras\">ByronEra</a>)",
-    "name": "makeByronTransaction",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyRedeemers\">TxBodyRedeemers</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxBodyNoRedeemers\">TxBodyNoRedeemers</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxBodyRedeemers\" title=\"Cardano.Api.TxBody\">TxBodyRedeemers</a> era</li><li><a href=\"#v:TxBodyRedeemers\">TxBodyRedeemers</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:ScriptDataSupportedInEra\" title=\"Cardano.Api.TxBody\">ScriptDataSupportedInEra</a> era &#8594; Redeemers (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBodyRedeemers\" title=\"Cardano.Api.TxBody\">TxBodyRedeemers</a> era</li></ul>",
+    "name": "TxBodyRedeemers TxBodyRedeemers TxBodyNoRedeemers",
     "module": "Cardano.Api.TxBody",
-    "link": "cardano-api/Cardano-Api-TxBody.html#v:makeByronTransaction"
+    "link": "cardano-api/Cardano-Api-TxBody.html#t:TxBodyRedeemers"
   },
   {
     "display_html": "<span class=\"keyword\">newtype</span> <a href=\"#t:TxId\">TxId</a> = <a href=\"#v:TxId\">TxId</a> (Hash StandardCrypto EraIndependentTxBody)",
@@ -2452,6 +2470,12 @@
     "name": "TxAuxScriptData TxAuxScriptData TxAuxScriptDataNone",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#t:TxAuxScriptData"
+  },
+  {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxExtraKeyWitnesses\">TxExtraKeyWitnesses</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxExtraKeyWitnessesNone\">TxExtraKeyWitnessesNone</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxExtraKeyWitnesses\" title=\"Cardano.Api.TxBody\">TxExtraKeyWitnesses</a> era</li><li><a href=\"#v:TxExtraKeyWitnesses\">TxExtraKeyWitnesses</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxExtraKeyWitnessesSupportedInEra\" title=\"Cardano.Api.TxBody\">TxExtraKeyWitnessesSupportedInEra</a> era &#8594; [<a href=\"Cardano-Api-Hash.html#t:Hash\" title=\"Cardano.Api.Hash\">Hash</a> <a href=\"Cardano-Api-KeysShelley.html#t:PaymentKey\" title=\"Cardano.Api.KeysShelley\">PaymentKey</a>] &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxExtraKeyWitnesses\" title=\"Cardano.Api.TxBody\">TxExtraKeyWitnesses</a> era</li></ul>",
+    "name": "TxExtraKeyWitnesses TxExtraKeyWitnesses TxExtraKeyWitnessesNone",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#t:TxExtraKeyWitnesses"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxWithdrawals\">TxWithdrawals</a> build era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxWithdrawalsNone\">TxWithdrawalsNone</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxWithdrawals\" title=\"Cardano.Api.TxBody\">TxWithdrawals</a> build era</li><li><a href=\"#v:TxWithdrawals\">TxWithdrawals</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api.TxBody\">WithdrawalsSupportedInEra</a> era &#8594; [(<a href=\"Cardano-Api-Address.html#t:StakeAddress\" title=\"Cardano.Api.Address\">StakeAddress</a>, <a href=\"Cardano-Api-Value.html#t:Lovelace\" title=\"Cardano.Api.Value\">Lovelace</a>, <a href=\"Cardano-Api-TxBody.html#t:BuildTxWith\" title=\"Cardano.Api.TxBody\">BuildTxWith</a> build (<a href=\"Cardano-Api-Script.html#t:Witness\" title=\"Cardano.Api.Script\">Witness</a> <a href=\"Cardano-Api-Script.html#t:WitCtxStake\" title=\"Cardano.Api.Script\">WitCtxStake</a> era))] &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxWithdrawals\" title=\"Cardano.Api.TxBody\">TxWithdrawals</a> build era</li></ul>",
@@ -2550,6 +2574,12 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#t:AuxScriptsSupportedInEra"
   },
   {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxExtraKeyWitnessesSupportedInEra\">TxExtraKeyWitnessesSupportedInEra</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ExtraKeyWitnessesInAlonzoEra\">ExtraKeyWitnessesInAlonzoEra</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:TxExtraKeyWitnessesSupportedInEra\" title=\"Cardano.Api.TxBody\">TxExtraKeyWitnessesSupportedInEra</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li></ul>",
+    "name": "TxExtraKeyWitnessesSupportedInEra ExtraKeyWitnessesInAlonzoEra",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#t:TxExtraKeyWitnessesSupportedInEra"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ScriptDataSupportedInEra\">ScriptDataSupportedInEra</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ScriptDataInAlonzoEra\">ScriptDataInAlonzoEra</a> &#8759; <a href=\"Cardano-Api-TxBody.html#t:ScriptDataSupportedInEra\" title=\"Cardano.Api.TxBody\">ScriptDataSupportedInEra</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li></ul>",
     "name": "ScriptDataSupportedInEra ScriptDataInAlonzoEra",
     "module": "Cardano.Api.TxBody",
@@ -2616,6 +2646,12 @@
     "link": "cardano-api/Cardano-Api-TxBody.html#v:auxScriptsSupportedInEra"
   },
   {
+    "display_html": "<a href=\"#v:extraKeyWitnessesSupportedInEra\">extraKeyWitnessesSupportedInEra</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:CardanoEra\" title=\"Cardano.Api.Eras\">CardanoEra</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (<a href=\"Cardano-Api-TxBody.html#t:TxExtraKeyWitnessesSupportedInEra\" title=\"Cardano.Api.TxBody\">TxExtraKeyWitnessesSupportedInEra</a> era)",
+    "name": "extraKeyWitnessesSupportedInEra",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#v:extraKeyWitnessesSupportedInEra"
+  },
+  {
     "display_html": "<a href=\"#v:scriptDataSupportedInEra\">scriptDataSupportedInEra</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:CardanoEra\" title=\"Cardano.Api.Eras\">CardanoEra</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (<a href=\"Cardano-Api-TxBody.html#t:ScriptDataSupportedInEra\" title=\"Cardano.Api.TxBody\">ScriptDataSupportedInEra</a> era)",
     "name": "scriptDataSupportedInEra",
     "module": "Cardano.Api.TxBody",
@@ -2680,6 +2716,18 @@
     "name": "fromTxOut",
     "module": "Cardano.Api.TxBody",
     "link": "cardano-api/Cardano-Api-TxBody.html#v:fromTxOut"
+  },
+  {
+    "display_html": "<a href=\"#v:toAlonzoRedeemers\">toAlonzoRedeemers</a> &#8759; Era (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8658; <a href=\"Cardano-Api-TxBody.html#t:TxBodyRedeemers\" title=\"Cardano.Api.TxBody\">TxBodyRedeemers</a> era &#8594; Redeemers (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era)",
+    "name": "toAlonzoRedeemers",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#v:toAlonzoRedeemers"
+  },
+  {
+    "display_html": "<a href=\"#v:fromAlonzoRedeemers\">fromAlonzoRedeemers</a> &#8759; Era (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8658; <a href=\"Cardano-Api-TxBody.html#t:ScriptDataSupportedInEra\" title=\"Cardano.Api.TxBody\">ScriptDataSupportedInEra</a> era &#8594; Redeemers (<a href=\"Cardano-Api-Eras.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Eras\">ShelleyLedgerEra</a> era) &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBodyRedeemers\" title=\"Cardano.Api.TxBody\">TxBodyRedeemers</a> era",
+    "name": "fromAlonzoRedeemers",
+    "module": "Cardano.Api.TxBody",
+    "link": "cardano-api/Cardano-Api-TxBody.html#v:fromAlonzoRedeemers"
   },
   {
     "display_html": "<span class=\"keyword\">data family</span> <a href=\"#t:AsType\">AsType</a> t",
@@ -3798,16 +3846,10 @@
     "link": "cardano-api/Cardano-Api.html#v:chainTipToChainPoint"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBody\">TxBody</a> era",
-    "name": "TxBody",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBody\">TxBody</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><span class=\"keyword\">pattern</span> <a href=\"#v:TxBody\">TxBody</a> &#8759; <a href=\"Cardano-Api.html#t:TxBodyContent\" title=\"Cardano.Api\">TxBodyContent</a> <a href=\"Cardano-Api.html#t:ViewTx\" title=\"Cardano.Api\">ViewTx</a> era &#8594; <a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era</li></ul>",
+    "name": "TxBody TxBody",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TxBody"
-  },
-  {
-    "display_html": "<a href=\"#v:getTransactionBodyContent\">getTransactionBodyContent</a> &#8759; <a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api.html#t:TxBodyError\" title=\"Cardano.Api\">TxBodyError</a> era) (<a href=\"Cardano-Api.html#t:TxBodyContent\" title=\"Cardano.Api\">TxBodyContent</a> <a href=\"Cardano-Api.html#t:ViewTx\" title=\"Cardano.Api\">ViewTx</a> era)",
-    "name": "getTransactionBodyContent",
-    "module": "Cardano.Api",
-    "link": "cardano-api/Cardano-Api.html#v:getTransactionBodyContent"
   },
   {
     "display_html": "<a href=\"#v:makeTransactionBody\">makeTransactionBody</a> &#8759; &#8704; era. <a href=\"Cardano-Api.html#t:IsCardanoEra\" title=\"Cardano.Api\">IsCardanoEra</a> era &#8658; <a href=\"Cardano-Api.html#t:TxBodyContent\" title=\"Cardano.Api\">TxBodyContent</a> <a href=\"Cardano-Api.html#t:BuildTx\" title=\"Cardano.Api\">BuildTx</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api.html#t:TxBodyError\" title=\"Cardano.Api\">TxBodyError</a> era) (<a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> era)",
@@ -3816,14 +3858,14 @@
     "link": "cardano-api/Cardano-Api.html#v:makeTransactionBody"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyContent\">TxBodyContent</a> build era = <a href=\"#v:TxBodyContent\">TxBodyContent</a> {<ul class=\"subs\"><li><a href=\"#v:txIns\">txIns</a> &#8759; [(<a href=\"Cardano-Api.html#t:TxIn\" title=\"Cardano.Api\">TxIn</a>, <a href=\"Cardano-Api.html#t:BuildTxWith\" title=\"Cardano.Api\">BuildTxWith</a> build (<a href=\"Cardano-Api.html#t:Witness\" title=\"Cardano.Api\">Witness</a> <a href=\"Cardano-Api.html#t:WitCtxTxIn\" title=\"Cardano.Api\">WitCtxTxIn</a> era))]</li><li><a href=\"#v:txOuts\">txOuts</a> &#8759; [<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era]</li><li><a href=\"#v:txFee\">txFee</a> &#8759; <a href=\"Cardano-Api.html#t:TxFee\" title=\"Cardano.Api\">TxFee</a> era</li><li><a href=\"#v:txValidityRange\">txValidityRange</a> &#8759; (<a href=\"Cardano-Api.html#t:TxValidityLowerBound\" title=\"Cardano.Api\">TxValidityLowerBound</a> era, <a href=\"Cardano-Api.html#t:TxValidityUpperBound\" title=\"Cardano.Api\">TxValidityUpperBound</a> era)</li><li><a href=\"#v:txMetadata\">txMetadata</a> &#8759; <a href=\"Cardano-Api.html#t:TxMetadataInEra\" title=\"Cardano.Api\">TxMetadataInEra</a> era</li><li><a href=\"#v:txAuxScripts\">txAuxScripts</a> &#8759; <a href=\"Cardano-Api.html#t:TxAuxScripts\" title=\"Cardano.Api\">TxAuxScripts</a> era</li><li><a href=\"#v:txWithdrawals\">txWithdrawals</a> &#8759; <a href=\"Cardano-Api.html#t:TxWithdrawals\" title=\"Cardano.Api\">TxWithdrawals</a> build era</li><li><a href=\"#v:txCertificates\">txCertificates</a> &#8759; <a href=\"Cardano-Api.html#t:TxCertificates\" title=\"Cardano.Api\">TxCertificates</a> build era</li><li><a href=\"#v:txUpdateProposal\">txUpdateProposal</a> &#8759; <a href=\"Cardano-Api.html#t:TxUpdateProposal\" title=\"Cardano.Api\">TxUpdateProposal</a> era</li><li><a href=\"#v:txMintValue\">txMintValue</a> &#8759; <a href=\"Cardano-Api.html#t:TxMintValue\" title=\"Cardano.Api\">TxMintValue</a> build era</li></ul>}",
-    "name": "TxBodyContent TxBodyContent txMetadata txFee txIns txOuts txValidityRange txAuxScripts txWithdrawals txCertificates txUpdateProposal txMintValue",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyContent\">TxBodyContent</a> build era = <a href=\"#v:TxBodyContent\">TxBodyContent</a> {<ul class=\"subs\"><li><a href=\"#v:txIns\">txIns</a> &#8759; [(<a href=\"Cardano-Api.html#t:TxIn\" title=\"Cardano.Api\">TxIn</a>, <a href=\"Cardano-Api.html#t:BuildTxWith\" title=\"Cardano.Api\">BuildTxWith</a> build (<a href=\"Cardano-Api.html#t:Witness\" title=\"Cardano.Api\">Witness</a> <a href=\"Cardano-Api.html#t:WitCtxTxIn\" title=\"Cardano.Api\">WitCtxTxIn</a> era))]</li><li><a href=\"#v:txOuts\">txOuts</a> &#8759; [<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era]</li><li><a href=\"#v:txFee\">txFee</a> &#8759; <a href=\"Cardano-Api.html#t:TxFee\" title=\"Cardano.Api\">TxFee</a> era</li><li><a href=\"#v:txValidityRange\">txValidityRange</a> &#8759; (<a href=\"Cardano-Api.html#t:TxValidityLowerBound\" title=\"Cardano.Api\">TxValidityLowerBound</a> era, <a href=\"Cardano-Api.html#t:TxValidityUpperBound\" title=\"Cardano.Api\">TxValidityUpperBound</a> era)</li><li><a href=\"#v:txMetadata\">txMetadata</a> &#8759; <a href=\"Cardano-Api.html#t:TxMetadataInEra\" title=\"Cardano.Api\">TxMetadataInEra</a> era</li><li><a href=\"#v:txAuxScripts\">txAuxScripts</a> &#8759; <a href=\"Cardano-Api.html#t:TxAuxScripts\" title=\"Cardano.Api\">TxAuxScripts</a> era</li><li><a href=\"#v:txExtraKeyWits\">txExtraKeyWits</a> &#8759; <a href=\"Cardano-Api.html#t:TxExtraKeyWitnesses\" title=\"Cardano.Api\">TxExtraKeyWitnesses</a> era</li><li><a href=\"#v:txProtocolParams\">txProtocolParams</a> &#8759; <a href=\"Cardano-Api.html#t:BuildTxWith\" title=\"Cardano.Api\">BuildTxWith</a> build (<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> <a href=\"Cardano-Api-ProtocolParameters.html#t:ProtocolParameters\" title=\"Cardano.Api.ProtocolParameters\">ProtocolParameters</a>)</li><li><a href=\"#v:txWithdrawals\">txWithdrawals</a> &#8759; <a href=\"Cardano-Api.html#t:TxWithdrawals\" title=\"Cardano.Api\">TxWithdrawals</a> build era</li><li><a href=\"#v:txCertificates\">txCertificates</a> &#8759; <a href=\"Cardano-Api.html#t:TxCertificates\" title=\"Cardano.Api\">TxCertificates</a> build era</li><li><a href=\"#v:txUpdateProposal\">txUpdateProposal</a> &#8759; <a href=\"Cardano-Api.html#t:TxUpdateProposal\" title=\"Cardano.Api\">TxUpdateProposal</a> era</li><li><a href=\"#v:txMintValue\">txMintValue</a> &#8759; <a href=\"Cardano-Api.html#t:TxMintValue\" title=\"Cardano.Api\">TxMintValue</a> build era</li></ul>}",
+    "name": "TxBodyContent TxBodyContent txMetadata txFee txIns txOuts txValidityRange txAuxScripts txExtraKeyWits txProtocolParams txWithdrawals txCertificates txUpdateProposal txMintValue",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TxBodyContent"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api.html#t:TxMetadataRangeError\" title=\"Cardano.Api\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li><li>| <a href=\"#v:TxBodyAuxDataHashInvalidError\">TxBodyAuxDataHashInvalidError</a></li><li>| <a href=\"#v:TxBodyMintBeforeMaryError\">TxBodyMintBeforeMaryError</a></li></ul>",
-    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError TxBodyAuxDataHashInvalidError TxBodyMintBeforeMaryError",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBodyError\">TxBodyError</a> era<ul class=\"subs\"><li>= <a href=\"#v:TxBodyEmptyTxIns\">TxBodyEmptyTxIns</a></li><li>| <a href=\"#v:TxBodyEmptyTxOuts\">TxBodyEmptyTxOuts</a></li><li>| <a href=\"#v:TxBodyOutputNegative\">TxBodyOutputNegative</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyOutputOverflow\">TxBodyOutputOverflow</a> <a href=\"Cardano-Api.html#t:Quantity\" title=\"Cardano.Api\">Quantity</a> (<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> era)</li><li>| <a href=\"#v:TxBodyMetadataError\">TxBodyMetadataError</a> [(<a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Word64\" title=\"Distribution.Compat.Prelude.Internal\">Word64</a>, <a href=\"Cardano-Api.html#t:TxMetadataRangeError\" title=\"Cardano.Api\">TxMetadataRangeError</a>)]</li><li>| <a href=\"#v:TxBodyMintAdaError\">TxBodyMintAdaError</a></li><li>| <a href=\"#v:TxBodyAuxDataHashInvalidError\">TxBodyAuxDataHashInvalidError</a></li><li>| <a href=\"#v:TxBodyMintBeforeMaryError\">TxBodyMintBeforeMaryError</a></li><li>| <a href=\"#v:TxBodyMissingProtocolParams\">TxBodyMissingProtocolParams</a></li></ul>",
+    "name": "TxBodyError TxBodyEmptyTxIns TxBodyEmptyTxOuts TxBodyOutputNegative TxBodyOutputOverflow TxBodyMetadataError TxBodyMintAdaError TxBodyAuxDataHashInvalidError TxBodyMintBeforeMaryError TxBodyMissingProtocolParams",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#t:TxBodyError"
   },
@@ -3924,6 +3966,12 @@
     "link": "cardano-api/Cardano-Api.html#t:TxAuxScriptData"
   },
   {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxExtraKeyWitnesses\">TxExtraKeyWitnesses</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxExtraKeyWitnessesNone\">TxExtraKeyWitnessesNone</a> &#8759; <a href=\"Cardano-Api.html#t:TxExtraKeyWitnesses\" title=\"Cardano.Api\">TxExtraKeyWitnesses</a> era</li><li><a href=\"#v:TxExtraKeyWitnesses\">TxExtraKeyWitnesses</a> &#8759; <a href=\"Cardano-Api.html#t:TxExtraKeyWitnessesSupportedInEra\" title=\"Cardano.Api\">TxExtraKeyWitnessesSupportedInEra</a> era &#8594; [<a href=\"Cardano-Api.html#t:Hash\" title=\"Cardano.Api\">Hash</a> <a href=\"Cardano-Api.html#t:PaymentKey\" title=\"Cardano.Api\">PaymentKey</a>] &#8594; <a href=\"Cardano-Api.html#t:TxExtraKeyWitnesses\" title=\"Cardano.Api\">TxExtraKeyWitnesses</a> era</li></ul>",
+    "name": "TxExtraKeyWitnesses TxExtraKeyWitnesses TxExtraKeyWitnessesNone",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:TxExtraKeyWitnesses"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxWithdrawals\">TxWithdrawals</a> build era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:TxWithdrawalsNone\">TxWithdrawalsNone</a> &#8759; <a href=\"Cardano-Api.html#t:TxWithdrawals\" title=\"Cardano.Api\">TxWithdrawals</a> build era</li><li><a href=\"#v:TxWithdrawals\">TxWithdrawals</a> &#8759; <a href=\"Cardano-Api.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api\">WithdrawalsSupportedInEra</a> era &#8594; [(<a href=\"Cardano-Api.html#t:StakeAddress\" title=\"Cardano.Api\">StakeAddress</a>, <a href=\"Cardano-Api.html#t:Lovelace\" title=\"Cardano.Api\">Lovelace</a>, <a href=\"Cardano-Api.html#t:BuildTxWith\" title=\"Cardano.Api\">BuildTxWith</a> build (<a href=\"Cardano-Api.html#t:Witness\" title=\"Cardano.Api\">Witness</a> <a href=\"Cardano-Api.html#t:WitCtxStake\" title=\"Cardano.Api\">WitCtxStake</a> era))] &#8594; <a href=\"Cardano-Api.html#t:TxWithdrawals\" title=\"Cardano.Api\">TxWithdrawals</a> build era</li></ul>",
     "name": "TxWithdrawals TxWithdrawals TxWithdrawalsNone",
     "module": "Cardano.Api",
@@ -4020,6 +4068,12 @@
     "link": "cardano-api/Cardano-Api.html#t:AuxScriptsSupportedInEra"
   },
   {
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxExtraKeyWitnessesSupportedInEra\">TxExtraKeyWitnessesSupportedInEra</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ExtraKeyWitnessesInAlonzoEra\">ExtraKeyWitnessesInAlonzoEra</a> &#8759; <a href=\"Cardano-Api.html#t:TxExtraKeyWitnessesSupportedInEra\" title=\"Cardano.Api\">TxExtraKeyWitnessesSupportedInEra</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li></ul>",
+    "name": "TxExtraKeyWitnessesSupportedInEra ExtraKeyWitnessesInAlonzoEra",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#t:TxExtraKeyWitnessesSupportedInEra"
+  },
+  {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:WithdrawalsSupportedInEra\">WithdrawalsSupportedInEra</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:WithdrawalsInShelleyEra\">WithdrawalsInShelleyEra</a> &#8759; <a href=\"Cardano-Api.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api\">WithdrawalsSupportedInEra</a> <a href=\"Cardano-Api.html#t:ShelleyEra\" title=\"Cardano.Api\">ShelleyEra</a></li><li><a href=\"#v:WithdrawalsInAllegraEra\">WithdrawalsInAllegraEra</a> &#8759; <a href=\"Cardano-Api.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api\">WithdrawalsSupportedInEra</a> <a href=\"Cardano-Api.html#t:AllegraEra\" title=\"Cardano.Api\">AllegraEra</a></li><li><a href=\"#v:WithdrawalsInMaryEra\">WithdrawalsInMaryEra</a> &#8759; <a href=\"Cardano-Api.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api\">WithdrawalsSupportedInEra</a> <a href=\"Cardano-Api.html#t:MaryEra\" title=\"Cardano.Api\">MaryEra</a></li><li><a href=\"#v:WithdrawalsInAlonzoEra\">WithdrawalsInAlonzoEra</a> &#8759; <a href=\"Cardano-Api.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api\">WithdrawalsSupportedInEra</a> <a href=\"Cardano-Api-Eras.html#t:AlonzoEra\" title=\"Cardano.Api.Eras\">AlonzoEra</a></li></ul>",
     "name": "WithdrawalsSupportedInEra WithdrawalsInShelleyEra WithdrawalsInAllegraEra WithdrawalsInMaryEra WithdrawalsInAlonzoEra",
     "module": "Cardano.Api",
@@ -4078,6 +4132,12 @@
     "name": "auxScriptsSupportedInEra",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:auxScriptsSupportedInEra"
+  },
+  {
+    "display_html": "<a href=\"#v:extraKeyWitnessesSupportedInEra\">extraKeyWitnessesSupportedInEra</a> &#8759; <a href=\"Cardano-Api.html#t:CardanoEra\" title=\"Cardano.Api\">CardanoEra</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (<a href=\"Cardano-Api.html#t:TxExtraKeyWitnessesSupportedInEra\" title=\"Cardano.Api\">TxExtraKeyWitnessesSupportedInEra</a> era)",
+    "name": "extraKeyWitnessesSupportedInEra",
+    "module": "Cardano.Api",
+    "link": "cardano-api/Cardano-Api.html#v:extraKeyWitnessesSupportedInEra"
   },
   {
     "display_html": "<a href=\"#v:withdrawalsSupportedInEra\">withdrawalsSupportedInEra</a> &#8759; <a href=\"Cardano-Api.html#t:CardanoEra\" title=\"Cardano.Api\">CardanoEra</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (<a href=\"Cardano-Api.html#t:WithdrawalsSupportedInEra\" title=\"Cardano.Api\">WithdrawalsSupportedInEra</a> era)",
@@ -4144,12 +4204,6 @@
     "name": "makeByronKeyWitness",
     "module": "Cardano.Api",
     "link": "cardano-api/Cardano-Api.html#v:makeByronKeyWitness"
-  },
-  {
-    "display_html": "<a href=\"#v:makeByronTransaction\">makeByronTransaction</a> &#8759; [<a href=\"Cardano-Api.html#t:TxIn\" title=\"Cardano.Api\">TxIn</a>] &#8594; [<a href=\"Cardano-Api.html#t:TxOut\" title=\"Cardano.Api\">TxOut</a> <a href=\"Cardano-Api.html#t:ByronEra\" title=\"Cardano.Api\">ByronEra</a>] &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Either\" title=\"Distribution.Compat.Prelude.Internal\">Either</a> (<a href=\"Cardano-Api.html#t:TxBodyError\" title=\"Cardano.Api\">TxBodyError</a> <a href=\"Cardano-Api.html#t:ByronEra\" title=\"Cardano.Api\">ByronEra</a>) (<a href=\"Cardano-Api.html#t:TxBody\" title=\"Cardano.Api\">TxBody</a> <a href=\"Cardano-Api.html#t:ByronEra\" title=\"Cardano.Api\">ByronEra</a>)",
-    "name": "makeByronTransaction",
-    "module": "Cardano.Api",
-    "link": "cardano-api/Cardano-Api.html#v:makeByronTransaction"
   },
   {
     "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:ShelleyWitnessSigningKey\">ShelleyWitnessSigningKey</a><ul class=\"subs\"><li>= <a href=\"#v:WitnessPaymentKey\">WitnessPaymentKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:PaymentKey\" title=\"Cardano.Api\">PaymentKey</a>)</li><li>| <a href=\"#v:WitnessPaymentExtendedKey\">WitnessPaymentExtendedKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:PaymentExtendedKey\" title=\"Cardano.Api\">PaymentExtendedKey</a>)</li><li>| <a href=\"#v:WitnessStakeKey\">WitnessStakeKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:StakeKey\" title=\"Cardano.Api\">StakeKey</a>)</li><li>| <a href=\"#v:WitnessStakeExtendedKey\">WitnessStakeExtendedKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:StakeExtendedKey\" title=\"Cardano.Api\">StakeExtendedKey</a>)</li><li>| <a href=\"#v:WitnessStakePoolKey\">WitnessStakePoolKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api-KeysShelley.html#t:StakePoolKey\" title=\"Cardano.Api.KeysShelley\">StakePoolKey</a>)</li><li>| <a href=\"#v:WitnessGenesisKey\">WitnessGenesisKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:GenesisKey\" title=\"Cardano.Api\">GenesisKey</a>)</li><li>| <a href=\"#v:WitnessGenesisExtendedKey\">WitnessGenesisExtendedKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:GenesisExtendedKey\" title=\"Cardano.Api\">GenesisExtendedKey</a>)</li><li>| <a href=\"#v:WitnessGenesisDelegateKey\">WitnessGenesisDelegateKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:GenesisDelegateKey\" title=\"Cardano.Api\">GenesisDelegateKey</a>)</li><li>| <a href=\"#v:WitnessGenesisDelegateExtendedKey\">WitnessGenesisDelegateExtendedKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:GenesisDelegateExtendedKey\" title=\"Cardano.Api\">GenesisDelegateExtendedKey</a>)</li><li>| <a href=\"#v:WitnessGenesisUTxOKey\">WitnessGenesisUTxOKey</a> (<a href=\"Cardano-Api-Key.html#t:SigningKey\" title=\"Cardano.Api.Key\">SigningKey</a> <a href=\"Cardano-Api.html#t:GenesisUTxOKey\" title=\"Cardano.Api\">GenesisUTxOKey</a>)</li></ul>",
@@ -5298,7 +5352,7 @@
     "link": "cardano-api/Cardano-Api-Shelley.html#v:fromShelleyPaymentCredential"
   },
   {
-    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBody\">TxBody</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ShelleyTxBody\">ShelleyTxBody</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; TxBody (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era) &#8594; [Script (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era)] &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (AuxiliaryData (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era)) &#8594; <a href=\"Cardano-Api-Shelley.html#t:TxBody\" title=\"Cardano.Api.Shelley\">TxBody</a> era</li></ul>",
+    "display_html": "<span class=\"keyword\">data</span> <a href=\"#t:TxBody\">TxBody</a> era <span class=\"keyword\">where</span><ul class=\"subs\"><li><a href=\"#v:ShelleyTxBody\">ShelleyTxBody</a> &#8759; <a href=\"Cardano-Api-Eras.html#t:ShelleyBasedEra\" title=\"Cardano.Api.Eras\">ShelleyBasedEra</a> era &#8594; TxBody (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era) &#8594; [Script (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era)] &#8594; <a href=\"Cardano-Api-TxBody.html#t:TxBodyRedeemers\" title=\"Cardano.Api.TxBody\">TxBodyRedeemers</a> era &#8594; <a href=\"file:///opt/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/Cabal-3.2.1.0/Distribution-Compat-Prelude-Internal.html#t:Maybe\" title=\"Distribution.Compat.Prelude.Internal\">Maybe</a> (AuxiliaryData (<a href=\"Cardano-Api-Shelley.html#t:ShelleyLedgerEra\" title=\"Cardano.Api.Shelley\">ShelleyLedgerEra</a> era)) &#8594; <a href=\"Cardano-Api-Shelley.html#t:TxBody\" title=\"Cardano.Api.Shelley\">TxBody</a> era</li></ul>",
     "name": "TxBody ShelleyTxBody",
     "module": "Cardano.Api.Shelley",
     "link": "cardano-api/Cardano-Api-Shelley.html#t:TxBody"
