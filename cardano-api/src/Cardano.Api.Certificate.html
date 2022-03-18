@@ -35,16 +35,16 @@
 </span><span id="line-35"></span><span>    </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier">AsType</span></a></span><span class="hs-special">(</span><span class="hs-glyph">..</span><span class="hs-special">)</span><span>
 </span><span id="line-36"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-37"></span><span>
-</span><span id="line-38"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-38"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-39"></span><span>
-</span><span id="line-40"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.ByteString</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">ByteString</span></span><span class="hs-special">)</span><span>
-</span><span id="line-41"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Foldable</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Foldable</span></span><span>
-</span><span id="line-42"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Map.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
-</span><span id="line-43"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Maybe</span></span><span>
+</span><span id="line-40"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">ByteString</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-41"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Data.Foldable</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Foldable</span></span><span>
+</span><span id="line-42"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Map.Strict</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Map</span></span><span>
+</span><span id="line-43"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Data.Maybe</span></a></span><span>
 </span><span id="line-44"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Sequence.Strict</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Seq</span></span><span>
-</span><span id="line-45"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Set</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Set</span></span><span>
-</span><span id="line-46"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Text</span></span><span class="hs-special">)</span><span>
-</span><span id="line-47"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text.Encoding</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-45"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier">Data.Set</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Set</span></span><span>
+</span><span id="line-46"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Text</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-47"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text.Encoding</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-48"></span><span>
 </span><span id="line-49"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.IP</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">IPv4</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">IPv6</span></span><span class="hs-special">)</span><span>
 </span><span id="line-50"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Network.Socket</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">PortNumber</span></span><span class="hs-special">)</span><span>
@@ -101,7 +101,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Certificate -&gt; Certificate -&gt; Bool
 == :: Certificate -&gt; Certificate -&gt; Bool
 $c== :: Certificate -&gt; Certificate -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422934"><span id="local-6989586621679422936"><span id="local-6989586621679422938"><span class="annot"><span class="annottext">Int -&gt; Certificate -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422934"><span id="local-6989586621679422936"><span id="local-6989586621679422938"><span class="annot"><span class="annottext">Int -&gt; Certificate -&gt; ShowS
 [Certificate] -&gt; ShowS
 Certificate -&gt; String
 (Int -&gt; Certificate -&gt; ShowS)
@@ -116,7 +116,7 @@ show :: Certificate -&gt; String
 $cshow :: Certificate -&gt; String
 showsPrec :: Int -&gt; Certificate -&gt; ShowS
 $cshowsPrec :: Int -&gt; Certificate -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-97"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">anyclass</span></span><span> </span><span id="local-6989586621679422928"><span id="local-6989586621679422930"><span class="annot"><span class="annottext">HasTypeProxy Certificate
 HasTypeProxy Certificate
 -&gt; (Certificate -&gt; ByteString)
@@ -151,7 +151,7 @@ forall a. ToCBOR a =&gt; a -&gt; Encoding
 </span><span class="hs-identifier hs-var">toCBOR</span></span><span> </span><span class="annot"><span class="annottext">(DCert StandardCrypto -&gt; Encoding)
 -&gt; (Certificate -&gt; DCert StandardCrypto) -&gt; Certificate -&gt; Encoding
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Certificate -&gt; DCert StandardCrypto
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Certificate -&gt; DCert StandardCrypto
 </span><a href="Cardano.Api.Certificate.html#toShelleyCertificate"><span class="hs-identifier hs-var">toShelleyCertificate</span></a></span><span>
 </span><span id="line-105"></span><span>
 </span><span id="line-106"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679422908"><span class="annot"><span class="hs-identifier hs-type">FromCBOR</span></span><span> </span><span class="annot"><a href="Cardano.Api.Certificate.html#Certificate"><span class="hs-identifier hs-type">Certificate</span></a></span></span><span> </span><span class="hs-keyword">where</span><span>
@@ -160,7 +160,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><a href="Cardano.Api.Certificate.html#fromShelleyCertificate"><span class="hs-identifier hs-var">fromShelleyCertificate</span></a></span><span> </span><span class="annot"><span class="annottext">(DCert StandardCrypto -&gt; Certificate)
 -&gt; Decoder s (DCert StandardCrypto) -&gt; Decoder s Certificate
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Decoder s (DCert StandardCrypto)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Decoder s (DCert StandardCrypto)
 forall a s. FromCBOR a =&gt; Decoder s a
 </span><span class="hs-identifier hs-var">fromCBOR</span></span><span>
 </span><span id="line-108"></span><span>
@@ -212,7 +212,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: MIRTarget -&gt; MIRTarget -&gt; Bool
 == :: MIRTarget -&gt; MIRTarget -&gt; Bool
 $c== :: MIRTarget -&gt; MIRTarget -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422882"><span id="local-6989586621679422884"><span id="local-6989586621679422886"><span class="annot"><span class="annottext">Int -&gt; MIRTarget -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422882"><span id="local-6989586621679422884"><span id="local-6989586621679422886"><span class="annot"><span class="annottext">Int -&gt; MIRTarget -&gt; ShowS
 [MIRTarget] -&gt; ShowS
 MIRTarget -&gt; String
 (Int -&gt; MIRTarget -&gt; ShowS)
@@ -227,7 +227,7 @@ show :: MIRTarget -&gt; String
 $cshow :: MIRTarget -&gt; String
 showsPrec :: Int -&gt; MIRTarget -&gt; ShowS
 $cshowsPrec :: Int -&gt; MIRTarget -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-137"></span><span>
 </span><span id="line-138"></span><span class="hs-comment">-- ----------------------------------------------------------------------------</span><span>
 </span><span id="line-139"></span><span class="hs-comment">-- Stake pool parameters</span><span>
@@ -244,7 +244,7 @@ $cshowsPrec :: Int -&gt; MIRTarget -&gt; ShowS
 </span><span id="line-148"></span><span>       </span><span id="stakePoolCost"><span class="annot"><span class="annottext">StakePoolParameters -&gt; Lovelace
 </span><a href="Cardano.Api.Certificate.html#stakePoolCost"><span class="hs-identifier hs-var hs-var">stakePoolCost</span></a></span></span><span>          </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Value.html#Lovelace"><span class="hs-identifier hs-type">Lovelace</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-149"></span><span>       </span><span id="stakePoolMargin"><span class="annot"><span class="annottext">StakePoolParameters -&gt; Rational
-</span><a href="Cardano.Api.Certificate.html#stakePoolMargin"><span class="hs-identifier hs-var hs-var">stakePoolMargin</span></a></span></span><span>        </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Rational</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.Certificate.html#stakePoolMargin"><span class="hs-identifier hs-var hs-var">stakePoolMargin</span></a></span></span><span>        </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Rational</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-150"></span><span>       </span><span id="stakePoolRewardAccount"><span class="annot"><span class="annottext">StakePoolParameters -&gt; StakeAddress
 </span><a href="Cardano.Api.Certificate.html#stakePoolRewardAccount"><span class="hs-identifier hs-var hs-var">stakePoolRewardAccount</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Address.html#StakeAddress"><span class="hs-identifier hs-type">StakeAddress</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-151"></span><span>       </span><span id="stakePoolPledge"><span class="annot"><span class="annottext">StakePoolParameters -&gt; Lovelace
@@ -254,7 +254,7 @@ $cshowsPrec :: Int -&gt; MIRTarget -&gt; ShowS
 </span><span id="line-153"></span><span>       </span><span id="stakePoolRelays"><span class="annot"><span class="annottext">StakePoolParameters -&gt; [StakePoolRelay]
 </span><a href="Cardano.Api.Certificate.html#stakePoolRelays"><span class="hs-identifier hs-var hs-var">stakePoolRelays</span></a></span></span><span>        </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolRelay"><span class="hs-identifier hs-type">StakePoolRelay</span></a></span><span class="hs-special">]</span><span class="hs-special">,</span><span>
 </span><span id="line-154"></span><span>       </span><span id="stakePoolMetadata"><span class="annot"><span class="annottext">StakePoolParameters -&gt; Maybe StakePoolMetadataReference
-</span><a href="Cardano.Api.Certificate.html#stakePoolMetadata"><span class="hs-identifier hs-var hs-var">stakePoolMetadata</span></a></span></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolMetadataReference"><span class="hs-identifier hs-type">StakePoolMetadataReference</span></a></span><span>
+</span><a href="Cardano.Api.Certificate.html#stakePoolMetadata"><span class="hs-identifier hs-var hs-var">stakePoolMetadata</span></a></span></span><span>      </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolMetadataReference"><span class="hs-identifier hs-type">StakePoolMetadataReference</span></a></span><span>
 </span><span id="line-155"></span><span>     </span><span class="hs-special">}</span><span>
 </span><span id="line-156"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679422867"><span id="local-6989586621679422869"><span class="annot"><span class="annottext">StakePoolParameters -&gt; StakePoolParameters -&gt; Bool
 (StakePoolParameters -&gt; StakePoolParameters -&gt; Bool)
@@ -265,7 +265,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakePoolParameters -&gt; StakePoolParameters -&gt; Bool
 == :: StakePoolParameters -&gt; StakePoolParameters -&gt; Bool
 $c== :: StakePoolParameters -&gt; StakePoolParameters -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422861"><span id="local-6989586621679422863"><span id="local-6989586621679422865"><span class="annot"><span class="annottext">Int -&gt; StakePoolParameters -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422861"><span id="local-6989586621679422863"><span id="local-6989586621679422865"><span class="annot"><span class="annottext">Int -&gt; StakePoolParameters -&gt; ShowS
 [StakePoolParameters] -&gt; ShowS
 StakePoolParameters -&gt; String
 (Int -&gt; StakePoolParameters -&gt; ShowS)
@@ -280,21 +280,21 @@ show :: StakePoolParameters -&gt; String
 $cshow :: StakePoolParameters -&gt; String
 showsPrec :: Int -&gt; StakePoolParameters -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakePoolParameters -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-157"></span><span>
 </span><span id="line-158"></span><span class="hs-keyword">data</span><span> </span><span id="StakePoolRelay"><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolRelay"><span class="hs-identifier hs-var">StakePoolRelay</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-159"></span><span>
 </span><span id="line-160"></span><span>       </span><span class="hs-comment">-- | One or both of IPv4 &amp; IPv6</span><span>
 </span><span id="line-161"></span><span>       </span><span id="StakePoolRelayIp"><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolRelayIp"><span class="hs-identifier hs-var">StakePoolRelayIp</span></a></span></span><span>
-</span><span id="line-162"></span><span>          </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IPv4</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IPv6</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span><span class="hs-special">)</span><span>
+</span><span id="line-162"></span><span>          </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IPv4</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">IPv6</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span><span class="hs-special">)</span><span>
 </span><span id="line-163"></span><span>
 </span><span id="line-164"></span><span>       </span><span class="hs-comment">-- | An DNS name pointing to a @A@ or @AAAA@ record.</span><span>
 </span><span id="line-165"></span><span>     </span><span class="hs-glyph">|</span><span> </span><span id="StakePoolRelayDnsARecord"><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolRelayDnsARecord"><span class="hs-identifier hs-var">StakePoolRelayDnsARecord</span></a></span></span><span>
-</span><span id="line-166"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Maybe</span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span><span class="hs-special">)</span><span>
+</span><span id="line-166"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-type">Maybe</span></a></span><span> </span><span class="annot"><span class="hs-identifier hs-type">PortNumber</span></span><span class="hs-special">)</span><span>
 </span><span id="line-167"></span><span>
 </span><span id="line-168"></span><span>       </span><span class="hs-comment">-- | A DNS name pointing to a @SRV@ record.</span><span>
 </span><span id="line-169"></span><span>     </span><span class="hs-glyph">|</span><span> </span><span id="StakePoolRelayDnsSrvRecord"><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolRelayDnsSrvRecord"><span class="hs-identifier hs-var">StakePoolRelayDnsSrvRecord</span></a></span></span><span>
-</span><span id="line-170"></span><span>          </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-170"></span><span>          </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-171"></span><span>
 </span><span id="line-172"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679422854"><span id="local-6989586621679422856"><span class="annot"><span class="annottext">StakePoolRelay -&gt; StakePoolRelay -&gt; Bool
 (StakePoolRelay -&gt; StakePoolRelay -&gt; Bool)
@@ -304,7 +304,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakePoolRelay -&gt; StakePoolRelay -&gt; Bool
 == :: StakePoolRelay -&gt; StakePoolRelay -&gt; Bool
 $c== :: StakePoolRelay -&gt; StakePoolRelay -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422848"><span id="local-6989586621679422850"><span id="local-6989586621679422852"><span class="annot"><span class="annottext">Int -&gt; StakePoolRelay -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422848"><span id="local-6989586621679422850"><span id="local-6989586621679422852"><span class="annot"><span class="annottext">Int -&gt; StakePoolRelay -&gt; ShowS
 [StakePoolRelay] -&gt; ShowS
 StakePoolRelay -&gt; String
 (Int -&gt; StakePoolRelay -&gt; ShowS)
@@ -319,12 +319,12 @@ show :: StakePoolRelay -&gt; String
 $cshow :: StakePoolRelay -&gt; String
 showsPrec :: Int -&gt; StakePoolRelay -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakePoolRelay -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-173"></span><span>
 </span><span id="line-174"></span><span class="hs-keyword">data</span><span> </span><span id="StakePoolMetadataReference"><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolMetadataReference"><span class="hs-identifier hs-var">StakePoolMetadataReference</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-175"></span><span>     </span><span id="StakePoolMetadataReference"><span class="annot"><a href="Cardano.Api.Certificate.html#StakePoolMetadataReference"><span class="hs-identifier hs-var">StakePoolMetadataReference</span></a></span></span><span> </span><span class="hs-special">{</span><span>
 </span><span id="line-176"></span><span>       </span><span id="stakePoolMetadataURL"><span class="annot"><span class="annottext">StakePoolMetadataReference -&gt; Text
-</span><a href="Cardano.Api.Certificate.html#stakePoolMetadataURL"><span class="hs-identifier hs-var hs-var">stakePoolMetadataURL</span></a></span></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span class="hs-special">,</span><span>
+</span><a href="Cardano.Api.Certificate.html#stakePoolMetadataURL"><span class="hs-identifier hs-var hs-var">stakePoolMetadataURL</span></a></span></span><span>  </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span class="hs-special">,</span><span>
 </span><span id="line-177"></span><span>       </span><span id="stakePoolMetadataHash"><span class="annot"><span class="annottext">StakePoolMetadataReference -&gt; Hash StakePoolMetadata
 </span><a href="Cardano.Api.Certificate.html#stakePoolMetadataHash"><span class="hs-identifier hs-var hs-var">stakePoolMetadataHash</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.StakePoolMetadata.html#StakePoolMetadata"><span class="hs-identifier hs-type">StakePoolMetadata</span></a></span><span>
 </span><span id="line-178"></span><span>     </span><span class="hs-special">}</span><span>
@@ -338,7 +338,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: StakePoolMetadataReference -&gt; StakePoolMetadataReference -&gt; Bool
 == :: StakePoolMetadataReference -&gt; StakePoolMetadataReference -&gt; Bool
 $c== :: StakePoolMetadataReference -&gt; StakePoolMetadataReference -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422835"><span id="local-6989586621679422837"><span id="local-6989586621679422839"><span class="annot"><span class="annottext">Int -&gt; StakePoolMetadataReference -&gt; ShowS
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422835"><span id="local-6989586621679422837"><span id="local-6989586621679422839"><span class="annot"><span class="annottext">Int -&gt; StakePoolMetadataReference -&gt; ShowS
 [StakePoolMetadataReference] -&gt; ShowS
 StakePoolMetadataReference -&gt; String
 (Int -&gt; StakePoolMetadataReference -&gt; ShowS)
@@ -353,7 +353,7 @@ show :: StakePoolMetadataReference -&gt; String
 $cshow :: StakePoolMetadataReference -&gt; String
 showsPrec :: Int -&gt; StakePoolMetadataReference -&gt; ShowS
 $cshowsPrec :: Int -&gt; StakePoolMetadataReference -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-180"></span><span>
 </span><span id="line-181"></span><span>
 </span><span id="line-182"></span><span class="hs-comment">-- ----------------------------------------------------------------------------</span><span>
@@ -414,7 +414,7 @@ forall crypto. DelegCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertDeleg</span></span><span> </span><span class="annot"><span class="annottext">(DelegCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; DelegCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-218"></span><span>      </span><span class="annot"><span class="annottext">StakeCredential StandardCrypto -&gt; DelegCert StandardCrypto
 forall crypto. StakeCredential crypto -&gt; DelegCert crypto
 </span><span class="hs-identifier hs-var">Shelley.RegKey</span></span><span>
@@ -429,7 +429,7 @@ forall crypto. DelegCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertDeleg</span></span><span> </span><span class="annot"><span class="annottext">(DelegCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; DelegCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-223"></span><span>      </span><span class="annot"><span class="annottext">StakeCredential StandardCrypto -&gt; DelegCert StandardCrypto
 forall crypto. StakeCredential crypto -&gt; DelegCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DeRegKey</span></span><span>
@@ -445,13 +445,13 @@ forall crypto. DelegCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertDeleg</span></span><span> </span><span class="annot"><span class="annottext">(DelegCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; DelegCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-229"></span><span>    </span><span class="annot"><span class="annottext">Delegation StandardCrypto -&gt; DelegCert StandardCrypto
 forall crypto. Delegation crypto -&gt; DelegCert crypto
 </span><span class="hs-identifier hs-var">Shelley.Delegate</span></span><span> </span><span class="annot"><span class="annottext">(Delegation StandardCrypto -&gt; DelegCert StandardCrypto)
 -&gt; Delegation StandardCrypto -&gt; DelegCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-230"></span><span>      </span><span class="annot"><span class="annottext">StakeCredential StandardCrypto
 -&gt; KeyHash 'StakePool StandardCrypto -&gt; Delegation StandardCrypto
 forall crypto.
@@ -471,7 +471,7 @@ forall crypto. PoolCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertPool</span></span><span> </span><span class="annot"><span class="annottext">(PoolCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; PoolCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-236"></span><span>      </span><span class="annot"><span class="annottext">PoolParams StandardCrypto -&gt; PoolCert StandardCrypto
 forall crypto. PoolParams crypto -&gt; PoolCert crypto
 </span><span class="hs-identifier hs-var">Shelley.RegPool</span></span><span>
@@ -487,7 +487,7 @@ forall crypto. PoolCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertPool</span></span><span> </span><span class="annot"><span class="annottext">(PoolCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; PoolCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-242"></span><span>      </span><span class="annot"><span class="annottext">KeyHash 'StakePool StandardCrypto
 -&gt; EpochNo -&gt; PoolCert StandardCrypto
 forall crypto.
@@ -507,7 +507,7 @@ forall crypto. GenesisDelegCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertGenesis</span></span><span> </span><span class="annot"><span class="annottext">(GenesisDelegCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; GenesisDelegCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-251"></span><span>      </span><span class="annot"><span class="annottext">KeyHash 'Genesis StandardCrypto
 -&gt; KeyHash 'GenesisDelegate StandardCrypto
 -&gt; Hash StandardCrypto (VerKeyVRF StandardCrypto)
@@ -533,7 +533,7 @@ forall crypto. MIRCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertMir</span></span><span> </span><span class="annot"><span class="annottext">(MIRCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; MIRCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-258"></span><span>      </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget StandardCrypto -&gt; MIRCert StandardCrypto
 forall crypto. MIRPot -&gt; MIRTarget crypto -&gt; MIRCert crypto
 </span><span class="hs-identifier hs-var">Shelley.MIRCert</span></span><span>
@@ -548,22 +548,22 @@ Map (Credential 'Staking crypto) DeltaCoin -&gt; MIRTarget crypto
 -&gt; Map (StakeCredential StandardCrypto) DeltaCoin
 -&gt; MIRTarget StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">(DeltaCoin -&gt; DeltaCoin -&gt; DeltaCoin)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">(DeltaCoin -&gt; DeltaCoin -&gt; DeltaCoin)
 -&gt; [(StakeCredential StandardCrypto, DeltaCoin)]
 -&gt; Map (StakeCredential StandardCrypto) DeltaCoin
 forall k a. Ord k =&gt; (a -&gt; a -&gt; a) -&gt; [(k, a)] -&gt; Map k a
-</span><span class="hs-identifier hs-var">Map.fromListWith</span></span><span> </span><span class="annot"><span class="annottext">DeltaCoin -&gt; DeltaCoin -&gt; DeltaCoin
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.fromListWith</span></a></span><span> </span><span class="annot"><span class="annottext">DeltaCoin -&gt; DeltaCoin -&gt; DeltaCoin
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">(&lt;&gt;)</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">(&lt;&gt;)</span></a></span><span>
 </span><span id="line-261"></span><span>           </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">StakeCredential -&gt; StakeCredential StandardCrypto
 </span><a href="Cardano.Api.Address.html#toShelleyStakeCredential"><span class="hs-identifier hs-var">toShelleyStakeCredential</span></a></span><span> </span><span class="annot"><span class="annottext">StakeCredential
 </span><a href="#local-6989586621679422803"><span class="hs-identifier hs-var">sc</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Coin -&gt; DeltaCoin
 </span><span class="hs-identifier hs-var">Shelley.toDeltaCoin</span></span><span> </span><span class="annot"><span class="annottext">(Coin -&gt; DeltaCoin) -&gt; (Lovelace -&gt; Coin) -&gt; Lovelace -&gt; DeltaCoin
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Coin
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Coin
 </span><a href="Cardano.Api.Value.html#toShelleyLovelace"><span class="hs-identifier hs-var">toShelleyLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">(Lovelace -&gt; DeltaCoin) -&gt; Lovelace -&gt; DeltaCoin
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679422801"><span class="hs-identifier hs-var">v</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-262"></span><span>           </span><span class="hs-glyph">|</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679422803"><span class="annot"><span class="annottext">StakeCredential
 </span><a href="#local-6989586621679422803"><span class="hs-identifier hs-var">sc</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679422801"><span class="annot"><span class="annottext">Lovelace
@@ -582,7 +582,7 @@ forall crypto. MIRCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertMir</span></span><span> </span><span class="annot"><span class="annottext">(MIRCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; MIRCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-268"></span><span>          </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget StandardCrypto -&gt; MIRCert StandardCrypto
 forall crypto. MIRPot -&gt; MIRTarget crypto -&gt; MIRCert crypto
 </span><span class="hs-identifier hs-var">Shelley.MIRCert</span></span><span>
@@ -593,14 +593,14 @@ forall crypto. Coin -&gt; MIRTarget crypto
 </span><span class="hs-identifier hs-var">Shelley.SendToOppositePotMIR</span></span><span> </span><span class="annot"><span class="annottext">(Coin -&gt; MIRTarget StandardCrypto)
 -&gt; Coin -&gt; MIRTarget StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Coin
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Coin
 </span><a href="Cardano.Api.Value.html#toShelleyLovelace"><span class="hs-identifier hs-var">toShelleyLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679422799"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-271"></span><span>      </span><span class="annot"><span class="annottext">MIRPot
 </span><span class="hs-identifier hs-var">ReservesMIR</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-272"></span><span>        </span><span class="annot"><span class="annottext">String -&gt; DCert StandardCrypto
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;toShelleyCertificate: Incorrect MIRPot specified. Expected TreasuryMIR but got ReservesMIR&quot;</span></span><span>
 </span><span id="line-273"></span><span>
 </span><span id="line-274"></span><span class="annot"><a href="Cardano.Api.Certificate.html#toShelleyCertificate"><span class="hs-identifier hs-var">toShelleyCertificate</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Certificate.html#MIRCertificate"><span class="hs-identifier hs-type">MIRCertificate</span></a></span><span> </span><span id="local-6989586621679422794"><span class="annot"><span class="annottext">MIRPot
@@ -615,7 +615,7 @@ forall crypto. MIRCert crypto -&gt; DCert crypto
 </span><span class="hs-identifier hs-var">Shelley.DCertMir</span></span><span> </span><span class="annot"><span class="annottext">(MIRCert StandardCrypto -&gt; DCert StandardCrypto)
 -&gt; MIRCert StandardCrypto -&gt; DCert StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-278"></span><span>          </span><span class="annot"><span class="annottext">MIRPot -&gt; MIRTarget StandardCrypto -&gt; MIRCert StandardCrypto
 forall crypto. MIRPot -&gt; MIRTarget crypto -&gt; MIRCert crypto
 </span><span class="hs-identifier hs-var">Shelley.MIRCert</span></span><span>
@@ -626,14 +626,14 @@ forall crypto. Coin -&gt; MIRTarget crypto
 </span><span class="hs-identifier hs-var">Shelley.SendToOppositePotMIR</span></span><span> </span><span class="annot"><span class="annottext">(Coin -&gt; MIRTarget StandardCrypto)
 -&gt; Coin -&gt; MIRTarget StandardCrypto
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Coin
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace -&gt; Coin
 </span><a href="Cardano.Api.Value.html#toShelleyLovelace"><span class="hs-identifier hs-var">toShelleyLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Lovelace
 </span><a href="#local-6989586621679422793"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-281"></span><span>      </span><span class="annot"><span class="annottext">MIRPot
 </span><span class="hs-identifier hs-var">TreasuryMIR</span></span><span> </span><span class="hs-glyph">-&gt;</span><span>
 </span><span id="line-282"></span><span>        </span><span class="annot"><span class="annottext">String -&gt; DCert StandardCrypto
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;toShelleyCertificate: Incorrect MIRPot specified. Expected ReservesMIR but got TreasuryMIR&quot;</span></span><span>
 </span><span id="line-283"></span><span>
 </span><span id="line-284"></span><span>
@@ -725,7 +725,7 @@ forall a. HasCallStack =&gt; String -&gt; a
 </span><a href="#local-6989586621679422776"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Map (StakeCredential StandardCrypto) DeltaCoin
 -&gt; [(StakeCredential StandardCrypto, DeltaCoin)]
 forall k a. Map k a -&gt; [(k, a)]
-</span><span class="hs-identifier hs-var">Map.toList</span></span><span> </span><span class="annot"><span class="annottext">Map (StakeCredential StandardCrypto) DeltaCoin
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Map.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Map (StakeCredential StandardCrypto) DeltaCoin
 </span><a href="#local-6989586621679422779"><span class="hs-identifier hs-var">amounts</span></a></span><span> </span><span class="hs-special">]</span><span>
 </span><span id="line-323"></span><span>      </span><span class="hs-special">)</span><span>
 </span><span id="line-324"></span><span class="annot"><a href="Cardano.Api.Certificate.html#fromShelleyCertificate"><span class="hs-identifier hs-var">fromShelleyCertificate</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier hs-type">Shelley.DCertMir</span></span><span>
@@ -738,7 +738,7 @@ forall k a. Map k a -&gt; [(k, a)]
 </span><span id="line-327"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Lovelace -&gt; MIRTarget
 </span><a href="Cardano.Api.Certificate.html#SendToTreasuryMIR"><span class="hs-identifier hs-var">SendToTreasuryMIR</span></a></span><span> </span><span class="annot"><span class="annottext">(Lovelace -&gt; MIRTarget) -&gt; Lovelace -&gt; MIRTarget
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Coin -&gt; Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Coin -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#fromShelleyLovelace"><span class="hs-identifier hs-var">fromShelleyLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Coin
 </span><a href="#local-6989586621679422774"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-328"></span><span>
@@ -752,7 +752,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span id="line-332"></span><span>      </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Lovelace -&gt; MIRTarget
 </span><a href="Cardano.Api.Certificate.html#SendToReservesMIR"><span class="hs-identifier hs-var">SendToReservesMIR</span></a></span><span> </span><span class="annot"><span class="annottext">(Lovelace -&gt; MIRTarget) -&gt; Lovelace -&gt; MIRTarget
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">Coin -&gt; Lovelace
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">Coin -&gt; Lovelace
 </span><a href="Cardano.Api.Value.html#fromShelleyLovelace"><span class="hs-identifier hs-var">fromShelleyLovelace</span></a></span><span> </span><span class="annot"><span class="annottext">Coin
 </span><a href="#local-6989586621679422772"><span class="hs-identifier hs-var">amount</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-333"></span><span>
@@ -831,7 +831,7 @@ KeyHash 'StakePool crypto
 </span><span class="hs-identifier hs-var">Shelley._poolOwners</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">[KeyHash 'Staking StandardCrypto]
 -&gt; Set (KeyHash 'Staking StandardCrypto)
 forall a. Ord a =&gt; [a] -&gt; Set a
-</span><span class="hs-identifier hs-var">Set.fromList</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Set.fromList</span></a></span><span>
 </span><span id="line-355"></span><span>                              </span><span class="hs-special">[</span><span> </span><span class="annot"><span class="annottext">KeyHash 'Staking StandardCrypto
 </span><a href="#local-6989586621679422751"><span class="hs-identifier hs-var">kh</span></a></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><a href="Cardano.Api.KeysShelley.html#StakeKeyHash"><span class="hs-identifier hs-type">StakeKeyHash</span></a></span><span> </span><span id="local-6989586621679422751"><span class="annot"><a href="#local-6989586621679422751"><span class="hs-identifier hs-var">kh</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">[Hash StakeKey]
 </span><a href="#local-6989586621679422765"><span class="hs-identifier hs-var">stakePoolOwners</span></a></span><span> </span><span class="hs-special">]</span><span>
@@ -842,7 +842,7 @@ forall a. [a] -&gt; StrictSeq a
 </span><span id="line-357"></span><span>                              </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(StakePoolRelay -&gt; StakePoolRelay)
 -&gt; [StakePoolRelay] -&gt; [StakePoolRelay]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
-</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">StakePoolRelay -&gt; StakePoolRelay
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">map</span></a></span><span> </span><span class="annot"><span class="annottext">StakePoolRelay -&gt; StakePoolRelay
 </span><a href="#local-6989586621679422747"><span class="hs-identifier hs-var">toShelleyStakePoolRelay</span></a></span><span> </span><span class="annot"><span class="annottext">[StakePoolRelay]
 </span><a href="#local-6989586621679422764"><span class="hs-identifier hs-var">stakePoolRelays</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-358"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">_poolMD :: StrictMaybe PoolMetadata
@@ -851,7 +851,7 @@ forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
 -&gt; StrictMaybe StakePoolMetadataReference
 -&gt; StrictMaybe PoolMetadata
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span>
 </span><span id="line-359"></span><span>                              </span><span class="annot"><span class="annottext">Maybe StakePoolMetadataReference
 -&gt; StrictMaybe StakePoolMetadataReference
 forall a. Maybe a -&gt; StrictMaybe a
@@ -870,9 +870,9 @@ forall a. Maybe a -&gt; StrictMaybe a
 </span><span class="hs-identifier hs-var">Shelley.SingleHostAddr</span></span><span>
 </span><span id="line-365"></span><span>        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PortNumber -&gt; Port
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(PortNumber -&gt; Port) -&gt; StrictMaybe PortNumber -&gt; StrictMaybe Port
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">(PortNumber -&gt; Port) -&gt; StrictMaybe PortNumber -&gt; StrictMaybe Port
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Maybe PortNumber -&gt; StrictMaybe PortNumber
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe PortNumber -&gt; StrictMaybe PortNumber
 forall a. Maybe a -&gt; StrictMaybe a
 </span><span class="hs-identifier hs-var">maybeToStrictMaybe</span></span><span> </span><span class="annot"><span class="annottext">Maybe PortNumber
 </span><a href="#local-6989586621679422742"><span class="hs-identifier hs-var">mport</span></a></span><span class="hs-special">)</span><span>
@@ -892,9 +892,9 @@ forall a. Maybe a -&gt; StrictMaybe a
 </span><span class="hs-identifier hs-var">Shelley.SingleHostName</span></span><span>
 </span><span id="line-371"></span><span>        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">PortNumber -&gt; Port
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(PortNumber -&gt; Port) -&gt; StrictMaybe PortNumber -&gt; StrictMaybe Port
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">(PortNumber -&gt; Port) -&gt; StrictMaybe PortNumber -&gt; StrictMaybe Port
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Maybe PortNumber -&gt; StrictMaybe PortNumber
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe PortNumber -&gt; StrictMaybe PortNumber
 forall a. Maybe a -&gt; StrictMaybe a
 </span><span class="hs-identifier hs-var">maybeToStrictMaybe</span></span><span> </span><span class="annot"><span class="annottext">Maybe PortNumber
 </span><a href="#local-6989586621679422739"><span class="hs-identifier hs-var">mport</span></a></span><span class="hs-special">)</span><span>
@@ -934,36 +934,36 @@ Hash Blake2b_256 ByteString
 </span><a href="#local-6989586621679422732"><span class="hs-identifier hs-var">mdh</span></a></span><span>
 </span><span id="line-386"></span><span>      </span><span class="hs-special">}</span><span>
 </span><span id="line-387"></span><span>
-</span><span id="line-388"></span><span>    </span><span class="annot"><a href="#local-6989586621679422737"><span class="hs-identifier hs-type">toShelleyDnsName</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.DnsName</span></span><span>
+</span><span id="line-388"></span><span>    </span><span class="annot"><a href="#local-6989586621679422737"><span class="hs-identifier hs-type">toShelleyDnsName</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.DnsName</span></span><span>
 </span><span id="line-389"></span><span>    </span><span id="local-6989586621679422737"><span class="annot"><span class="annottext">toShelleyDnsName :: ByteString -&gt; DnsName
 </span><a href="#local-6989586621679422737"><span class="hs-identifier hs-var hs-var">toShelleyDnsName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">DnsName -&gt; Maybe DnsName -&gt; DnsName
 forall a. a -&gt; Maybe a -&gt; a
-</span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; DnsName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromMaybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; DnsName
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;toShelleyDnsName: invalid dns name. TODO: proper validation&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-390"></span><span>                     </span><span class="annot"><span class="annottext">(Maybe DnsName -&gt; DnsName)
 -&gt; (ByteString -&gt; Maybe DnsName) -&gt; ByteString -&gt; DnsName
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe DnsName
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe DnsName
 </span><span class="hs-identifier hs-var">Shelley.textToDns</span></span><span>
 </span><span id="line-391"></span><span>                     </span><span class="annot"><span class="annottext">(Text -&gt; Maybe DnsName)
 -&gt; (ByteString -&gt; Text) -&gt; ByteString -&gt; Maybe DnsName
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
-</span><span class="hs-identifier hs-var">Text.decodeLatin1</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.decodeLatin1</span></a></span><span>
 </span><span id="line-392"></span><span>
-</span><span id="line-393"></span><span>    </span><span class="annot"><a href="#local-6989586621679422729"><span class="hs-identifier hs-type">toShelleyUrl</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Url</span></span><span>
+</span><span id="line-393"></span><span>    </span><span class="annot"><a href="#local-6989586621679422729"><span class="hs-identifier hs-type">toShelleyUrl</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.Url</span></span><span>
 </span><span id="line-394"></span><span>    </span><span id="local-6989586621679422729"><span class="annot"><span class="annottext">toShelleyUrl :: Text -&gt; Url
 </span><a href="#local-6989586621679422729"><span class="hs-identifier hs-var hs-var">toShelleyUrl</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Url -&gt; Maybe Url -&gt; Url
 forall a. a -&gt; Maybe a -&gt; a
-</span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Url
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromMaybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Url
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;toShelleyUrl: invalid url. TODO: proper validation&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-395"></span><span>                 </span><span class="annot"><span class="annottext">(Maybe Url -&gt; Url) -&gt; (Text -&gt; Maybe Url) -&gt; Text -&gt; Url
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Url
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Maybe Url
 </span><span class="hs-identifier hs-var">Shelley.textToUrl</span></span><span>
 </span><span id="line-396"></span><span>
 </span><span id="line-397"></span><span>
@@ -1048,28 +1048,28 @@ _poolMD :: forall crypto. PoolParams crypto -&gt; StrictMaybe PoolMetadata
 </span><a href="Cardano.Api.Certificate.html#stakePoolOwners"><span class="hs-identifier hs-var">stakePoolOwners</span></a></span><span>        </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(KeyHash 'Staking StandardCrypto -&gt; Hash StakeKey)
 -&gt; [KeyHash 'Staking StandardCrypto] -&gt; [Hash StakeKey]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
-</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">KeyHash 'Staking StandardCrypto -&gt; Hash StakeKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">map</span></a></span><span> </span><span class="annot"><span class="annottext">KeyHash 'Staking StandardCrypto -&gt; Hash StakeKey
 </span><a href="Cardano.Api.KeysShelley.html#StakeKeyHash"><span class="hs-identifier hs-var">StakeKeyHash</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Set (KeyHash 'Staking StandardCrypto)
 -&gt; [KeyHash 'Staking StandardCrypto]
 forall a. Set a -&gt; [a]
-</span><span class="hs-identifier hs-var">Set.toList</span></span><span> </span><span class="annot"><span class="annottext">Set (KeyHash 'Staking StandardCrypto)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/containers-0.6.2.1/src"><span class="hs-identifier hs-var">Set.toList</span></a></span><span> </span><span class="annot"><span class="annottext">Set (KeyHash 'Staking StandardCrypto)
 </span><a href="#local-6989586621679422716"><span class="hs-identifier hs-var">_poolOwners</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-420"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">stakePoolRelays :: [StakePoolRelay]
 </span><a href="Cardano.Api.Certificate.html#stakePoolRelays"><span class="hs-identifier hs-var">stakePoolRelays</span></a></span><span>        </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">(StakePoolRelay -&gt; StakePoolRelay)
 -&gt; [StakePoolRelay] -&gt; [StakePoolRelay]
 forall a b. (a -&gt; b) -&gt; [a] -&gt; [b]
-</span><span class="hs-identifier hs-var">map</span></span><span> </span><span class="annot"><span class="annottext">StakePoolRelay -&gt; StakePoolRelay
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">map</span></a></span><span> </span><span class="annot"><span class="annottext">StakePoolRelay -&gt; StakePoolRelay
 </span><a href="#local-6989586621679422710"><span class="hs-identifier hs-var">fromShelleyStakePoolRelay</span></a></span><span>
 </span><span id="line-421"></span><span>                                   </span><span class="hs-special">(</span><span class="annot"><span class="annottext">StrictSeq StakePoolRelay -&gt; [StakePoolRelay]
 forall (t :: * -&gt; *) a. Foldable t =&gt; t a -&gt; [a]
-</span><span class="hs-identifier hs-var">Foldable.toList</span></span><span> </span><span class="annot"><span class="annottext">StrictSeq StakePoolRelay
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Foldable.toList</span></a></span><span> </span><span class="annot"><span class="annottext">StrictSeq StakePoolRelay
 </span><a href="#local-6989586621679422715"><span class="hs-identifier hs-var">_poolRelays</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-422"></span><span>    </span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">stakePoolMetadata :: Maybe StakePoolMetadataReference
 </span><a href="Cardano.Api.Certificate.html#stakePoolMetadata"><span class="hs-identifier hs-var">stakePoolMetadata</span></a></span><span>      </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">PoolMetadata -&gt; StakePoolMetadataReference
 </span><a href="#local-6989586621679422708"><span class="hs-identifier hs-var">fromShelleyPoolMetadata</span></a></span><span> </span><span class="annot"><span class="annottext">(PoolMetadata -&gt; StakePoolMetadataReference)
 -&gt; Maybe PoolMetadata -&gt; Maybe StakePoolMetadataReference
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span>
 </span><span id="line-423"></span><span>                                 </span><span class="annot"><span class="annottext">StrictMaybe PoolMetadata -&gt; Maybe PoolMetadata
 forall a. StrictMaybe a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">strictMaybeToMaybe</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe PoolMetadata
@@ -1094,12 +1094,12 @@ forall a. StrictMaybe a -&gt; Maybe a
 </span><a href="#local-6989586621679422705"><span class="hs-identifier hs-var">mipv6</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-431"></span><span>        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word16 -&gt; PortNumber
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Word16 -&gt; PortNumber) -&gt; (Port -&gt; Word16) -&gt; Port -&gt; PortNumber
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">(Word16 -&gt; PortNumber) -&gt; (Port -&gt; Word16) -&gt; Port -&gt; PortNumber
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Port -&gt; Word16
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Port -&gt; Word16
 </span><span class="hs-identifier hs-var hs-var">Shelley.portToWord16</span></span><span> </span><span class="annot"><span class="annottext">(Port -&gt; PortNumber) -&gt; Maybe Port -&gt; Maybe PortNumber
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe Port -&gt; Maybe Port
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe Port -&gt; Maybe Port
 forall a. StrictMaybe a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">strictMaybeToMaybe</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe Port
 </span><a href="#local-6989586621679422707"><span class="hs-identifier hs-var">mport</span></a></span><span class="hs-special">)</span><span>
@@ -1114,12 +1114,12 @@ forall a. StrictMaybe a -&gt; Maybe a
 </span><a href="#local-6989586621679422702"><span class="hs-identifier hs-var">dnsname</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-436"></span><span>        </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Word16 -&gt; PortNumber
 forall a b. (Integral a, Num b) =&gt; a -&gt; b
-</span><span class="hs-identifier hs-var">fromIntegral</span></span><span> </span><span class="annot"><span class="annottext">(Word16 -&gt; PortNumber) -&gt; (Port -&gt; Word16) -&gt; Port -&gt; PortNumber
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromIntegral</span></a></span><span> </span><span class="annot"><span class="annottext">(Word16 -&gt; PortNumber) -&gt; (Port -&gt; Word16) -&gt; Port -&gt; PortNumber
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Port -&gt; Word16
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Port -&gt; Word16
 </span><span class="hs-identifier hs-var hs-var">Shelley.portToWord16</span></span><span> </span><span class="annot"><span class="annottext">(Port -&gt; PortNumber) -&gt; Maybe Port -&gt; Maybe PortNumber
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe Port -&gt; Maybe Port
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">StrictMaybe Port -&gt; Maybe Port
 forall a. StrictMaybe a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">strictMaybeToMaybe</span></span><span> </span><span class="annot"><span class="annottext">StrictMaybe Port
 </span><a href="#local-6989586621679422703"><span class="hs-identifier hs-var">mport</span></a></span><span class="hs-special">)</span><span>
@@ -1159,13 +1159,13 @@ Hash Blake2b_256 ByteString -&gt; Hash StakePoolMetadata
 -&gt; ByteString
 -&gt; Hash StakePoolMetadata
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">Hash Blake2b_256 ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">Hash Blake2b_256 ByteString
 -&gt; Maybe (Hash Blake2b_256 ByteString)
 -&gt; Hash Blake2b_256 ByteString
 forall a. a -&gt; Maybe a -&gt; a
-</span><span class="hs-identifier hs-var">fromMaybe</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Hash Blake2b_256 ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">fromMaybe</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Hash Blake2b_256 ByteString
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;fromShelleyPoolMetadata: invalid hash. TODO: proper validation&quot;</span></span><span class="hs-special">)</span><span>
 </span><span id="line-451"></span><span>                              </span><span class="annot"><span class="annottext">(Maybe (Hash Blake2b_256 ByteString)
  -&gt; Hash Blake2b_256 ByteString)
@@ -1173,23 +1173,23 @@ forall a. HasCallStack =&gt; String -&gt; a
 -&gt; ByteString
 -&gt; Hash Blake2b_256 ByteString
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (Hash Blake2b_256 ByteString)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (Hash Blake2b_256 ByteString)
 forall h a. HashAlgorithm h =&gt; ByteString -&gt; Maybe (Hash h a)
 </span><span class="hs-identifier hs-var">Crypto.hashFromBytes</span></span><span>
 </span><span id="line-452"></span><span>                              </span><span class="annot"><span class="annottext">(ByteString -&gt; Hash StakePoolMetadata)
 -&gt; ByteString -&gt; Hash StakePoolMetadata
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679422698"><span class="hs-identifier hs-var">_poolMDHash</span></a></span><span>
 </span><span id="line-453"></span><span>      </span><span class="hs-special">}</span><span>
 </span><span id="line-454"></span><span>
 </span><span id="line-455"></span><span>    </span><span class="hs-comment">--TODO: change the ledger rep of the DNS name to use ShortByteString</span><span>
-</span><span id="line-456"></span><span>    </span><span class="annot"><a href="#local-6989586621679422701"><span class="hs-identifier hs-type">fromShelleyDnsName</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.DnsName</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">ByteString</span></span><span>
+</span><span id="line-456"></span><span>    </span><span class="annot"><a href="#local-6989586621679422701"><span class="hs-identifier hs-type">fromShelleyDnsName</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Shelley.DnsName</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-type">ByteString</span></a></span><span>
 </span><span id="line-457"></span><span>    </span><span id="local-6989586621679422701"><span class="annot"><span class="annottext">fromShelleyDnsName :: DnsName -&gt; ByteString
 </span><a href="#local-6989586621679422701"><span class="hs-identifier hs-var hs-var">fromShelleyDnsName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Text -&gt; ByteString
-</span><span class="hs-identifier hs-var">Text.encodeUtf8</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.encodeUtf8</span></a></span><span>
 </span><span id="line-458"></span><span>                       </span><span class="annot"><span class="annottext">(Text -&gt; ByteString) -&gt; (DnsName -&gt; Text) -&gt; DnsName -&gt; ByteString
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">DnsName -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">DnsName -&gt; Text
 </span><span class="hs-identifier hs-var hs-var">Shelley.dnsToText</span></span><span>
 </span><span id="line-459"></span></pre></body></html>

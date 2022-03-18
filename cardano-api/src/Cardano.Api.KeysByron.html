@@ -31,15 +31,15 @@
 </span><span id="line-31"></span><span>  </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-32"></span><span>
 </span><span id="line-33"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Cardano.Prelude</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">cborError</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="hs-identifier">toCborError</span></span><span class="hs-special">)</span><span>
-</span><span id="line-34"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Prelude</span></span><span>
+</span><span id="line-34"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Prelude</span></a></span><span>
 </span><span id="line-35"></span><span>
 </span><span id="line-36"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Codec.CBOR.Decoding</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">CBOR</span></span><span>
 </span><span id="line-37"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Codec.CBOR.Read</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">CBOR</span></span><span>
-</span><span id="line-38"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Control.Monad</span></span><span>
-</span><span id="line-39"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.ByteString.Lazy</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
-</span><span id="line-40"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.String</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">IsString</span></span><span class="hs-special">)</span><span>
-</span><span id="line-41"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="hs-identifier">Text</span></span><span class="hs-special">)</span><span>
-</span><span id="line-42"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Data.Text</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
+</span><span id="line-38"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Control.Monad</span></a></span><span>
+</span><span id="line-39"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier">Data.ByteString.Lazy</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">LB</span></span><span>
+</span><span id="line-40"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">Data.String</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier">IsString</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-41"></span><span class="hs-keyword">import</span><span>           </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Text</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-42"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier">Data.Text</span></a></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Text</span></span><span>
 </span><span id="line-43"></span><span>
 </span><span id="line-44"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Crypto.DSIGN.Class</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Crypto</span></span><span>
 </span><span id="line-45"></span><span class="hs-keyword">import</span><span> </span><span class="hs-keyword">qualified</span><span> </span><span class="annot"><span class="hs-identifier">Cardano.Crypto.Seed</span></span><span> </span><span class="hs-keyword">as</span><span> </span><span class="annot"><span class="hs-identifier">Crypto</span></span><span>
@@ -113,7 +113,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: VerificationKey ByronKey -&gt; VerificationKey ByronKey -&gt; Bool
 == :: VerificationKey ByronKey -&gt; VerificationKey ByronKey -&gt; Bool
 $c== :: VerificationKey ByronKey -&gt; VerificationKey ByronKey -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span>
 </span><span id="line-103"></span><span>      </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419285"><span id="local-6989586621679419287"><span id="local-6989586621679419289"><span class="annot"><span class="annottext">Int -&gt; VerificationKey ByronKey -&gt; ShowS
 [VerificationKey ByronKey] -&gt; ShowS
 VerificationKey ByronKey -&gt; String
@@ -129,13 +129,13 @@ show :: VerificationKey ByronKey -&gt; String
 $cshow :: VerificationKey ByronKey -&gt; String
 showsPrec :: Int -&gt; VerificationKey ByronKey -&gt; ShowS
 $cshowsPrec :: Int -&gt; VerificationKey ByronKey -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419282"><span class="annot"><span class="annottext">String -&gt; VerificationKey ByronKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419282"><span class="annot"><span class="annottext">String -&gt; VerificationKey ByronKey
 (String -&gt; VerificationKey ByronKey)
 -&gt; IsString (VerificationKey ByronKey)
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; VerificationKey ByronKey
 $cfromString :: String -&gt; VerificationKey ByronKey
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#VerificationKey"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#VerificationKey"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-104"></span><span>      </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419273"><span id="local-6989586621679419275"><span id="local-6989586621679419277"><span class="annot"><span class="annottext">Typeable (VerificationKey ByronKey)
 Typeable (VerificationKey ByronKey)
 -&gt; (VerificationKey ByronKey -&gt; Encoding)
@@ -223,12 +223,12 @@ show :: SigningKey ByronKey -&gt; String
 $cshow :: SigningKey ByronKey -&gt; String
 showsPrec :: Int -&gt; SigningKey ByronKey -&gt; ShowS
 $cshowsPrec :: Int -&gt; SigningKey ByronKey -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419252"><span class="annot"><span class="annottext">String -&gt; SigningKey ByronKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419252"><span class="annot"><span class="annottext">String -&gt; SigningKey ByronKey
 (String -&gt; SigningKey ByronKey) -&gt; IsString (SigningKey ByronKey)
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; SigningKey ByronKey
 $cfromString :: String -&gt; SigningKey ByronKey
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-110"></span><span>      </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419245"><span id="local-6989586621679419247"><span id="local-6989586621679419249"><span class="annot"><span class="annottext">Typeable (SigningKey ByronKey)
 Typeable (SigningKey ByronKey)
 -&gt; (SigningKey ByronKey -&gt; Encoding)
@@ -307,7 +307,7 @@ $cp1SerialiseAsCBOR :: HasTypeProxy (SigningKey ByronKey)
 </span><span id="line-115"></span><span>       </span><span class="annot"><span class="annottext">SigningKey -&gt; SigningKey ByronKey
 </span><a href="Cardano.Api.KeysByron.html#ByronSigningKey"><span class="hs-identifier hs-var">ByronSigningKey</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(VerificationKey, SigningKey) -&gt; SigningKey
 forall a b. (a, b) -&gt; b
-</span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seed
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">snd</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Seed
 -&gt; (forall (m :: * -&gt; *).
     MonadRandom m =&gt;
     m (VerificationKey, SigningKey))
@@ -319,7 +319,7 @@ MonadRandom m =&gt;
 m (VerificationKey, SigningKey)
 </span><span class="hs-identifier hs-var">Byron.keyGen</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-116"></span><span>
-</span><span id="line-117"></span><span>    </span><span class="annot"><a href="Cardano.Api.Key.html#deterministicSigningKeySeedSize"><span class="hs-identifier hs-type">deterministicSigningKeySeedSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word</span></span><span>
+</span><span id="line-117"></span><span>    </span><span class="annot"><a href="Cardano.Api.Key.html#deterministicSigningKeySeedSize"><span class="hs-identifier hs-type">deterministicSigningKeySeedSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Word</span></a></span><span>
 </span><span id="line-118"></span><span>    </span><span id="local-6989586621679419227"><span class="annot"><span class="annottext">deterministicSigningKeySeedSize :: AsType ByronKey -&gt; Word
 </span><a href="#local-6989586621679419227"><span class="hs-identifier hs-var hs-var hs-var hs-var">deterministicSigningKeySeedSize</span></a></span></span><span> </span><span class="annot"><span class="annottext">AsType ByronKey
 </span><a href="Cardano.Api.KeysByron.html#AsByronKey"><span class="hs-identifier hs-var">AsByronKey</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word
@@ -376,23 +376,23 @@ m (VerificationKey, SigningKey)
 -&gt; Either String XPub
 -&gt; Maybe (VerificationKey ByronKey)
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKey)
 -&gt; String -&gt; Maybe (VerificationKey ByronKey)
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKey)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey ByronKey -&gt; Maybe (VerificationKey ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey ByronKey -&gt; Maybe (VerificationKey ByronKey)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(VerificationKey ByronKey -&gt; Maybe (VerificationKey ByronKey))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(VerificationKey ByronKey -&gt; Maybe (VerificationKey ByronKey))
 -&gt; (XPub -&gt; VerificationKey ByronKey)
 -&gt; XPub
 -&gt; Maybe (VerificationKey ByronKey)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey -&gt; VerificationKey ByronKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey -&gt; VerificationKey ByronKey
 </span><a href="Cardano.Api.KeysByron.html#ByronVerificationKey"><span class="hs-identifier hs-var">ByronVerificationKey</span></a></span><span> </span><span class="annot"><span class="annottext">(VerificationKey -&gt; VerificationKey ByronKey)
 -&gt; (XPub -&gt; VerificationKey) -&gt; XPub -&gt; VerificationKey ByronKey
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">XPub -&gt; VerificationKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">XPub -&gt; VerificationKey
 </span><span class="hs-identifier hs-var">Byron.VerificationKey</span></span><span class="hs-special">)</span><span>
 </span><span id="line-144"></span><span>             </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either String XPub
 </span><span class="hs-identifier hs-var">Crypto.HD.xpub</span></span><span> </span><span class="annot"><span class="annottext">ByteString
@@ -404,7 +404,7 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 </span><span id="line-148"></span><span>      </span><span class="annot"><span class="annottext">Encoding -&gt; ByteString
 </span><span class="hs-identifier hs-var">toStrictByteString</span></span><span> </span><span class="annot"><span class="annottext">(Encoding -&gt; ByteString) -&gt; Encoding -&gt; ByteString
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">XPrv -&gt; Encoding
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">XPrv -&gt; Encoding
 </span><span class="hs-identifier hs-var">Crypto.toCBORXPrv</span></span><span> </span><span class="annot"><span class="annottext">XPrv
 </span><a href="#local-6989586621679419179"><span class="hs-identifier hs-var">xsk</span></a></span><span>
 </span><span id="line-149"></span><span>
@@ -417,38 +417,38 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 -&gt; Either DeserialiseFailure XPrv
 -&gt; Maybe (SigningKey ByronKey)
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKey)
 -&gt; DeserialiseFailure -&gt; Maybe (SigningKey ByronKey)
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKey)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SigningKey ByronKey -&gt; Maybe (SigningKey ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SigningKey ByronKey -&gt; Maybe (SigningKey ByronKey)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(SigningKey ByronKey -&gt; Maybe (SigningKey ByronKey))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(SigningKey ByronKey -&gt; Maybe (SigningKey ByronKey))
 -&gt; (XPrv -&gt; SigningKey ByronKey)
 -&gt; XPrv
 -&gt; Maybe (SigningKey ByronKey)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">SigningKey -&gt; SigningKey ByronKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">SigningKey -&gt; SigningKey ByronKey
 </span><a href="Cardano.Api.KeysByron.html#ByronSigningKey"><span class="hs-identifier hs-var">ByronSigningKey</span></a></span><span> </span><span class="annot"><span class="annottext">(SigningKey -&gt; SigningKey ByronKey)
 -&gt; (XPrv -&gt; SigningKey) -&gt; XPrv -&gt; SigningKey ByronKey
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">XPrv -&gt; SigningKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">XPrv -&gt; SigningKey
 </span><span class="hs-identifier hs-var">Byron.SigningKey</span></span><span class="hs-special">)</span><span>
 </span><span id="line-152"></span><span>             </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(ByteString, XPrv) -&gt; XPrv
 forall a b. (a, b) -&gt; b
-</span><span class="hs-identifier hs-var">snd</span></span><span> </span><span class="annot"><span class="annottext">((ByteString, XPrv) -&gt; XPrv)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">snd</span></a></span><span> </span><span class="annot"><span class="annottext">((ByteString, XPrv) -&gt; XPrv)
 -&gt; Either DeserialiseFailure (ByteString, XPrv)
 -&gt; Either DeserialiseFailure XPrv
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">(forall s. Decoder s XPrv)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">(forall s. Decoder s XPrv)
 -&gt; ByteString -&gt; Either DeserialiseFailure (ByteString, XPrv)
 forall a.
 (forall s. Decoder s a)
 -&gt; ByteString -&gt; Either DeserialiseFailure (ByteString, a)
 </span><span class="hs-identifier hs-var">CBOR.deserialiseFromBytes</span></span><span> </span><span class="annot"><span class="annottext">forall s. Decoder s XPrv
 </span><span class="hs-identifier hs-var">Byron.fromCBORXPrv</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
-</span><span class="hs-identifier hs-var">LB.fromStrict</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">LB.fromStrict</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679419175"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-153"></span><span>
 </span><span id="line-154"></span><span class="hs-keyword">newtype</span><span> </span><span class="hs-keyword">instance</span><span> </span><span id="Hash"><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-var">Hash</span></a></span></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="ByronKeyHash"><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyHash"><span class="hs-identifier hs-var">ByronKeyHash</span></a></span></span><span> </span><span class="annot"><span class="hs-identifier hs-type">Byron.KeyHash</span></span><span>
@@ -460,7 +460,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Hash ByronKey -&gt; Hash ByronKey -&gt; Bool
 == :: Hash ByronKey -&gt; Hash ByronKey -&gt; Bool
 $c== :: Hash ByronKey -&gt; Hash ByronKey -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419152"><span id="local-6989586621679419154"><span id="local-6989586621679419156"><span id="local-6989586621679419158"><span id="local-6989586621679419160"><span id="local-6989586621679419162"><span id="local-6989586621679419164"><span class="annot"><span class="annottext">Eq (Hash ByronKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419152"><span id="local-6989586621679419154"><span id="local-6989586621679419156"><span id="local-6989586621679419158"><span id="local-6989586621679419160"><span id="local-6989586621679419162"><span id="local-6989586621679419164"><span class="annot"><span class="annottext">Eq (Hash ByronKey)
 Eq (Hash ByronKey)
 -&gt; (Hash ByronKey -&gt; Hash ByronKey -&gt; Ordering)
 -&gt; (Hash ByronKey -&gt; Hash ByronKey -&gt; Bool)
@@ -498,7 +498,7 @@ $c&lt; :: Hash ByronKey -&gt; Hash ByronKey -&gt; Bool
 compare :: Hash ByronKey -&gt; Hash ByronKey -&gt; Ordering
 $ccompare :: Hash ByronKey -&gt; Hash ByronKey -&gt; Ordering
 $cp1Ord :: Eq (Hash ByronKey)
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-156"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419145"><span id="local-6989586621679419147"><span id="local-6989586621679419149"><span class="annot"><span class="annottext">Int -&gt; Hash ByronKey -&gt; ShowS
 [Hash ByronKey] -&gt; ShowS
 Hash ByronKey -&gt; String
@@ -514,12 +514,12 @@ show :: Hash ByronKey -&gt; String
 $cshow :: Hash ByronKey -&gt; String
 showsPrec :: Int -&gt; Hash ByronKey -&gt; ShowS
 $cshowsPrec :: Int -&gt; Hash ByronKey -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419143"><span class="annot"><span class="annottext">String -&gt; Hash ByronKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419143"><span class="annot"><span class="annottext">String -&gt; Hash ByronKey
 (String -&gt; Hash ByronKey) -&gt; IsString (Hash ByronKey)
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; Hash ByronKey
 $cfromString :: String -&gt; Hash ByronKey
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-157"></span><span>
 </span><span id="line-158"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#SerialiseAsRawBytes"><span class="hs-identifier hs-type">SerialiseAsRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-159"></span><span>    </span><span id="local-6989586621679419139"><span class="annot"><span class="annottext">serialiseToRawBytes :: Hash ByronKey -&gt; ByteString
@@ -538,12 +538,12 @@ forall algo a. AbstractHash algo a -&gt; ByteString
 -&gt; AbstractHash Blake2b_224 VerificationKey
 -&gt; Hash ByronKey
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">AbstractHash Blake2b_224 VerificationKey -&gt; KeyHash
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">AbstractHash Blake2b_224 VerificationKey -&gt; KeyHash
 </span><span class="hs-identifier hs-var">Byron.KeyHash</span></span><span> </span><span class="annot"><span class="annottext">(AbstractHash Blake2b_224 VerificationKey -&gt; Hash ByronKey)
 -&gt; Maybe (AbstractHash Blake2b_224 VerificationKey)
 -&gt; Maybe (Hash ByronKey)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (AbstractHash Blake2b_224 VerificationKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (AbstractHash Blake2b_224 VerificationKey)
 forall algo a.
 HashAlgorithm algo =&gt;
 ByteString -&gt; Maybe (AbstractHash algo a)
@@ -573,7 +573,7 @@ VerificationKey keyroleA -&gt; VerificationKey keyroleB
 -&gt; VerificationKey ByronKey
 -&gt; VerificationKey PaymentKey
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey ByronKey -&gt; VerificationKey PaymentExtendedKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey ByronKey -&gt; VerificationKey PaymentExtendedKey
 forall keyroleA keyroleB.
 CastVerificationKeyRole keyroleA keyroleB =&gt;
 VerificationKey keyroleA -&gt; VerificationKey keyroleB
@@ -609,7 +609,7 @@ $c/= :: VerificationKey ByronKeyLegacy
 -&gt; VerificationKey ByronKeyLegacy -&gt; Bool
 $c== :: VerificationKey ByronKeyLegacy
 -&gt; VerificationKey ByronKeyLegacy -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-189"></span><span>      </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419100"><span id="local-6989586621679419102"><span id="local-6989586621679419104"><span class="annot"><span class="annottext">Int -&gt; VerificationKey ByronKeyLegacy -&gt; ShowS
 [VerificationKey ByronKeyLegacy] -&gt; ShowS
 VerificationKey ByronKeyLegacy -&gt; String
@@ -625,13 +625,13 @@ show :: VerificationKey ByronKeyLegacy -&gt; String
 $cshow :: VerificationKey ByronKeyLegacy -&gt; String
 showsPrec :: Int -&gt; VerificationKey ByronKeyLegacy -&gt; ShowS
 $cshowsPrec :: Int -&gt; VerificationKey ByronKeyLegacy -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419098"><span class="annot"><span class="annottext">String -&gt; VerificationKey ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419098"><span class="annot"><span class="annottext">String -&gt; VerificationKey ByronKeyLegacy
 (String -&gt; VerificationKey ByronKeyLegacy)
 -&gt; IsString (VerificationKey ByronKeyLegacy)
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; VerificationKey ByronKeyLegacy
 $cfromString :: String -&gt; VerificationKey ByronKeyLegacy
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#VerificationKey"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#VerificationKey"><span class="hs-identifier hs-type">VerificationKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-190"></span><span>      </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419091"><span id="local-6989586621679419093"><span id="local-6989586621679419095"><span class="annot"><span class="annottext">Typeable (VerificationKey ByronKeyLegacy)
 Typeable (VerificationKey ByronKeyLegacy)
 -&gt; (VerificationKey ByronKeyLegacy -&gt; Encoding)
@@ -723,13 +723,13 @@ show :: SigningKey ByronKeyLegacy -&gt; String
 $cshow :: SigningKey ByronKeyLegacy -&gt; String
 showsPrec :: Int -&gt; SigningKey ByronKeyLegacy -&gt; ShowS
 $cshowsPrec :: Int -&gt; SigningKey ByronKeyLegacy -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419073"><span class="annot"><span class="annottext">String -&gt; SigningKey ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419073"><span class="annot"><span class="annottext">String -&gt; SigningKey ByronKeyLegacy
 (String -&gt; SigningKey ByronKeyLegacy)
 -&gt; IsString (SigningKey ByronKeyLegacy)
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; SigningKey ByronKeyLegacy
 $cfromString :: String -&gt; SigningKey ByronKeyLegacy
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Key.html#SigningKey"><span class="hs-identifier hs-type">SigningKey</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-196"></span><span>      </span><span class="hs-keyword">deriving</span><span> </span><span class="annot"><span class="hs-keyword">newtype</span></span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419066"><span id="local-6989586621679419068"><span id="local-6989586621679419070"><span class="annot"><span class="annottext">Typeable (SigningKey ByronKeyLegacy)
 Typeable (SigningKey ByronKeyLegacy)
 -&gt; (SigningKey ByronKeyLegacy -&gt; Encoding)
@@ -806,10 +806,10 @@ $cp1SerialiseAsCBOR :: HasTypeProxy (SigningKey ByronKeyLegacy)
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Seed
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; SigningKey ByronKeyLegacy
 forall a. HasCallStack =&gt; String -&gt; a
-</span><span class="hs-identifier hs-var">error</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">error</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;Please generate a non legacy Byron key instead&quot;</span></span><span>
 </span><span id="line-201"></span><span>
-</span><span id="line-202"></span><span>    </span><span class="annot"><a href="Cardano.Api.Key.html#deterministicSigningKeySeedSize"><span class="hs-identifier hs-type">deterministicSigningKeySeedSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Word</span></span><span>
+</span><span id="line-202"></span><span>    </span><span class="annot"><a href="Cardano.Api.Key.html#deterministicSigningKeySeedSize"><span class="hs-identifier hs-type">deterministicSigningKeySeedSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Cardano.Api.HasTypeProxy.html#AsType"><span class="hs-identifier hs-type">AsType</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Word</span></a></span><span>
 </span><span id="line-203"></span><span>    </span><span id="local-6989586621679419053"><span class="annot"><span class="annottext">deterministicSigningKeySeedSize :: AsType ByronKeyLegacy -&gt; Word
 </span><a href="#local-6989586621679419053"><span class="hs-identifier hs-var hs-var hs-var hs-var">deterministicSigningKeySeedSize</span></a></span></span><span> </span><span class="annot"><span class="annottext">AsType ByronKeyLegacy
 </span><a href="Cardano.Api.KeysByron.html#AsByronKeyLegacy"><span class="hs-identifier hs-var">AsByronKeyLegacy</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Word
@@ -860,7 +860,7 @@ forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c/= :: Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Bool
 == :: Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Bool
 $c== :: Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419016"><span id="local-6989586621679419018"><span id="local-6989586621679419020"><span id="local-6989586621679419022"><span id="local-6989586621679419024"><span id="local-6989586621679419026"><span id="local-6989586621679419028"><span class="annot"><span class="annottext">Eq (Hash ByronKeyLegacy)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></a></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419016"><span id="local-6989586621679419018"><span id="local-6989586621679419020"><span id="local-6989586621679419022"><span id="local-6989586621679419024"><span id="local-6989586621679419026"><span id="local-6989586621679419028"><span class="annot"><span class="annottext">Eq (Hash ByronKeyLegacy)
 Eq (Hash ByronKeyLegacy)
 -&gt; (Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Ordering)
 -&gt; (Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Bool)
@@ -900,7 +900,7 @@ $c&lt; :: Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Bool
 compare :: Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Ordering
 $ccompare :: Hash ByronKeyLegacy -&gt; Hash ByronKeyLegacy -&gt; Ordering
 $cp1Ord :: Eq (Hash ByronKeyLegacy)
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Ord</span></a></span></span></span></span></span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-225"></span><span>  </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679419010"><span id="local-6989586621679419012"><span id="local-6989586621679419014"><span class="annot"><span class="annottext">Int -&gt; Hash ByronKeyLegacy -&gt; ShowS
 [Hash ByronKeyLegacy] -&gt; ShowS
 Hash ByronKeyLegacy -&gt; String
@@ -916,12 +916,12 @@ show :: Hash ByronKeyLegacy -&gt; String
 $cshow :: Hash ByronKeyLegacy -&gt; String
 showsPrec :: Int -&gt; Hash ByronKeyLegacy -&gt; ShowS
 $cshowsPrec :: Int -&gt; Hash ByronKeyLegacy -&gt; ShowS
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419008"><span class="annot"><span class="annottext">String -&gt; Hash ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></a></span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679419008"><span class="annot"><span class="annottext">String -&gt; Hash ByronKeyLegacy
 (String -&gt; Hash ByronKeyLegacy) -&gt; IsString (Hash ByronKeyLegacy)
 forall a. (String -&gt; a) -&gt; IsString a
 fromString :: String -&gt; Hash ByronKeyLegacy
 $cfromString :: String -&gt; Hash ByronKeyLegacy
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var hs-var hs-var hs-var">IsString</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">via</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#UsingRawBytesHex"><span class="hs-identifier hs-type">UsingRawBytesHex</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-226"></span><span>
 </span><span id="line-227"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.SerialiseRaw.html#SerialiseAsRawBytes"><span class="hs-identifier hs-type">SerialiseAsRawBytes</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Cardano.Api.Hash.html#Hash"><span class="hs-identifier hs-type">Hash</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
 </span><span id="line-228"></span><span>    </span><span id="local-6989586621679419004"><span class="annot"><span class="annottext">serialiseToRawBytes :: Hash ByronKeyLegacy -&gt; ByteString
@@ -941,12 +941,12 @@ forall algo a. AbstractHash algo a -&gt; ByteString
 -&gt; AbstractHash Blake2b_224 VerificationKey
 -&gt; Hash ByronKeyLegacy
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">AbstractHash Blake2b_224 VerificationKey -&gt; KeyHash
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">AbstractHash Blake2b_224 VerificationKey -&gt; KeyHash
 </span><span class="hs-identifier hs-var">Byron.KeyHash</span></span><span> </span><span class="annot"><span class="annottext">(AbstractHash Blake2b_224 VerificationKey -&gt; Hash ByronKeyLegacy)
 -&gt; Maybe (AbstractHash Blake2b_224 VerificationKey)
 -&gt; Maybe (Hash ByronKeyLegacy)
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (AbstractHash Blake2b_224 VerificationKey)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Maybe (AbstractHash Blake2b_224 VerificationKey)
 forall algo a.
 HashAlgorithm algo =&gt;
 ByteString -&gt; Maybe (AbstractHash algo a)
@@ -969,27 +969,27 @@ ByteString -&gt; Maybe (AbstractHash algo a)
 -&gt; Either String XPub
 -&gt; Maybe (VerificationKey ByronKeyLegacy)
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKeyLegacy)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKeyLegacy)
 -&gt; String -&gt; Maybe (VerificationKey ByronKeyLegacy)
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKeyLegacy)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (VerificationKey ByronKeyLegacy)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">VerificationKey ByronKeyLegacy
 -&gt; Maybe (VerificationKey ByronKeyLegacy)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(VerificationKey ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(VerificationKey ByronKeyLegacy
  -&gt; Maybe (VerificationKey ByronKeyLegacy))
 -&gt; (XPub -&gt; VerificationKey ByronKeyLegacy)
 -&gt; XPub
 -&gt; Maybe (VerificationKey ByronKeyLegacy)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">VerificationKey -&gt; VerificationKey ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">VerificationKey -&gt; VerificationKey ByronKeyLegacy
 </span><a href="Cardano.Api.KeysByron.html#ByronVerificationKeyLegacy"><span class="hs-identifier hs-var">ByronVerificationKeyLegacy</span></a></span><span> </span><span class="annot"><span class="annottext">(VerificationKey -&gt; VerificationKey ByronKeyLegacy)
 -&gt; (XPub -&gt; VerificationKey)
 -&gt; XPub
 -&gt; VerificationKey ByronKeyLegacy
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">XPub -&gt; VerificationKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">XPub -&gt; VerificationKey
 </span><span class="hs-identifier hs-var">Byron.VerificationKey</span></span><span class="hs-special">)</span><span>
 </span><span id="line-240"></span><span>             </span><span class="hs-special">(</span><span class="annot"><span class="annottext">ByteString -&gt; Either String XPub
 </span><span class="hs-identifier hs-var">Crypto.HD.xpub</span></span><span> </span><span class="annot"><span class="annottext">ByteString
@@ -1011,27 +1011,27 @@ forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
 -&gt; Either DeserialiseFailure (ByteString, SigningKey)
 -&gt; Maybe (SigningKey ByronKeyLegacy)
 forall a c b. (a -&gt; c) -&gt; (b -&gt; c) -&gt; Either a b -&gt; c
-</span><span class="hs-identifier hs-var">either</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKeyLegacy)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">either</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKeyLegacy)
 -&gt; DeserialiseFailure -&gt; Maybe (SigningKey ByronKeyLegacy)
 forall a b. a -&gt; b -&gt; a
-</span><span class="hs-identifier hs-var">const</span></span><span> </span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKeyLegacy)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">const</span></a></span><span> </span><span class="annot"><span class="annottext">Maybe (SigningKey ByronKeyLegacy)
 forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SigningKey ByronKeyLegacy -&gt; Maybe (SigningKey ByronKeyLegacy)
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Nothing</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">SigningKey ByronKeyLegacy -&gt; Maybe (SigningKey ByronKeyLegacy)
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">(SigningKey ByronKeyLegacy -&gt; Maybe (SigningKey ByronKeyLegacy))
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">Just</span></a></span><span> </span><span class="annot"><span class="annottext">(SigningKey ByronKeyLegacy -&gt; Maybe (SigningKey ByronKeyLegacy))
 -&gt; ((ByteString, SigningKey) -&gt; SigningKey ByronKeyLegacy)
 -&gt; (ByteString, SigningKey)
 -&gt; Maybe (SigningKey ByronKeyLegacy)
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">SigningKey -&gt; SigningKey ByronKeyLegacy
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">SigningKey -&gt; SigningKey ByronKeyLegacy
 </span><a href="Cardano.Api.KeysByron.html#ByronSigningKeyLegacy"><span class="hs-identifier hs-var">ByronSigningKeyLegacy</span></a></span><span> </span><span class="annot"><span class="annottext">(SigningKey -&gt; SigningKey ByronKeyLegacy)
 -&gt; ((ByteString, SigningKey) -&gt; SigningKey)
 -&gt; (ByteString, SigningKey)
 -&gt; SigningKey ByronKeyLegacy
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">(ByteString, SigningKey) -&gt; SigningKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString, SigningKey) -&gt; SigningKey
 forall a b. (a, b) -&gt; b
-</span><span class="hs-identifier hs-var">snd</span></span><span class="hs-special">)</span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">snd</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-248"></span><span>             </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(forall s. Decoder s SigningKey)
 -&gt; ByteString -&gt; Either DeserialiseFailure (ByteString, SigningKey)
 forall a.
@@ -1041,14 +1041,14 @@ forall a.
 </span><a href="#local-6989586621679418985"><span class="hs-identifier hs-var">decodeLegacyDelegateKey</span></a></span><span> </span><span class="annot"><span class="annottext">(ByteString -&gt; Either DeserialiseFailure (ByteString, SigningKey))
 -&gt; ByteString -&gt; Either DeserialiseFailure (ByteString, SigningKey)
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
-</span><span class="hs-identifier hs-var">LB.fromStrict</span></span><span> </span><span class="annot"><span class="annottext">ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; ByteString
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/bytestring-0.10.12.0/src"><span class="hs-identifier hs-var">LB.fromStrict</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString
 </span><a href="#local-6989586621679418986"><span class="hs-identifier hs-var">bs</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-249"></span><span>     </span><span class="hs-keyword">where</span><span>
 </span><span id="line-250"></span><span>      </span><span class="hs-comment">-- Stolen from: cardano-sl/binary/src/Pos/Binary/Class/Core.hs</span><span>
 </span><span id="line-251"></span><span>      </span><span class="hs-comment">-- | Enforces that the input size is the same as the decoded one, failing in</span><span>
 </span><span id="line-252"></span><span>      </span><span class="hs-comment">-- case it's not.</span><span>
-</span><span id="line-253"></span><span>      </span><span id="local-6989586621679419333"><span class="annot"><a href="#local-6989586621679418984"><span class="hs-identifier hs-type">enforceSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CBOR.Decoder</span></span><span> </span><span class="annot"><a href="#local-6989586621679419333"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-253"></span><span>      </span><span id="local-6989586621679419333"><span class="annot"><a href="#local-6989586621679418984"><span class="hs-identifier hs-type">enforceSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CBOR.Decoder</span></span><span> </span><span class="annot"><a href="#local-6989586621679419333"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-254"></span><span>      </span><span id="local-6989586621679418984"><span class="annot"><span class="annottext">enforceSize :: Text -&gt; Int -&gt; Decoder s ()
 </span><a href="#local-6989586621679418984"><span class="hs-identifier hs-var hs-var">enforceSize</span></a></span></span><span> </span><span id="local-6989586621679418983"><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679418983"><span class="hs-identifier hs-var">lbl</span></a></span></span><span> </span><span id="local-6989586621679418982"><span class="annot"><span class="annottext">Int
@@ -1056,7 +1056,7 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 forall s. Decoder s Int
 </span><span class="hs-identifier hs-var">CBOR.decodeListLenCanonical</span></span><span> </span><span class="annot"><span class="annottext">Decoder s Int -&gt; (Int -&gt; Decoder s ()) -&gt; Decoder s ()
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
-</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text -&gt; Int -&gt; Decoder s ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&gt;&gt;=</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Text -&gt; Int -&gt; Decoder s ()
 forall s. Int -&gt; Text -&gt; Int -&gt; Decoder s ()
 </span><a href="#local-6989586621679418980"><span class="hs-identifier hs-var">matchSize</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679418982"><span class="hs-identifier hs-var">requestedSize</span></a></span><span> </span><span class="annot"><span class="annottext">Text
@@ -1064,7 +1064,7 @@ forall s. Int -&gt; Text -&gt; Int -&gt; Decoder s ()
 </span><span id="line-255"></span><span>
 </span><span id="line-256"></span><span>      </span><span class="hs-comment">-- Stolen from: cardano-sl/binary/src/Pos/Binary/Class/Core.hs</span><span>
 </span><span id="line-257"></span><span>      </span><span class="hs-comment">-- | Compare two sizes, failing if they are not equal.</span><span>
-</span><span id="line-258"></span><span>      </span><span id="local-6989586621679419349"><span class="annot"><a href="#local-6989586621679418980"><span class="hs-identifier hs-type">matchSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Text</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Int</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CBOR.Decoder</span></span><span> </span><span class="annot"><a href="#local-6989586621679419349"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
+</span><span id="line-258"></span><span>      </span><span id="local-6989586621679419349"><span class="annot"><a href="#local-6989586621679418980"><span class="hs-identifier hs-type">matchSize</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-type">Text</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-identifier hs-type">Int</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">CBOR.Decoder</span></span><span> </span><span class="annot"><a href="#local-6989586621679419349"><span class="hs-identifier hs-type">s</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">)</span></span><span>
 </span><span id="line-259"></span><span>      </span><span id="local-6989586621679418980"><span class="annot"><span class="annottext">matchSize :: Int -&gt; Text -&gt; Int -&gt; Decoder s ()
 </span><a href="#local-6989586621679418980"><span class="hs-identifier hs-var hs-var">matchSize</span></a></span></span><span> </span><span id="local-6989586621679418979"><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679418979"><span class="hs-identifier hs-var">requestedSize</span></a></span></span><span> </span><span id="local-6989586621679418978"><span class="annot"><span class="annottext">Text
@@ -1072,35 +1072,35 @@ forall s. Int -&gt; Text -&gt; Int -&gt; Decoder s ()
 </span><a href="#local-6989586621679418977"><span class="hs-identifier hs-var">actualSize</span></a></span></span><span> </span><span class="hs-glyph">=</span><span>
 </span><span id="line-260"></span><span>        </span><span class="annot"><span class="annottext">Bool -&gt; Decoder s () -&gt; Decoder s ()
 forall (f :: * -&gt; *). Applicative f =&gt; Bool -&gt; f () -&gt; f ()
-</span><span class="hs-identifier hs-var">when</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">when</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679418977"><span class="hs-identifier hs-var">actualSize</span></a></span><span> </span><span class="annot"><span class="annottext">Int -&gt; Int -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
-</span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/ghc-prim-0.6.1/src"><span class="hs-operator hs-var">/=</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679418979"><span class="hs-identifier hs-var">requestedSize</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(Decoder s () -&gt; Decoder s ()) -&gt; Decoder s () -&gt; Decoder s ()
 forall a b. (a -&gt; b) -&gt; a -&gt; b
-</span><span class="hs-operator hs-var">$</span></span><span>
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">$</span></a></span><span>
 </span><span id="line-261"></span><span>          </span><span class="annot"><span class="annottext">Text -&gt; Decoder s ()
 forall e s a. Buildable e =&gt; e -&gt; Decoder s a
 </span><span class="hs-identifier hs-var">cborError</span></span><span> </span><span class="hs-special">(</span><span> </span><span class="annot"><span class="annottext">Text
 </span><a href="#local-6989586621679418978"><span class="hs-identifier hs-var">lbl</span></a></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot; failed the size check. Expected &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; String
 forall a. Show a =&gt; a -&gt; String
-</span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">show</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679418979"><span class="hs-identifier hs-var">requestedSize</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-262"></span><span>                          </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Text
 </span><span class="hs-string">&quot;, found &quot;</span></span><span> </span><span class="annot"><span class="annottext">Text -&gt; Text -&gt; Text
 forall a. Semigroup a =&gt; a -&gt; a -&gt; a
-</span><span class="hs-operator hs-var">&lt;&gt;</span></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
-</span><span class="hs-identifier hs-var">Text.pack</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; String
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Text
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/text-1.2.4.1/src"><span class="hs-identifier hs-var">Text.pack</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Int -&gt; String
 forall a. Show a =&gt; a -&gt; String
-</span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Int
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">show</span></a></span><span> </span><span class="annot"><span class="annottext">Int
 </span><a href="#local-6989586621679418977"><span class="hs-identifier hs-var">actualSize</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-263"></span><span>                    </span><span class="hs-special">)</span><span>
 </span><span id="line-264"></span><span>
@@ -1111,14 +1111,14 @@ forall s. Decoder s ByteString
 </span><span class="hs-identifier hs-var">CBOR.decodeBytesCanonical</span></span><span> </span><span class="annot"><span class="annottext">Decoder s ByteString
 -&gt; (ByteString -&gt; Decoder s XPrv) -&gt; Decoder s XPrv
 forall (m :: * -&gt; *) a b. Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
-</span><span class="hs-operator hs-var">&gt;&gt;=</span></span><span> </span><span class="annot"><span class="annottext">Either String XPrv -&gt; Decoder s XPrv
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&gt;&gt;=</span></a></span><span> </span><span class="annot"><span class="annottext">Either String XPrv -&gt; Decoder s XPrv
 forall e a s. Buildable e =&gt; Either e a -&gt; Decoder s a
 </span><span class="hs-identifier hs-var">toCborError</span></span><span> </span><span class="annot"><span class="annottext">(Either String XPrv -&gt; Decoder s XPrv)
 -&gt; (ByteString -&gt; Either String XPrv)
 -&gt; ByteString
 -&gt; Decoder s XPrv
 forall b c a. (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
-</span><span class="hs-operator hs-var">.</span></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either String XPrv
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">.</span></a></span><span> </span><span class="annot"><span class="annottext">ByteString -&gt; Either String XPrv
 forall bin. ByteArrayAccess bin =&gt; bin -&gt; Either String XPrv
 </span><span class="hs-identifier hs-var">Wallet.xprv</span></span><span>
 </span><span id="line-267"></span><span>
@@ -1153,7 +1153,7 @@ forall s. Text -&gt; Int -&gt; Decoder s ()
 </span><span id="line-279"></span><span>            </span><span class="annot"><span class="annottext">XPrv -&gt; SigningKey
 </span><span class="hs-identifier hs-var">Byron.SigningKey</span></span><span> </span><span class="annot"><span class="annottext">(XPrv -&gt; SigningKey) -&gt; Decoder s XPrv -&gt; Decoder s SigningKey
 forall (f :: * -&gt; *) a b. Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
-</span><span class="hs-operator hs-var">&lt;$&gt;</span></span><span> </span><span class="annot"><span class="annottext">Decoder s XPrv
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-operator hs-var">&lt;$&gt;</span></a></span><span> </span><span class="annot"><span class="annottext">Decoder s XPrv
 forall s. Decoder s XPrv
 </span><a href="#local-6989586621679418971"><span class="hs-identifier hs-var">decodeXPrv</span></a></span><span>
 </span><span id="line-280"></span><span>          </span><span class="annot"><span class="annottext">[()]
@@ -1167,9 +1167,9 @@ forall r a r' s.
 (r -&gt; a -&gt; r) -&gt; r -&gt; (r -&gt; r') -&gt; Decoder s a -&gt; Decoder s r'
 </span><span class="hs-identifier hs-var">CBOR.decodeSequenceLenIndef</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">(() -&gt; [()] -&gt; [()]) -&gt; [()] -&gt; () -&gt; [()]
 forall a b c. (a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c
-</span><span class="hs-identifier hs-var">flip</span></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">:</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">[()] -&gt; [()]
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">flip</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">:</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="annot"><span class="annottext">[()] -&gt; [()]
 forall a. [a] -&gt; [a]
-</span><span class="hs-identifier hs-var">reverse</span></span><span> </span><span class="annot"><span class="annottext">Decoder s ()
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">reverse</span></a></span><span> </span><span class="annot"><span class="annottext">Decoder s ()
 forall s. Decoder s ()
 </span><span class="hs-identifier hs-var">CBOR.decodeNull</span></span><span>
 </span><span id="line-283"></span><span>          </span><span class="annot"><span class="annottext">()
@@ -1181,7 +1181,7 @@ forall s. Text -&gt; Int -&gt; Decoder s ()
 </span><span class="hs-number">0</span></span><span>
 </span><span id="line-285"></span><span>          </span><span class="annot"><span class="annottext">SigningKey -&gt; Decoder s SigningKey
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
-</span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">SigningKey
+</span><a href="../file:///home/runner/.ghcup/ghc/8.10.4/share/doc/ghc-8.10.4/html/libraries/base-4.14.1.0/src"><span class="hs-identifier hs-var">pure</span></a></span><span> </span><span class="annot"><span class="annottext">SigningKey
 </span><a href="#local-6989586621679418966"><span class="hs-identifier hs-var">pkey</span></a></span><span>
 </span><span id="line-286"></span><span>
 </span><span id="line-287"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Cardano.Api.Key.html#CastVerificationKeyRole"><span class="hs-identifier hs-type">CastVerificationKeyRole</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKeyLegacy"><span class="hs-identifier hs-type">ByronKeyLegacy</span></a></span><span> </span><span class="annot"><a href="Cardano.Api.KeysByron.html#ByronKey"><span class="hs-identifier hs-type">ByronKey</span></a></span><span> </span><span class="hs-keyword">where</span><span>
